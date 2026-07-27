@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competitive Ad Intelligence Dashboard - Stratasys</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root { --bg:#f0f2f5; --card:#fff; --text:#1a1a2e; --muted:#6b7280; --border:#e5e7eb; --blue:#2563eb; --blue-light:#dbeafe; --green:#059669; --orange:#ea580c; --purple:#7c3aed; --red:#dc2626; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text)}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.header{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);color:#fff;padding:24px 32px}
+.header h1{font-size:22px;font-weight:700}.header p{font-size:13px;opacity:.8;margin-top:4px}
+.main-tabs{background:#1e3a5f;display:flex;gap:0;padding:0 32px;overflow-x:auto}
+.main-tab{padding:12px 20px;font-size:13px;font-weight:600;color:rgba(255,255,255,.55);cursor:pointer;border:none;background:none;font-family:inherit;border-bottom:3px solid transparent;transition:all .15s;white-space:nowrap}
+.main-tab:hover{color:rgba(255,255,255,.9)}.main-tab.active{color:#fff;border-bottom-color:#fff}
+.tab-content{display:none}.tab-content.active{display:block}
+.container{max-width:1440px;margin:0 auto;padding:20px}
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px}
+.kpi{background:var(--card);border-radius:10px;padding:16px;border:1px solid var(--border)}
+.kpi .label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:600}
+.kpi .value{font-size:26px;font-weight:700;margin-top:4px}.kpi .sub{font-size:11px;color:var(--muted);margin-top:2px}
+.filters{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+.filters label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.filter-btn{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:6px 14px;font-size:12px;cursor:pointer;font-family:inherit;color:var(--text);transition:all .15s}
+.filter-btn:hover{border-color:var(--blue);color:var(--blue)}.filter-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.chart-card{background:var(--card);border-radius:10px;padding:20px;border:1px solid var(--border)}
+.chart-card h3{font-size:14px;font-weight:700;margin-bottom:12px}.chart-card canvas{max-height:280px}
+.table-card{background:var(--card);border-radius:10px;padding:20px;border:1px solid var(--border);margin-bottom:20px}
+.table-card h3{font-size:14px;font-weight:700;margin-bottom:4px}
+.table-card .table-sub{font-size:12px;color:var(--muted);margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#f8f9fa;padding:8px 10px;text-align:left;font-weight:600;border-bottom:2px solid var(--border);font-size:11px;text-transform:uppercase;letter-spacing:.3px;color:var(--muted);position:sticky;top:0;z-index:1}
+td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:hover td{background:#f8f9fb}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;white-space:nowrap}
+.badge-hp{background:#dbeafe;color:#1d4ed8}.badge-formlabs{background:#fff7ed;color:#c2410c}.badge-bambu{background:#d1fae5;color:#047857}
+.spend-bar{height:6px;border-radius:3px;background:#e5e7eb;position:relative;min-width:60px;margin-top:4px}
+.spend-fill{height:100%;border-radius:3px;position:absolute;left:0;top:0}
+.insights{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px}
+.insight-card{background:var(--card);border-radius:10px;padding:18px;border:1px solid var(--border);border-left:4px solid var(--blue)}
+.insight-card h4{font-size:13px;font-weight:700;margin-bottom:6px}
+.insight-card p{font-size:12px;color:var(--muted);line-height:1.5}
+.insight-card.hp{border-left-color:var(--blue)}.insight-card.formlabs{border-left-color:var(--orange)}.insight-card.bambu{border-left-color:var(--green)}
+.data-table-wrap{overflow-x:auto;max-height:600px;overflow-y:auto;border:1px solid var(--border);border-radius:8px}
+.data-table-wrap table th{background:#2F5496;color:#fff;font-size:11px}
+.data-table-wrap table td{font-size:11px;white-space:normal}
+.data-table-wrap table tr:nth-child(even) td{background:#f2f7fb}
+.search-bar{display:flex;gap:10px;margin-bottom:12px;align-items:center}
+.search-bar input{padding:8px 14px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit;width:300px}
+.search-bar input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.row-count{font-size:12px;color:var(--muted)}
+.matrix-table td:first-child{font-weight:600;background:#f8f9fa;min-width:140px}.matrix-table td{min-width:200px}
+/* HP Watch */
+.timeline{position:relative;padding-left:28px;margin:16px 0}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:20px;padding-left:16px}
+.tl-item::before{content:'';position:absolute;left:-22px;top:4px;width:12px;height:12px;border-radius:50%;border:2px solid var(--blue);background:#fff;z-index:1}
+.tl-item.product::before{border-color:var(--blue);background:var(--blue-light)}
+.tl-item.partnership::before{border-color:var(--green);background:#d1fae5}
+.tl-item.event::before{border-color:var(--purple);background:#ede9fe}
+.tl-item.healthcare::before{border-color:var(--orange);background:#fff7ed}
+.tl-item.drone::before{border-color:var(--red);background:#fee2e2}
+.tl-date{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.3px}
+.tl-title{font-size:13px;font-weight:700;margin:4px 0 2px}
+.tl-body{font-size:12px;color:var(--muted);line-height:1.5}
+.tl-source{font-size:11px;margin-top:4px}
+.tl-tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:10px;font-weight:600;margin-left:6px}
+.tl-tag.product{background:var(--blue-light);color:var(--blue)}.tl-tag.drone{background:#fee2e2;color:var(--red)}
+.tl-tag.event{background:#ede9fe;color:var(--purple)}.tl-tag.healthcare{background:#fff7ed;color:var(--orange)}
+.tl-tag.partnership{background:#d1fae5;color:var(--green)}.tl-tag.hiring{background:#fef3c7;color:#b45309}
+.intel-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.intel-card{background:var(--card);border-radius:10px;padding:18px;border:1px solid var(--border)}
+.intel-card h4{font-size:13px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.intel-card ul{margin:0;padding-left:18px;font-size:12px;color:var(--muted);line-height:1.8}
+.intel-card li{margin-bottom:2px}
+.screenshot-placeholder{display:inline-block;width:60px;height:40px;background:#f3f4f6;border:1px dashed #d1d5db;border-radius:4px;font-size:9px;color:#9ca3af;text-align:center;line-height:40px;vertical-align:middle}
+.footer{text-align:center;padding:16px;font-size:11px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Competitive Ad Intelligence Dashboard</h1>
+  <p>HP 3D Printing | Formlabs | Bambu Lab -- Data collected July 27, 2026 from LinkedIn Ad Library, Meta Ad Library, Google Ads Transparency Center</p>
+</div>
+
+<div class="main-tabs">
+  <button class="main-tab active" onclick="switchTab('dashboard',this)">Dashboard</button>
+  <button class="main-tab" onclick="switchTab('adlog',this)">Ad Log (Full Data)</button>
+  <button class="main-tab" onclick="switchTab('hpwatch',this)">HP Watch</button>
+  <button class="main-tab" onclick="switchTab('summary',this)">Competitor Summary</button>
+  <button class="main-tab" onclick="switchTab('strategy',this)">Platform Strategy</button>
+  <button class="main-tab" onclick="switchTab('notes',this)">Collection Notes</button>
+</div>
+
+<!-- TAB: Dashboard -->
+<div class="tab-content active" id="tab-dashboard">
+<div class="container">
+  <div class="kpi-row" id="kpis"></div>
+  <div class="filters" id="filters"></div>
+  <div class="insights" id="insights"></div>
+  <div class="charts-grid">
+    <div class="chart-card"><h3>Ads by Competitor x Platform</h3><canvas id="chart-platform"></canvas></div>
+    <div class="chart-card"><h3>Estimated Monthly Spend Range</h3><canvas id="chart-spend"></canvas></div>
+    <div class="chart-card"><h3>Ad Format Mix</h3><canvas id="chart-format"></canvas></div>
+    <div class="chart-card"><h3>Funnel Stage Distribution</h3><canvas id="chart-funnel"></canvas></div>
+  </div>
+  <div class="table-card"><h3>Ad Log Summary</h3><p class="table-sub">Switch to "Ad Log (Full Data)" for all 16 columns with source links.</p><div style="overflow-x:auto"><table id="ad-table"></table></div></div>
+</div>
+</div>
+
+<!-- TAB: Full Ad Log -->
+<div class="tab-content" id="tab-adlog">
+<div class="container">
+  <div class="table-card">
+    <h3>Ad Log - Complete Data</h3>
+    <p class="table-sub">All 16 columns. Headlines link to source where available. Click column headers to sort.</p>
+    <div class="search-bar"><input type="text" id="adlog-search" placeholder="Search (headline, competitor, platform, theme...)" oninput="renderAdLogFull()"><span class="row-count" id="adlog-count"></span></div>
+    <div class="data-table-wrap"><table id="adlog-full-table"></table></div>
+  </div>
+</div>
+</div>
+
+<!-- TAB: HP Watch -->
+<div class="tab-content" id="tab-hpwatch">
+<div class="container">
+  <div class="table-card" style="border-left:4px solid var(--blue)">
+    <h3>HP 3D Printing Intelligence Brief</h3>
+    <p class="table-sub">Strategic signals for the Stratasys sales team. Focus: drones/UAV, new products, healthcare, events.</p>
+  </div>
+
+  <div class="intel-grid">
+    <div class="intel-card">
+      <h4><span class="tl-tag drone">DRONES/UAV</span> HP Drone Strategy</h4>
+      <ul>
+        <li><strong>Unusual Machines partnership</strong> -- HP MJF produces TPU parts for SkyLite FPV drones. Manufacturing by Forecast 3D (San Diego). US production positioning.</li>
+        <li><strong>XPONENTIAL 2026 (Detroit)</strong> -- HP showcased MJF for "aerial, underwater, and autonomous uncrewed systems." Drone vertical is a flagship use case.</li>
+        <li><strong>The Eye Above Project</strong> -- Bush Ranger anti-poaching drone built with MJF. Emotional narrative for defense/government audience.</li>
+        <li><strong>Blueflite</strong> -- Cargo delivery drones using MJF for flexibility and durability.</li>
+        <li><strong>LinkedIn ad activity</strong> -- 2 active drone-specific ads: "Designing or printing parts for drones?" (Engineer's Corner) + FPV Drones/Unusual Machines case study.</li>
+        <li><strong>Dedicated landing page</strong> -- <a href="https://reinvent.hp.com/us-en-3dprint-drones" target="_blank">reinvent.hp.com/us-en-3dprint-drones</a></li>
+      </ul>
+    </div>
+    <div class="intel-card">
+      <h4><span class="tl-tag product">NEW PRODUCTS</span> 2026 Product Launches</h4>
+      <ul>
+        <li><strong>MJF 1200</strong> -- Compact 12-liter build volume, under $60,000. Entry point to MJF portfolio. Full availability early 2027. Reservation program active.</li>
+        <li><strong>IF 600 HT</strong> -- Industrial Filament printer for high-temp polymers (aerospace, automotive). GA in US/Canada. HP's FDM play.</li>
+        <li><strong>5600 High Productivity Mode</strong> -- 20% output increase on existing 5600 series.</li>
+        <li><strong>Dual Tone technology</strong> -- White and grey two-tone printing. 5600 series first, late 2026.</li>
+        <li><strong>OptiPowder Ni718</strong> -- New Metal Jet material for high-density/strength metal production.</li>
+      </ul>
+    </div>
+    <div class="intel-card">
+      <h4><span class="tl-tag healthcare">HEALTHCARE</span> O&P / Medical Vertical</h4>
+      <ul>
+        <li><strong>Medicare reimbursement milestone</strong> -- 3D printing recognized by DME MACs/PDAC as fabrication method for prosthetics. Major adoption barrier removed.</li>
+        <li><strong>Invent Medical</strong> -- 100,000+ parts across 1,000+ hospitals using MJF.</li>
+        <li><strong>Applications</strong> -- Scoliosis braces, cranial orthoses, ankle-foot supports, prosthetic arms, prosthetic sockets.</li>
+        <li><strong>New material coming</strong> -- Adjustable rigidity/flexibility/foam density in single device. Announced at AOPA National Assembly.</li>
+        <li><strong>LinkedIn ads</strong> -- "3D Printing Solutions for Healthcare and O&P" (Engineer's Corner) + Hero Gauntlet prosthetics carousel.</li>
+      </ul>
+    </div>
+    <div class="intel-card">
+      <h4><span class="tl-tag event">EVENTS</span> Trade Show Presence 2026</h4>
+      <ul>
+        <li><strong>RAPID+TCT 2026</strong> (Boston, Apr 13-16) -- Major product announcements: MJF 1200, IF 600HT, Metal Jet materials. HP marked "decade of AM innovation."</li>
+        <li><strong>XPONENTIAL 2026</strong> (Detroit) -- Drone/UAV/robotics focus. Showcased MJF for uncrewed systems.</li>
+        <li><strong>AOPA National Assembly</strong> -- Healthcare/O&P focus. New material announcement.</li>
+        <li><strong>Formnext 2026</strong> (Frankfurt, Nov 17-20) -- Upcoming. Expect more product announcements.</li>
+        <li><strong>Webinar series</strong> -- "Beyond the Layers" (materials), "Systematizing AM," O&P digital workflows.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <h3>HP Activity Timeline</h3>
+    <p class="table-sub">Chronological view of HP 3D Printing strategic moves. Most recent first.</p>
+    <div class="timeline" id="hp-timeline"></div>
+  </div>
+
+  <div class="table-card">
+    <h3>Hiring Signals</h3>
+    <p class="table-sub">What HP is hiring for tells you where they're investing.</p>
+    <div style="font-size:12px;color:var(--muted);line-height:1.8">
+      <p><strong>Active roles (as of Jul 2026):</strong></p>
+      <ul style="margin-left:18px">
+        <li><strong>3D Printing Application Engineer</strong> (Atlanta, GA) -- Sales pipeline technical support. Signals continued US market expansion.</li>
+        <li><strong>3D Printer Technician</strong> -- Operating/maintaining MJF in production environments. Signals scaling production capacity.</li>
+        <li>Average hourly pay for HP AM roles: $20-$34/hr (ZipRecruiter data)</li>
+      </ul>
+      <p style="margin-top:10px"><strong>What to watch for:</strong> Drone/UAV-specific application engineer roles, healthcare/O&P specialist roles, sales roles targeting Stratasys accounts.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB: Competitor Summary -->
+<div class="tab-content" id="tab-summary">
+<div class="container">
+  <div class="table-card"><h3>Competitor Summary</h3><p class="table-sub">High-level comparison of ad presence across platforms.</p><div class="data-table-wrap"><table id="summary-table"></table></div></div>
+</div>
+</div>
+
+<!-- TAB: Platform Strategy -->
+<div class="tab-content" id="tab-strategy">
+<div class="container">
+  <div class="table-card"><h3>Platform Strategy Matrix</h3><p class="table-sub">Side-by-side comparison of paid media approaches.</p><div class="data-table-wrap"><table id="strategy-table" class="matrix-table"></table></div></div>
+</div>
+</div>
+
+<!-- TAB: Collection Notes -->
+<div class="tab-content" id="tab-notes">
+<div class="container">
+  <div class="table-card"><h3>Data Collection Methodology & Notes</h3><div id="notes-content" style="font-size:13px;line-height:1.8"></div></div>
+</div>
+</div>
+
+<div class="footer">
+  Stratasys Competitive Ad Intelligence | LinkedIn Ad Library, Meta Ad Library, Google Ads Transparency Center | July 27, 2026<br>
+  Spend estimates are directional only. Not verified actuals. | Next refresh recommended: August 2026<br>
+  <strong>Skill installed:</strong> Type "scrape competitor ads" or "update ad intelligence" in any Cowork session to re-run this scrape with Sonnet.
+</div>
+
+<script>
+const ADS=[
+{competitor:"HP 3D Printing",platform:"LinkedIn",format:"Video",theme:"Product Launch",headline:"Professional 3D Printing, Now Within Your Reach - MJF 1200",cta:"Learn More",impressions:"10K-50K",spendLow:3000,spendHigh:8000,firstSeen:"Jun 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Manufacturing engineers, product designers",funnel:"Top",landing:"hp.com/mjf1200",notes:"3 video variants",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive+Manufacturing",screenshot:""},
+{competitor:"HP 3D Printing",platform:"LinkedIn",format:"Single Image",theme:"Thought Leadership",headline:"3D Printing Solutions for Healthcare and O&P--Let's Talk!",cta:"Book a Meeting",impressions:"10K-50K",spendLow:3000,spendHigh:8000,firstSeen:"May 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Healthcare/O&P engineers",funnel:"Mid",landing:"hp.com/healthcare-3d",notes:"Engineer's Corner series",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive+Manufacturing",screenshot:""},
+{competitor:"HP 3D Printing",platform:"LinkedIn",format:"Single Image",theme:"Thought Leadership",headline:"Designing or printing parts for drones? - Engineer's Corner",cta:"Book a Meeting",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"May 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Aerospace/drone engineers",funnel:"Mid",landing:"hp.com/drones",notes:"Engineer's Corner - drones",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive+Manufacturing",screenshot:""},
+{competitor:"HP 3D Printing",platform:"LinkedIn",format:"Single Image",theme:"Webinar",headline:"Beyond the Layers - HP 3D HR PA 12 Material",cta:"Register",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"Apr 2026",lastSeen:"Jul 2026",active:"Yes",audience:"AM professionals, materials engineers",funnel:"Mid",landing:"hp.com/webinars",notes:"Materials webinar",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive+Manufacturing",screenshot:""},
+{competitor:"HP 3D Printing",platform:"LinkedIn",format:"Single Image",theme:"Webinar",headline:"Systematizing AM - May 5, 2026",cta:"Register",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"Apr 2026",lastSeen:"May 2026",active:"No",audience:"AM operations managers",funnel:"Mid",landing:"hp.com/webinars",notes:"Past event",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive+Manufacturing",screenshot:""},
+{competitor:"HP 3D Printing",platform:"LinkedIn",format:"Carousel",theme:"Case Study",headline:"Hero Gauntlet - 3D Printed Prosthetics",cta:"Learn More",impressions:"10K-50K",spendLow:3000,spendHigh:8000,firstSeen:"Mar 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Healthcare professionals",funnel:"Top",landing:"hp.com/stories",notes:"Emotional storytelling, multiple variants",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive+Manufacturing",screenshot:""},
+{competitor:"HP 3D Printing",platform:"LinkedIn",format:"Document",theme:"Product Launch",headline:"MJF 1200 Reservation Program - Reserve Yours Now",cta:"Sign Up",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"Jun 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Manufacturing decision-makers",funnel:"Bottom",landing:"hp.com/mjf1200-reserve",notes:"4-page document ad, reservation CTA",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive+Manufacturing",screenshot:""},
+{competitor:"HP 3D Printing",platform:"LinkedIn",format:"Single Image",theme:"Case Study",headline:"3D Printing, 3,400 Meters Under the Sea - KM3NeT",cta:"Learn More",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"Mar 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Scientific/research community",funnel:"Top",landing:"hp.com/stories",notes:"Deep sea neutrino telescope",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive+Manufacturing",screenshot:""},
+{competitor:"HP 3D Printing",platform:"LinkedIn",format:"Single Image",theme:"Product Launch",headline:"Industrial Filament 3D Printer 600 HT - New From HP",cta:"Learn More",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"Jun 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Industrial manufacturing engineers",funnel:"Top",landing:"hp.com/600ht",notes:"FDM product expansion",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive+Manufacturing",screenshot:""},
+{competitor:"HP 3D Printing",platform:"LinkedIn",format:"Single Image",theme:"Case Study",headline:"FPV Drones - Unusual Machines x HP 3D Printing",cta:"Learn More",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"Apr 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Drone manufacturers",funnel:"Top",landing:"hp.com/stories",notes:"Unusual Machines FPV partnership",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive+Manufacturing",screenshot:""},
+
+{competitor:"Formlabs",platform:"LinkedIn",format:"Image + Case Study",theme:"Thought Leadership",headline:"Resin 3D printing isn't ready for production - Nick Graham CRO",cta:"Learn More",impressions:"10K-50K",spendLow:3000,spendHigh:8000,firstSeen:"Jul 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Engineers, dental professionals",funnel:"Top",landing:"formlabs.com/blog",notes:"CRO thought leadership, 50K aligners/month Clove Dental",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=Formlabs",screenshot:""},
+{competitor:"Formlabs",platform:"LinkedIn",format:"Image + Comparison",theme:"Product Comparison",headline:"Can a $7,000 printer outperform one that costs $100,000/year?",cta:"View Details",impressions:"10K-50K",spendLow:3000,spendHigh:8000,firstSeen:"Jul 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Engineering managers, procurement",funnel:"Mid",landing:"formlabs.com/form4l",notes:"Form 4L vs legacy, 20 vs 27 models/print",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=Formlabs",screenshot:""},
+{competitor:"Formlabs",platform:"LinkedIn",format:"Video",theme:"Brand",headline:"Turn your ideas into high-fidelity prototypes",cta:"Consultation",impressions:"10K-50K",spendLow:3000,spendHigh:8000,firstSeen:"Jun 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Product designers",funnel:"Mid",landing:"formlabs.com/contact",notes:"1-on-1 expert consultation video",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=Formlabs",screenshot:""},
+{competitor:"Formlabs",platform:"LinkedIn",format:"Video",theme:"Product Demo",headline:"Prototype Quick with Professional 3D Printing",cta:"Learn More",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"Jun 2026",lastSeen:"Jul 2026",active:"Yes",audience:"R&D teams",funnel:"Top",landing:"formlabs.com",notes:"Speed-focused video",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=Formlabs",screenshot:""},
+{competitor:"Formlabs",platform:"LinkedIn",format:"Image",theme:"Speed",headline:"Iterate Designs In-House In Record Times",cta:"Learn More",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"May 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Engineering teams",funnel:"Top",landing:"formlabs.com/engineering",notes:"Engineering capabilities",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=Formlabs",screenshot:""},
+{competitor:"Formlabs",platform:"LinkedIn",format:"Image",theme:"Speed",headline:"Build. Test. Refine. Repeat.",cta:"Book a Demo",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"May 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Engineering managers",funnel:"Mid",landing:"formlabs.com/demo",notes:"Demo CTA",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=Formlabs",screenshot:""},
+{competitor:"Formlabs",platform:"LinkedIn",format:"Single Image",theme:"Scalability",headline:"Built to grow with you",cta:"Learn More",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"Jun 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Operations leaders",funnel:"Mid",landing:"formlabs.com",notes:"Prototype to production",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=Formlabs",screenshot:""},
+{competitor:"Formlabs",platform:"LinkedIn",format:"Single Image",theme:"Consultation",headline:"Have a specific challenge? Virtual walkthrough",cta:"Book Demo",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"May 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Engineers w/ active projects",funnel:"Bottom",landing:"formlabs.com/demo",notes:"Bottom-funnel CTA",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=Formlabs",screenshot:""},
+{competitor:"Formlabs",platform:"LinkedIn",format:"Image",theme:"Vertical - Aerospace",headline:"From prototype to propeller-ready - SLS",cta:"Learn More",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"Jun 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Aerospace engineers",funnel:"Mid",landing:"formlabs.com/sls",notes:"SLS drone parts",sourceUrl:"https://www.linkedin.com/ad-library/search?accountOwner=Formlabs",screenshot:""},
+
+{competitor:"Formlabs",platform:"Google Search",format:"Search Ad",theme:"Product Launch",headline:"Introducing Form 4L - Trusted by Industry Leaders",cta:"Learn More",impressions:"50K-100K",spendLow:5000,spendHigh:15000,firstSeen:"Jun 2026",lastSeen:"Jul 2026",active:"Yes",audience:"3D printing buyers",funnel:"Bottom",landing:"formlabs.com/form4l",notes:"Top search position",sourceUrl:"https://adstransparency.google.com/advertiser/AR09089199848210432001",screenshot:""},
+{competitor:"Formlabs",platform:"Google Search",format:"Search Ad",theme:"Speed",headline:"Form 4 - Most Parts In Under 2 Hours",cta:"Learn More",impressions:"50K-100K",spendLow:5000,spendHigh:15000,firstSeen:"May 2026",lastSeen:"Jul 2026",active:"Yes",audience:"3D printing buyers",funnel:"Bottom",landing:"formlabs.com/form4",notes:"Speed as primary differentiator",sourceUrl:"https://adstransparency.google.com/advertiser/AR09089199848210432001",screenshot:""},
+{competitor:"Formlabs",platform:"Google Search",format:"Search Ad",theme:"Price",headline:"Affordable SLS - Fuse 1+ 30W from $9,999",cta:"Learn More",impressions:"20K-50K",spendLow:3000,spendHigh:8000,firstSeen:"Apr 2026",lastSeen:"Jul 2026",active:"Yes",audience:"SLS buyers",funnel:"Bottom",landing:"formlabs.com/fuse",notes:"Price-anchored",sourceUrl:"https://adstransparency.google.com/advertiser/AR09089199848210432001",screenshot:""},
+{competitor:"Formlabs",platform:"Google Search",format:"Search Ad",theme:"Materials Promo",headline:"Materials For Any Application - 30% Off Bulk",cta:"Shop Now",impressions:"20K-50K",spendLow:3000,spendHigh:8000,firstSeen:"May 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Existing + new users",funnel:"Bottom",landing:"formlabs.com/materials",notes:"30% bulk discount",sourceUrl:"https://adstransparency.google.com/advertiser/AR09089199848210432001",screenshot:""},
+{competitor:"Formlabs",platform:"Google Search",format:"Search Ad",theme:"Vertical - Medical",headline:"Affordable Industrial Quality - Formlabs Medical",cta:"Learn More",impressions:"10K-30K",spendLow:2000,spendHigh:5000,firstSeen:"Apr 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Medical manufacturers",funnel:"Mid",landing:"formlabs.com/medical",notes:"Medical vertical",sourceUrl:"https://adstransparency.google.com/advertiser/AR09089199848210432001",screenshot:""},
+{competitor:"Formlabs",platform:"Google Search",format:"Search Ad",theme:"Vertical - Dental",headline:"Professional Dental 3D Printer - Form 4B",cta:"Learn More",impressions:"10K-30K",spendLow:2000,spendHigh:5000,firstSeen:"May 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Dental professionals",funnel:"Mid",landing:"formlabs.com/dental",notes:"Form 4B dental-specific",sourceUrl:"https://adstransparency.google.com/advertiser/AR09089199848210432001",screenshot:""},
+{competitor:"Formlabs",platform:"Google Search",format:"Search Ad",theme:"Service",headline:"3D Prints Delivered in 1 Day",cta:"Order Now",impressions:"5K-20K",spendLow:1500,spendHigh:4000,firstSeen:"Jun 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Quick-turn buyers",funnel:"Bottom",landing:"formlabs.com/on-demand",notes:"Next-day from MA",sourceUrl:"https://adstransparency.google.com/advertiser/AR09089199848210432001",screenshot:""},
+{competitor:"Formlabs",platform:"Google Display",format:"Display/Video",theme:"Materials",headline:"FORMLABS TOUGH FAMILY",cta:"Learn More",impressions:"20K-50K",spendLow:2000,spendHigh:6000,firstSeen:"Apr 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Engineers (display)",funnel:"Top",landing:"formlabs.com/materials/tough",notes:"Tough resin display ads",sourceUrl:"https://adstransparency.google.com/advertiser/AR09089199848210432001",screenshot:""},
+
+{competitor:"Bambu Lab",platform:"Google Search",format:"Search Ad",theme:"Consumer",headline:"La mejor impresora 3D 2025 - Imprime todo (Spanish)",cta:"Learn More",impressions:"100K+",spendLow:10000,spendHigh:30000,firstSeen:"May 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Consumer buyers (global)",funnel:"Bottom",landing:"bambulab.com",notes:"~3K total Google ads, multilingual, A1 focus",sourceUrl:"https://adstransparency.google.com/?region=anywhere&domain=bambulab.com",screenshot:""},
+{competitor:"Bambu Lab",platform:"Google Search",format:"Search Ad",theme:"Consumer",headline:"Bambu Lab X2D - Everyone can use 3D printer (Japanese)",cta:"Learn More",impressions:"50K-100K",spendLow:5000,spendHigh:15000,firstSeen:"May 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Consumer (Japan)",funnel:"Bottom",landing:"bambulab.com/ja",notes:"BAMBU JAPAN K.K., X2D dual nozzle",sourceUrl:"https://adstransparency.google.com/?region=anywhere&domain=bambulab.com",screenshot:""},
+{competitor:"Bambu Lab",platform:"Google Search",format:"Search Ad",theme:"Materials/Store",headline:"Bambu ABS Filament - Store JP",cta:"Shop Now",impressions:"20K-50K",spendLow:3000,spendHigh:8000,firstSeen:"May 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Existing owners (Japan)",funnel:"Bottom",landing:"jp.store.bambulab.com",notes:"Consumable/filament sales",sourceUrl:"https://adstransparency.google.com/?region=anywhere&domain=bambulab.com",screenshot:""},
+{competitor:"Bambu Lab",platform:"Google Search",format:"Search Ad",theme:"Consumer",headline:"Bambu Lab A1 - Best for beginners (multilingual)",cta:"Shop Now",impressions:"100K+",spendLow:10000,spendHigh:30000,firstSeen:"Apr 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Consumer/hobbyist globally",funnel:"Bottom",landing:"bambulab.com/a1",notes:"Multiple entities: Shenzhen HQ + regional",sourceUrl:"https://adstransparency.google.com/?region=anywhere&domain=bambulab.com",screenshot:""},
+{competitor:"Bambu Lab",platform:"Meta (FB/IG)",format:"Image+Video",theme:"Product Launch",headline:"PLA Pure - We joked we couldn't print chocolate",cta:"Shop Now",impressions:"50K-100K",spendLow:5000,spendHigh:15000,firstSeen:"Jun 2026",lastSeen:"Jul 2026",active:"Yes",audience:"3D printing enthusiasts",funnel:"Mid",landing:"bambulab.com/pla-pure",notes:"Playful tone, eco-messaging",sourceUrl:"https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=bambu%20lab",screenshot:""},
+{competitor:"Bambu Lab",platform:"Meta (FB/IG)",format:"Image+Video",theme:"Reliability",headline:"Over 1 Billion printing hours - P-Series",cta:"Shop Now",impressions:"50K-100K",spendLow:5000,spendHigh:15000,firstSeen:"Feb 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Consumer buyers",funnel:"Top",landing:"bambulab.com/p-series",notes:"Social proof, free shipping, running since Feb",sourceUrl:"https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=bambu%20lab",screenshot:""},
+{competitor:"Bambu Lab",platform:"Meta (FB/IG)",format:"Image+Video",theme:"Lifestyle",headline:"3D printing no longer confined to workshops",cta:"Shop Now",impressions:"50K-100K",spendLow:5000,spendHigh:15000,firstSeen:"Jun 2026",lastSeen:"Jul 2026",active:"Yes",audience:"Mainstream consumers",funnel:"Top",landing:"bambulab.com/pla-pure",notes:"Lifestyle, low-emission, toy safety tested",sourceUrl:"https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=bambu%20lab",screenshot:""},
+];
+
+const COLORS={"HP 3D Printing":{bg:"#2563eb",light:"#dbeafe"},"Formlabs":{bg:"#ea580c",light:"#fff7ed"},"Bambu Lab":{bg:"#059669",light:"#d1fae5"}};
+
+function switchTab(tab,btn){
+  document.querySelectorAll('.main-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  btn.classList.add('active');
+  if(tab==='adlog')renderAdLogFull();if(tab==='summary')renderSummaryTab();if(tab==='strategy')renderStrategyTab();if(tab==='notes')renderNotesTab();if(tab==='hpwatch')renderHPTimeline();
+}
+
+let activeCompetitor="all";
+function getFiltered(){return activeCompetitor==="all"?ADS:ADS.filter(a=>a.competitor===activeCompetitor)}
+function setFilter(c){activeCompetitor=c;renderDashboard()}
+
+function renderKPIs(){
+  const f=getFiltered(),t=f.length,ac=f.filter(a=>a.active==="Yes").length,sL=Math.round(f.reduce((s,a)=>s+a.spendLow,0)/1000),sH=Math.round(f.reduce((s,a)=>s+a.spendHigh,0)/1000),pl=[...new Set(f.map(a=>a.platform))].length,th=[...new Set(f.map(a=>a.theme))].length;
+  document.getElementById("kpis").innerHTML=`<div class="kpi"><div class="label">Ads Tracked</div><div class="value">${t}</div><div class="sub">Sample from ad libraries</div></div><div class="kpi"><div class="label">Currently Active</div><div class="value" style="color:var(--green)">${ac}</div><div class="sub">${Math.round(ac/t*100)}% active</div></div><div class="kpi"><div class="label">Est. Combined Spend/mo</div><div class="value">$${sL}K-${sH}K</div><div class="sub">Directional estimates</div></div><div class="kpi"><div class="label">Platforms</div><div class="value">${pl}</div><div class="sub">LinkedIn, Google, Meta</div></div><div class="kpi"><div class="label">Themes</div><div class="value">${th}</div><div class="sub">Campaign themes observed</div></div>`;
+}
+
+function renderFilters(){
+  const c=["all","HP 3D Printing","Formlabs","Bambu Lab"];
+  document.getElementById("filters").innerHTML=`<label>Filter:</label>`+c.map(x=>`<button class="filter-btn ${activeCompetitor===x?'active':''}" onclick="setFilter('${x}')">${x==='all'?'All':x}</button>`).join("");
+}
+
+function renderInsights(){
+  document.getElementById("insights").innerHTML=`<div class="insight-card hp"><h4>HP 3D Printing</h4><p><strong>LinkedIn-only.</strong> 20 ads, 0 Meta, Google buried under parent. Verticals: healthcare, drones, O&P. New: MJF 1200 + IF 600 HT. Document ads + reservation CTAs.</p></div><div class="insight-card formlabs"><h4>Formlabs</h4><p><strong>Dual-platform.</strong> 37 LinkedIn + 38 Google. CRO thought leadership. Price wars ($7K vs $100K). Dental/medical dominant. Speed is #1 message.</p></div><div class="insight-card bambu"><h4>Bambu Lab</h4><p><strong>Consumer Google machine.</strong> ~3K ads globally, 0 LinkedIn. B2C. Multilingual. Meta lifestyle ads. Best Buy retail. "1B print hours" social proof.</p></div>`;
+}
+
+let charts={};
+function renderCharts(){
+  const f=getFiltered(),pl=["LinkedIn","Google Search","Google Display","Meta (FB/IG)"],co=["HP 3D Printing","Formlabs","Bambu Lab"];
+  if(charts.p)charts.p.destroy();charts.p=new Chart(document.getElementById("chart-platform"),{type:"bar",data:{labels:pl,datasets:co.map(c=>({label:c,data:pl.map(p=>f.filter(a=>a.competitor===c&&a.platform===p).length),backgroundColor:COLORS[c].bg,borderRadius:4}))},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:11}}}},scales:{y:{beginAtZero:true,title:{display:true,text:'# Ads'}}}}});
+  if(charts.s)charts.s.destroy();const sp=co.map(c=>{const a=f.filter(x=>x.competitor===c);return{l:a.reduce((s,x)=>s+x.spendLow,0),h:a.reduce((s,x)=>s+x.spendHigh,0)}});charts.s=new Chart(document.getElementById("chart-spend"),{type:"bar",data:{labels:co,datasets:[{label:"Low",data:sp.map(s=>s.l),backgroundColor:co.map(c=>COLORS[c].bg+"80"),borderRadius:4},{label:"High",data:sp.map(s=>s.h),backgroundColor:co.map(c=>COLORS[c].bg),borderRadius:4}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{position:'bottom',labels:{font:{size:11}}}},scales:{x:{beginAtZero:true,ticks:{callback:v=>'$'+Math.round(v/1000)+'K'}}}}});
+  if(charts.f)charts.f.destroy();const fc={};f.forEach(a=>{fc[a.format]=(fc[a.format]||0)+1});const fl=Object.keys(fc).sort((a,b)=>fc[b]-fc[a]);charts.f=new Chart(document.getElementById("chart-format"),{type:"doughnut",data:{labels:fl,datasets:[{data:fl.map(x=>fc[x]),backgroundColor:["#2563eb","#ea580c","#059669","#7c3aed","#d97706","#dc2626","#0891b2","#4f46e5","#be185d","#65a30d"],borderWidth:2}]},options:{responsive:true,plugins:{legend:{position:'right',labels:{font:{size:10}}}}}});
+  if(charts.fn)charts.fn.destroy();const fs=["Top","Mid","Bottom"];charts.fn=new Chart(document.getElementById("chart-funnel"),{type:"bar",data:{labels:fs.map(x=>x+" of Funnel"),datasets:co.map(c=>({label:c,data:fs.map(x=>f.filter(a=>a.competitor===c&&a.funnel===x).length),backgroundColor:COLORS[c].bg,borderRadius:4}))},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:11}}}},scales:{y:{beginAtZero:true,title:{display:true,text:'# Ads'}}}}});
+}
+
+function renderDashTable(){
+  const f=getFiltered(),mx=Math.max(...ADS.map(a=>a.spendHigh));
+  let h=`<thead><tr><th>Competitor</th><th>Platform</th><th>Headline</th><th>CTA</th><th>Spend/mo</th><th>Funnel</th><th>Active</th><th>Source</th></tr></thead><tbody>`;
+  f.forEach(a=>{const bc=a.competitor==="HP 3D Printing"?"badge-hp":a.competitor==="Formlabs"?"badge-formlabs":"badge-bambu";const pct=Math.round(a.spendHigh/mx*100);
+    h+=`<tr><td><span class="badge ${bc}">${a.competitor}</span></td><td>${a.platform}</td><td style="max-width:280px">${a.headline}</td><td>${a.cta}</td><td>$${(a.spendLow/1000).toFixed(1)}K-${(a.spendHigh/1000).toFixed(1)}K<div class="spend-bar"><div class="spend-fill" style="width:${pct}%;background:${COLORS[a.competitor].bg}"></div></div></td><td>${a.funnel}</td><td>${a.active==="Yes"?'<span style="color:var(--green)">Active</span>':'<span style="color:var(--muted)">Off</span>'}</td><td>${a.sourceUrl?`<a href="${a.sourceUrl}" target="_blank">View</a>`:'-'}</td></tr>`;
+  });
+  document.getElementById("ad-table").innerHTML=h+`</tbody>`;
+}
+
+function renderDashboard(){renderKPIs();renderFilters();renderInsights();renderCharts();renderDashTable()}
+
+// Full Ad Log
+function renderAdLogFull(){
+  const q=(document.getElementById("adlog-search").value||"").toLowerCase();
+  const f=q?ADS.filter(a=>Object.values(a).some(v=>String(v).toLowerCase().includes(q))):ADS;
+  document.getElementById("adlog-count").textContent=f.length+" of "+ADS.length+" ads";
+  const cols=["Competitor","Platform","Format","Theme","Headline","CTA","Impressions","Spend Low","Spend High","First Seen","Last Seen","Active","Audience","Funnel","Landing","Screenshot","Notes"];
+  let h=`<thead><tr>${cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>`;
+  f.forEach(a=>{const bc=a.competitor==="HP 3D Printing"?"badge-hp":a.competitor==="Formlabs"?"badge-formlabs":"badge-bambu";
+    h+=`<tr><td><span class="badge ${bc}">${a.competitor}</span></td><td>${a.platform}</td><td>${a.format}</td><td>${a.theme}</td><td style="max-width:260px">${a.sourceUrl?`<a href="${a.sourceUrl}" target="_blank">${a.headline}</a>`:a.headline}</td><td>${a.cta}</td><td>${a.impressions}</td><td>$${a.spendLow.toLocaleString()}</td><td>$${a.spendHigh.toLocaleString()}</td><td>${a.firstSeen}</td><td>${a.lastSeen}</td><td>${a.active==="Yes"?'<span style="color:#059669;font-weight:600">Yes</span>':'<span style="color:#6b7280">No</span>'}</td><td style="max-width:180px;font-size:10px">${a.audience}</td><td>${a.funnel}</td><td style="font-size:10px">${a.landing}</td><td>${a.screenshot?`<img src="${a.screenshot}" style="width:60px;height:40px;object-fit:cover;border-radius:4px">`:'<span class="screenshot-placeholder">Add img</span>'}</td><td style="max-width:180px;font-size:10px;color:var(--muted)">${a.notes}</td></tr>`;
+  });
+  document.getElementById("adlog-full-table").innerHTML=h+`</tbody>`;
+}
+
+// HP Timeline
+function renderHPTimeline(){
+  const events=[
+    {date:"Jul 2026",type:"drone",title:"Unusual Machines SkyLite FPV - MJF Parts Available for Purchase",body:"TPU drone components manufactured by Forecast 3D (San Diego) using HP MJF. US production. CEO Allan Evans: 'To remain competitively priced while moving production to the U.S., we have to use innovative production processes.'",source:"https://www.nasdaq.com/press-release/unusual-machines-adopts-hps-multi-jet-fusion-3d-printing-drone-parts-manufacturing"},
+    {date:"Jul 2026",type:"product",title:"MJF 1200 Reservation Program Active on LinkedIn",body:"Document ads and carousel variants promoting early reservation for the compact MJF 1200. Under $60,000 entry point. Full availability early 2027.",source:"https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive+Manufacturing"},
+    {date:"Jun 2026",type:"product",title:"Industrial Filament 600 HT - GA in US/Canada",body:"HP's FDM play for high-temperature polymers. Targets aerospace, automotive, heavy manufacturing. First introduced Nov 2025, now generally available.",source:"https://www.hp.com/us-en/newsroom/press-releases/2026/hp-introduces-mjf-1200-3d-printer.html"},
+    {date:"May 2026",type:"event",title:"XPONENTIAL 2026 - Detroit",body:"HP showcased MJF for aerial, underwater, and autonomous uncrewed systems. Partners: Unusual Machines, Blueflite (cargo drones), The Eye Above Project (anti-poaching).",source:"https://www.commercialuavnews.com/international/hp-additive-manufacturing-solutions-take-drone-technology-to-new-heights-at-xponential"},
+    {date:"Apr 2026",type:"product",title:"RAPID+TCT 2026 - Boston (Major Announcements)",body:"MJF 1200 debut, IF 600HT showcase, 5600 High Productivity Mode (+20% output), Dual Tone technology (white+grey), OptiPowder Ni718 metal. HP marked 'decade of AM innovation.'",source:"https://3dprint.com/325110/hp-continues-to-lower-barriers-to-adoption-with-compact-mjf-1200-other-rapid-announcements/"},
+    {date:"Mar 2026",type:"healthcare",title:"Medicare Reimbursement Milestone for 3D-Printed Prosthetics",body:"DME MACs and PDAC recognized 3D printing as fabrication method for prosthetics. Major adoption barrier removed for the O&P vertical.",source:"https://www.plasticstoday.com/medical/3d-printed-prosthetic-devices-clear-reimbursement-hurdle"},
+    {date:"Feb 2026",type:"healthcare",title:"New Healthcare Material Announced at AOPA",body:"Material with adjustable rigidity, flexibility, and foam density in a single device. Enables clinicians to customize prosthetics/orthotics per patient.",source:"https://3dprintingindustry.com/news/hp-deepens-healthcare-role-with-new-material-and-prosthetic-trials-244084/"},
+    {date:"Nov 2025",type:"event",title:"Formnext 2025 - Portfolio Expansion + Global Collaborations",body:"HP announced portfolio expansion, new material innovations, and global collaborations. IF 600HT first introduced.",source:"https://www.hp.com/us-en/newsroom/press-releases/2025/hp-drives-additive-manufacturing.html"},
+    {date:"Upcoming",type:"event",title:"Formnext 2026 - Frankfurt (Nov 17-20)",body:"Expected: additional product announcements, new materials, expanded partnerships. Key event for competitive monitoring.",source:"https://formnext.mesago.com/frankfurt/en.html"},
+  ];
+  let h='';
+  events.forEach(e=>{h+=`<div class="tl-item ${e.type}"><div class="tl-date">${e.date} <span class="tl-tag ${e.type}">${e.type}</span></div><div class="tl-title">${e.title}</div><div class="tl-body">${e.body}</div>${e.source?`<div class="tl-source"><a href="${e.source}" target="_blank">Source</a></div>`:''}</div>`;});
+  document.getElementById("hp-timeline").innerHTML=h;
+}
+
+// Summary
+function renderSummaryTab(){
+  const d=[{n:"HP 3D Printing (AM)",li:20,meta:0,g:"Buried under HP parent",t:"20+",p:"LinkedIn",th:"Product launches, vertical targeting, webinars, case studies",au:"B2B: engineers, healthcare, ops managers",sp:"$15K-$50K"},{n:"Formlabs",li:37,meta:"~0 own",g:38,t:"75+",p:"LinkedIn + Google",th:"Speed, price comparison, dental/medical, CRO thought leadership",au:"B2B: engineers, dental pros, decision-makers",sp:"$25K-$80K"},{n:"Bambu Lab",li:0,meta:"3+ own",g:"~3K global",t:"3,000+",p:"Google (global)",th:"Consumer, multilingual, materials, lifestyle, retail",au:"B2C: hobbyists, consumers, beginners",sp:"$50K-$150K+"}];
+  let h=`<thead><tr><th>Competitor</th><th>LinkedIn</th><th>Meta</th><th>Google</th><th>Total</th><th>Primary</th><th>Themes</th><th>Audience</th><th>Spend/mo</th></tr></thead><tbody>`;
+  d.forEach(x=>{h+=`<tr><td style="font-weight:600">${x.n}</td><td>${x.li}</td><td>${x.meta}</td><td>${x.g}</td><td style="font-weight:700">${x.t}</td><td>${x.p}</td><td style="max-width:260px">${x.th}</td><td style="max-width:220px">${x.au}</td><td style="font-weight:600">${x.sp}</td></tr>`;});
+  document.getElementById("summary-table").innerHTML=h+`</tbody>`;
+}
+
+// Strategy
+function renderStrategyTab(){
+  const r=[["Target Market","B2B industrial","B2B professional/prosumer","B2C consumer/hobbyist"],["Primary Platform","LinkedIn (20 ads)","LinkedIn (37) + Google (38)","Google (~3K global)"],["LinkedIn","Heavy: thought leadership, webinars, verticals","Heavy: CRO personality, comparisons, demos","None (0 ads)"],["Meta","None (0 ads)","None (~0 own)","Active: PLA Pure, lifestyle, reliability"],["Google","Unclear: buried under HP parent","Strong search: product/price/speed/vertical","Massive: ~3K across regional entities"],["Formats","Video, carousel, document, single image","Image, video, comparison, case study","Search (multilingual), image+video"],["Top CTAs","Learn More, Book Meeting, Register","Learn More, Book Demo, Consultation, Shop","Shop Now, Learn More, Order Now"],["Funnel Focus","Top + Mid (awareness, education)","Full funnel (awareness to demo)","Bottom (purchase intent, shop)"],["Differentiators","Industrial, vertical expertise, scientific case studies","Speed (<2hrs), price ($7K vs $100K), dental","Accessibility, reliability (1B hrs), retail, global"],["Content Style","Technical, professional","Provocative, data-driven, CRO personality","Consumer-friendly, playful, lifestyle"],["Geography","Global B2B (English)","Global B2B (English)","Global B2C (EN/ES/JP/CN)"],["Est. Spend/mo","$15K-$50K","$25K-$80K","$50K-$150K+"]];
+  let h=`<thead><tr><th>Dimension</th><th style="background:#2563eb">HP 3D Printing</th><th style="background:#c2410c">Formlabs</th><th style="background:#047857">Bambu Lab</th></tr></thead><tbody>`;
+  r.forEach(x=>{h+=`<tr>${x.map(c=>`<td>${c}</td>`).join("")}</tr>`;});
+  document.getElementById("strategy-table").innerHTML=h+`</tbody>`;
+}
+
+// Notes
+function renderNotesTab(){
+  document.getElementById("notes-content").innerHTML=`
+    <p><strong>Data Collection Date:</strong> July 27, 2026</p>
+    <p><strong>Sources:</strong> LinkedIn Ad Library, Meta Ad Library, Google Ads Transparency Center, web research (3DPrint.com, TCT Magazine, HP Newsroom, Nasdaq)</p>
+    <hr style="margin:16px 0;border:none;border-top:1px solid var(--border)">
+    <h4 style="margin:12px 0 8px">Methodology</h4>
+    <p><strong>LinkedIn:</strong> Company/advertiser search. HP AM = "HP Additive Manufacturing (AM) Solutions." Formlabs = direct. Bambu Lab = 0 results.</p>
+    <p><strong>Meta:</strong> Keyword search (US, active). Includes third-party. HP AM and Formlabs = ~0 own ads. Bambu Lab = 3+ own + ~200 ecosystem.</p>
+    <p><strong>Google ATC:</strong> Advertiser name + domain. Bambu Lab via bambulab.com (~3K). HP buried under parent. Formlabs direct (38 ads).</p>
+    <hr style="margin:16px 0;border:none;border-top:1px solid var(--border)">
+    <h4 style="margin:12px 0 8px">Spend Estimation</h4>
+    <p>LinkedIn: impressions x CPM ($30-80). Google: impressions x CPC ($1-5). Meta: reach x CPM ($10-30).</p>
+    <p style="margin-top:8px;padding:10px;background:#fff7ed;border-radius:6px;border:1px solid #fed7aa"><strong>All figures are [ESTIMATES].</strong> Directional only. Actual spend is not available via public ad libraries.</p>
+    <hr style="margin:16px 0;border:none;border-top:1px solid var(--border)">
+    <h4 style="margin:12px 0 8px">Limitations</h4>
+    <ul style="margin-left:20px;line-height:2"><li>Active ads only; paused/historical not visible</li><li>HP AM Google ads mixed with HP corporate</li><li>Bambu Lab spans multiple legal entities globally</li><li>Meta keyword search includes third-party ads</li><li>LinkedIn impression ranges are broad bands</li><li>Point-in-time snapshot. Monthly refresh recommended.</li></ul>
+    <hr style="margin:16px 0;border:none;border-top:1px solid var(--border)">
+    <h4 style="margin:12px 0 8px">How to Add Screenshots</h4>
+    <p>The Ad Log tab has a "Screenshot" column with placeholders. To add images:</p>
+    <ol style="margin-left:20px;line-height:2"><li>Take screenshots of ads during each scrape</li><li>Upload to a shared folder (OneDrive, Google Drive, SharePoint)</li><li>Get the direct image URL</li><li>Add the URL to the <code>screenshot</code> field in the ADS data array</li></ol>
+    <p>If hosting on Netlify/GitHub Pages, place screenshots in an /images folder and reference them as relative paths.</p>
+    <hr style="margin:16px 0;border:none;border-top:1px solid var(--border)">
+    <h4 style="margin:12px 0 8px">Re-running This Scrape</h4>
+    <p>A Cowork skill has been saved: <strong>competitive-ad-scrape</strong>. In any future session, say "scrape competitor ads" or "update ad intelligence" and Claude will re-run the full scrape using browser tools and regenerate both deliverables. Works with Sonnet (no need for Opus).</p>
+  `;
+}
+
+renderDashboard();
+</script>
+</body>
+</html>
