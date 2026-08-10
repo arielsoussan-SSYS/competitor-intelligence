@@ -1,65 +1,90 @@
-# Competitive Ad Intelligence Dashboard
+# HP Ad Intelligence Dashboard
 
-Live competitive ad tracking for Stratasys additive manufacturing. Monitors paid media activity across HP 3D Printing, Formlabs, and Bambu Lab.
+Live competitive ad tracking for Stratasys additive manufacturing. **HP Additive Manufacturing only.**
 
-**Live dashboard:** [https://arielsoussan-ssys.github.io/competitor-intelligence/](https://arielsoussan-ssys.github.io/competitor-intelligence/)
+**Live dashboard:** https://arielsoussan-ssys.github.io/competitor-intelligence/
+
+> **Scope change, Aug 10 2026:** Formlabs and Bambu Lab were removed from this tracker. Prior multi-competitor comparison tabs were replaced by HP-over-time views. The `competitive-ad-scrape` skill was rewritten to match.
 
 ## What's Inside
 
-Single-file HTML dashboard (no backend, no build step) with six tabs:
+Single-file HTML dashboard (no backend, no build step).
 
-- **Dashboard** -- KPI cards, competitor filters, four Chart.js visualizations (platform mix, spend range, ad format, funnel stage), summary table
-- **Ad Log (Full Data)** -- All 34 tracked ads across 16 columns. Searchable. Headlines link to source ad libraries. Screenshot placeholder column for future image capture.
-- **HP Watch** -- Strategic intelligence brief for the sales team. Drone/UAV partnerships (Unusual Machines, Blueflite, Eye Above Project), 2026 product launches (MJF 1200, IF 600 HT), healthcare/O&P milestones, trade show presence, hiring signals. Includes a chronological activity timeline with sourced entries.
-- **Competitor Summary** -- High-level comparison: ad counts, primary platforms, themes, audiences, spend ranges
-- **Platform Strategy** -- 12-dimension side-by-side matrix (target market, platform strategy, formats, CTAs, funnel focus, content style, geography, spend)
-- **Collection Notes** -- Methodology, spend estimation formulas, known limitations, instructions for adding screenshots
+**Pinned at the top, above everything else:**
+
+- **Key Headline This Week** plus a one-line "so what" for Stratasys
+- **What Changed This Week at HP** in four fixed categories: ad-level changes, company/market moves, messaging/positioning shift, landing page/funnel changes. Every entry carries a source link.
+
+**Tabs:**
+
+- **Dashboard** - KPI cards, four Chart.js visualizations (theme mix, format mix, funnel distribution, estimated spend by theme), plus a table of creatives dropped since the last run
+- **Ad Log** - 18 unique HP creatives across 17 fields. Searchable. New-this-week creatives flagged.
+- **Messaging Themes** - Theme, creative count, live instances, sample headline, funnel position, and which buying committee role each theme addresses
+- **HP Watch** - Product, the MJF 1200 Early Access mechanic, drones/UAV/defense, earnings and exec, channel, competitive field, and an explicit unverified/refuted section
+- **Collection Notes** - Methodology, spend estimation, known limitations
 
 ## Data Sources
 
-All data collected from public ad transparency tools (no login required):
+| Source | What We Capture | Current state |
+|---|---|---|
+| [LinkedIn Ad Library](https://www.linkedin.com/ad-library/) | Ads, impression ranges, formats, CTAs | 37 live instances, 18 unique creatives |
+| [Meta Ad Library](https://www.facebook.com/ads/library/) | Active ads by keyword | Zero HP-owned ads. Recorded as a finding. |
+| [Google Ads Transparency](https://adstransparency.google.com/) | Ad counts, formats, landing pages | ~50K on hp.com, AM not isolable from parent entity |
 
-| Source | What We Capture |
-|--------|----------------|
-| [LinkedIn Ad Library](https://www.linkedin.com/ad-library/) | Company ads, impression ranges, formats, CTAs |
-| [Meta Ad Library](https://www.facebook.com/ads/library/) | Active ads by keyword, creative themes |
-| [Google Ads Transparency Center](https://adstransparency.google.com/) | Ad counts, formats, landing pages |
+HP Watch is sourced from trade press, HP newsroom, HP landing pages, and investor calls.
 
-HP Watch tab is sourced from trade publications, press releases, and company newsrooms.
+## Weekly Change Detection
+
+Each run diffs against the previous run's dataset, matching on headline plus platform:
+
+- Present now, absent before = **new**
+- Present before, absent now = **dropped or paused**
+- Changed CTA, format, or spend band = **changed**
+
+Company-level moves are researched over the trailing 7 days only. Claims without a direct source are labelled `[Unverified]` or `[Inference]`.
 
 ## Spend Estimation
 
-Figures are directional estimates, not verified actuals:
+Directional estimates, not verified actuals. Do not present as HP's real budget.
 
-- LinkedIn: impression range midpoint x CPM ($30-80 B2B)
-- Google Search: estimated impressions x CPC ($1-5)
-- Google Display: estimated impressions x CPM ($5-15)
-- Meta: estimated reach x CPM ($10-30)
+- LinkedIn: impression range midpoint x B2B CPM ($30-$80)
+- Google Search: estimated impressions x CPC ($1-$5)
+- Google Display: estimated impressions x CPM ($5-$15)
+- Meta: estimated reach x CPM ($10-$30)
+
+## Deduplication Rule
+
+One Ad Log row = one unique creative. LinkedIn serves the same creative as multiple separate library entries; instance counts live in the Notes column. Instance totals and unique-creative totals are reported separately because they are not interchangeable.
 
 ## Updating the Dashboard
 
-A Cowork skill (competitive-ad-scrape) automates the full scrape. In any Claude Cowork session, say:
+A Cowork skill (`competitive-ad-scrape`) automates the full run. In any Claude Cowork session:
 
-> "scrape competitor ads" or "update ad intelligence"
+> "scrape competitor ads" or "update ad intelligence" or "HP ad watch"
 
-Claude will re-scrape all three ad libraries, refresh HP Watch intel, and regenerate the dashboard. A weekly scheduled task runs every Monday at 8:00 AM.
+Claude re-scrapes all three ad libraries, refreshes HP Watch, diffs against the prior run, and regenerates both the dashboard and `hp-ad-intelligence.xlsx`.
 
-To deploy updates: replace index.html in this repo via GitHub web UI (Add file > Upload files > Commit).
+To deploy: replace `index.html` in this repo (Add file > Upload files > Commit), or commit from your local clone.
 
 ## Tech Stack
 
-- Single HTML file, zero dependencies beyond [Chart.js CDN](https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js)
-- Hosted on GitHub Pages (free)
-- Data embedded as JavaScript array (no database, no API calls)
-- Works offline once loaded
+- Single HTML file, one dependency: [Chart.js CDN](https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js)
+- GitHub Pages
+- Data embedded as a JavaScript object. No database, no API calls, no browser storage.
 
-## Key Findings (as of July 2026)
+## Current Snapshot (Aug 10 2026)
 
-| Competitor | Platform Focus | Est. Monthly Spend | Strategy |
-|-----------|---------------|-------------------|----------|
-| HP 3D Printing | LinkedIn only (20 ads) | $15K-$50K | B2B verticals: healthcare, drones, O&P. Thought leadership + webinars. |
-| Formlabs | LinkedIn (37) + Google (38) | $25K-$80K | Speed + price disruption. CRO personality-driven. Dental/medical dominant. |
-| Bambu Lab | Google (~3K global) + Meta | $50K-$150K+ | B2C consumer machine. Multilingual. Lifestyle. Best Buy retail. |
+| Metric | This week | Baseline Aug 4 |
+|---|---|---|
+| Unique creatives | 18 | 14 |
+| Live ad instances | 37 | not recorded |
+| New creatives | 4 | - |
+| Dropped creatives | 3 | - |
+| Drone / UAV share of ad volume | 38% (14 of 37) | 3 of 14 creatives |
+| Est monthly spend | $35K-$94K | $26K-$68K |
+| Platforms in use | LinkedIn only | LinkedIn only |
+
+**Headline:** HP added two new drone creatives this week. Drone and UAV work is now 38% of HP's live LinkedIn ad volume.
 
 ## Repository Structure
 
@@ -70,8 +95,8 @@ README.md           # This file
 
 ## License
 
-Internal use -- Stratasys marketing team.
+Internal use, Stratasys marketing team.
 
 ---
 
-Built with [Claude Cowork](https://claude.ai) | Data: July 27, 2026 | Next refresh: Monday auto-scrape
+Built with Claude Cowork | Data: August 10, 2026 | Next refresh: Monday August 17, 2026
