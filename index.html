@@ -14,6 +14,11 @@ header h1{font-size:25px;font-weight:700;letter-spacing:-.3px}
 header p{opacity:.82;font-size:12.5px;margin-top:6px}
 .pill{display:inline-block;background:rgba(255,255,255,.16);padding:3px 11px;border-radius:20px;
 font-size:11px;font-weight:600;letter-spacing:.5px;margin-right:7px}
+ .sitenav{display:flex;gap:8px;margin-bottom:14px;align-items:center}
+ .sitenav a{background:#fff;border:1px solid #d5dbe4;padding:8px 15px;border-radius:7px;font-size:13px;font-weight:600;color:#4a5464;text-decoration:none}
+ .sitenav a:hover{background:#f6f8fb}
+ .sitenav a.cur{background:#12233f;color:#fff;border-color:#12233f}
+ .sitenav span{font-size:11.5px;color:#6b7280;margin-left:6px}
 
 /* pinned weekly card */
 .weekly{background:#fff;border-radius:12px;margin-bottom:18px;overflow:hidden;
@@ -95,7 +100,8 @@ footer{text-align:center;color:#6b7280;font-size:11.5px;padding:22px 0 8px;line-
 @media(max-width:960px){.grid2,.chgs{grid-template-columns:1fr}}
 </style></head><body><div class="wrap">
 
-<header>
+<div class="sitenav"><a href="index.html" class="cur">HP Additive Manufacturing</a><a href="3dsystems.html">3D Systems</a><span>Stratasys competitive ad intelligence</span></div>
+ <header>
 <h1>HP Ad Intelligence</h1>
 <p><span class="pill">HP ONLY</span><span class="pill">Week of Aug 4-10, 2026</span>
 Stratasys competitive tracking. LinkedIn Ad Library, Meta Ad Library, Google Ads Transparency
