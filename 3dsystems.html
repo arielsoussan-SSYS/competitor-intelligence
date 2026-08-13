@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Systems Ad Intelligence - Stratasys</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+background:#eef1f5;color:#1a1f2b;line-height:1.5;font-size:14px}
+.wrap{max-width:1500px;margin:0 auto;padding:22px}
+.sitenav{display:flex;gap:8px;margin-bottom:14px;align-items:center}
+.sitenav a{background:#fff;border:1px solid #d5dbe4;padding:8px 15px;border-radius:7px;
+font-size:13px;font-weight:600;color:#4a5464;text-decoration:none}
+.sitenav a:hover{background:#f6f8fb}
+.sitenav a.cur{background:#0f5c2e;color:#fff;border-color:#0f5c2e}
+.sitenav span{font-size:11.5px;color:#6b7280;margin-left:6px}
+header{background:linear-gradient(100deg,#0d2818,#0f5c2e);color:#fff;padding:26px 30px;
+border-radius:12px;margin-bottom:18px}
+header h1{font-size:25px;font-weight:700;letter-spacing:-.3px}
+header p{opacity:.85;font-size:12.5px;margin-top:6px}
+.pill{display:inline-block;background:rgba(255,255,255,.18);padding:3px 11px;border-radius:20px;
+font-size:11px;font-weight:600;letter-spacing:.5px;margin-right:7px}
+.weekly{background:#fff;border-radius:12px;margin-bottom:18px;overflow:hidden;
+box-shadow:0 3px 14px rgba(20,35,63,.11);border-top:5px solid #0f5c2e}
+.wk-hd{padding:20px 26px 16px}
+.wk-tag{font-size:10.5px;font-weight:800;letter-spacing:1.3px;color:#0f5c2e}
+.wk-hl{font-size:23px;font-weight:750;line-height:1.3;margin:9px 0 12px;letter-spacing:-.4px}
+.wk-so{background:#fff8e1;border-left:4px solid #f0ad00;padding:11px 15px;border-radius:5px;
+font-size:13.5px}
+.wk-so b{color:#8a6100}
+.wk-meta{padding:8px 26px 14px;font-size:11.5px;color:#6b7280;display:flex;gap:18px;flex-wrap:wrap}
+.chgs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e4e8ee;
+border-top:1px solid #e4e8ee}
+.chg{background:#fff;padding:16px 20px}
+.chg h4{font-size:10.5px;font-weight:800;letter-spacing:1px;color:#5a6472;
+margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.chg h4 em{font-style:normal;background:#eef1f5;color:#3a4453;border-radius:10px;
+padding:1px 8px;font-size:10.5px}
+.chg.pm h4{color:#b8541f}.chg.msg h4{color:#9a7400}.chg.co h4{color:#0f5c2e}
+.chg.ch h4{color:#1f6fb8}.chg.fin h4{color:#6b3fa0}
+.chg.pm{border-left:3px solid #d9701f}.chg.msg{border-left:3px solid #d9a600}
+.chg.co{border-left:3px solid #0f5c2e}.chg.ch{border-left:3px solid #1f6fb8}
+.chg.fin{border-left:3px solid #6b3fa0}
+.chg ul{list-style:none}
+.chg li{padding:8px 0;border-bottom:1px dashed #e8ebf0}
+.chg li:last-child{border-bottom:0}
+.chg li strong{display:block;font-size:13px;font-weight:650;margin-bottom:3px}
+.chg li span{display:block;font-size:12.2px;color:#525b6b}
+.chg li a{font-size:11px;color:#1f6fb8;text-decoration:none}
+.chg li a:hover{text-decoration:underline}
+nav.tabs{display:flex;gap:5px;margin-bottom:16px;flex-wrap:wrap}
+nav.tabs button{background:#fff;border:1px solid #d5dbe4;padding:9px 16px;border-radius:7px;
+cursor:pointer;font-size:13px;font-weight:600;color:#4a5464;font-family:inherit}
+nav.tabs button:hover{background:#f6f8fb}
+nav.tabs button.on{background:#0f5c2e;color:#fff;border-color:#0f5c2e}
+.tab{display:none}.tab.on{display:block}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:13px;
+margin-bottom:18px}
+.kpi{background:#fff;padding:17px 19px;border-radius:10px;border-left:4px solid #0f5c2e}
+.kpi.zero{border-left-color:#b8541f}
+.kpi .lbl{font-size:10.5px;text-transform:uppercase;letter-spacing:.8px;color:#6b7280;
+font-weight:700}
+.kpi .v{font-size:27px;font-weight:750;margin:5px 0 2px;letter-spacing:-.7px}
+.kpi .d{font-size:11.5px;color:#6b7280}
+.kpi .d.r{color:#b8541f;font-weight:600}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.card{background:#fff;border-radius:10px;padding:19px 21px;margin-bottom:16px}
+.card h3{font-size:14px;font-weight:700;margin-bottom:14px;color:#0f5c2e}
+.card p.sub{font-size:12px;color:#6b7280;margin:-9px 0 13px}
+.ch{position:relative;height:265px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{background:#0f5c2e;color:#fff;text-align:left;padding:9px 10px;font-size:10.5px;
+text-transform:uppercase;letter-spacing:.6px}
+td{padding:9px 10px;border-bottom:1px solid #eaedf2;vertical-align:top}
+tbody tr:nth-child(even){background:#f8fafc}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+td.none{color:#b8541f;font-weight:700}
+td.some{color:#0f5c2e;font-weight:600}
+.tag{display:inline-block;padding:2px 8px;border-radius:11px;font-size:10.5px;font-weight:700;
+white-space:nowrap}
+.t-res{background:#fde8d6;color:#8a3f10}
+.t-corp{background:#d9ecdf;color:#0f5c2e}
+.scroll{max-height:640px;overflow:auto;border-radius:8px}
+input.search{width:100%;padding:10px 13px;border:1px solid #d5dbe4;border-radius:7px;
+font-size:13px;margin-bottom:13px;font-family:inherit}
+a.lp{color:#1f6fb8;text-decoration:none;font-size:11.5px}
+.note{background:#fff8e1;border-left:4px solid #f0ad00;padding:12px 15px;border-radius:5px;
+font-size:12.5px;margin-bottom:15px}
+.contrast{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.cbox{background:#fff;border-radius:10px;padding:18px 20px;text-align:center}
+.cbox .co{font-size:11px;font-weight:800;letter-spacing:1px;color:#6b7280}
+.cbox .big{font-size:44px;font-weight:750;letter-spacing:-1.5px;margin:6px 0 2px}
+.cbox .cap{font-size:12px;color:#525b6b}
+.cbox.hp .big{color:#c8102e}.cbox.ddd .big{color:#0f5c2e}
+ol.take{padding-left:20px}
+ol.take li{margin-bottom:11px;font-size:13.5px;line-height:1.55}
+footer{text-align:center;color:#6b7280;font-size:11.5px;padding:22px 0 8px;line-height:1.9}
+@media(max-width:960px){.grid2,.chgs,.contrast{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+
+<div class="sitenav">
+ <a href="index.html">HP Additive Manufacturing</a>
+ <a href="3dsystems.html" class="cur">3D Systems</a>
+ <span>Stratasys competitive ad intelligence</span>
+</div>
+
+<header>
+<h1>3D Systems Ad Intelligence</h1>
+<p><span class="pill">3D SYSTEMS ONLY</span><span class="pill">Week 1 baseline, 12 Aug 2026</span>
+LinkedIn Ad Library, Meta Ad Library, Google Ads Transparency Center, plus trade press,
+filings and earnings. Run 2026-08-12.</p>
+</header>
+
+<section class="weekly">
+ <div class="wk-hd">
+  <div class="wk-tag">KEY HEADLINE</div>
+  <div class="wk-hl">3D Systems is not competing for attention. Their entire observable paid footprint is 27 Google ads run by a Korean subsidiary and a Japanese reseller.</div>
+  <div class="wk-so"><b>So what:</b> They are winning aerospace and defense through contracts and joint ventures, not marketing. There is no paid demand-gen contest to fight here, so the contest is on programs, channel and specification.</div>
+ </div>
+ <div class="wk-meta">
+  <span><b>Run</b> 2026-08-12</span><span><b>Baseline</b> none (Week 1 baseline)</span>
+  <span><b>7 creatives identified</b></span>
+  <span><b>0 LinkedIn marketing creatives</b></span>
+  <span><b>Scope</b> 3D Systems Corporation only</span>
+ </div>
+ <div class="chgs"><div class="chg pm"><h4>PAID MEDIA FOOTPRINT <em>3</em></h4><ul><li><strong>Zero marketing creative on LinkedIn. One ad total, and it is an automated jobs ad.</strong><span>Advertiser search for &#x27;3D Systems Corporation&#x27; in the LinkedIn Ad Library returns exactly 1 ad: an auto-generated LinkedIn Talent post still showing the unrendered %FIRSTNAME% token. For contrast, HP Additive Manufacturing runs 37 live ad instances across 18 marketing creatives.</span><a href="https://www.linkedin.com/ad-library/search?accountOwner=3D+Systems+Corporation" target="_blank" rel="noopener">source</a></li><li><strong>All 27 Google ads belong to a Korean subsidiary and a Japanese reseller. No US corporate account.</strong><span>Google Ads Transparency, region Anywhere, domain 3dsystems.com returns 27 ads across exactly two verified advertiser accounts: 3D Systems Korea and Yamada Leo House, a Japanese reseller. No US or EMEA corporate advertiser account appears. Unlike HP, the figure is cleanly isolable because 3dsystems.com is not shared with a consumer business.</span><a href="https://adstransparency.google.com/?region=anywhere&amp;domain=3dsystems.com" target="_blank" rel="noopener">source</a></li><li><strong>No 3D Systems owned ads identified on Meta.</strong><span>Keyword searches for &#x27;3D Systems&#x27; and &#x27;NextDent&#x27; return more than 50,000 and roughly 5,100 unrelated results respectively, because Meta matches keywords unordered. [Inference] No owned presence, but keyword search cannot prove absence.</span><a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener">source</a></li></ul></div><div class="chg msg"><h4>MESSAGING / POSITIONING <em>1</em></h4><ul><li><strong>Their paid message and their investor message do not match.</strong><span>Investor narrative names four priority growth markets: Med Tech, Dental, Aerospace and Defense, and Data Center Infrastructure. The observable paid footprint sells jewelry wax patterns, mould cost reduction, prototyping lead time and accuracy against cheap printers, all in Korea and Japan. Zero paid support for the four stated verticals.</span><a href="https://www.3dsystems.com/press-releases/3d-systems-accelerates-growth-in-aerospace-and-defense" target="_blank" rel="noopener">source</a></li></ul></div><div class="chg co"><h4>COMPANY / MARKET MOVES <em>4</em></h4><ul><li><strong>CEO Jeffrey Graves is stepping down. No successor named.</strong><span>Announced 4 Aug 2026. He remains CEO until a successor is appointed, timing stated as later this year, then serves six months as a consultant. Chairman Chip McClure issued the statement. No interim CEO named. [Inference] Major go-to-market shifts are unlikely to be initiated during an active search.</span><a href="https://www.globenewswire.com/news-release/2026/08/04/3338187/8852/en/3d-systems-announces-ceo-transition-plan.html" target="_blank" rel="noopener">source</a></li><li><strong>Q2 2026: revenue roughly flat, losses narrowing, metal hardware growing fast.</strong><span>Reported 3 Aug 2026. Revenue $94.6M, down 0.3% year on year and up 1.4% excluding divestitures. Net loss $12.9M. Adjusted EBITDA loss improved to $0.8M. Healthcare is the largest segment, up 6.8%, with Med Tech above 20%. DMP 350 metal printer sales up about 90% and SLA 825 up about 125%. More metal printers sold in H1 2026 than in all of 2025. Q3 guidance $96M to $99M.</span><a href="https://www.globenewswire.com/news-release/2026/08/03/3337894/8852/en/3D-Systems-Reports-Second-Quarter-2026-Financial-Results.html" target="_blank" rel="noopener">source</a></li><li><strong>$9M US Air Force follow-on contract for large-format metal additive.</strong><span>Announced 10 Aug 2026. Extends the Large-Format Metal 3D Printer Advanced Technology Demonstrator programme by two more years. Won through programme and contract routes, not through marketing.</span><a href="https://www.globenewswire.com/news-release/2026/08/10/3341733/8852/en/3d-systems-receives-9-million-contract-award-from-u-s-air-force-for-advanced-large-format-metal-3d-printing-system.html" target="_blank" rel="noopener">source</a></li><li><strong>Saudi joint venture NAMI obtained a military manufacturing licence.</strong><span>Announced 29 Jul 2026. Licence covers local defence hardware production. NAMI is also reported to be collaborating with Lockheed Martin. A sovereign-manufacturing route into defence that paid media would never reveal.</span><a href="https://www.globenewswire.com/news-release/2026/07/29/3335132/0/en/3D-Systems-Saudi-Arabian-Joint-Venture-NAMI-Obtains-Critical-Military-Manufacturing-License-for-Local-Defense-Hardware-Production.html" target="_blank" rel="noopener">source</a></li></ul></div><div class="chg ch"><h4>CHANNEL AND PORTFOLIO <em>2</em></h4><ul><li><strong>The divestiture trail explains the thin marketing footprint.</strong><span>Geomagic sold to Hexagon, completed 1 Apr 2025 for about $123M. Oqton and 3DXpert sold to Hubb Global Holdings, completed 31 Oct 2025 for $3.3M cash plus a royalty receivable. Systemic Bio, the bioprinting subsidiary, ceased operations 24 Jul 2025. Cimatron and GibbsCAM went to a Battery Ventures affiliate back in Jan 2021. A company shedding software and moonshots to reach profitability has little left to spend on demand gen.</span><a href="https://www.3dsystems.com/press-releases/3d-systems-completes-sale-geomagic-software-portfolio" target="_blank" rel="noopener">source</a></li><li><strong>Geomagic ads in the LinkedIn library are Hexagon&#x27;s, not 3D Systems&#x27;.</strong><span>A keyword search for Geomagic returns 256 live LinkedIn ads. Every one traces to Hexagon Manufacturing Intelligence or its resellers, bundling Geomagic Design X with Hexagon scanners. Attributing these to 3D Systems would be a material error.</span><a href="https://www.linkedin.com/ad-library/search?keyword=Geomagic" target="_blank" rel="noopener">source</a></li></ul></div><div class="chg fin"><h4>FINANCIAL POSITION <em>1</em></h4><ul><li><strong>Small cap, not yet profitable, analyst view split.</strong><span>Share price $3.75 and market capitalisation about $484M as of 7 Aug 2026. Craig-Hallum upgraded to Buy with a $6.00 target in early August, while the five-analyst consensus remains Underperform at roughly $4.25. June 2025 refinancing retired about $180M of 0% notes due Nov 2026 and issued $92M of 5.875% secured notes due 2030, clearing the 2026 maturity wall. [Unverified] cash and debt figures come from an aggregator, not a filing.</span><a href="https://stockanalysis.com/stocks/ddd/market-cap/" target="_blank" rel="noopener">source</a></li></ul></div></div>
+</section>
+
+<nav class="tabs">
+<button class="on" data-t="dash">Dashboard</button>
+<button data-t="log">Ad Log</button>
+<button data-t="gap">Vertical Gap</button>
+<button data-t="themes">Messaging Themes</button>
+<button data-t="read">Strategic Readout</button>
+<button data-t="notes">Collection Notes</button>
+</nav>
+
+<div id="dash" class="tab on">
+ <div class="kpis">
+  <div class="kpi zero"><div class="lbl">LinkedIn marketing creatives</div><div class="v">0</div>
+   <div class="d r">1 ad total, an automated jobs post</div></div>
+  <div class="kpi"><div class="lbl">Google ads on domain</div><div class="v">27</div>
+   <div class="d">2 advertiser accounts, both APAC</div></div>
+  <div class="kpi zero"><div class="lbl">Meta owned ads</div><div class="v">0</div>
+   <div class="d r">None identified</div></div>
+  <div class="kpi"><div class="lbl">Distinct creatives</div><div class="v">7</div>
+   <div class="d">Across all channels</div></div>
+  <div class="kpi zero"><div class="lbl">US corporate ad account</div><div class="v">None</div>
+   <div class="d r">No US or EMEA account found</div></div>
+  <div class="kpi"><div class="lbl">Est spend / mo</div><div class="v">$1.8-7.6K</div>
+   <div class="d">Directional estimate only</div></div>
+ </div>
+
+ <div class="contrast">
+  <div class="cbox hp"><div class="co">HP ADDITIVE MANUFACTURING</div>
+   <div class="big">37</div>
+   <div class="cap">live LinkedIn ad instances across 18 marketing creatives, run 10 Aug 2026</div></div>
+  <div class="cbox ddd"><div class="co">3D SYSTEMS CORPORATION</div>
+   <div class="big">0</div>
+   <div class="cap">LinkedIn marketing creatives. One automated jobs ad is the entire library entry</div></div>
+ </div>
+
+ <div class="grid2">
+  <div class="card"><h3>Where the paid footprint actually sits</h3>
+   <p class="sub">Distinct creatives by theme. Note what is absent.</p>
+   <div class="ch"><canvas id="c1"></canvas></div></div>
+  <div class="card"><h3>Channel ownership</h3>
+   <p class="sub">Who is actually paying for these ads</p>
+   <div class="ch"><canvas id="c2"></canvas></div></div>
+ </div>
+</div>
+
+<div id="log" class="tab">
+ <div class="card"><h3>Ad Log</h3>
+ <p class="sub">Every creative identified across all three libraries. 17 fields.
+ Owner column matters more than usual here: most of it is not corporate.</p>
+ <input class="search" id="q" placeholder="Filter by headline, theme, owner, platform...">
+ <div class="scroll"><table><thead><tr>
+ <th>Owner type</th><th>Platform</th><th>Format</th><th>Theme</th><th>Headline / Hook</th>
+ <th>CTA</th><th>Est $/mo</th><th>Active</th><th>Audience</th><th>Funnel</th>
+ <th>Source</th><th>Notes</th>
+ </tr></thead><tbody id="tb"></tbody></table></div></div>
+</div>
+
+<div id="gap" class="tab">
+ <div class="card"><h3>Stated priority vertical vs paid support</h3>
+ <p class="sub">The single most useful view on this competitor. What they tell investors,
+ against what they actually pay to promote.</p>
+ <table><thead><tr><th style="width:22%">Vertical</th><th>What they say and what the numbers show</th>
+ <th style="width:26%">Observable paid support</th></tr></thead>
+ <tbody><tr><td><strong>Med Tech</strong></td><td>Named a priority growth market. Med Tech revenue up more than 20% in Q2 2026.</td><td class=none>None</td></tr><tr><td><strong>Dental</strong></td><td>Named a priority growth market. NextDent full-scope EU MDR certification, Mar 2026.</td><td class=some>One reseller event ad in France, now ended</td></tr><tr><td><strong>Aerospace and Defense</strong></td><td>Positioned to become the largest industrial business in 2026. $9M USAF contract, Saudi defence JV, Littleton expansion.</td><td class=none>None</td></tr><tr><td><strong>Data Center Infrastructure</strong></td><td>Named a priority growth market, reported double-digit growth in H1 2026.</td><td class=none>None</td></tr><tr><td><strong>Jewelry and mould making</strong></td><td>Not named as a growth priority in investor communications.</td><td class=some>Most of the observable paid footprint</td></tr></tbody></table>
+ <div class="note" style="margin-top:15px"><b>Read:</b> the four verticals they lead with in
+ investor communications carry almost no paid media. The paid footprint promotes jewelry wax
+ patterns and mould cost reduction, which are not named growth priorities. They are converting
+ demand through contracts, joint ventures, clinical relationships and channel, not through
+ advertising.</div>
+ </div>
+</div>
+
+<div id="themes" class="tab">
+ <div class="card"><h3>Messaging Themes</h3>
+ <p class="sub">Every theme observed in paid creative, with the buying committee role it speaks to.</p>
+ <table><thead><tr><th>Theme</th><th>Creatives</th><th>Sample headline</th><th>Funnel</th>
+ <th>Buying committee role</th></tr></thead>
+ <tbody><tr><td><strong>Jewelry / wax casting</strong></td><td class=n>1</td><td>주얼리 전용 MJP 3D 프린터, MJP 300W Plus</td><td>Mid</td><td>Jewelry manufacturers (KR)</td></tr><tr><td><strong>Prototyping lead time</strong></td><td class=n>1</td><td>業務用3Dプリンタ, 試作リードタイムを大幅短縮</td><td>Mid</td><td>Engineering (JP)</td></tr><tr><td><strong>Mould cost reduction</strong></td><td class=n>1</td><td>金型コスト削減に貢献3Dプリンタ</td><td>Mid</td><td>Tooling and manufacturing (JP)</td></tr><tr><td><strong>Accuracy vs low-cost printers</strong></td><td class=n>1</td><td>安価3Dプリンタの精度に不満な方</td><td>Mid</td><td>Entry-level printer owners (JP)</td></tr><tr><td><strong>Brand defence</strong></td><td class=n>1</td><td>3D Systems - 3d 시스템즈</td><td>Bottom</td><td>Brand searchers (KR)</td></tr><tr><td><strong>Dental (reseller)</strong></td><td class=n>1</td><td>Soirées de l&#x27;imprimante 3D NextDent 300, Paris</td><td>Mid</td><td>Dental labs (FR)</td></tr><tr><td><strong>Recruitment (not marketing)</strong></td><td class=n>1</td><td>Get the latest jobs and industry news</td><td>n/a</td><td>Job seekers</td></tr></tbody></table></div>
+</div>
+
+<div id="read" class="tab">
+ <div class="card"><h3>Strategic readout for Stratasys</h3>
+ <p class="sub">What to do differently given this competitor behaves nothing like HP.</p>
+ <ol class="take"><li>There is no paid demand-generation contest with 3D Systems right now. Their entire observable footprint is 27 Google ads from a Korean subsidiary and a Japanese reseller, plus one automated jobs post. Any share-of-voice budget aimed at them is wasted.</li><li>The contest is on programmes and specification, not media. The $9M Air Force follow-on, the Saudi NAMI military manufacturing licence and the Littleton expansion are all won through contracts, joint ventures and qualification. That is where they are taking defence ground, and it is invisible in advertising.</li><li>Their real hardware momentum is metal. DMP 350 up about 90% and more metal printers sold in H1 2026 than in all of 2025. If we are defending polymer, we are defending the wrong flank against this competitor.</li><li>Healthcare is their strongest segment and their most defensible. Largest segment, up 6.8%, Med Tech above 20%, NextDent with full-scope EU MDR. Yet it gets almost no paid support, which means clinical and channel relationships are carrying it.</li><li>The CEO transition is a timing window. Graves is leaving with no named successor and a search running into later this year. [Inference] Large go-to-market changes are unlikely to start mid-search, so the next two quarters are more predictable than usual.</li></ol></div>
+</div>
+
+<div id="notes" class="tab">
+ <div class="card"><h3>Collection Notes</h3>
+ <div class="note"><b>Week 1 baseline.</b> This is the first run for 3D Systems, so there is no
+ prior week to diff against. Change detection starts with the next run. The HP tracker has a
+ working week-over-week diff; this one does not yet.</div>
+ <table><tbody>
+ <tr><th style="width:230px">Run date</th><td>2026-08-12</td></tr>
+ <tr><th>Scope</th><td>3D Systems Corporation only. Ads belonging to other companies were
+ identified and excluded, see the Geomagic note below.</td></tr>
+ <tr><th>LinkedIn Ad Library</th><td>Advertiser search for "3D Systems Corporation" returns
+ 1 ad, an automated LinkedIn Talent jobs post. <b>Trap:</b> searching "3D Systems" instead
+ returns 33 ads that belong to <i>3D Dental Systems d.o.o.</i> and an unrelated branding
+ agency, because the field does substring matching. Use the full legal name.</td></tr>
+ <tr><th>Geomagic exclusion</th><td>A Geomagic keyword search returns 256 live LinkedIn ads.
+ All of them belong to Hexagon Manufacturing Intelligence and its resellers. Hexagon completed
+ the acquisition of Geomagic from 3D Systems on 1 Apr 2025 for about $123M. Counting these
+ against 3D Systems would overstate their presence by two orders of magnitude.</td></tr>
+ <tr><th>Google Ads Transparency</th><td>Region Anywhere, domain 3dsystems.com. 27 ads across
+ two verified advertiser accounts: 3D Systems Korea and Yamada Leo House, a Japanese reseller.
+ Unlike HP, this figure <b>is</b> cleanly attributable, because 3dsystems.com is not shared
+ with a consumer business. 5 distinct creatives were read from the visible sample; the
+ remainder were not individually enumerated.</td></tr>
+ <tr><th>Meta Ad Library</th><td>No owned ads identified. Keyword searches for "3D Systems"
+ and "NextDent" return more than 50,000 and about 5,100 unrelated results because Meta matches
+ keywords unordered. Recorded as none identified. <b>Keyword search cannot prove absence.</b></td></tr>
+ <tr><th>Company research</th><td>Press releases, earnings releases and trade press. Every
+ company-level claim in the readout carries a source URL and a date.</td></tr>
+ <tr><th>Spend estimation</th><td>Google Search at $1-5 CPC and display at $5-15 CPM against
+ estimated volumes. All figures directional [Estimate]. The absolute numbers matter far less
+ here than the fact that the footprint is tiny.</td></tr>
+ <tr><th>Known limits</th><td>1) Google ATC does not disclose impressions or spend.
+ 2) Meta absence is not provable. 3) Korean and Japanese creative was read in translation.
+ 4) No baseline for change detection yet. 5) Aggregator financial figures are labelled
+ [Unverified].</td></tr>
+ <tr><th>Unverified in this run</th><td>Cash and debt figures from stockanalysis.com rather
+ than a filing. The reported share price reaction to Q2 earnings. Whether 3D Systems will
+ exhibit at Formnext 2026. Going-concern language was neither found nor ruled out.</td></tr>
+ <tr><th>Next refresh</th><td>Monday, alongside the HP run. Diff against this file.</td></tr>
+ </tbody></table></div>
+</div>
+
+<footer>
+Stratasys competitive ad intelligence, 3D Systems tracker | Run 2026-08-12<br>
+Spend figures are directional estimates, not verified actuals. Items marked [Unverified] or
+[Inference] are not confirmed fact.
+</footer>
+</div>
+
+<script>
+const D={"ads": [{"platform": "LinkedIn", "format": "Text / Jobs", "theme": "Recruitment (not marketing)", "headline": "Get the latest jobs and industry news. %FIRSTNAME%, explore relevant opportunities with 3D Systems Corporation", "cta": "Learn More", "reach": "not disclosed", "lo": 0, "hi": 500, "first": "2026", "last": "Aug 2026", "active": "Yes", "audience": "Job seekers", "funnel": "n/a", "url": "https://www.linkedin.com/company/3d-systems/", "owner": "3D Systems corporate", "status": "Baseline", "notes": "The ONLY ad in the LinkedIn Ad Library under advertiser '3D Systems Corporation'. It is an auto-generated LinkedIn Talent product ad, still carrying the unrendered %FIRSTNAME% token. Not a marketing campaign. Marketing creative on LinkedIn: zero."}, {"platform": "Google Search (KR)", "format": "Search Ad", "theme": "Brand defence", "headline": "3D Systems - 3d \uc2dc\uc2a4\ud15c\uc988", "cta": "Visit site", "reach": "not disclosed", "lo": 300, "hi": 1200, "first": "2026", "last": "Aug 2026", "active": "Yes", "audience": "Korean buyers searching the brand", "funnel": "Bottom", "url": "https://ko.3dsystems.com/", "owner": "3D Systems Korea (\uc4f0\ub9ac\ub514\uc2dc\uc2a4\ud15c\uc988\ucf54\ub9ac\uc544)", "status": "Baseline", "notes": "Brand-term search ad from the Korean subsidiary account. Defensive, captures existing demand rather than creating it."}, {"platform": "Google Search (JP)", "format": "Search Ad", "theme": "Prototyping speed", "headline": "\u30103D Systems\u3011\u696d\u52d9\u75283D\u30d7\u30ea\u30f3\u30bf - \u8a66\u4f5c\u30ea\u30fc\u30c9\u30bf\u30a4\u30e0\u3092\u5927\u5e45\u77ed\u7e2e (industrial 3D printer, sharply shorten prototyping lead time)", "cta": "Visit site", "reach": "not disclosed", "lo": 300, "hi": 1200, "first": "2026", "last": "Aug 2026", "active": "Yes", "audience": "Japanese engineering and prototyping buyers", "funnel": "Mid", "url": "https://ja.3dsystems.com/", "owner": "Yamada Leo House (\u682a\u5f0f\u4f1a\u793e\u30e4\u30de\u30c0\u30ec\u30aa\u30cf\u30a6\u30b9), JP reseller", "status": "Baseline", "notes": "Reseller-run, not corporate. Copy claims free sample parts at production-grade accuracy and up to 500 units per month of low-volume, high-mix production."}, {"platform": "Google Search (JP)", "format": "Search Ad", "theme": "Cost reduction", "headline": "\u91d1\u578b\u30b3\u30b9\u30c8\u524a\u6e1b\u306b\u8ca2\u732e3D\u30d7\u30ea\u30f3\u30bf (3D printers that cut mould costs)", "cta": "Visit site", "reach": "not disclosed", "lo": 300, "hi": 1200, "first": "2026", "last": "Aug 2026", "active": "Yes", "audience": "Japanese tooling and manufacturing buyers", "funnel": "Mid", "url": "https://ja.3dsystems.com/", "owner": "Yamada Leo House (JP reseller)", "status": "Baseline", "notes": "In-housing prototypes to cut outsourcing and tooling cost. Classic cost-displacement pitch, not a production-scale pitch."}, {"platform": "Google Search (JP)", "format": "Search Ad", "theme": "Accuracy vs low-cost printers", "headline": "\u5b89\u4fa13D\u30d7\u30ea\u30f3\u30bf\u306e\u7cbe\u5ea6\u306b\u4e0d\u6e80\u306a\u65b9 (for those dissatisfied with the accuracy of cheap 3D printers)", "cta": "Visit site", "reach": "not disclosed", "lo": 300, "hi": 1200, "first": "2026", "last": "Aug 2026", "active": "Yes", "audience": "Owners of entry-level printers", "funnel": "Mid", "url": "https://ja.3dsystems.com/", "owner": "Yamada Leo House (JP reseller)", "status": "Baseline", "notes": "Explicit trade-up play against low-cost printers. The only competitive-displacement message observed anywhere in their paid footprint."}, {"platform": "Google Display (KR)", "format": "Display Image", "theme": "Jewelry / wax casting", "headline": "\uc8fc\uc5bc\ub9ac \uc804\uc6a9 MJP 3D \ud504\ub9b0\ud130 - \uc96c\uc5bc\ub9ac \uc641\uc2a4 \ud328\ud134 3D \ud504\ub9b0\ud130, MJP 300W Plus (MJP 3D printer for jewelry, wax pattern printing)", "cta": "\ub354 \uc54c\uc544\ubcf4\uae30 (Learn more)", "reach": "not disclosed", "lo": 400, "hi": 1500, "first": "2026", "last": "Aug 2026", "active": "Yes", "audience": "Korean jewelry manufacturers", "funnel": "Mid", "url": "https://ko.3dsystems.com/", "owner": "3D Systems Korea", "status": "Baseline", "notes": "Branded display creative for MJP 300W Plus. Jewelry wax patterns, a legacy niche application. Nothing in their paid footprint supports Med Tech, A&D or data centre."}, {"platform": "LinkedIn (reseller)", "format": "Event Ad", "theme": "Dental", "headline": "Impression 3D directe de proth\u00e8ses compl\u00e8tes dentaire. Soir\u00e9es de l'imprimante 3D NextDent 300, Paris", "cta": "Register", "reach": "not disclosed", "lo": 200, "hi": 800, "first": "Jun 2026", "last": "Jul 2026", "active": "No", "audience": "French dental laboratories", "funnel": "Mid", "url": "https://www.linkedin.com/ad-library/search?keyword=NextDent", "owner": "KALLISTO (FR reseller)", "status": "Baseline", "notes": "The only NextDent ad in the LinkedIn library, and it is reseller-owned, not 3D Systems. Open-house event, Paris, June to July 2026. Now ended."}], "themes": {"Jewelry / wax casting": 1, "Prototyping lead time": 1, "Mould cost reduction": 1, "Accuracy vs low-cost printers": 1, "Brand defence": 1, "Dental (reseller)": 1, "Recruitment (not marketing)": 1}, "totals": {"linkedin_corporate_ads": 1, "linkedin_marketing_creative": 0, "google_ads_on_domain": 27, "google_advertiser_accounts": 2, "meta_owned_ads": 0, "reseller_ads_identified": 2, "distinct_creatives_observed": 7}};
+document.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('nav.tabs button').forEach(x=>x.classList.remove('on'));
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+ b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on');});
+
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function rows(f){
+ const q=(f||'').toLowerCase();
+ document.getElementById('tb').innerHTML=D.ads.filter(a=>!q||
+  [a.headline,a.theme,a.owner,a.platform,a.audience,a.notes].join(' ').toLowerCase().includes(q))
+ .map(a=>{const res=/reseller/i.test(a.owner);return `<tr>
+ <td><span class="tag ${res?'t-res':'t-corp'}">${res?'reseller':'corporate'}</span></td>
+ <td>${esc(a.platform)}</td><td>${esc(a.format)}</td><td>${esc(a.theme)}</td>
+ <td>${esc(a.headline)}</td><td>${esc(a.cta)}</td>
+ <td class=n>$${(a.lo/1000).toFixed(1)}-${(a.hi/1000).toFixed(1)}K</td>
+ <td>${esc(a.active)}</td><td>${esc(a.audience)}</td><td>${esc(a.funnel)}</td>
+ <td><a class=lp href="${esc(a.url)}" target="_blank" rel="noopener">open</a></td>
+ <td style="font-size:11.5px;color:#5a6472">${esc(a.notes)}</td></tr>`}).join('');
+}
+rows('');
+document.getElementById('q').oninput=e=>rows(e.target.value);
+
+const GREEN='#0f5c2e',ORANGE='#b8541f';
+const PAL=['#0f5c2e','#1f6fb8','#d9a600','#b8541f','#6b3fa0','#2e7d4f','#8FA0BE'];
+Chart.defaults.font.family='Arial, sans-serif';Chart.defaults.font.size=11.5;
+
+const th=Object.entries(D.themes).sort((a,b)=>b[1]-a[1]);
+new Chart(c1,{type:'bar',data:{labels:th.map(t=>t[0]),
+ datasets:[{data:th.map(t=>t[1]),backgroundColor:GREEN,borderRadius:4}]},
+ options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+ plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.x+' creative'}}},
+ scales:{x:{beginAtZero:true,ticks:{precision:0,stepSize:1},grid:{color:'#eef1f5'}},
+ y:{grid:{display:false}}}}});
+
+const own={};D.ads.forEach(a=>{const k=/reseller/i.test(a.owner)?'Reseller owned':
+ (/Korea/i.test(a.owner)?'Korean subsidiary':'Corporate (jobs ad only)');
+ own[k]=(own[k]||0)+1;});
+const oe=Object.entries(own);
+new Chart(c2,{type:'doughnut',data:{labels:oe.map(o=>o[0]),
+ datasets:[{data:oe.map(o=>o[1]),backgroundColor:[ORANGE,GREEN,'#8FA0BE'],
+ borderWidth:2,borderColor:'#fff'}]},
+ options:{responsive:true,maintainAspectRatio:false,cutout:'52%',
+ plugins:{legend:{position:'right',labels:{boxWidth:11,padding:9}},
+ tooltip:{callbacks:{label:c=>c.label+': '+c.parsed+' creative'}}}}});
+</script></body></html>
