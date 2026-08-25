@@ -36,7 +36,10 @@ for s, d in C.items():
     if len(set(tot.values())) > 1:
         print("WARN %s: instance buckets disagree %s" % (s, tot), file=sys.stderr)
 
-PAYLOAD = {"competitors": C, "order": order, "built": built}
+GPATH = os.path.join(ROOT, "data", "gauntlet.json")
+G = json.load(open(GPATH, encoding="utf-8")) if os.path.exists(GPATH) else None
+
+PAYLOAD = {"competitors": C, "order": order, "built": built, "gauntlet": G}
 
 TPL = r"""<!doctype html>
 <html lang="en">
@@ -174,6 +177,35 @@ tr.new td{background:rgba(28,107,69,.08)}
 .b-carry{background:rgba(16,23,37,.06);color:var(--ink3)}
 .f{font-size:11px;font-weight:660;color:var(--ink3)}
 canvas{max-height:270px}
+.sect{display:flex;gap:4px;padding:5px;margin:18px 0 4px;width:fit-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.sect::-webkit-scrollbar{display:none}
+.sb{flex:0 0 auto;border:0;cursor:pointer;font:inherit;font-size:14px;font-weight:640;color:var(--ink2);
+  background:transparent;padding:10px 20px;border-radius:16px;transition:background .18s,color .18s}
+.sb:hover{color:var(--ink)}
+.sb[aria-pressed=true]{background:#fff;color:var(--navy);box-shadow:0 1px 2px rgba(16,23,37,.06),0 5px 16px rgba(16,23,37,.10)}
+.view{display:none}.view.on{display:block}
+.sig{padding:18px 20px;border-left:3px solid var(--red)}
+.sig .l{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.sig .h{font-size:15px;font-weight:640;line-height:1.45;margin-bottom:7px}
+.sig .b{font-size:13.5px;color:var(--ink2);line-height:1.55}
+.nav2{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:4px}
+.ncard{padding:20px 22px;cursor:pointer;text-align:left;font:inherit;border:1px solid var(--stroke);
+  outline:1px solid var(--edge);outline-offset:-1px;background:var(--glass);border-radius:var(--r);
+  box-shadow:var(--shadow);-webkit-backdrop-filter:blur(22px) saturate(155%);
+  backdrop-filter:blur(22px) saturate(155%);transition:transform .18s cubic-bezier(.22,.9,.3,1),box-shadow .18s}
+.ncard:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(16,23,37,.07),0 14px 34px rgba(31,56,100,.15)}
+.ncard .t{font-size:16px;font-weight:660;letter-spacing:-.018em;margin-bottom:6px;color:var(--ink)}
+.ncard .d{font-size:13.5px;color:var(--ink2);line-height:1.5}
+.ncard .go{font-size:12.5px;font-weight:660;color:var(--navy);margin-top:11px;display:block}
+.gmeta{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin-bottom:16px}
+.gm{padding:14px 16px}
+.gm .k{font-size:10.5px;font-weight:660;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+.gm .v{font-size:14px;font-weight:600;color:var(--ink);margin-top:5px;line-height:1.4}
+.pos{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pos.Open{background:rgba(28,107,69,.13);color:var(--green)}
+.pos.Contested{background:rgba(200,16,46,.13);color:var(--red)}
+.pos.Locked{background:rgba(16,23,37,.09);color:var(--ink3)}
+.g1{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:999px;background:rgba(31,56,100,.11);color:var(--navy)}
 .empty{padding:44px 26px;text-align:center}
 .empty h3{font-size:17px;font-weight:660;margin-bottom:8px}
 .empty p{font-size:14px;color:var(--ink2);max-width:56ch;margin:0 auto 6px;line-height:1.6}
@@ -191,9 +223,41 @@ footer b{color:var(--ink2)}
   <div class="eyebrow">Stratasys competitive intelligence</div>
   <h1>Competitive Ad Intelligence</h1>
   <p class="sub">What competitors are advertising, what changed this week, and what to say about it on a call. Sources: LinkedIn Ad Library, Meta Ad Library, Google Ads Transparency Center, trade press.</p>
-  <div class="who" id="who" role="group" aria-label="Select competitor"></div>
 </header>
 
+<div class="sect glass" role="group" aria-label="Section">
+  <button class="sb" data-v="home" aria-pressed="true">Home</button>
+  <button class="sb" data-v="competitors" aria-pressed="false">Competitors</button>
+  <button class="sb" data-v="gauntlet" aria-pressed="false">Gauntlet</button>
+</div>
+
+<section class="view on" id="v-home">
+  <div class="grid g3" id="homeKpis" style="margin:16px 0"></div>
+  <div class="glass card"><h3>Signals this week</h3>
+    <p class="cap">The few things worth acting on, across every tracked source.</p>
+    <div class="grid g2" id="signals"></div></div>
+  <div class="nav2" id="nav2"></div>
+</section>
+
+<section class="view" id="v-gauntlet">
+  <div class="glass hero" style="margin-top:16px">
+    <div class="lab">Why this matters</div>
+    <h2 id="gHead"></h2>
+    <div class="sowhat"><b>So what:</b> <span id="gWhy"></span></div>
+  </div>
+  <div class="gmeta" id="gMeta"></div>
+  <div class="glass card"><h3>The 19 companies in Gauntlet II</h3>
+    <p class="cap">Every one is a Stratasys prospect. Posture is displacement difficulty, not importance. Confidence is how well the competitor presence is evidenced.</p>
+    <div class="tools"><input class="search" id="gq" placeholder="Search company, posture, notes..." autocomplete="off"></div>
+    <div class="scroll"><table><thead><tr><th>Company</th><th>Posture</th><th>AM stance</th>
+      <th>Competitor present</th><th>Confidence</th><th>Notes</th></tr></thead><tbody id="gRows"></tbody></table></div>
+    <p class="cap" style="margin:12px 0 0" id="gCount"></p></div>
+  <div class="glass card"><h3>Sources</h3><p class="cap">Public reporting only. No non-public information.</p>
+    <ul class="plain" id="gSrc"></ul></div>
+</section>
+
+<section class="view" id="v-competitors">
+<div class="who" id="who" role="group" aria-label="Select competitor" style="margin-top:16px"></div>
 <div class="pills" id="pills"></div>
 
 <section class="glass hero" id="hero">
@@ -291,6 +355,8 @@ footer b{color:var(--ink2)}
 </section>
 </div>
 
+</section>
+
 <footer class="glass">
   <b>Last successful scan: <span id="fRun"></span></b> &middot; page built <span id="fBuilt"></span> &middot; next refresh Monday.<br>
   Internal use, Stratasys marketing and sales. Competitor ad copy is summarised, not reproduced, for customer-facing use.
@@ -298,7 +364,7 @@ footer b{color:var(--ink2)}
 
 </div>
 <script>
-const P=%%DATA%%, CO=P.competitors, ORD=P.order;
+const P=%%DATA%%, CO=P.competitors, ORD=P.order, G=P.gauntlet;
 const e=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const $=i=>document.getElementById(i);
 const money=a=>a.lo||a.hi?"$"+(a.lo/1000)+"-"+(a.hi/1000)+"K":"n/a";
@@ -417,7 +483,79 @@ function drawCharts(){
     {label:"High",data:se.map(x=>x[1][1]),backgroundColor:PAL[0],borderRadius:6}]},
     options:{...base,plugins:{legend:{position:"top",labels:{boxWidth:11,usePointStyle:true,pointStyle:"circle"}}}}});
 }
-render(cur);
+
+/* ---- section switching ---- */
+document.querySelectorAll(".sb").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".sb").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  document.querySelectorAll(".view").forEach(v=>v.classList.toggle("on",v.id==="v-"+b.dataset.v));
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(b.dataset.v==="competitors"&&$("p-charts").classList.contains("on")){drawnFor=null;drawCharts();}
+}));
+function go(v){document.querySelector('.sb[data-v="'+v+'"]').click();}
+
+/* ---- home ---- */
+function home(){
+  const live=ORD.filter(s=>CO[s].status!=="pending");
+  const ads=live.reduce((n,s)=>n+(CO[s].ads||[]).length,0);
+  const inst=live.reduce((n,s)=>n+((CO[s].sources&&CO[s].sources.linkedin&&CO[s].sources.linkedin.live_instances)||0),0);
+  const nw=live.reduce((n,s)=>n+(CO[s].ads||[]).filter(a=>/NEW/i.test(a.status||"")).length,0);
+  const contested=G?G.teams.filter(t=>t.posture==="Contested").length:0;
+  const K=[
+   {label:"Competitors tracked",value:ORD.length,delta:live.length+" scanned, "+(ORD.length-live.length)+" awaiting first run",dir:"flat"},
+   {label:"Unique creatives",value:ads,delta:"Across all scanned competitors",dir:"flat"},
+   {label:"Live instances",value:inst||"n/a",delta:"LinkedIn, where reported",dir:"flat"},
+   {label:"New this week",value:nw,delta:nw?"Flagged in the ad logs":"No new creatives",dir:nw?"up":"flat"},
+   {label:"Gauntlet II field",value:G?G.teams.length:0,delta:"Pre-qualified drone prospects",dir:"flat"},
+   {label:"Contested accounts",value:contested,delta:contested?"A competitor is already present":"None confirmed yet",dir:contested?"down":"flat"}];
+  $("homeKpis").innerHTML=K.map(k=>{const g=k.dir==="down"?"&darr;":k.dir==="up"?"&uarr;":"&ndash;";
+    return '<div class="glass kpi"><div class="k">'+e(k.label)+'</div><div class="v">'+e(k.value)+
+    '</div><div class="d"><span class="dir '+k.dir+'">'+g+"</span>"+e(k.delta)+"</div></div>";}).join("");
+
+  const sig=[];
+  if(G&&G.headline_signal) sig.push({l:"Gauntlet",h:G.headline_signal,
+    b:"This is the core objection to the entire drone additive pitch, ours and HP's alike, and it is coming from a Gauntlet 1 award winner. Have an answer before a prospect quotes it back."});
+  live.forEach(s=>{const d=CO[s]; if(d.headline) sig.push({l:d.competitor,h:d.headline,b:d.so_what||""});});
+  $("signals").innerHTML=sig.map(x=>'<div class="glass sig"><div class="l">'+e(x.l)+
+    '</div><div class="h">'+e(x.h)+'</div><div class="b">'+e(x.b)+"</div></div>").join("");
+
+  $("nav2").innerHTML=
+   '<button class="ncard" data-go="competitors"><span class="t">Competitors</span>'+
+   '<span class="d">Ad logs, messaging themes, weekly diffs and a sales brief for '+ORD.length+
+   ' competitors.</span><span class="go">Open competitors &rarr;</span></button>'+
+   (G?'<button class="ncard" data-go="gauntlet"><span class="t">Drone Dominance Gauntlet</span>'+
+   '<span class="d">'+G.teams.length+' pre-qualified drone manufacturers, who is already in each account, and where we can still win.</span>'+
+   '<span class="go">Open gauntlet &rarr;</span></button>':"");
+  document.querySelectorAll(".ncard").forEach(c=>c.addEventListener("click",()=>go(c.dataset.go)));
+}
+
+/* ---- gauntlet ---- */
+function gaunt(){
+  if(!G) return;
+  $("gHead").textContent=G.headline_signal||G.stage;
+  $("gWhy").textContent=G.why_it_matters;
+  $("gMeta").innerHTML=[["Program",G.program],["Value",G.value],["Stage",G.stage],
+    ["Selection funnel",G.funnel],["Requirement",G.requirement],["Sponsor",G.sponsor]]
+    .filter(x=>x[1]).map(x=>'<div class="glass gm"><div class="k">'+e(x[0])+'</div><div class="v">'+e(x[1])+"</div></div>").join("");
+  $("gSrc").innerHTML=(G.sources||[]).map(s=>'<li><a class="src" href="'+e(s.u)+
+    '" target="_blank" rel="noopener">'+e(s.t)+"</a></li>").join("");
+  grows("");
+  $("gq").addEventListener("input",ev=>grows(ev.target.value));
+}
+function grows(f){
+  const q=(f||"").toLowerCase();
+  const r=G.teams.filter(t=>!q||JSON.stringify(t).toLowerCase().includes(q));
+  $("gRows").innerHTML=r.map(t=>"<tr><td class='hl'>"+e(t.company)+
+    (t.gauntlet1?' <span class="g1">G1</span>':"")+'</td><td><span class="pos '+e(t.posture)+'">'+
+    e(t.posture)+"</span></td><td>"+e(t.am_posture||"Unknown")+"</td><td>"+
+    e(t.competitor_presence||"None identified")+'</td><td><span class="f">'+e(t.confidence)+"</span></td><td>"+
+    e(t.notes)+(t.evidence_url?' <a class="src" href="'+e(t.evidence_url)+
+    '" target="_blank" rel="noopener">source</a>':"")+"</td></tr>").join("")
+    ||'<tr><td colspan="6">No companies match.</td></tr>';
+  $("gCount").textContent=r.length+" of "+G.teams.length+" companies shown. "+
+    G.teams.filter(t=>t.gauntlet1).length+" returning from Gauntlet I.";
+}
+
+render(cur); home(); gaunt();
 </script>
 </body>
 </html>

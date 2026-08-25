@@ -1,0 +1,244 @@
+{
+  "program": "Drone Dominance Program - Gauntlet II",
+  "sponsor": "Office of the Secretary of War, executed by DIU, NSWC Crane and the Test Resource Management Center",
+  "value": "$1.1B program",
+  "stage": "19 companies advancing to Gauntlet II, Fort Carson CO, August 2026",
+  "funnel": "26 companies in Gauntlet I, 49 in the Phase 2 Qualifier (Camp Grayling MI, June 8-19 2026), 19 to Gauntlet II",
+  "requirement": "Each company must deliver 120 kamikaze drones with lethality payloads in roughly five weeks. Price ceilings $5,500 long-range strike, $4,500 close quarters. Awards cover 5 long-range and 3 close-quarters designs, with production orders of 4,000-9,500 UAVs per winner.",
+  "why_it_matters": "Nineteen pre-qualified companies that must prove they can manufacture at wartime speed. Every one is a Stratasys prospect. The 120-units-in-five-weeks requirement is the additive manufacturing pitch stated as a procurement requirement. Intelligence indicates HP is supporting 14 of the 19 [validation-needed]; if true, HP is buying ecosystem position ahead of its advertising, which no ad scan would surface.",
+  "headline_signal": "Neros, a Gauntlet 1 award winner, is publicly arguing that 3D printing does not solve the drone supply-chain problem.",
+  "last_researched": "2026-08-25",
+  "sources": [
+    {
+      "t": "DOD names 19 companies invited to Phase II final demo",
+      "u": "https://insidedefense.com/insider/dod-names-19-companies-invited-drone-dominance-phase-ii-final-demo-event"
+    },
+    {
+      "t": "19 of 49 qualify for Gauntlet 2",
+      "u": "https://insideunmannedsystems.com/19-companies-out-of-49-contenders-qualify-for-drone-dominance-gauntlet-2-trial/"
+    },
+    {
+      "t": "Gauntlet 2 trials structure and participants",
+      "u": "https://insideunmannedsystems.com/drone-dominance-program-qualifies-48-companies-for-gauntlet-2-trials/"
+    },
+    {
+      "t": "Drone Dominance official site",
+      "u": "https://drone-dominance.io/"
+    },
+    {
+      "t": "Inside Neros' factory",
+      "u": "https://www.sourcery.vc/p/breaking-inside-neros-factory"
+    }
+  ],
+  "teams": [
+    {
+      "company": "Neros",
+      "gauntlet1": true,
+      "am_posture": "Skeptical",
+      "competitor_presence": null,
+      "confidence": "Confirmed",
+      "evidence_url": "https://www.sourcery.vc/p/breaking-inside-neros-factory",
+      "stratasys_relationship": null,
+      "posture": "Contested",
+      "notes": "CEO Soren Monroe-Anderson has argued publicly that 3D printing does not solve the underlying supply-chain problem, and that mass production requires designing the product around manufacturing. Neros runs a 250,000 sq ft facility (Millennium One) already producing 250+ drones/day, targeting 1M/year. This is the single most important objection in the drone AM market and it is coming from a Gauntlet 1 award winner."
+    },
+    {
+      "company": "Ascent Aerosystems",
+      "gauntlet1": true,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Gauntlet 1 award winner. Received an order from the inaugural competition."
+    },
+    {
+      "company": "Auterion Government Solutions",
+      "gauntlet1": true,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Gauntlet 1 award winner. Autonomy software layer more than airframe, so AM relevance is lower."
+    },
+    {
+      "company": "Griffon Aerospace",
+      "gauntlet1": true,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Gauntlet 1 award winner."
+    },
+    {
+      "company": "ModalAI",
+      "gauntlet1": true,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Gauntlet 1 award winner. Autonomy and compute modules."
+    },
+    {
+      "company": "Skycutter",
+      "gauntlet1": true,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Gauntlet 1 award winner."
+    },
+    {
+      "company": "Ukrainian Defense Drones Tech Corp.",
+      "gauntlet1": true,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Gauntlet 1 award winner. Combat-proven production experience."
+    },
+    {
+      "company": "Teal Drones",
+      "gauntlet1": true,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Returning Gauntlet 1 participant. Red Cat subsidiary."
+    },
+    {
+      "company": "Swarm Defense",
+      "gauntlet1": true,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Returning Gauntlet 1 participant."
+    },
+    {
+      "company": "Vector",
+      "gauntlet1": true,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Returning Gauntlet 1 participant, listed previously as Vector Defense."
+    },
+    {
+      "company": "XTEND Reality",
+      "gauntlet1": true,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Returning Gauntlet 1 participant. Israeli. Announced Gauntlet II qualification publicly via GlobeNewswire."
+    },
+    {
+      "company": "Perennial Autonomy",
+      "gauntlet1": false,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Previous participant competing under a new name."
+    },
+    {
+      "company": "Renegade UxS",
+      "gauntlet1": false,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Previous participant competing under a new name."
+    },
+    {
+      "company": "Wilcox Cherry Defense",
+      "gauntlet1": false,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Previous participant competing under a new name."
+    },
+    {
+      "company": "Grim Tech",
+      "gauntlet1": false,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Newcomer to Phase 2."
+    },
+    {
+      "company": "Hyperscale",
+      "gauntlet1": false,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Newcomer to Phase 2. Name suggests a manufacturing-scale thesis; worth a direct check."
+    },
+    {
+      "company": "Mountain Horse Solutions + AG3 Labs",
+      "gauntlet1": false,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Newcomer, competing as a team."
+    },
+    {
+      "company": "ORQA US LLC",
+      "gauntlet1": false,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Newcomer. FPV goggles and systems heritage."
+    },
+    {
+      "company": "Stellarion",
+      "gauntlet1": false,
+      "am_posture": null,
+      "competitor_presence": null,
+      "confidence": "[Unverified]",
+      "evidence_url": null,
+      "stratasys_relationship": null,
+      "posture": "Open",
+      "notes": "Newcomer to Phase 2."
+    }
+  ]
+}

@@ -84,10 +84,20 @@ earnings, exec changes, hiring; channel and reseller changes; landing page and o
 Require a source URL and publication date for every claim, separate last-7-days from
 older context, and flag anything unconfirmed.
 
-**Also update the account watch.** Research whether any competitor has gained a foothold
-in a target account. Move at least one entry in `data/account-watch.json` from
-`[Unverified]` toward `Confirmed` or `Refuted`. This is the highest-value output of the
-scan, because it is the one thing advertising data alone cannot tell you.
+**Also update the Gauntlet tracker,** `data/gauntlet.json`. For each of the 19 companies,
+research public sources only: company site, newsroom and press releases, executive social
+posts, trade press, funding and contract announcements. Look for:
+
+- Which additive supplier, if any, they use, and whether a competitor is named
+- Public statements about additive manufacturing, for or against
+- Production milestones, facility news, funding, contract awards
+
+Move at least one company from `[Unverified]` toward `Confirmed` or `Refuted` each run,
+and set `posture` to `Open`, `Contested`, or `Locked`. This is the highest-value output of
+the scan, because it is the one thing advertising data alone cannot tell you.
+
+Public sources only. No non-public information, no credentialed access, no scraping behind
+a login. Every entry carries an `evidence_url`.
 
 ---
 

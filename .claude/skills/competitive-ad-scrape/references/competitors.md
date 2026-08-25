@@ -34,7 +34,7 @@ ad log and a diff, not the full HP treatment.
 No ad scraping. This tier answers a sales question, not a marketing one:
 **which companies we want to sell into does a competitor already have a foothold in?**
 
-Maintained in `data/account-watch.json`. Each account carries the competitor present,
+Maintained in `data/gauntlet.json`. Each account carries the competitor present,
 the evidence type and link, a confidence level, and a **displacement posture**:
 
 | Posture | Meaning | Sales implication |
@@ -43,14 +43,19 @@ the evidence type and link, a confidence level, and a **displacement posture**:
 | `Contested` | Competitor present, not locked in | Highest-value target. Move now. |
 | `Locked` | Equipment installed and validated | Long play, or partner around it |
 
-**Drone Dominance Gauntlet, Phase 2** - 19 teams, every one a live Stratasys prospect.
-Intelligence indicates HP is supporting 14 of the 19 `[validation-needed]`.
+**Drone Dominance Gauntlet II** - 19 companies, Fort Carson CO, August 2026, from a
+$1.1B program. Every one is a live Stratasys prospect. Names, program structure and
+selection funnel are confirmed in `data/gauntlet.json`.
 
-The team names do not matter in themselves. What matters is that this is a
-pre-qualified list of companies building drones at production intent, and a competitor
-may have reached them first. If the 14-of-19 figure holds, HP is buying ecosystem
-position ahead of its advertising, which is exactly the kind of move an ad scan alone
-would never surface. That is the argument for this tier existing.
+Intelligence indicates HP supports 14 of the 19 `[validation-needed]`. If it holds, HP is
+buying ecosystem position ahead of its advertising, which an ad scan alone would never
+surface. That is the argument for this tier existing.
+
+**The standing counter-signal:** Neros CEO Soren Monroe-Anderson argues publicly that 3D
+printing does not solve the drone supply-chain problem, and that mass production means
+designing the product around manufacturing. Neros was a Gauntlet 1 award winner running
+250+ drones/day. This is the strongest objection in the market to the entire drone
+additive pitch, ours as much as HP's. Track whether it spreads to other teams.
 
 Each run should attempt to move at least one account from `[Unverified]` toward
 `Confirmed` or `Refuted`, and surface every `Contested` account into the sales brief.

@@ -13,6 +13,7 @@ answers "what do I do with this on a call."
 
 ```
 data/                       # the asset: one JSON file per competitor per run
+data/gauntlet.json          # the 19 Gauntlet II companies, tracked as prospects
 tools/build_dashboard.py    # renders index.html from the latest run file
 index.html                  # published dashboard (generated, do not hand-edit)
 briefs/                     # one-page sales brief per run
@@ -53,6 +54,18 @@ available to Claude Code cloud routines, which run skills from the cloned reposi
 Tier 3 answers a sales question rather than a marketing one: **which companies we want to
 sell into does a competitor already have a foothold in?** Accounts carry a displacement
 posture of `Open`, `Contested`, or `Locked`. Contested accounts surface into every brief.
+
+The **Gauntlet** section tracks the 19 companies advancing to Drone Dominance Gauntlet II
+(Fort Carson, August 2026, from a $1.1B program). Each must deliver 120 drones in roughly
+five weeks, which is the additive manufacturing pitch restated as a procurement
+requirement. Researched from public sources only: company sites, press releases, executive
+social posts, trade press.
+
+## Navigation
+
+**Home** gives the cross-competitor read and the signals worth acting on.
+**Competitors** holds a full dashboard per competitor.
+**Gauntlet** holds the drone prospect field.
 
 ## Data sources
 
