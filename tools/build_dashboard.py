@@ -249,7 +249,7 @@ footer b{color:var(--ink2)}
 <header>
   <div class="eyebrow">Stratasys competitive intelligence</div>
   <h1>Competitive Ad Intelligence</h1>
-  <p class="sub">What competitors are advertising, what changed this week, and what to say about it on a call. Sources: LinkedIn Ad Library, Meta Ad Library, Google Ads Transparency Center, trade press.</p>
+  <p class="sub">What competitors are advertising, what changed, and what to say about it on a call. Sources: LinkedIn Ad Library (advertiser search), Google Ads Transparency Center, and trade press. Meta is not currently checked.</p>
 </header>
 
 <div class="sect glass" role="group" aria-label="Section">

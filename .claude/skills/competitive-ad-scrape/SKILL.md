@@ -33,7 +33,7 @@ Deliverables, into the repo:
 |---|---|
 | `data/YYYY-MM-DD-<slug>.json` | The run dataset. **The asset.** |
 | `index.html` | Dashboard, published to GitHub Pages |
-| `briefs/YYYY-MM-DD-sales-brief.md` | One page, for sales |
+| `briefs/YYYY-MM-DD-<slug>-brief.md` | One page, for sales |
 | `ad-intelligence.xlsx` | Workbook, for anyone who wants to filter and sort |
 | `README.md` | Snapshot table refreshed |
 
@@ -225,7 +225,7 @@ If LibreOffice recalc hangs, kill it rather than retrying, verify formula ranges
 exactly the data rows, cross-check against a Python-side computation, and say in the
 summary that recalc did not complete.
 
-**briefs/YYYY-MM-DD-sales-brief.md** — one page maximum. For most reps this is the only
+**briefs/YYYY-MM-DD-<slug>-brief.md** — one page maximum. For most reps this is the only
 thing they will read.
 
 1. The one thing to know this week, in a sentence
