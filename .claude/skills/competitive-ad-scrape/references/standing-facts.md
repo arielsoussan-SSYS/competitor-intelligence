@@ -42,6 +42,33 @@ consecutive quarter of industrial print growth.
 Execs: Alex Monino (SVP/GM HP AM), Arvind Rangarajan (Product & Strategy),
 Alexandre Tartas (Metals GTM).
 
+## Formlabs — carry forward (est. Aug 25 2026)
+
+**Fuse X1.** Announced Jun 9 2026, ships **Q4 2026**, from **$84,999**.
+330 x 330 x 565 mm. Nylon 12 + Open Material Mode at launch; Nylon 11 end of 2026;
+Nylon 12 GF and TPU announced. Adaptive Thermal Control, AI-Powered Print Intelligence.
+~1.3 sq m footprint, fits a standard industrial door, ~1 hour install.
+Claims up to 50% lower cost per part and 3x throughput vs comparable industrial PBF
+`[Unverified]` — no named comparator or test method.
+
+**The timing fact that matters:** Fuse X1 ships **Q4 2026**, HP MJF 1200 ships
+**early 2027**. Formlabs reaches the accessible-industrial segment first.
+
+**Corporate.** Weighing a ~$500M IPO (Bloomberg, Aug 7 2026), SoftBank-backed.
+Dan Riccio, former Apple hardware chief, took a stake and became strategic adviser
+Aug 12 2026 amid a board reshuffle. Says three more printer platforms ship within
+12 months after a record Q3. HQ Somerville MA. CRO is **Nick Graham**, who personally
+fronts their thought-leader ads.
+
+**Confirmed drone footprint.** Published case study: **ORQA** (Croatia) runs Fuse 1 and
+Fuse 1+ 30W on Nylon 12 and TPU 90A for end-use drone parts. ORQA US LLC is in
+Gauntlet II. This is a confirmed competitor placement inside a Gauntlet account.
+
+**Unresolved and high-value.** Formlabs outbound claims **SkyFall**, Ukraine's largest
+drone manufacturer, uses its printers. SkyFall independently builds the **Shrike 10F**
+that won Gauntlet I for **Skycutter** (99.3/100). Neither source confirms the other.
+`[Unverified]`. Verifying this is the highest-value open question on the board.
+
 ## Known bad claims — do not repeat
 
 | Claim | Status |
@@ -49,6 +76,9 @@ Alexandre Tartas (Metals GTM).
 | Aluminium alloy partnership at RAPID+TCT 2026 | **Refuted.** Materials were copper, M247LC nickel superalloy, WC-Co. |
 | AAOP 2026 booth 822 | Appears verbatim in HP ad copy; HP's presence unconfirmed. Label `[Unverified]`. |
 | Hero Gauntlet as an HP partnership | An Open Bionics product made with MJF. No HP co-marketing announcement exists. Application reference, not a partnership. Creative dropped from rotation Aug 18. |
+| Formlabs: Clove Dental at "50,000 aligners a day" | **Internally inconsistent.** Same ad says "more than half a million parts a year", off by ~30x. Card headline says "per month". Do not quote any version. |
+| Formlabs: "#1 by unit market share" in industrial resin | `[Unverified]`. No source cited in the ad. |
+| Formlabs: 98.6% Form 4B print success | `[Unverified]`. Self-reported telemetry on a self-selected upvote mechanic. The cited third-party 98.7% yield study is not published. |
 
 ## HP's standing operational weakness
 

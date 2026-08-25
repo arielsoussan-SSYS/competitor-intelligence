@@ -91,7 +91,22 @@ Company intelligence comes from trade press, newsrooms, landing pages, and inves
 
 ## Current snapshot
 
-Run 2026-08-18, baseline 2026-08-10, HP Additive Manufacturing.
+**Formlabs, run 2026-08-25 — baseline run, no prior data.**
+
+| Metric | This run |
+|---|---|
+| Unique creatives | 15 |
+| Live instances (LinkedIn) | 38 |
+| Drone share of volume | 11% (4 of 38) |
+| Funnel mix | 68% top (26 of 38) |
+| Est monthly LinkedIn spend | $18.5-66.6K `[Estimate]` |
+| Google, own advertiser account | 106 ads (88 Text / 10 Image / 8 Video) |
+| Platforms checked | LinkedIn, Google. Meta out of scope this run. |
+
+**Headline:** Formlabs is selling large-format industrial SLS into drone manufacturing,
+and it ships the Fuse X1 in Q4 2026, ahead of HP's MJF 1200 in early 2027.
+
+**HP Additive, run 2026-08-18, baseline 2026-08-10.**
 
 | Metric | This run | Baseline |
 |---|---|---|
@@ -105,11 +120,19 @@ Run 2026-08-18, baseline 2026-08-10, HP Additive Manufacturing.
 **Headline:** HP held steady on volume. The drone share increase is a denominator effect,
 not growth: the absolute drone count did not move.
 
+**Gauntlet tracker, updated 2026-08-25.** All 19 Gauntlet II teams carry location,
+financial backing, production scale, technology and a sales hook. 14 of 19 are now
+`Confirmed`, up from 1. One account is `Locked` (ORQA US LLC, Formlabs installed and
+case-studied) and two are `Contested` (Neros, Skycutter).
+
+3D Systems last ran 2026-08-18. Bambu Lab has not been scanned yet and is an explicit
+`pending` stub, not zeroed data.
+
 ## Tech
 
 Single self-contained HTML file, one dependency (Chart.js from CDN), GitHub Pages. No
-backend, no build step for viewers, no browser storage. Dark and light themes follow the
-reader's system setting.
+backend, no build step for viewers, no browser storage. Light theme only, by request:
+the dashboard is used in meetings and on shared screens.
 
 ---
 

@@ -22,7 +22,7 @@ Collected every run. No standing Watch section unless something material moves.
 | Competitor | Slug | LinkedIn advertiser | Why tracked |
 |---|---|---|---|
 | 3D Systems | `3dsystems` | 3D Systems | Direct industrial overlap, existing tracker |
-| Formlabs | `formlabs` | Formlabs | Owns the workhorse/accessible segment, moving upmarket |
+| Formlabs | `formlabs` | Formlabs | Owns the workhorse/accessible segment, moving upmarket. **Now the nearest-term drone threat**: ships Fuse X1 Q4 2026, ahead of HP's MJF 1200. Also log **partner/reseller ads** (Phillips Machine Tools, Thinglab, 3D-EDU) separately in `partner_ads` — the channel runs the harder drone creative. |
 | Bambu Lab | `bambulab` | Bambu Lab | Prosumer disruption pressing up into professional; drone hobbyist crossover |
 
 Formlabs and Bambu Lab were removed from the tracker on Aug 10 2026 when it narrowed to
@@ -51,10 +51,22 @@ Intelligence indicates HP supports 14 of the 19 `[validation-needed]`. If it hol
 buying ecosystem position ahead of its advertising, which an ad scan alone would never
 surface. That is the argument for this tier existing.
 
+**Confirmed as of Aug 25 2026:** ORQA US LLC is `Locked` to **Formlabs** (published case
+study, Fuse 1 / Fuse 1+ 30W). Skycutter is `Contested`: its Gauntlet I winning Shrike 10F
+is built by SkyFall, which Formlabs names as a customer in outbound `[Unverified]`.
+14 of 19 teams are now `Confirmed`. Vector, Hyperscale and Stellarion remain research
+gaps — thin or ambiguous public footprints. Resolve the legal entity from the DIU or
+NSWC Crane vendor listing before spending more open-source search time on them.
+
+Every team row carries `hq`, `backing`, `scale`, `tech` and a `sales_hook`. The hook is
+the point: a row with no sales consequence should not ship.
+
 **The standing counter-signal:** Neros CEO Soren Monroe-Anderson argues publicly that 3D
 printing does not solve the drone supply-chain problem, and that mass production means
 designing the product around manufacturing. Neros was a Gauntlet 1 award winner running
-250+ drones/day. This is the strongest objection in the market to the entire drone
+250+ drones/day. **Read the quote precisely:** he rejects *distributed printing at the
+edge* as a supply-chain fix, not additive inside a factory. That is a narrower claim
+than it sounds and it is answerable. This is the strongest objection in the market to the entire drone
 additive pitch, ours as much as HP's. Track whether it spreads to other teams.
 
 Each run should attempt to move at least one account from `[Unverified]` toward
