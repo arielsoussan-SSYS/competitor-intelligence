@@ -6,7 +6,7 @@
   "funnel": "26 companies in Gauntlet I, 49 in the Phase 2 Qualifier (Camp Grayling MI, June 8-19 2026), 19 to Gauntlet II",
   "requirement": "Each company must deliver 120 kamikaze drones with lethality payloads in roughly five weeks. Price ceilings $5,500 long-range strike, $4,500 close quarters. Awards cover 5 long-range and 3 close-quarters designs, with production orders of 4,000-9,500 UAVs per winner.",
   "why_it_matters": "Nineteen pre-qualified companies that must prove they can manufacture at wartime speed. Every one is a Stratasys prospect. The 120-units-in-five-weeks requirement is the additive manufacturing pitch stated as a procurement requirement. Intelligence indicates HP is supporting 14 of the 19 [validation-needed]; if true, HP is buying ecosystem position ahead of its advertising, which no ad scan would surface.",
-  "headline_signal": "Formlabs is confirmed inside ORQA, a Gauntlet II company, and claims SkyFall, which builds the drone that won Gauntlet I for Skycutter.",
+  "headline_signal": "The Gauntlet I winner runs hundreds of 3D printers and has committed to removing Chinese components. Nobody has asked whether the printers themselves meet the same standard.",
   "last_researched": "2026-08-25",
   "sources": [
     {
@@ -40,6 +40,18 @@
     {
       "t": "Inside Neros' factory: why printing does not solve the supply chain",
       "u": "https://www.sourcery.vc/p/breaking-inside-neros-factory"
+    },
+    {
+      "t": "SkyFall's Shrike 10 Fiber wins the Drone Dominance stage",
+      "u": "https://oboronka.mezha.ua/en/dron-vid-skyfall-peremig-v-programi-pentagonu-309215/"
+    },
+    {
+      "t": "Auterion and Skyfall to supply 50,000 FPVs",
+      "u": "https://breakingdefense.com/2026/07/auterion-ukrainian-drone-maker-skyfall-to-supply-50000-fpvs/"
+    },
+    {
+      "t": "Department of War, Drone Dominance Program, official participant directory",
+      "u": "https://drone-dominance.io/vendors.html"
     }
   ],
   "teams": [
@@ -81,15 +93,15 @@
       "am_posture": "Unknown",
       "competitor_presence": null,
       "confidence": "Confirmed",
-      "evidence_url": "https://auterion.com/auterion-raises-130-million-series-b-as-their-ai-enabled-software-powering-low-cost-commercial-hardware-at-scale-transforms-warfare/",
+      "evidence_url": "https://breakingdefense.com/2026/07/auterion-ukrainian-drone-maker-skyfall-to-supply-50000-fpvs/",
       "stratasys_relationship": null,
       "posture": "Open",
-      "notes": "The $25M of DoW non-dilutive capital is the signal. The Pentagon is directly funding the autonomy layer it wants standardised across vendors.",
+      "notes": "The $25M of DoW non-dilutive capital is the signal. The Pentagon is directly funding the autonomy layer it wants standardised across vendors. CROSS-LINK: Auterion signed an agreement with SkyFall, the manufacturer behind Gauntlet I winner Skycutter's Shrike 10-F, to supply autonomy software for 50,000 FPV drones. Two Gauntlet II entrants are already commercially tied to each other.",
       "hq": "Arlington, Virginia, USA. Swiss origin.",
       "backing": "$130M Series B led by Bessemer Venture Partners, Sept 2025, including $25M non-dilutive from the Department of War via the Office of Strategic Capital. Lakestar, Mosaic Ventures and Costanoa Ventures also participated.",
       "scale": "Software-first. Strategy is 'build swarms, not individual drones' through AuterionOS and the Nemyx defense system.",
       "tech": "Skynode and Skynode X autonomy modules, AI autonomy, secure comms, edge computing, jamming resilience. Priced like consumer electronics.",
-      "sales_hook": "Software company, not an airframe manufacturer, so the printer sale is not to them directly. The value is the map: Auterion knows which airframe builders it is designed into. Treat this as a channel and intelligence relationship, not a hardware deal."
+      "sales_hook": "Software company, not an airframe manufacturer, so the printer sale is not to them directly. The value is the map: Auterion knows which airframe builders it is designed into. Treat this as a channel and intelligence relationship, not a hardware deal. Their SkyFall agreement also makes them a route into the highest-scoring team on the board."
     },
     {
       "company": "Griffon Aerospace",
@@ -126,18 +138,18 @@
     {
       "company": "Skycutter",
       "gauntlet1": true,
-      "am_posture": "Unknown",
+      "am_posture": "Heavy adopter, brand unconfirmed",
       "competitor_presence": "Formlabs [Unverified], via SkyFall",
-      "confidence": "[Unverified]",
-      "evidence_url": "https://www.shephardmedia.com/news/air-warfare/uk-firm-skycutter-top-first-us-drone-dominance-program-gauntlet/",
+      "confidence": "Confirmed",
+      "evidence_url": "https://oboronka.mezha.ua/en/dron-vid-skyfall-peremig-v-programi-pentagonu-309215/",
       "stratasys_relationship": null,
       "posture": "Contested",
-      "notes": "Formlabs runs a conversation ad claiming 'Skyfall, the largest drone manufacturer in Ukraine, uses our printers to deploy flight-ready parts the same day they're designed.' Independently, Skycutter's Gauntlet I entry, the Shrike 10F, is made by SkyFall. Neither source confirms the other, so the link is [Unverified], but it is the highest-value thing to verify on this board.",
+      "notes": "SkyFall + Skycutter joint task force topped Gauntlet I with the Shrike 10-F. Formlabs claims in outbound that 'Skyfall, the largest drone manufacturer in Ukraine, uses our printers'. SkyFall's heavy additive use is now independently CONFIRMED (hundreds of printers, printed modular parts, 23-second takt). The Formlabs BRAND claim remains [Unverified]: no published case study, no SkyFall statement. Separately, Auterion has agreed to supply SkyFall with autonomy software for 50,000 FPV drones, linking two Gauntlet II entrants.",
       "hq": "United Kingdom",
-      "backing": "Private UK company. On contract for more than 2,500 drones off Gauntlet I.",
-      "scale": "Won Gauntlet I outright with 99.3 of 100 points, about 12 points clear of Neros in second.",
-      "tech": "Fielded the Shrike 10F, a 10-inch fibre-optic FPV drone developed and manufactured by SkyFall of Ukraine. Skycutter provided logistics and engineering support.",
-      "sales_hook": "Highest-priority account on this list. It topped Gauntlet I and its airframe comes from SkyFall, the manufacturer Formlabs names in outbound as a printer customer. If that claim is true, a competitor is already inside the number one team's supply chain. Verify before assuming, then call SkyFall as well as Skycutter."
+      "backing": "Private UK company. On contract for more than 2,500 drones off Gauntlet I. Operates as a joint task force with SkyFall of Ukraine, which manufactures the airframe.",
+      "scale": "Won Gauntlet I outright at 99.3 of 100, about 12 points clear of Neros, from a field of 27 including Neros, Auterion, PDW and Kratos. Manufacturing partner SkyFall produces one drone every 23 seconds, up to 4,000 a day and a reported 123,000 units a month.",
+      "tech": "Shrike 10-F, a 10-inch fibre-optic FPV drone developed and manufactured by SkyFall; Skycutter provided logistics and engineering. Fibre-optic control bypasses jamming and spoofing. SkyFall runs a factory with HUNDREDS of 3D printers, with modular design and printed parts central to production speed. The Shrike 10-F was specifically REDESIGNED WITH SKYCUTTER TO EXCLUDE ALL CHINESE PARTS AND COMPONENTS to meet Drone Dominance requirements.",
+      "sales_hook": "Best-qualified opportunity on the board, and the argument writes itself. They already run hundreds of printers, so there is no need to sell additive. They have publicly committed to removing Chinese components to win a US programme. Ukrainian drone production commonly runs Chinese desktop printers such as Creality and Bambu, and NDAA FY2026 s880 bars agencies from operating AM machines manufactured in, with software developed in, or networked through China. Ask one question: has the printer fleet itself been audited against the same standard as the bill of materials? If not, they have a compliance gap at the exact moment they are scaling a US contract."
     },
     {
       "company": "Ukrainian Defense Drones Tech Corp.",
@@ -188,20 +200,20 @@
       "sales_hook": "Scaling from 72K to 250K units a year is a tooling decision they have to make soon, and they missed a Gauntlet I order so the pressure is on. Detroit location means automotive manufacturing talent and automotive assumptions about tooling. Bring the cost-per-part crossover analysis."
     },
     {
-      "company": "Vector",
+      "company": "Vector Defense, Inc.",
       "gauntlet1": true,
       "am_posture": "Unknown",
       "competitor_presence": null,
-      "confidence": "[Unverified]",
-      "evidence_url": "https://insidedefense.com/insider/dod-names-19-companies-invited-drone-dominance-phase-ii-final-demo-event",
+      "confidence": "Confirmed",
+      "evidence_url": "https://www.axios.com/2025/09/03/vector-defense-drones-utah-investments",
       "stratasys_relationship": null,
       "posture": "Open",
-      "notes": "Research gap. Identity ambiguity is the blocker, not absence of information. Resolve the entity first.",
-      "hq": "Not established from public sources. Appears in reporting as Vector Defense. [Unverified]",
-      "backing": "Not established from public sources.",
-      "scale": "Advanced from the Gauntlet I field of 25 to the Gauntlet II field of 19.",
-      "tech": "Not established from public sources.",
-      "sales_hook": "Name collision with several unrelated companies called Vector makes open-source research unreliable. Confirm the legal entity from the DIU or NSWC Crane vendor listing before any outreach."
+      "notes": "Entity resolved 2026-08-25 via the Department of War Drone Dominance vendor directory, which lists 'VECTOR DEFENSE, INC.'. Earlier ambiguity came from the programme's short display name 'Vector'.",
+      "hq": "Bluffdale, Utah, USA. R&D in Austin, Texas.",
+      "backing": "$61M Series A, Sept 2025, led by Pelion Venture Partners with Lightspeed Venture Partners and Point72 Ventures. Plus a $20M loan from JPMorgan Chase to expand domestic manufacturing.",
+      "scale": "Holds a SOCOM contract. Expanding US production on the back of the JPMorgan facility.",
+      "tech": "Hammer, a deep-sensing and strike FPV quadcopter. First US company to integrate fibre-optic control lines into a US-made FPV drone, giving immunity to electronic jamming. Sells 'Modern Warfare as a Service': hardware plus battlefield insight, TTP development, integration and training.",
+      "sales_hook": "Resolved from the official DoW vendor directory: the entity is Vector Defense, Inc. Well funded, US based, actively expanding domestic manufacturing with borrowed money, which means capex decisions are live right now. The fibre-optic FPV line puts them in direct technical competition with Skycutter's Shrike 10-F. A services-led model means they care about sustainment and spares, which is a strong tooling-free argument."
     },
     {
       "company": "XTEND Reality",
@@ -289,10 +301,10 @@
       "am_posture": "Unknown",
       "competitor_presence": null,
       "confidence": "[Unverified]",
-      "evidence_url": "https://insideunmannedsystems.com/19-companies-out-of-49-contenders-qualify-for-drone-dominance-gauntlet-2-trial/",
+      "evidence_url": "https://drone-dominance.io/vendors.html",
       "stratasys_relationship": null,
       "posture": "Open",
-      "notes": "Research gap. Generic company name makes open-source search unusable. Carry to next run.",
+      "notes": "Research gap. Generic company name makes open-source search unusable. Carry to next run. Entity check 2026-08-25: the official DoW vendor directory lists this company under the bare name shown here, with no legal suffix and no Phase 1 directory entry, so it is a Phase 2 new entrant. The thin public footprint is genuine, not a search failure.",
       "hq": "Not established from public sources. [Unverified]",
       "backing": "Not established from public sources.",
       "scale": "Advanced to Gauntlet II at Fort Carson, August 2026.",
@@ -337,10 +349,10 @@
       "am_posture": "Unknown",
       "competitor_presence": null,
       "confidence": "[Unverified]",
-      "evidence_url": "https://thedefender.media/en/2026/06/drone-dominance-ukrainian-companies/",
+      "evidence_url": "https://drone-dominance.io/vendors.html",
       "stratasys_relationship": null,
       "posture": "Open",
-      "notes": "Confirmed in Gauntlet II with the Deadliner Q1. Everything else is unestablished. Research gap, carry to next run.",
+      "notes": "Confirmed in Gauntlet II with the Deadliner Q1. Everything else is unestablished. Research gap, carry to next run. Entity check 2026-08-25: the official DoW vendor directory lists this company under the bare name shown here, with no legal suffix and no Phase 1 directory entry, so it is a Phase 2 new entrant. The thin public footprint is genuine, not a search failure.",
       "hq": "Ukraine",
       "backing": "Not established from public sources. [Unverified]",
       "scale": "Not established from public sources.",
@@ -348,5 +360,22 @@
       "sales_hook": "Thin public footprint. Treat as a discovery call, not a pitch. Establish who manufactures the Deadliner Q1 and where before spending time."
     }
   ],
-  "research_note": "Enrichment pass Aug 25 2026 added headquarters, financial backing, production scale, technology and a sales hook for all 19 teams. Public sources only. Three companies (Vector, Hyperscale, Stellarion) have thin or ambiguous public footprints and are flagged as research gaps rather than filled with guesses."
+  "research_note": "Enrichment pass Aug 25 2026 added headquarters, financial backing, production scale, technology and a sales hook for all 19 teams. Public sources only. Three companies (Vector, Hyperscale, Stellarion) have thin or ambiguous public footprints and are flagged as research gaps rather than filled with guesses.",
+  "official_directory": {
+    "url": "https://drone-dominance.io/vendors.html",
+    "note": "Authoritative source for entity names and status. Phase 2 lists 49 qualifiers with the 19 that advanced to Gauntlet II marked. A separate Lethality Vendors section lists munitions partners teamed with Phase 2 drone operations: Bravo Ordnance, Kela Defense, Kraken Kinetics, Mountain Horse and Northrop Grumman as Lethality Prize winners, plus Nammo, Perennial Autonomy and XTEND Reality. Note Northrop Grumman's presence in the programme."
+  },
+  "hp_14_of_19": {
+    "claim": "Intelligence indicates HP Additive supports 14 of the 19 Gauntlet II companies.",
+    "status": "[validation-needed] — no public evidence found after three research passes. Treat as unsupported, not as false.",
+    "what_we_checked": [
+      "Every one of HP's publicly named drone and AM partners: Unusual Machines, blueflite, Firestorm Labs, Avular and Materialise. NONE of the five is among the 19 Gauntlet II companies. Firestorm Labs appears in the Drone Dominance Phase 1 vendor directory but did not advance to Gauntlet II.",
+      "HP AM's own advertising, 36 live instances across 18 creatives. It names Unusual Machines, blueflite and Firestorm Labs as drone proof points and no Gauntlet II company.",
+      "The official Department of War participant directory. It lists no additive suppliers against any team.",
+      "Per-company research across all 19: company sites, newsrooms, executive statements, trade press and funding announcements. No HP relationship surfaced for any of them."
+    ],
+    "what_we_did_find": "The only CONFIRMED competitor placement inside a Gauntlet II account is Formlabs at ORQA, evidenced by a published Formlabs case study. That is one account, and it is not HP.",
+    "how_to_read_it": "The claim may still be true and simply private: supplier relationships are rarely public, and HP could be supporting teams through resellers, service bureaus or NDA'd engineering support that leaves no trace. But nothing found so far corroborates it, and HP's own marketing points away from the Gauntlet field rather than toward it. Do not repeat the 14-of-19 figure externally, and do not build a campaign on it. If it came from a person, go back and ask what they actually saw.",
+    "last_checked": "2026-08-25"
+  }
 }
