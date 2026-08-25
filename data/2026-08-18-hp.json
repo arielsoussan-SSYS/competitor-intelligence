@@ -641,5 +641,10 @@
     "live_instances_at_verification": 36,
     "note": "Confirmed 2026-08-25 via Chrome connector, accountOwner search. Both 'HP Additive' and the full name return 36."
   },
-  "stale_warning": "BASELINE IS STALE. An advertiser verification pass on 2026-08-25 found HP creative that is not in this Aug 18 dataset. Live instance count is unchanged at 36, so the rotation turned over rather than grew. Treat the ad log below as accurate to Aug 18 only. A full HP re-scrape is the next priority."
+  "stale_warning": "BASELINE IS STALE. An advertiser verification pass on 2026-08-25 found HP creative that is not in this Aug 18 dataset. Live instance count is unchanged at 36, so the rotation turned over rather than grew. Treat the ad log below as accurate to Aug 18 only. A full HP re-scrape is the next priority.",
+  "eu_disclosure": {
+    "ads_with_eu_delivery": 2,
+    "of_total": 36,
+    "note": "Only 2 of 36 HP AM creatives reach the EU. Like Formlabs, HP's additive LinkedIn programme is effectively United States only. Checked 2026-08-25 via countries= filter."
+  }
 }

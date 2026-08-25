@@ -51,7 +51,7 @@
     {
       "label": "Drone-specific creative",
       "value": "4 of 38",
-      "delta": "11% of LinkedIn ad volume",
+      "delta": "11% of ad volume, but the drone message test reached <1K",
       "dir": "up"
     },
     {
@@ -66,8 +66,8 @@
       "cat": "Ad-level",
       "items": [
         {
-          "t": "Formlabs is running a conversation ad aimed squarely at drone teams, signed by a named rep.",
-          "d": "Rob Ortiz, personalised with %FIRSTNAME%, claims Skyfall, the largest drone manufacturer in Ukraine, prints flight-ready parts the same day they are designed, and that the Fuse X1 prints 20 one-foot quadcopter frames in one build versus 7-10 days and 5x the cost at a service bureau. Reply buttons are 'What else can it print?' and 'What does it cost?'. This is a priced, named-account, bottom-funnel drone play, not brand advertising.",
+          "t": "Formlabs tested a drone-team conversation ad signed by a named rep. It ran two weeks and reached under 1,000 people.",
+          "d": "Rob Ortiz, personalised with %FIRSTNAME%, claims Skyfall, the largest drone manufacturer in Ukraine, prints flight-ready parts the same day they are designed, and quotes the Fuse X1 at 20 one-foot quadcopter frames per build versus 7-10 days and 5x the cost at a service bureau. Because it was served in the EU, LinkedIn discloses the full record: Aug 10-24 2026, under 1,000 total impressions, 97% United States, targeted only on language and broad location. Read it as a message test, not a campaign. The claim is the finding; the reach is not.",
           "u": "https://www.linkedin.com/ad-library/detail/1494261574"
         },
         {
@@ -288,27 +288,28 @@
     "Fuse X1 delivers up to 50% lower cost per part and 3x throughput versus comparable industrial powder bed fusion. [Unverified] Vendor claim, no named comparison system or test method disclosed.",
     "Clove Dental manufactures 50,000 clear aligners a day. [Unverified] The ad body says 'a day' and then says 'more than half a million parts a year', inconsistent by roughly a factor of 30. The card headline elsewhere reads 'per month'. Treat the figure as unreliable as published.",
     "98.6% Form 4B print success rate from 400,000+ customer votes. [Unverified] Self-reported telemetry on a self-selected voting mechanic. The commissioned third-party 98.7% part yield study is cited but not published in the ad.",
-    "Formlabs is '#1 by unit market share' in industrial resin 3D printers. [Unverified] No source cited in the ad."
+    "Formlabs is '#1 by unit market share' in industrial resin 3D printers. [Unverified] No source cited in the ad.",
+    "Earlier in this run the Skyfall conversation ad was described as the highest-priority creative. That overstated it. It is strategically revealing but operationally tiny: under 1,000 impressions over two weeks, now ended. Corrected on the same day."
   ],
   "ads": [
     {
       "platform": "LinkedIn",
-      "format": "Conversation",
+      "format": "Message Ad",
       "theme": "Drones / UAV / defense",
       "headline": "Hi %FIRSTNAME%, here at Formlabs I work all the time with drone teams on both SLS and SLA production. Skyfall, the largest drone manufacturer in Ukraine, uses our printers to deploy flight-ready parts the same day they're designed. The new Fuse X1 can print 20 1ft quadcopter frames in one build in-house versus 7-10 days and 5x the cost at a service bureau. / What does it cost?",
       "cta": "What does it cost?",
-      "impr": "Not disclosed",
-      "lo": 500,
-      "hi": 1800,
+      "impr": "<1K total",
+      "lo": 50,
+      "hi": 300,
       "first": "Aug 2026",
       "last": "Aug 2026",
-      "active": "Yes",
-      "audience": "Drone OEM engineering, ops, program leads",
+      "active": "Ended Aug 24 2026",
+      "audience": "English speakers, United States and Europe. No job-title or company targeting disclosed.",
       "funnel": "Bottom",
       "url": "https://www.linkedin.com/ad-library/detail/1494261574",
       "owner": "Formlabs-owned",
-      "status": "NEW this week",
-      "notes": "1 instance. Signed by named rep Rob Ortiz. Reply buttons: 'What else can it print?' and 'What does it cost?'. Highest-priority creative on this run: named-account claim plus explicit cost and lead-time comparison against service bureaus."
+      "status": "Ended",
+      "notes": "1 instance. EU-served, so LinkedIn discloses the full detail: ran Aug 10-24 2026, TOTAL IMPRESSIONS UNDER 1,000, delivered 97% United States / 2% Ukraine / 1% Greece, targeted on language (English) and location (US, Europe) only. CORRECTION to the first read of this run: this is a small, short, broadly-targeted TEST that has already ended, not a funded campaign. Its value is that it reveals what Formlabs is willing to claim, not that it reached anyone. Signed by named rep Rob Ortiz."
     },
     {
       "platform": "LinkedIn",
@@ -613,7 +614,7 @@
     "Video": 12,
     "Document": 7,
     "Thought Leader": 4,
-    "Conversation": 1
+    "Message Ad": 1
   },
   "funnels": {
     "Top": 26,
@@ -628,5 +629,10 @@
     "method": "Chrome connector, ?accountOwner= URL parameter",
     "live_instances_at_verification": 38,
     "note": "Confirmed 2026-08-25 via Chrome connector, accountOwner search. Returns 38, matching this run."
+  },
+  "eu_disclosure": {
+    "ads_with_eu_delivery": 1,
+    "of_total": 38,
+    "note": "Only 1 of 38 Formlabs creatives was served in the EU, which is why impressions and targeting are 'Not disclosed' for the other 37. Formlabs' LinkedIn programme is effectively United States only."
   }
 }

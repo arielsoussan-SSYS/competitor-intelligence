@@ -5,7 +5,12 @@ description: Run the weekly additive-manufacturing competitive ad intelligence s
 
 # Competitive ad intelligence: scrape, diff, build, publish
 
-End-to-end weekly run. Audience is the Stratasys sales team.
+End-to-end run. Audience is the Stratasys sales team.
+
+**Cadence:** monthly is the defensible default for a competitive scan; weekly mostly
+re-reads the same rotation. Run weekly only while a launch or a live campaign makes it
+worth it, and say which mode a given run is in. What genuinely rewards a fast cadence is
+the Gauntlet account tracker in Phase 4, not the ad log.
 
 Run the whole pipeline without stopping to ask permission at each step. Publishing is
 pre-authorized. Stop only if a verification gate fails.
@@ -19,7 +24,8 @@ sales consequence does not ship.
 - `references/standing-facts.md` — carry-forward intel and refuted claims. **Verify, do not re-derive.**
 - `references/collection.md` — source-by-source tradecraft. Saves an hour of rediscovery.
 - `references/schema.md` — the 17-field record, verbatim. Do not invent fields.
-- `references/spend-model.md` — CPM/CPC constants
+- `references/spend-model.md` — CPM/CPC constants, impression bands, format efficiency
+- `references/creative-rubric.md` — how to score creative quality, and score ours too
 
 Deliverables, into the repo:
 
@@ -96,6 +102,34 @@ newly funded flight.
 Record only what you observed. Reasoning is `[Inference]`. Advertiser claims that are
 uncorroborated are `[Unverified]`. Spend is `[Estimate]`. Every claim carries a source link.
 
+### Phase 2b: EU disclosure pass (do not skip)
+
+Impressions and targeting are disclosed only for **EU-served** ads. Find them:
+
+```
+/ad-library/search?accountOwner=<Name>&countries=DE,FR,NL,IT,ES,IE,SE,PL
+```
+
+Open each result and capture exact run dates, total impression band, impressions by
+country, and the targeting table. Record the EU-served count over the total in
+`eu_disclosure`: it tells you whether a competitor's programme is US-only, and it is a
+finding in its own right. Both HP and Formlabs are effectively US-only.
+
+### Phase 2c: landscape scan, for discovery not for the ad log
+
+Separately from the advertiser searches, run `?keyword=` across 5-10 core buyer terms
+(for example `SLS drone parts`, `additive manufacturing defense`, `production 3D
+printing`, `NDAA 3D printer`). Purpose is **discovery**, not measurement:
+
+- Which advertisers are crowding our buyer keywords
+- Adjacent competitors and resellers we do not track
+- Messaging angles that are becoming generic
+
+Anything found here goes to `partner_ads` or to a "new names seen" note. **It never
+enters the ad log**, because keyword results are not the competitor's own spend.
+Ignoring adjacent competitors is a named failure mode; so is letting keyword results
+contaminate advertiser counts.
+
 ---
 
 ## Phase 3: dedupe and count
@@ -158,6 +192,11 @@ company/market moves; messaging/positioning shift; landing page/funnel changes.
 
 Always call out **stale creative** and how long it has been running. See
 `references/standing-facts.md`.
+
+**Score the creative.** Apply `references/creative-rubric.md` to each unique creative and
+report the competitor's median with the one or two traits driving it. Where we have a
+comparable Stratasys campaign, score ours the same way and state the gap plainly. A
+scored gap is the answer to "HP out-markets us"; an opinion is not.
 
 ---
 

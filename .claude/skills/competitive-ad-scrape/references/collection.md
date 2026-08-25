@@ -70,6 +70,42 @@ distinct advertiser names in the results, not just the count.
 - Search state is a POST, not a URL parameter, so a search cannot be linked or reloaded.
 - No login required.
 
+### The EU disclosure trick, highest-value technique on this source
+
+Most guides state that LinkedIn never shows targeting. **That is wrong.** For any ad
+**served in the EU**, the detail page additionally discloses:
+
+- **Exact run dates** — "Ran from Aug 10, 2026 to Aug 24, 2026"
+- **Total impressions band** — e.g. "< 1k"
+- **Impressions by country with percentages** — e.g. United States 97%, Ukraine 2%,
+  Greece 1%
+- **Ad Targeting** — a Targeted/Excluded table across Audience, Demographic, Company,
+  Education, Job, and Member Interests and Traits, plus Language and Location
+
+This is DSA-driven, so it applies only to EU-delivered ads. US-only ads show none of it,
+which is why `impr` is legitimately "Not disclosed" for most US creative.
+
+**Find the EU-served subset with the `countries=` parameter:**
+
+```
+/ad-library/search?accountOwner=Formlabs&countries=DE,FR,NL,IT,ES,IE,SE,PL
+```
+
+Then open each result and capture impressions, country split, run dates and targeting.
+
+**Run this every scan.** The EU-served count is itself a finding:
+
+| Competitor | EU-served | Of total | Read |
+|---|---|---|---|
+| Formlabs | 1 | 38 | Effectively US-only |
+| HP Additive | 2 | 36 | Effectively US-only |
+
+Both competitors are fighting the LinkedIn war almost entirely in the United States.
+
+`countries=` also works as a straightforward geographic filter, and the Date filter
+covers up to 12 months, which can be used to isolate genuinely new launches instead of
+relying only on a diff against our own prior run.
+
 ## Meta Ad Library
 
 Keyword search, not advertiser search: `Multi Jet Fusion`, `HP 3D printing`,
