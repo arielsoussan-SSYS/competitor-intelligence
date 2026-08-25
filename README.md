@@ -1,102 +1,103 @@
-# HP Ad Intelligence Dashboard
+# Competitive Ad Intelligence
 
-Live competitive ad tracking for Stratasys additive manufacturing. **HP Additive Manufacturing only.**
+Weekly competitive advertising intelligence for Stratasys additive manufacturing, built
+for the sales team.
 
 **Live dashboard:** https://arielsoussan-ssys.github.io/competitor-intelligence/
 
-> **Scope change, Aug 10 2026:** Formlabs and Bambu Lab were removed from this tracker. Prior multi-competitor comparison tabs were replaced by HP-over-time views. The `competitive-ad-scrape` skill was rewritten to match.
+Tracks what competitors are advertising across LinkedIn, Meta, and Google, diffs each run
+against the last, and publishes a dashboard plus a one-page sales brief. Every output
+answers "what do I do with this on a call."
 
-## What's Inside
+## How it is put together
 
-Single-file HTML dashboard (no backend, no build step).
+```
+data/                       # the asset: one JSON file per competitor per run
+tools/build_dashboard.py    # renders index.html from the latest run file
+index.html                  # published dashboard (generated, do not hand-edit)
+briefs/                     # one-page sales brief per run
+.claude/skills/             # the competitive-ad-scrape skill that runs the whole thing
+```
 
-**Pinned at the top, above everything else:**
+**Data is separate from presentation.** Until Aug 2026 the dataset lived inside
+`index.html` as a JavaScript object, which made the published page the only copy, forced
+each run to scrape its own dashboard to find the baseline, and put the history at risk
+on every render change. Run files are now the asset and the dashboard is a view of them.
 
-- **Key Headline This Week** plus a one-line "so what" for Stratasys
-- **What Changed This Week at HP** in four fixed categories: ad-level changes, company/market moves, messaging/positioning shift, landing page/funnel changes. Every entry carries a source link.
+Rebuild the dashboard after editing a data file:
 
-**Tabs:**
+```bash
+python3 tools/build_dashboard.py
+```
 
-- **Dashboard** - KPI cards, four Chart.js visualizations (theme mix, format mix, funnel distribution, estimated spend by theme), plus a table of creatives dropped since the last run
-- **Ad Log** - 18 unique HP creatives across 17 fields. Searchable. New-this-week creatives flagged.
-- **Messaging Themes** - Theme, creative count, live instances, sample headline, funnel position, and which buying committee role each theme addresses
-- **HP Watch** - Product, the MJF 1200 Early Access mechanic, drones/UAV/defense, earnings and exec, channel, competitive field, and an explicit unverified/refuted section
-- **Collection Notes** - Methodology, spend estimation, known limitations
+## Running a scan
 
-## Data Sources
+The skill lives in `.claude/skills/competitive-ad-scrape/`. From a Claude Code session in
+this repo, say **"scrape competitor ads"**, "update ad intelligence", or "HP ad watch".
 
-| Source | What We Capture | Current state |
+Claude reads the previous run from `data/`, collects from all three ad libraries, dedupes
+and reconciles the counts, diffs against the baseline, writes a new run file, rebuilds
+the dashboard and the sales brief, runs the verification gate, and pushes.
+
+Because the skill is committed here, it is backed up, portable to any machine, and
+available to Claude Code cloud routines, which run skills from the cloned repository.
+
+## Coverage
+
+| Tier | Competitors | Depth |
 |---|---|---|
-| [LinkedIn Ad Library](https://www.linkedin.com/ad-library/) | Ads, impression ranges, formats, CTAs | 37 live instances, 18 unique creatives |
-| [Meta Ad Library](https://www.facebook.com/ads/library/) | Active ads by keyword | Zero HP-owned ads. Recorded as a finding. |
-| [Google Ads Transparency](https://adstransparency.google.com/) | Ad counts, formats, landing pages | ~50K on hp.com, AM not isolable from parent entity |
+| 1 | HP Additive Manufacturing | Full ad log, Watch, diff, company research |
+| 2 | 3D Systems, Formlabs, Bambu Lab | Ad log and diff |
+| 3 | Drone Gauntlet field, UxS suppliers | Account penetration watch, no ad scraping |
 
-HP Watch is sourced from trade press, HP newsroom, HP landing pages, and investor calls.
+Tier 3 answers a sales question rather than a marketing one: **which companies we want to
+sell into does a competitor already have a foothold in?** Accounts carry a displacement
+posture of `Open`, `Contested`, or `Locked`. Contested accounts surface into every brief.
 
-## Weekly Change Detection
+## Data sources
 
-Each run diffs against the previous run's dataset, matching on headline plus platform:
-
-- Present now, absent before = **new**
-- Present before, absent now = **dropped or paused**
-- Changed CTA, format, or spend band = **changed**
-
-Company-level moves are researched over the trailing 7 days only. Claims without a direct source are labelled `[Unverified]` or `[Inference]`.
-
-## Spend Estimation
-
-Directional estimates, not verified actuals. Do not present as HP's real budget.
-
-- LinkedIn: impression range midpoint x B2B CPM ($30-$80)
-- Google Search: estimated impressions x CPC ($1-$5)
-- Google Display: estimated impressions x CPM ($5-$15)
-- Meta: estimated reach x CPM ($10-$30)
-
-## Deduplication Rule
-
-One Ad Log row = one unique creative. LinkedIn serves the same creative as multiple separate library entries; instance counts live in the Notes column. Instance totals and unique-creative totals are reported separately because they are not interchangeable.
-
-## Updating the Dashboard
-
-A Cowork skill (`competitive-ad-scrape`) automates the full run. In any Claude Cowork session:
-
-> "scrape competitor ads" or "update ad intelligence" or "HP ad watch"
-
-Claude re-scrapes all three ad libraries, refreshes HP Watch, diffs against the prior run, and regenerates both the dashboard and `hp-ad-intelligence.xlsx`.
-
-To deploy: replace `index.html` in this repo (Add file > Upload files > Commit), or commit from your local clone.
-
-## Tech Stack
-
-- Single HTML file, one dependency: [Chart.js CDN](https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js)
-- GitHub Pages
-- Data embedded as a JavaScript object. No database, no API calls, no browser storage.
-
-## Current Snapshot (Aug 10 2026)
-
-| Metric | This week | Baseline Aug 4 |
+| Source | What we capture | Reality |
 |---|---|---|
-| Unique creatives | 18 | 14 |
-| Live ad instances | 37 | not recorded |
-| New creatives | 4 | - |
-| Dropped creatives | 3 | - |
-| Drone / UAV share of ad volume | 38% (14 of 37) | 3 of 14 creatives |
-| Est monthly spend | $35K-$94K | $26K-$68K |
+| [LinkedIn Ad Library](https://www.linkedin.com/ad-library/) | Creatives, impression bands, formats, CTAs | Primary source. The only reliable creative-level data. |
+| [Meta Ad Library](https://www.facebook.com/ads/library/) | Active ads by keyword | Zero HP-owned ads. Recorded as a finding, not a failure. |
+| [Google Ads Transparency](https://adstransparency.google.com/) | Ad counts, formats, landing pages | Not isolable by business unit. Real signal is `jumpid` campaign codes on trade-site banners. |
+
+Company intelligence comes from trade press, newsrooms, landing pages, and investor calls.
+
+## Rules that keep the numbers honest
+
+- **One row equals one unique creative.** LinkedIn serves the same creative as many
+  library entries. Unique creatives and live instances are reported separately, always.
+- **Spend is a directional `[Estimate]`**, never a competitor's real budget. Impression
+  figures are bands, so midpoint arithmetic compounds error.
+- **Absence of evidence is not evidence of absence.** "Not found in search", never "none".
+- **Labels are mandatory:** `[Inference]` for reasoning, `[Unverified]` for uncorroborated
+  claims, `[validation-needed]` for anything sales-facing that is not proven.
+- The verification gate reconciles theme, format, and funnel instance counts against the
+  reported platform total before anything publishes. It has caught real errors.
+
+## Current snapshot
+
+Run 2026-08-18, baseline 2026-08-10, HP Additive Manufacturing.
+
+| Metric | This run | Baseline |
+|---|---|---|
+| Unique creatives | 18 | 18 |
+| Live instances | 36 | 37 |
+| New / dropped | 1 / 1 | - |
+| Drone share of volume | 39% (14 of 36) | 38% (14 of 37) |
+| Est monthly spend | $35-94K `[Estimate]` | $35-94K |
 | Platforms in use | LinkedIn only | LinkedIn only |
 
-**Headline:** HP added two new drone creatives this week. Drone and UAV work is now 38% of HP's live LinkedIn ad volume.
+**Headline:** HP held steady on volume. The drone share increase is a denominator effect,
+not growth: the absolute drone count did not move.
 
-## Repository Structure
+## Tech
 
-```
-index.html          # The complete dashboard (self-contained)
-README.md           # This file
-```
-
-## License
-
-Internal use, Stratasys marketing team.
+Single self-contained HTML file, one dependency (Chart.js from CDN), GitHub Pages. No
+backend, no build step for viewers, no browser storage. Dark and light themes follow the
+reader's system setting.
 
 ---
 
-Built with Claude Cowork | Data: August 10, 2026 | Next refresh: Monday August 17, 2026
+Internal use, Stratasys marketing and sales.

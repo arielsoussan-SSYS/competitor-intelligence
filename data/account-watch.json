@@ -1,0 +1,32 @@
+{
+  "purpose": "Companies Stratasys wants to sell into, where a competitor may already have a foothold. This is a sales target list ordered by displacement difficulty, not a competitor roster.",
+  "last_researched": "2026-08-24",
+  "segments": [
+    {
+      "segment": "Drone Dominance Gauntlet - Phase 2",
+      "population": 19,
+      "why_it_matters": "A pre-qualified list of 19 companies actively building drones at production intent. Every one is a Stratasys prospect. Intelligence indicates HP is supporting 14 of them [validation-needed]. If true, HP is buying ecosystem position ahead of the advertising, and the ad scan alone would never have surfaced it.",
+      "accounts": [
+        {
+          "account": "EXAMPLE - one object per company as they surface",
+          "competitor_presence": null,
+          "evidence_type": null,
+          "evidence_url": null,
+          "confidence": "[Unverified]",
+          "stratasys_relationship": null,
+          "displacement_posture": null,
+          "notes": "evidence_type: sponsorship / equipment supply / co-marketing / named customer / case study. displacement_posture: Open (no incumbent), Contested (competitor present, not locked), Locked (equipment installed and validated)."
+        }
+      ]
+    },
+    {
+      "segment": "HP named drone partners",
+      "why_it_matters": "Named in HP's own live creative, so competitor presence is confirmed, not inferred. Hardest to displace, but the most useful for understanding what HP promises and where it is vulnerable.",
+      "accounts": [
+        { "account": "Blueflite", "competitor_presence": "HP", "evidence_type": "named customer", "confidence": "Confirmed", "notes": "25% weight cut across 48 printed parts, per HP creative." },
+        { "account": "Unusual Machines", "competitor_presence": "HP", "evidence_type": "case study", "confidence": "Confirmed", "notes": "FPV, domestic production. Adopted MJF Aug 2024." },
+        { "account": "Firestorm Labs", "competitor_presence": "HP", "evidence_type": "named customer", "confidence": "Confirmed", "notes": "MJF in 20-foot mobile containers." }
+      ]
+    }
+  ]
+}
