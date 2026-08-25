@@ -371,5 +371,6 @@
     "Bottom": 1,
     "Mid": 5
   },
-  "bucket_basis": "Counts are live LinkedIn ad instances, not unique creatives. The same creative is served as multiple library entries."
+  "bucket_basis": "Counts are live LinkedIn ad instances, not unique creatives. The same creative is served as multiple library entries.",
+  "count_unit": "Live LinkedIn instances"
 }

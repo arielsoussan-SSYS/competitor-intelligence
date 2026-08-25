@@ -227,6 +227,8 @@ canvas{max-height:270px}
  border:1px solid rgba(168,100,0,.24);font-size:13px;line-height:1.55;color:var(--ink);margin-bottom:10px}
 .hook b{color:var(--amber)}
 .gnote{font-size:12.4px;line-height:1.6;color:var(--ink3);margin:0}
+.empty{margin:0;padding:26px 20px;border-radius:14px;background:rgba(16,23,37,.035);
+ border:1px dashed rgba(16,23,37,.16);font-size:13px;line-height:1.6;color:var(--ink3);text-align:center}
 .empty{padding:44px 26px;text-align:center}
 .empty h3{font-size:17px;font-weight:660;margin-bottom:8px}
 .empty p{font-size:14px;color:var(--ink2);max-width:56ch;margin:0 auto 6px;line-height:1.6}
@@ -350,10 +352,10 @@ footer b{color:var(--ink2)}
 <section class="panel" id="p-charts">
   <p class="cap" id="chartBasis" style="margin:16px 0 0"></p>
   <div class="grid g2">
-    <div class="glass card"><h3>Theme mix</h3><p class="cap">Live instances by campaign theme</p><canvas id="c1"></canvas></div>
-    <div class="glass card"><h3>Format mix</h3><p class="cap">Live instances by creative format</p><canvas id="c2"></canvas></div>
-    <div class="glass card"><h3>Funnel distribution</h3><p class="cap">Where they are spending in the buying cycle</p><canvas id="c3"></canvas></div>
-    <div class="glass card"><h3>Estimated spend by theme</h3><p class="cap">Low and high monthly bands. Directional only.</p><canvas id="c4"></canvas></div>
+    <div class="glass card"><h3>Theme mix</h3><p class="cap" id="cap1">By campaign theme</p><canvas id="c1"></canvas><p class="empty" id="e1" hidden></p></div>
+    <div class="glass card"><h3>Format mix</h3><p class="cap" id="cap2">By creative format</p><canvas id="c2"></canvas><p class="empty" id="e2" hidden></p></div>
+    <div class="glass card"><h3>Funnel distribution</h3><p class="cap" id="cap3">Where they are spending in the buying cycle</p><canvas id="c3"></canvas><p class="empty" id="e3" hidden></p></div>
+    <div class="glass card"><h3>Estimated spend by theme</h3><p class="cap">Low and high monthly bands. Directional only.</p><canvas id="c4"></canvas><p class="empty" id="e4" hidden></p></div>
   </div>
 </section>
 
@@ -493,29 +495,43 @@ function drawCharts(){
   if(drawnFor===cur) return; drawnFor=cur;
   charts.forEach(c=>c.destroy()); charts=[];
   const D=CO[cur];
+  const unit=D.count_unit||"Live instances";
+  if($("cap1"))$("cap1").textContent=unit+" by campaign theme";
+  if($("cap2"))$("cap2").textContent=unit+" by creative format";
+  if($("cap3"))$("cap3").textContent=unit+", where they are spending in the buying cycle";
   const PAL=["#c8102e","#1f3864","#2e7d4f","#d9a600","#1f6fb8","#d9701f","#7b5ea7","#4a5464"];
   const grid="rgba(16,23,37,.08)";
   Chart.defaults.font.family="-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif";
   Chart.defaults.color="#414b60"; Chart.defaults.borderColor=grid;
   const base={responsive:true,maintainAspectRatio:false,scales:{x:{grid:{color:grid}},y:{grid:{color:grid}}}},
         noL={plugins:{legend:{display:false}}};
-  const mk=(id,cfg)=>{const el=$(id); if(el) charts.push(new Chart(el,cfg));};
+  const mk=(id,cfg,emptyMsg)=>{
+    const el=$(id), note=$("e"+id.slice(1));
+    const vals=(cfg.data.datasets||[]).flatMap(d=>d.data||[]);
+    const has=vals.length&&vals.some(v=>v>0);
+    if(note){note.hidden=has; if(!has) note.textContent=emptyMsg||"No data for this competitor.";}
+    if(el){el.style.display=has?"":"none"; if(has) charts.push(new Chart(el,cfg));}
+  };
   const th=Object.entries(D.themes||{}).sort((a,b)=>b[1]-a[1]);
   mk("c1",{type:"bar",data:{labels:th.map(x=>x[0]),datasets:[{data:th.map(x=>x[1]),
-    backgroundColor:th.map((_,i)=>i?PAL[1]:PAL[0]),borderRadius:7}]},options:{...base,...noL,indexAxis:"y"}});
+    backgroundColor:th.map((_,i)=>i?PAL[1]:PAL[0]),borderRadius:7}]},options:{...base,...noL,indexAxis:"y"}},
+    D.theme_gap||"No theme breakdown for this competitor this run. This is a declared gap, not a zero.");
   const fm=Object.entries(D.formats||{}).sort((a,b)=>b[1]-a[1]);
   mk("c2",{type:"doughnut",data:{labels:fm.map(x=>x[0]),datasets:[{data:fm.map(x=>x[1]),
     backgroundColor:PAL,borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:"62%",
-    plugins:{legend:{position:"right",labels:{boxWidth:11,usePointStyle:true,pointStyle:"circle"}}}}});
+    plugins:{legend:{position:"right",labels:{boxWidth:11,usePointStyle:true,pointStyle:"circle"}}}}},
+    "No format breakdown collected this run.");
   const O=["Top","Mid","Bottom","n/a"],fu=Object.entries(D.funnels||{}).sort((a,b)=>O.indexOf(a[0])-O.indexOf(b[0]));
   mk("c3",{type:"bar",data:{labels:fu.map(x=>x[0]),datasets:[{data:fu.map(x=>x[1]),
-    backgroundColor:PAL[1],borderRadius:7}]},options:{...base,...noL}});
+    backgroundColor:PAL[1],borderRadius:7}]},options:{...base,...noL}},
+    "No funnel breakdown collected this run.");
   const sp={}; (D.ads||[]).forEach(a=>{const k=a.theme;sp[k]=sp[k]||[0,0];sp[k][0]+=a.lo||0;sp[k][1]+=a.hi||0;});
   const se=Object.entries(sp).sort((a,b)=>b[1][1]-a[1][1]);
   mk("c4",{type:"bar",data:{labels:se.map(x=>x[0]),datasets:[
     {label:"Low",data:se.map(x=>x[1][0]),backgroundColor:PAL[1],borderRadius:6},
     {label:"High",data:se.map(x=>x[1][1]),backgroundColor:PAL[0],borderRadius:6}]},
-    options:{...base,plugins:{legend:{position:"top",labels:{boxWidth:11,usePointStyle:true,pointStyle:"circle"}}}}});
+    options:{...base,plugins:{legend:{position:"top",labels:{boxWidth:11,usePointStyle:true,pointStyle:"circle"}}}}},
+    "No ad-level spend estimate: spend bands are only modelled for LinkedIn creatives, and this competitor has none.");
 }
 
 /* ---- section switching ---- */

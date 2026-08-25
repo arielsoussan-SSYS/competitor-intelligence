@@ -617,5 +617,6 @@
     "Hero Gauntlet as an HP partnership. An Open Bionics product made with MJF. No HP co-marketing announcement exists.",
     "HP supporting 14 of 19 Drone Dominance Gauntlet Phase 2 teams. Internal intelligence, not independently corroborated."
   ],
-  "bucket_basis": "Counts are live LinkedIn ad instances, not unique creatives. The same creative is served as multiple library entries."
+  "bucket_basis": "Counts are live LinkedIn ad instances, not unique creatives. The same creative is served as multiple library entries.",
+  "count_unit": "Live LinkedIn instances"
 }
