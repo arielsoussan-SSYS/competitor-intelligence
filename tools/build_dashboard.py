@@ -33,6 +33,8 @@ for s, d in C.items():
     if d.get("status") == "pending":
         continue
     tot = {k: sum(d.get(k, {}).values()) for k in ("themes", "formats", "funnels")}
+    # an empty bucket is a declared gap, not a disagreement; only compare populated ones
+    tot = {k: v for k, v in tot.items() if v}
     if len(set(tot.values())) > 1:
         print("WARN %s: instance buckets disagree %s" % (s, tot), file=sys.stderr)
 
@@ -326,7 +328,7 @@ footer b{color:var(--ink2)}
 
 <section class="panel" id="p-ads">
   <div class="glass card"><h3>Ad Log</h3>
-    <p class="cap">One row per unique creative. The same creative is served as multiple library entries; instance counts are in Notes.</p>
+    <p class="cap" id="adCap">One row per unique creative. The same creative is served as multiple library entries; instance counts are in Notes.</p>
     <div class="tools"><input class="search" id="q" placeholder="Search headline, theme, audience, landing page..." autocomplete="off"></div>
     <div class="scroll"><table><thead><tr><th>Status</th><th>Theme</th><th>Headline / hook</th><th>Format</th>
       <th>CTA</th><th>Funnel</th><th>Impr</th><th>Est $/mo</th><th>Audience</th><th>Notes</th></tr></thead>
@@ -346,6 +348,7 @@ footer b{color:var(--ink2)}
 </section>
 
 <section class="panel" id="p-charts">
+  <p class="cap" id="chartBasis" style="margin:16px 0 0"></p>
   <div class="grid g2">
     <div class="glass card"><h3>Theme mix</h3><p class="cap">Live instances by campaign theme</p><canvas id="c1"></canvas></div>
     <div class="glass card"><h3>Format mix</h3><p class="cap">Live instances by creative format</p><canvas id="c2"></canvas></div>
@@ -464,10 +467,14 @@ function rows(f){
     (a.url?'<a class="src" href="'+e(a.url)+'" target="_blank" rel="noopener">'+e(a.headline)+"</a>":e(a.headline))+
     "</td><td>"+e(a.format)+"</td><td>"+e(a.cta)+'</td><td><span class="f">'+e(a.funnel)+"</span></td><td>"+
     e(a.impr)+"</td><td>"+money(a)+"</td><td>"+e(a.audience)+"</td><td>"+e(a.notes)+"</td></tr>";}).join("")
-    ||'<tr><td colspan="10">No creatives match.</td></tr>';
+    ||'<tr><td colspan="10">'+((D.ads||[]).length===0&&D.sources&&D.sources.linkedin&&D.sources.linkedin.checked
+        ?"<b>Zero owned creatives found, and that is the finding.</b> "+e(D.sources.linkedin.note)
+        :"No creatives match.")+'</td></tr>';
   const li=D.sources&&D.sources.linkedin;
   $("count").textContent=r.length+" of "+(D.ads||[]).length+" unique creatives shown."+
     (li&&li.live_instances!=null?" "+li.live_instances+" live instances total.":"");
+  const cb=$("chartBasis");
+  if(cb) cb.textContent = D.bucket_basis || "Counts are live LinkedIn ad instances, not unique creatives.";
   const pa=(D.partner_ads||[]);
   $("partnerCard").hidden=!pa.length;
   $("prows").innerHTML=pa.map(x=>"<tr><td class='hl'>"+e(x.advertiser)+"</td><td><span class='f'>"+

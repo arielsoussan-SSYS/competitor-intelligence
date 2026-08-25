@@ -3,22 +3,256 @@
   "slug": "bambulab",
   "run_date": "2026-08-25",
   "baseline_date": null,
-  "week_label": "Not yet collected",
-  "status": "pending",
-  "why_tracked": "Prosumer disruption pressing up into professional, with drone hobbyist crossover.",
-  "headline": "Bambu Lab is tracked at Tier 2 but has not been scanned yet.",
-  "so_what": "Reinstated to the tracker on Aug 25 2026 after being removed on Aug 10. The first scan will establish the baseline. Nothing here is real data until then.",
-  "sources": {},
-  "kpis": [],
-  "changes": [],
+  "week_label": "Baseline run, week of Aug 25 2026",
+  "status": "scanned",
+  "why_tracked": "Largest 3D printing company in the world by unit volume, now pushing up from prosumer into the professional and departmental FDM market we own.",
+  "headline": "Bambu Lab runs zero LinkedIn advertising and roughly 3,000 Google ads. It is a consumer performance-marketing company moving into our market with a $3,799 enterprise printer.",
+  "so_what": "Do not benchmark our LinkedIn programme against Bambu, because they do not have one. The threat is not their marketing, it is their price and volume. Against that, NDAA FY2026 sections 849 and 880 shut them out of defense entirely, which turns every Bambu printer on a defense floor into a forced replacement and a pipeline source for us.",
+  "sources": {
+    "linkedin": {
+      "checked": true,
+      "unique_creatives": 0,
+      "live_instances": 0,
+      "note": "Zero owned ads. Advertiser search returned 'No results found' for Bambu Lab, BambuLab, Bambu Lab US, Bambu Japan and Tuozhu. Control test on the same method returned 38 for Formlabs, so the method is sound and the zero is real. Separately, a keyword search for 'Bambu Lab' returns 75 ads from 45 unique third-party advertisers, none of them Bambu-owned."
+    },
+    "meta": {
+      "checked": false,
+      "note": "Out of scope this run by request. Not checked. This is not a zero result."
+    },
+    "google": {
+      "checked": true,
+      "note": "~3K ads pointing at bambulab.com across three verified advertiser accounts. Own account 深圳拓竹科技有限公司 (Shenzhen Tuozhu Technology, China) carries ~2K ads, exact format counts 700 Text / 600 Image / 400 Video = 1,700. BAMBU JAPAN K.K. carries 400. The third account, Sinointeractive Digital Marketing Co., Ltd. (Hong Kong), is an agency whose own page shows ~100K ads across all its clients: that figure is NOT Bambu's and must never be quoted as such."
+    }
+  },
+  "kpis": [
+    {
+      "label": "LinkedIn owned ads",
+      "value": "0",
+      "delta": "Verified against 5 name variants, control passed",
+      "dir": "flat"
+    },
+    {
+      "label": "Google ads, own account",
+      "value": "1,700",
+      "delta": "700 Text / 600 Image / 400 Video",
+      "dir": "flat"
+    },
+    {
+      "label": "Google ads, all Bambu entities",
+      "value": "~2,100",
+      "delta": "Shenzhen Tuozhu + BAMBU JAPAN K.K.",
+      "dir": "flat"
+    },
+    {
+      "label": "Third-party LinkedIn mentions",
+      "value": "75 ads / 45 advertisers",
+      "delta": "Earned advocacy, not paid by Bambu",
+      "dir": "up"
+    },
+    {
+      "label": "Defense addressable market",
+      "value": "Zero",
+      "delta": "NDAA FY2026 s849 and s880",
+      "dir": "down"
+    },
+    {
+      "label": "Reported valuation",
+      "value": "~$10B",
+      "delta": "Tencent round reported, [Unverified]",
+      "dir": "up"
+    }
+  ],
+  "changes": [
+    {
+      "cat": "Ad-level",
+      "items": [
+        {
+          "t": "Bambu Lab buys no LinkedIn advertising at all.",
+          "d": "Advertiser search returned zero across every entity name tested: Bambu Lab, BambuLab, Bambu Lab US, Bambu Japan, Tuozhu. A control search on the identical method returned 38 for Formlabs, so this is a real zero and not a broken query. For a company of this size that is a deliberate channel choice, not an oversight.",
+          "u": "https://www.linkedin.com/ad-library/search?accountOwner=Bambu+Lab"
+        },
+        {
+          "t": "Their LinkedIn presence is entirely earned, and it is substantial.",
+          "d": "75 ads from 45 unique third-party advertisers reference Bambu Lab: service bureaus (Weerg, FKM Additive Manufacturing), filament vendors (3DXTECH), German and Polish AM consultants, universities and event organisers. One is a Belgrade event built around the H2D Pro. Other people pay to talk about their printers. That is a marketing position we cannot buy.",
+          "u": "https://www.linkedin.com/ad-library/search?keyword=Bambu%20Lab"
+        },
+        {
+          "t": "Google is the whole paid programme, and it is consumer-shaped.",
+          "d": "1,700 exactly-counted ads on the Shenzhen Tuozhu account: 41% Text, 35% Image, 24% Video. Heavy display and video weighting is a consumer performance-marketing mix, not a B2B account-based one. Compare with Formlabs at 106 ads and 83% Text.",
+          "u": "https://adstransparency.google.com/advertiser/AR05671717087047843841?region=anywhere&hl=en"
+        },
+        {
+          "t": "They run paid media through an outsourced Hong Kong agency.",
+          "d": "Sinointeractive Digital Marketing Co., Ltd. is a verified advertiser with ads pointing at bambulab.com. Its account carries ~100K ads across its entire client book. [Inference] Bambu outsources a meaningful share of paid acquisition rather than running it in house, which is consistent with having no B2B field marketing function.",
+          "u": "https://adstransparency.google.com/advertiser/AR05226884764400615425?region=anywhere&hl=en"
+        }
+      ]
+    },
+    {
+      "cat": "Company / market",
+      "items": [
+        {
+          "t": "Bambu Lab is now the largest 3D printing company in the world by volume.",
+          "d": "2024: roughly 6B RMB revenue, about 1.2 million units shipped, roughly 29% of the global consumer 3D printer market. 2025: revenue above 10B RMB. Trade press describes them as having surpassed the old guard including Stratasys and 3D Systems on scale. [Unverified] as company financials are not audited or public.",
+          "u": "https://www.chinamoneynetwork.com/2026/08/14/bambu-lab-the-rise-of-a-3d-printer-powerhouse-in-china"
+        },
+        {
+          "t": "Capacity is being built for more than 3 million units a year.",
+          "d": "2026 agreement with the Guangming District of Shenzhen to build a 3D printing intelligent manufacturing headquarters base. That is roughly 2.5x their 2024 shipment volume.",
+          "u": "https://www.chinamoneynetwork.com/2026/08/14/bambu-lab-the-rise-of-a-3d-printer-powerhouse-in-china"
+        },
+        {
+          "t": "Backed by Tencent, Temasek, IDG Capital and 5Y Capital at a reported ~$10B valuation.",
+          "d": "Confirmed 2023 round included Temasek, True Light Capital, 5Y Capital and Mingshi Investment Management. Tencent participation in a newer round at roughly $10B is reported but was not confirmed by either party. [Unverified].",
+          "u": "https://kr-asia.com/bambu-lab-nears-usd-100-billion-valuation-as-tencent-eyes-new-investment"
+        }
+      ]
+    },
+    {
+      "cat": "Messaging / positioning",
+      "items": [
+        {
+          "t": "The H2D Pro is an explicit move into our departmental FDM territory.",
+          "d": "$3,799, dual nozzle, 350C nozzle, active heated chamber to 65C, WPA2-Enterprise Wi-Fi and Ethernet, sold exclusively through resellers and positioned for departmental or shared-services use. Trade press assessment is blunt: it should be a real threat to Ultimaker and Stratasys and could displace us in a lot of offices.",
+          "u": "https://3dprint.com/319916/bambu-lab-launches-h2d-pro-targets-the-enterprise/"
+        },
+        {
+          "t": "The product ladder is built to walk buyers upward.",
+          "d": "H2D announced March 2025 as an all-in-one FDM plus laser plus cutting plotter. H2S at $1,249 in August 2025. H2D Pro at $3,799 for enterprise. Each step keeps the same ecosystem and slicer, so switching cost compounds at the low end before the buyer ever evaluates us.",
+          "u": "https://3dprint.com/320284/bambu-lab-launches-h2s-at-1249-exploring-the-strategy-behind-its-price-and-positioning/"
+        },
+        {
+          "t": "Creative-level messaging could not be extracted this run.",
+          "d": "Google Ads Transparency Center renders ad creative inside cross-origin iframes, which cannot be read programmatically, and the sampled creatives did not paint. Theme taxonomy for Bambu is therefore an open gap, deliberately left empty rather than guessed. Next run: sample creatives by screenshot.",
+          "u": "https://adstransparency.google.com/advertiser/AR05671717087047843841?region=anywhere&hl=en"
+        }
+      ]
+    },
+    {
+      "cat": "Channel / funnel",
+      "items": [
+        {
+          "t": "NDAA FY2026 removes Bambu from defense entirely. This is the single most important fact on this page.",
+          "d": "Section 880 prohibits any agency from operating, entering into or renewing a contract for additive manufacturing machines manufactured in, using software developed in, or networked through China, Russia, Iran or North Korea. Section 849 bars DoD contracting for covered AM machines, effective one year after enactment. Bambu is exposed on all three limbs: Chinese manufacture, Chinese-developed software, and cloud connectivity.",
+          "u": "https://www.tctmagazine.com/ndaa-dod-prohibited-from-using-or-procuring-additive-manufacturing-systems-made-or-networked-through-china-russia-iran-north-korea/"
+        },
+        {
+          "t": "Defense contractors are already ripping Bambu printers out.",
+          "d": "Reported cases of organisations scrapping Chinese-manufactured printers to reach compliance, with Bambu named as the common incumbent. Every Bambu machine on a defense or Tier-1 supplier floor is now a forced replacement. That is a pipeline source, not a threat.",
+          "u": "https://pivotam.com/uncategorized/how-the-ndaa-is-forcing-defense-contractors-to-replace-chinese-often-bambu-3d-printers/"
+        },
+        {
+          "t": "Their cloud authorization architecture makes the networking limb worse, not better.",
+          "d": "Authorization Control routes print operations through Bambu Connect, and print data including file names, print settings and camera feeds passes through Bambu cloud infrastructure. Bambu launched a Trust Center in response to the backlash. For a defense buyer reading Section 880's networking clause, a Trust Center does not solve a jurisdiction problem.",
+          "u": "https://3dprintingindustry.com/news/bambu-lab-controversy-deepens-firmware-update-sparks-backlash-240588/"
+        },
+        {
+          "t": "H2D Pro is reseller-exclusive, which means it lands through the same channel that sells us.",
+          "d": "Expect distributors carrying both lines to lead with the $3,799 machine on price for departmental evaluations. Channel conflict, not advertising, is where this competition actually happens.",
+          "u": "https://bambulab.com/en-us/h2d-pro"
+        }
+      ]
+    }
+  ],
   "dropped": [],
-  "talk_track": [],
-  "exposure": [],
-  "watch": [],
-  "unverified": [],
   "theme_detail": [],
+  "talk_track": [
+    {
+      "claim": "\"The H2D Pro does engineering materials at $3,799. Why would we spend ten times that?\"",
+      "counter": "If the parts never leave the building and never touch a regulated programme, that is a fair question and sometimes the honest answer is that they should buy it. Where it breaks is repeatability across machines and sites, documented material properties, and any customer or auditor who asks how the part was qualified. Ask what happens when the design is approved on one machine and has to be produced on six.",
+      "tag": "Pricing"
+    },
+    {
+      "claim": "\"Bambu is the biggest 3D printing company in the world now.\"",
+      "counter": "By unit volume, yes, and it is not close. That is a consumer market statistic. 1.2 million units at roughly 29% share of the consumer segment tells you nothing about qualified production parts. Agree with the fact, then move the frame to what the units are used for.",
+      "tag": "Scale"
+    },
+    {
+      "claim": "\"We already run Bambu printers and they work fine.\"",
+      "counter": "For any defense, DoD-contracting or Tier-1 supplier account this is now a compliance conversation, not a preference one. NDAA FY2026 Section 880 bars agencies from operating AM machines manufactured in, running software developed in, or networked through a covered country. Section 849 bars DoD contracting for them. Ask who has reviewed their floor against it. Bring the sections, not an opinion.",
+      "tag": "Compliance"
+    },
+    {
+      "claim": "\"Their cloud is fine, they published a Trust Center.\"",
+      "counter": "The Trust Center addresses security practice. Section 880's networking limb is about jurisdiction, not practice. Print data including file names, settings and camera feeds transiting infrastructure in a covered country is the issue, and no amount of documentation changes where the servers are.",
+      "tag": "Compliance"
+    },
+    {
+      "claim": "\"Everyone in the industry is talking about Bambu.\"",
+      "counter": "True, and worth understanding honestly. They buy zero LinkedIn advertising. 45 separate third-party advertisers pay to talk about their printers. That is an earned position built on product, and we should study it rather than dismiss it. It is also irrelevant to a qualification decision.",
+      "tag": "Brand"
+    }
+  ],
+  "exposure": [
+    "Departmental and office FDM. The H2D Pro at $3,799 with a 350C nozzle and a 65C active heated chamber is aimed squarely at the shared-services printer we have historically owned, and it is sold through resellers who also carry us.",
+    "The bottom of the funnel we no longer contest. Buyers now arrive having already used a Bambu machine at home or in a lab. The evaluation starts from their ergonomics and their price expectation.",
+    "Earned advocacy. 45 third-party advertisers promote Bambu on LinkedIn without Bambu paying for it. We spend to be talked about; they are talked about for free.",
+    "Scale economics. Capacity being built for 3M+ units a year against our unit volumes means their component costs will keep falling faster than ours."
+  ],
+  "watch": [
+    {
+      "h": "Stratasys v. Bambu Lab litigation",
+      "b": "This is our own live litigation, so treat it as legally sensitive and do not let reps freelance on it. Status: PTAB rulings on the contested patents expected mid-2026, with Bambu reported to lead 3-1 on its challenges. US consolidated case in Texas has a jury trial expected next June. On Apr 24 2026 the Unified Patent Court in The Hague dismissed our emergency bid to block the H2C in Europe, which was a provisional-measure ruling only and not a decision on infringement or validity. Route all customer questions to Legal.",
+      "u": "https://3dprintingindustry.com/news/stratasys-vs-bambu-lab-lawsuit-update-inside-ams-silent-legal-showdown-243862/"
+    },
+    {
+      "h": "NDAA Section 849 effective date",
+      "b": "Effective one year after enactment. Confirm the exact date with Legal, then build the replacement campaign against it. This is a dated, mandatory displacement event and it is the best pipeline trigger in the tracker.",
+      "u": "https://www.kslaw.com/news-and-insights/fy-2026-ndaa-domestic-sourcing-artificial-intelligence-cybersecurity-and-acquisition-reforms"
+    },
+    {
+      "h": "Whether Bambu ever starts buying B2B media",
+      "b": "Zero LinkedIn spend today. If that changes it signals a genuine enterprise go-to-market, not just an enterprise SKU. Re-run the advertiser search every cycle: it is a five-minute check with a high-value answer.",
+      "u": "https://www.linkedin.com/ad-library/search?accountOwner=Bambu+Lab"
+    },
+    {
+      "h": "H2D Pro reseller penetration",
+      "b": "Reseller-exclusive distribution means our own channel partners are the leading indicator. Ask partner managers which distributors have taken the line.",
+      "u": "https://bambulab.com/en-us/h2d-pro"
+    },
+    {
+      "h": "Tencent round and any IPO signal",
+      "b": "A confirmed Tencent round at ~$10B would fund a western enterprise push. Currently reported but unconfirmed by either party.",
+      "u": "https://kr-asia.com/bambu-lab-nears-usd-100-billion-valuation-as-tencent-eyes-new-investment"
+    }
+  ],
+  "unverified": [
+    "Bambu Lab valuation of roughly $10B with Tencent participating. [Unverified] Reported by multiple outlets; both parties declined to confirm. A separate report referencing a far higher figure appears to be a currency or unit error and should not be repeated.",
+    "2024 revenue ~6B RMB, ~1.2M units, ~29% global consumer 3D printer share; 2025 revenue >10B RMB. [Unverified] Private company, no audited public accounts. Directionally consistent across sources but not independently verifiable.",
+    "Bambu Lab is 'the largest 3D printing company in the world'. [Unverified] True on unit volume by most accounts, not established on revenue or on industrial or production-part terms. Be precise about which measure is being used.",
+    "Sinointeractive's ~100K ad count. This is the agency's entire client book and is NOT Bambu's ad volume. Recorded here specifically so nobody repeats the mistake we already avoided with HP's 50K figure on hp.com.",
+    "Planned annual capacity above 3 million units at the Shenzhen Guangming base. [Unverified] Announced plan, not installed capacity."
+  ],
   "ads": [],
+  "partner_ads": [
+    {
+      "advertiser": "45 unique third-party advertisers",
+      "count": "75 ads reference Bambu Lab",
+      "note": "None Bambu-owned. Includes service bureaus (Weerg, FKM Additive Manufacturing), filament vendors (3DXTECH, on AMS compatibility), independent AM consultants across Germany, Poland and France, universities, and event organisers. One promotes a Belgrade event built around the H2D Pro. This is earned advocacy at a scale we cannot buy, and it is the real Bambu marketing story.",
+      "url": "https://www.linkedin.com/ad-library/search?keyword=Bambu%20Lab"
+    },
+    {
+      "advertiser": "Sinointeractive Digital Marketing Co., Ltd.",
+      "count": "Agency, Hong Kong",
+      "note": "Verified Google advertiser running ads that point at bambulab.com. Its own account shows ~100K ads across all clients, which is the agency's whole book and not attributable to Bambu. [Inference] Bambu outsources a meaningful share of paid acquisition.",
+      "url": "https://adstransparency.google.com/advertiser/AR05226884764400615425?region=anywhere&hl=en"
+    },
+    {
+      "advertiser": "BAMBU JAPAN K.K.",
+      "count": "400 Google ads",
+      "note": "Bambu's own Japanese entity, run as a separate verified advertiser account. The only geographic subsidiary buying media under its own name.",
+      "url": "https://adstransparency.google.com/advertiser/AR04882639184256303105?region=anywhere&hl=en"
+    }
+  ],
   "themes": {},
-  "formats": {},
-  "funnels": {}
+  "formats": {
+    "Text": 700,
+    "Image": 600,
+    "Video": 400
+  },
+  "funnels": {
+    "Bottom": 700,
+    "Top": 1000
+  },
+  "bucket_basis": "Basis for Bambu Lab is DIFFERENT to the other competitors. These are Google Ads Transparency Center counts on Bambu's own advertiser account (Shenzhen Tuozhu), 1,700 ads total, not LinkedIn instances, because Bambu buys zero LinkedIn advertising. Theme mix is empty by design: Google renders ad creative in cross-origin iframes so creative-level themes could not be extracted this run. Funnel split is an [Inference]: Text treated as bottom-funnel brand and product search, Image and Video as top-funnel display and video."
 }

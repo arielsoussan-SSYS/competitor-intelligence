@@ -113,23 +113,23 @@
   "talk_track": [
     {
       "tag": "Marketing presence",
-      "claim": "\u201c3D Systems is a major competitor in this space.\u201d",
+      "claim": "“3D Systems is a major competitor in this space.”",
       "counter": "In demand generation they are effectively absent. Zero LinkedIn marketing creative for two consecutive runs, and their only paid footprint is 26 Google ads from two APAC reseller accounts. They are not contesting the market with marketing.",
       "u": ""
     },
     {
       "tag": "Vertical claims",
-      "claim": "\u201c3D Systems leads in Med Tech, Dental, and Aerospace.\u201d",
+      "claim": "“3D Systems leads in Med Tech, Dental, and Aerospace.”",
       "counter": "Those are stated verticals with effectively zero paid support behind them. Their observable advertising sells jewelry wax patterns and mould cost reduction in Korea and Japan. Ask what they are actively investing in versus what is on the website."
     },
     {
       "tag": "Stability",
-      "claim": "\u201c3D Systems is a safe long-term partner.\u201d",
+      "claim": "“3D Systems is a safe long-term partner.”",
       "counter": "The CEO search opened Aug 4 and remains unresolved with no successor named. Raise continuity of support and roadmap ownership over a multi-year program."
     },
     {
       "tag": "Where they do win",
-      "claim": "\u201cThey just won a defense contract.\u201d",
+      "claim": "“They just won a defense contract.”",
       "counter": "True, and worth respecting. The $9M USAF follow-on and the NAMI licence are real. They win through contracts and JVs, not marketing, so contest those on programme terms, not on share of voice."
     }
   ],
@@ -240,7 +240,7 @@
       "platform": "Google Search (KR)",
       "format": "Search Ad",
       "theme": "Brand defence",
-      "headline": "3D Systems - 3d \uc2dc\uc2a4\ud15c\uc988",
+      "headline": "3D Systems - 3d 시스템즈",
       "cta": "Visit site",
       "lo": 300,
       "hi": 1200,
@@ -250,7 +250,7 @@
       "audience": "Korean buyers searching the brand",
       "funnel": "Bottom",
       "url": "https://ko.3dsystems.com/",
-      "owner": "3D Systems Korea (\uc4f0\ub9ac\ub514\uc2dc\uc2a4\ud15c\uc988\ucf54\ub9ac\uc544)",
+      "owner": "3D Systems Korea (쓰리디시스템즈코리아)",
       "status": "Carried over",
       "notes": "Brand-term search ad from the Korean subsidiary account, unchanged.",
       "impr": "Not reported"
@@ -259,7 +259,7 @@
       "platform": "Google Search (JP)",
       "format": "Search Ad",
       "theme": "Prototyping speed",
-      "headline": "\u30103D Systems\u3011\u696d\u52d9\u75283D\u30d7\u30ea\u30f3\u30bf - \u8a66\u4f5c\u30ea\u30fc\u30c9\u30bf\u30a4\u30e0\u3092\u5927\u5e45\u77ed\u7e2e (industrial 3D printer, sharply shorten prototyping lead time)",
+      "headline": "【3D Systems】業務用3Dプリンタ - 試作リードタイムを大幅短縮 (industrial 3D printer, sharply shorten prototyping lead time)",
       "cta": "Visit site",
       "lo": 300,
       "hi": 1200,
@@ -269,7 +269,7 @@
       "audience": "Japanese engineering and prototyping buyers",
       "funnel": "Mid",
       "url": "https://ja.3dsystems.com/",
-      "owner": "Yamada Leo House (\u682a\u5f0f\u4f1a\u793e\u30e4\u30de\u30c0\u30ec\u30aa\u30cf\u30a6\u30b9), JP reseller",
+      "owner": "Yamada Leo House (株式会社ヤマダレオハウス), JP reseller",
       "status": "Carried over",
       "notes": "Reseller-run, not corporate. Unchanged.",
       "impr": "Not reported"
@@ -278,7 +278,7 @@
       "platform": "Google Search (JP)",
       "format": "Search Ad",
       "theme": "Cost reduction",
-      "headline": "\u91d1\u578b\u30b3\u30b9\u30c8\u524a\u6e1b\u306b\u8ca2\u732e3D\u30d7\u30ea\u30f3\u30bf (3D printers that cut mould costs)",
+      "headline": "金型コスト削減に貢献3Dプリンタ (3D printers that cut mould costs)",
       "cta": "Visit site",
       "lo": 300,
       "hi": 1200,
@@ -297,7 +297,7 @@
       "platform": "Google Search (JP)",
       "format": "Search Ad",
       "theme": "Accuracy vs low-cost printers",
-      "headline": "\u5b89\u4fa13D\u30d7\u30ea\u30f3\u30bf\u306e\u7cbe\u5ea6\u306b\u4e0d\u6e80\u306a\u65b9 (for those dissatisfied with the accuracy of cheap 3D printers)",
+      "headline": "安価3Dプリンタの精度に不満な方 (for those dissatisfied with the accuracy of cheap 3D printers)",
       "cta": "Visit site",
       "lo": 300,
       "hi": 1200,
@@ -316,8 +316,8 @@
       "platform": "Google Display (KR)",
       "format": "Display Image",
       "theme": "Jewelry / wax casting",
-      "headline": "\uc8fc\uc5bc\ub9ac \uc804\uc6a9 MJP 3D \ud504\ub9b0\ud130 - \uc96c\uc5bc\ub9ac \uc641\uc2a4 \ud328\ud134 3D \ud504\ub9b0\ud130, MJP 300W Plus (MJP 3D printer for jewelry, wax pattern printing)",
-      "cta": "\ub354 \uc54c\uc544\ubcf4\uae30 (Learn more)",
+      "headline": "주얼리 전용 MJP 3D 프린터 - 쥬얼리 왁스 패턴 3D 프린터, MJP 300W Plus (MJP 3D printer for jewelry, wax pattern printing)",
+      "cta": "더 알아보기 (Learn more)",
       "lo": 400,
       "hi": 1500,
       "first": "2026",
@@ -370,5 +370,6 @@
     "n/a": 1,
     "Bottom": 1,
     "Mid": 5
-  }
+  },
+  "bucket_basis": "Counts are live LinkedIn ad instances, not unique creatives. The same creative is served as multiple library entries."
 }

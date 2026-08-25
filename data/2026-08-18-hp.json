@@ -470,12 +470,12 @@
         },
         {
           "t": "Industrial filament added a third distinct creative, an objection-handler.",
-          "d": "\u201cWhy does industrial filament still come with so many trade-offs?\u201d joins the feature announcement and carousel. Shifts 600 HT messaging from announcement to persuasion.",
+          "d": "“Why does industrial filament still come with so many trade-offs?” joins the feature announcement and carousel. Shifts 600 HT messaging from announcement to persuasion.",
           "u": "https://reinvent.hp.com/us-en-3dprint-filament3dprinter600HT"
         },
         {
           "t": "Orthotics/prosthetics lost its case-study creative, still runs the emotive carousel.",
-          "d": "Theme drops from 4 unique/7 instances to 3 unique/5. The emotive \u201creshaping prosthetics\u201d carousel now carries more of the theme's weight.",
+          "d": "Theme drops from 4 unique/7 instances to 3 unique/5. The emotive “reshaping prosthetics” carousel now carries more of the theme's weight.",
           "u": "https://www.hp.com/us-en/printers/3d-printers/industries/orthotics-prosthetics.html"
         }
       ]
@@ -490,7 +490,7 @@
         },
         {
           "t": "Stale creative housekeeping gap flagged for a second consecutive run.",
-          "d": "MJFNext teaser still says \u201cjoin us April 14.\u201d O&P webinar still says \u201cOctober 30, 2025.\u201d AAOP 2026 booth ad is roughly six months past the event with no correction.",
+          "d": "MJFNext teaser still says “join us April 14.” O&P webinar still says “October 30, 2025.” AAOP 2026 booth ad is roughly six months past the event with no correction.",
           "u": "https://www.linkedin.com/ad-library/"
         }
       ]
@@ -564,28 +564,28 @@
   ],
   "talk_track": [
     {
-      "claim": "\u201cHP's MJF 1200 is under $60,000, professional printing within reach.\u201d",
+      "claim": "“HP's MJF 1200 is under $60,000, professional printing within reach.”",
       "counter": "It does not ship until early 2027. The Early Access program takes no payment and no commitment, which means nothing is actually reserved. Ask what they are running in the eighteen months in between.",
       "tag": "Pricing"
     },
     {
-      "claim": "\u201cHP's IF 600 HT is open materials, no lock-in.\u201d",
+      "claim": "“HP's IF 600 HT is open materials, no lock-in.”",
       "counter": "Open materials also means unvalidated materials. Ask who certifies the process for their application, and who they call when a build fails qualification.",
       "tag": "Materials"
     },
     {
-      "claim": "\u201cHP is the drone additive manufacturing leader.\u201d",
+      "claim": "“HP is the drone additive manufacturing leader.”",
       "counter": "HP names three drone customers in its advertising: Blueflite, Unusual Machines, Firestorm Labs. That is a proof set, not a market. Ask for production volumes.",
       "tag": "Drones"
     },
     {
-      "claim": "\u201cHP is everywhere in additive right now.\u201d",
+      "claim": "“HP is everywhere in additive right now.”",
       "counter": "HP runs 18 creatives on one platform, LinkedIn, and zero on Meta. Its April teaser and February booth ad were still live in August. That is a narrow, under-maintained program, not omnipresence.",
       "tag": "Share of voice"
     }
   ],
   "exposure": [
-    "Production system and scale messaging. HP's \u201cbuilding a production system the business can trust\u201d is Stratasys core ground and they are now advertising on it.",
+    "Production system and scale messaging. HP's “building a production system the business can trust” is Stratasys core ground and they are now advertising on it.",
     "Industrial filament. The IF 600 HT overlaps Stratasys FDM directly and HP has moved from announcing it to handling objections about it.",
     "Drone and UAV share of voice. HP holds 14 of 36 live instances on drones. Our Drone Dominance program is contesting the same feed."
   ],
@@ -616,5 +616,6 @@
     "AAOP 2026 booth 822. Appears verbatim in HP ad copy; HP's presence unconfirmed.",
     "Hero Gauntlet as an HP partnership. An Open Bionics product made with MJF. No HP co-marketing announcement exists.",
     "HP supporting 14 of 19 Drone Dominance Gauntlet Phase 2 teams. Internal intelligence, not independently corroborated."
-  ]
+  ],
+  "bucket_basis": "Counts are live LinkedIn ad instances, not unique creatives. The same creative is served as multiple library entries."
 }
