@@ -367,7 +367,7 @@
   },
   "hp_14_of_19": {
     "claim": "Intelligence indicates HP Additive supports 14 of the 19 Gauntlet II companies.",
-    "status": "[validation-needed] — no public evidence found after three research passes. Treat as unsupported, not as false.",
+    "status": "[validation-needed] — no public evidence, which is the EXPECTED result and is not evidence against the claim.",
     "what_we_checked": [
       "Every one of HP's publicly named drone and AM partners: Unusual Machines, blueflite, Firestorm Labs, Avular and Materialise. NONE of the five is among the 19 Gauntlet II companies. Firestorm Labs appears in the Drone Dominance Phase 1 vendor directory but did not advance to Gauntlet II.",
       "HP AM's own advertising, 36 live instances across 18 creatives. It names Unusual Machines, blueflite and Firestorm Labs as drone proof points and no Gauntlet II company.",
@@ -375,7 +375,14 @@
       "Per-company research across all 19: company sites, newsrooms, executive statements, trade press and funding announcements. No HP relationship surfaced for any of them."
     ],
     "what_we_did_find": "The only CONFIRMED competitor placement inside a Gauntlet II account is Formlabs at ORQA, evidenced by a published Formlabs case study. That is one account, and it is not HP.",
-    "how_to_read_it": "The claim may still be true and simply private: supplier relationships are rarely public, and HP could be supporting teams through resellers, service bureaus or NDA'd engineering support that leaves no trace. But nothing found so far corroborates it, and HP's own marketing points away from the Gauntlet field rather than toward it. Do not repeat the 14-of-19 figure externally, and do not build a campaign on it. If it came from a person, go back and ask what they actually saw.",
-    "last_checked": "2026-08-25"
+    "how_to_read_it": "Read the absence correctly. A supplier relationship is not something HP would publish, and a Gauntlet team has no reason to name its printer vendor either. Equipment support can run through resellers, service bureaus, loaned machines, or NDA'd application engineering and leave no public trace at all. So an open-source search failing to find it is close to meaningless as a test of the claim. What we can say is narrower and more useful: nothing in HP's own advertising, nothing in the DoW directory and nothing in three passes of per-company research corroborates it, so we cannot cite it. Treat 14-of-19 as unproven intelligence to act on privately, not as a fact to repeat externally or to build a public campaign on. If it came from a person inside Stratasys, the fastest path to validating it is to go back and ask what they actually saw: a slide, a customer conversation, a machine on a floor, or a rumour.",
+    "last_checked": "2026-08-25",
+    "what_would_prove_it": [
+      "A Gauntlet company naming HP in a case study, press release or careers posting mentioning MJF.",
+      "HP or a reseller listing a Gauntlet company as a customer.",
+      "A machine visible in facility footage or a factory tour.",
+      "A Stratasys rep seeing HP equipment on site during a visit. This is the most likely route and it costs nothing: ask the field team."
+    ],
+    "do_not_conclude": "Do not record this as refuted. It is unproven, and given the nature of supplier relationships it may well stay unproven while being true."
   }
 }

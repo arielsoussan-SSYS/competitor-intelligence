@@ -47,7 +47,7 @@ the evidence type and link, a confidence level, and a **displacement posture**:
 $1.1B program. Every one is a live Stratasys prospect. Names, program structure and
 selection funnel are confirmed in `data/gauntlet.json`.
 
-Intelligence indicates HP supports 14 of the 19 `[validation-needed]`. If it holds, HP is
+Intelligence indicates HP supports 14 of the 19 `[validation-needed]`. **Checked three times, no public evidence, and that is the expected result: supplier relationships are not published.** Do not record it as refuted and do not cite it externally. The cheapest path to validation is the field team, not the internet. If it holds, HP is
 buying ecosystem position ahead of its advertising, which an ad scan alone would never
 surface. That is the argument for this tier existing.
 
