@@ -53,6 +53,40 @@ report no diff, label the run `baseline`.
 
 Per competitor, in tier order. Follow `references/collection.md` for each source.
 
+### Non-negotiable collection rules
+
+1. **Use Ariel's Chrome via the `claude-in-chrome` connector.** Not the sandbox browser.
+   His session is stable, the sandbox one intermittently fails on LinkedIn. Load the
+   tools with a single `ToolSearch` for
+   `mcp__claude-in-chrome__tabs_context_mcp,navigate,computer,read_page,javascript_tool,tabs_create_mcp`.
+   Close the tabs you opened when you finish.
+2. **Search by Company or advertiser, never by keyword.** Keyword search answers "who is
+   talking about this brand." We need "what is this company running." They are different
+   questions and mixing them corrupts the dataset.
+   Use the URL parameter: `?accountOwner=<Exact Advertiser Name>`. Do not use the form's
+   Search button; it intermittently returns "Failed to load" for every query.
+   `?keyword=` is only ever for the separate `partner_ads` section.
+3. **Use the exact advertiser name from the table below.** Matching is loose, so a short
+   name silently returns another company's ads.
+4. **Run the control before recording any zero.** `?accountOwner=Formlabs` must return a
+   count. A zero without a passing control is an unknown, not a finding.
+5. **Confirm the advertiser identity in the results.** Walk the result cards, collect the
+   distinct advertiser names, and confirm they are the company you meant. A count alone
+   is not evidence.
+
+### Verified advertiser names
+
+Confirmed 2026-08-25 via Chrome connector. Re-confirm each run and update this table.
+
+| Competitor | `accountOwner=` | Verified count | Warning |
+|---|---|---|---|
+| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 36 | `HP Additive` also returns 36 and is safe |
+| Formlabs | `Formlabs` | 38 | clean |
+| 3D Systems | `3D Systems Corporation` | 1 | **`3D Systems` returns 33 ads that are NOT them** (3D Dental Systems d.o.o., FGS Media). Always use the full legal name. |
+| Bambu Lab | none exists | 0 | Verified across `Bambu Lab`, `BambuLab`, `Bambu Lab US`, `Bambu Japan`, `Tuozhu`. `Bambu` returns 237 ads that are all **Bambuser**, unrelated. |
+
+Record `linkedin_advertiser` and `advertiser_verified` in every run file.
+
 **LinkedIn** — primary and the only reliable creative-level source.
 **Meta** — keyword search. **Zero results is a finding**, recorded explicitly, never omitted.
 **Google** — parent-domain totals are not isolable by business unit. Say so. The real
@@ -180,6 +214,10 @@ thing they will read.
 7. **Sourcing.** Every factual claim has a URL. Inference, unverified, and estimate
    labels applied.
 8. **Data file parses** and its counts match the rendered dashboard.
+9. **Advertiser identity verified.** Every competitor in the run has `linkedin_advertiser`
+   and `advertiser_verified` set from a Chrome-connector `accountOwner` search this run,
+   the distinct advertiser names in the results were checked, and the control passed.
+   A count from an unverified advertiser name does not ship.
 
 ---
 

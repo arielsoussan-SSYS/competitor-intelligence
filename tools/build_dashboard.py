@@ -227,6 +227,10 @@ canvas{max-height:270px}
  border:1px solid rgba(168,100,0,.24);font-size:13px;line-height:1.55;color:var(--ink);margin-bottom:10px}
 .hook b{color:var(--amber)}
 .gnote{font-size:12.4px;line-height:1.6;color:var(--ink3);margin:0}
+.stalebar{margin:16px 0 0;padding:13px 16px;border-radius:14px;font-size:13.2px;line-height:1.6;
+ background:rgba(200,16,46,.07);border:1px solid rgba(200,16,46,.28);color:var(--ink)}
+.stalebar b{color:var(--red)}
+.advline{margin:10px 0 0;font-size:12px;color:var(--ink3)}
 .empty{margin:0;padding:26px 20px;border-radius:14px;background:rgba(16,23,37,.035);
  border:1px dashed rgba(16,23,37,.16);font-size:13px;line-height:1.6;color:var(--ink3);text-align:center}
 .empty{padding:44px 26px;text-align:center}
@@ -298,6 +302,7 @@ footer b{color:var(--ink2)}
   <button class="tab" role="tab" aria-selected="false" data-p="notes">Notes</button>
 </nav>
 
+<div class="stalebar" id="staleBar" hidden></div>
 <div id="pending" style="display:none">
   <div class="glass empty">
     <h3 id="peH"></h3>
@@ -475,6 +480,9 @@ function rows(f){
   const li=D.sources&&D.sources.linkedin;
   $("count").textContent=r.length+" of "+(D.ads||[]).length+" unique creatives shown."+
     (li&&li.live_instances!=null?" "+li.live_instances+" live instances total.":"");
+  const sb=$("staleBar");
+  if(sb){ sb.hidden=!D.stale_warning;
+    if(D.stale_warning) sb.innerHTML="<b>Heads up:</b> "+e(D.stale_warning); }
   const cb=$("chartBasis");
   if(cb) cb.textContent = D.bucket_basis || "Counts are live LinkedIn ad instances, not unique creatives.";
   const pa=(D.partner_ads||[]);

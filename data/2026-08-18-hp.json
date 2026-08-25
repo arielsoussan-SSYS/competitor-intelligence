@@ -591,6 +591,21 @@
   ],
   "watch": [
     {
+      "h": "NEW, unlogged: HP is running a 'Made in America: Redefining UAV Production with Additive Manufacturing' webinar",
+      "b": "Spotted 2026-08-25 during advertiser verification, 2 instances, not in the Aug 18 ad log. This is Drone Dominance ground and the 'Made in America' framing is a direct onshoring and NDAA-compliance play. It is also the argument we should be making. Priority item for the next full HP scrape.",
+      "u": "https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive"
+    },
+    {
+      "h": "NEW, unlogged: MJF 1200 has moved from teaser to a booking programme",
+      "b": "Creative now reads 'Reserve your HP MJF 1200 3D printer today' and 'Book your HP MJF 1200 3D printer today', plus an HP MJF 1200 Open House event on Oct 1 2026. Our current talk track says the Early Access programme takes no payment and no commitment so nothing is actually reserved. Re-verify that counter before reps use it again, because the mechanic appears to have changed.",
+      "u": "https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive"
+    },
+    {
+      "h": "Stale creative confirmed still running on Aug 25",
+      "b": "The AAOP 2026 booth ad (a February event) and the April 14 #MJFNext teaser are both still live. That is roughly six and four months past their dates respectively. The operational-rigor talking point holds.",
+      "u": "https://www.linkedin.com/ad-library/search?accountOwner=HP+Additive"
+    },
+    {
       "h": "Quiet execution week",
       "b": "No new HP AM press release, product launch, or partnership identified Aug 11-18.",
       "u": "https://www.hp.com/us-en/newsroom.html"
@@ -618,5 +633,13 @@
     "HP supporting 14 of 19 Drone Dominance Gauntlet Phase 2 teams. Internal intelligence, not independently corroborated."
   ],
   "bucket_basis": "Counts are live LinkedIn ad instances, not unique creatives. The same creative is served as multiple library entries.",
-  "count_unit": "Live LinkedIn instances"
+  "count_unit": "Live LinkedIn instances",
+  "linkedin_advertiser": "HP Additive Manufacturing (AM) Solutions - 3D Printing",
+  "advertiser_verified": {
+    "on": "2026-08-25",
+    "method": "Chrome connector, ?accountOwner= URL parameter",
+    "live_instances_at_verification": 36,
+    "note": "Confirmed 2026-08-25 via Chrome connector, accountOwner search. Both 'HP Additive' and the full name return 36."
+  },
+  "stale_warning": "BASELINE IS STALE. An advertiser verification pass on 2026-08-25 found HP creative that is not in this Aug 18 dataset. Live instance count is unchanged at 36, so the rotation turned over rather than grew. Treat the ad log below as accurate to Aug 18 only. A full HP re-scrape is the next priority."
 }

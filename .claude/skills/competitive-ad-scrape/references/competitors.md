@@ -6,7 +6,7 @@ everyone. Tier determines depth, not importance.
 ## Tier 1 — full depth, every run
 
 **HP Additive Manufacturing** (`hp`)
-- LinkedIn advertiser: `HP Additive`
+- LinkedIn advertiser: `HP Additive Manufacturing (AM) Solutions - 3D Printing` (`HP Additive` also resolves correctly)
 - Full ad log, full Watch section, full diff, company research
 - Why: closest positioning overlap, actively contesting drones/UAV, and the competitor
   management most often cites as out-marketing us
@@ -21,8 +21,8 @@ Collected every run. No standing Watch section unless something material moves.
 
 | Competitor | Slug | LinkedIn advertiser | Why tracked |
 |---|---|---|---|
-| 3D Systems | `3dsystems` | 3D Systems | Direct industrial overlap, existing tracker |
-| Formlabs | `formlabs` | Formlabs | Owns the workhorse/accessible segment, moving upmarket. **Now the nearest-term drone threat**: ships Fuse X1 Q4 2026, ahead of HP's MJF 1200. Also log **partner/reseller ads** (Phillips Machine Tools, Thinglab, 3D-EDU) separately in `partner_ads` — the channel runs the harder drone creative. |
+| 3D Systems | `3dsystems` | **`3D Systems Corporation`** (the short name returns 33 unrelated ads) | Direct industrial overlap, existing tracker |
+| Formlabs | `formlabs` | `Formlabs` | Owns the workhorse/accessible segment, moving upmarket. **Now the nearest-term drone threat**: ships Fuse X1 Q4 2026, ahead of HP's MJF 1200. Also log **partner/reseller ads** (Phillips Machine Tools, Thinglab, 3D-EDU) separately in `partner_ads` — the channel runs the harder drone creative. |
 | Bambu Lab | `bambulab` | **None. Runs zero LinkedIn ads** (verified Aug 25 2026, 5 variants + control) | Largest 3D printing company in the world by unit volume, now in our departmental FDM market with the $3,799 H2D Pro. Track via **Google only**, plus NDAA compliance status and the Stratasys litigation. Their buckets use Google counts, not LinkedIn instances: see `bucket_basis`. |
 
 Formlabs and Bambu Lab were removed from the tracker on Aug 10 2026 when it narrowed to

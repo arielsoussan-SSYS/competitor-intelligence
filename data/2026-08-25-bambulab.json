@@ -256,5 +256,12 @@
   },
   "bucket_basis": "Basis for Bambu Lab is DIFFERENT to the other competitors. These are Google Ads Transparency Center counts on Bambu's own advertiser account (Shenzhen Tuozhu), 1,700 ads total, not LinkedIn instances, because Bambu buys zero LinkedIn advertising. Theme mix is empty by design: Google renders ad creative in cross-origin iframes so creative-level themes could not be extracted this run. Funnel split is an [Inference]: Text treated as bottom-funnel brand and product search, Image and Video as top-funnel display and video.",
   "count_unit": "Google ads on Bambu's own advertiser account",
-  "theme_gap": "Bambu buys no LinkedIn advertising, so there are no creative-level themes to break down. Google renders ad creative in cross-origin iframes, which blocked theme extraction this run. Declared gap, not a zero."
+  "theme_gap": "Bambu buys no LinkedIn advertising, so there are no creative-level themes to break down. Google renders ad creative in cross-origin iframes, which blocked theme extraction this run. Declared gap, not a zero.",
+  "linkedin_advertiser": "None. No LinkedIn advertiser account found.",
+  "advertiser_verified": {
+    "on": "2026-08-25",
+    "method": "Chrome connector, ?accountOwner= URL parameter",
+    "live_instances_at_verification": 0,
+    "note": "Confirmed 2026-08-25 via Chrome connector across 5 name variants. Control (Formlabs=38) passed."
+  }
 }

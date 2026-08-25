@@ -7,6 +7,25 @@ where a scraping API is used instead, the field mappings still hold.
 
 Primary source, and the only one that reliably yields creative-level data.
 
+**Drive it through Ariel's Chrome (`claude-in-chrome` connector), not the sandbox
+browser.** The sandbox browser intermittently fails on LinkedIn; his session is stable.
+
+**Search by Company or advertiser, never keyword.** Keyword tells you who is talking
+about a brand. Advertiser tells you what the company is running. Only the second one
+belongs in the ad log. Keyword results belong in `partner_ads` and nowhere else.
+
+### Verified advertiser names, confirmed 2026-08-25
+
+| Competitor | `?accountOwner=` | Count | Note |
+|---|---|---|---|
+| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 36 | `HP Additive` also works |
+| Formlabs | `Formlabs` | 38 | clean |
+| 3D Systems | `3D Systems Corporation` | 1 | **`3D Systems` returns 33 unrelated ads** |
+| Bambu Lab | no account exists | 0 | `Bambu` returns 237 **Bambuser** ads |
+
+Matching is loose. A short name silently returns a different company. Always confirm the
+distinct advertiser names in the results, not just the count.
+
 - Advertiser: **"HP Additive Manufacturing (AM) Solutions - 3D Printing"**
 - **Use the URL parameter, not the form.** `?accountOwner=<Name>` works and is the
   reliable path:

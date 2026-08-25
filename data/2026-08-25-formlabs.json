@@ -621,5 +621,12 @@
     "Bottom": 6
   },
   "bucket_basis": "Counts are live LinkedIn ad instances, not unique creatives. The same creative is served as multiple library entries.",
-  "count_unit": "Live LinkedIn instances"
+  "count_unit": "Live LinkedIn instances",
+  "linkedin_advertiser": "Formlabs",
+  "advertiser_verified": {
+    "on": "2026-08-25",
+    "method": "Chrome connector, ?accountOwner= URL parameter",
+    "live_instances_at_verification": 38,
+    "note": "Confirmed 2026-08-25 via Chrome connector, accountOwner search. Returns 38, matching this run."
+  }
 }

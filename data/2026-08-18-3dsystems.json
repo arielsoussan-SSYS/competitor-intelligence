@@ -372,5 +372,12 @@
     "Mid": 5
   },
   "bucket_basis": "Counts are live LinkedIn ad instances, not unique creatives. The same creative is served as multiple library entries.",
-  "count_unit": "Live LinkedIn instances"
+  "count_unit": "Live LinkedIn instances",
+  "linkedin_advertiser": "3D Systems Corporation",
+  "advertiser_verified": {
+    "on": "2026-08-25",
+    "method": "Chrome connector, ?accountOwner= URL parameter",
+    "live_instances_at_verification": 1,
+    "note": "Confirmed 2026-08-25 via Chrome connector. WARNING: searching '3D Systems' returns 33 unrelated ads (3D Dental Systems d.o.o., FGS Media). The full legal name is required."
+  }
 }
