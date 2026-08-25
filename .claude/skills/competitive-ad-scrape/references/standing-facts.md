@@ -109,6 +109,35 @@ June. On **Apr 24 2026 the Unified Patent Court in The Hague dismissed our emerg
 to block the H2C in Europe — a provisional-measure ruling only, **not** a decision on
 infringement or validity. Do not let reps characterise the case to customers.
 
+## HP measured spend, from EU disclosure (est. Aug 25 2026)
+
+The only hard numbers we have on HP AM media. Both creatives are **paid for by
+ATREVIA COMUNICACIÓN SL**, a Madrid communications agency, not by HP directly.
+
+| Creative | Ran | Impressions | Delivery | Est. spend |
+|---|---|---|---|---|
+| #MJFNext teaser video | Mar 26 - Apr 13 2026 | **500K - 1M** | US 97% | $15-80K `[Estimate]` |
+| MJF 1200 reservation carousel | Jun 29 - Jul 19 2026 | 30K - 50K | FR 41%, ES 37%, US 8%, UK 8% | $1.2-3.2K `[Estimate]` |
+
+**The pattern that matters: HP buys launch bursts, not always-on presence.** One
+nineteen-day teaser flight dwarfs their steady-state volume. Do not describe HP as
+consistently out-spending us; describe them as concentrating around launches.
+
+Only 2 of 36 HP creatives are EU-served. The programme is otherwise US-only.
+
+**MJF 1200 reservation programme, full terms** (from the ad copy, sourced):
+priority access before general availability, **no upfront payment required**,
+20% off eligible MJF parts orders through HP 3D Printing Service, credit toward a future
+MJF 1200 purchase, **up to $10,000 in credit**.
+
+The counter is no longer "nothing is really reserved". It is: they are being paid to
+wait, the parts discount routes their production volume into HP's own service bureau for
+two quarters, and the credit only redeems against a machine that ships early 2027.
+
+**Closing motion:** HP MJF 1200 Open House, **Oct 1 2026**, targeted at Pacific Northwest
+manufacturing leaders. Watch for repeats in other regions; that would mean the MJF 1200
+has moved from launch to territory selling.
+
 ## Known bad claims — do not repeat
 
 | Claim | Status |

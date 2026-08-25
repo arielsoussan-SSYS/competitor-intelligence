@@ -46,8 +46,14 @@ distinct advertiser names in the results, not just the count.
   were all **Bambuser**, an unrelated company. Substring hits are not evidence.
 - Read the **"N ads match your search criteria"** count. That is the **instance** count
   and the source of truth for reconciliation.
-- Results lazy-load, and **scrolling alone stops early**. On the Aug 25 run scrolling
-  plateaued at 24 of 38 results. The remainder sits behind a hidden loader:
+- Results lazy-load 24 at a time. **Use real mouse-wheel scrolling to load the rest.**
+  In the Chrome connector: `computer` with `action:"scroll"`, `scroll_amount:10`,
+  `repeat:10` at a point over the results. That reliably took HP from 24 to all 36.
+  Verify against the reported total before extracting.
+
+  The hidden `.infinite-scroller__show-more-button` is a dead end: forcing it visible and
+  clicking it does not fire the loader. Earlier notes recommending it were wrong. Kept
+  here only so nobody rediscovers it:
 
   ```js
   const b=document.querySelector('.infinite-scroller__show-more-button');
