@@ -5,7 +5,7 @@
   "stage": "19 companies advancing to Gauntlet II, Fort Carson CO, August 2026",
   "funnel": "26 companies in Gauntlet I, 49 in the Phase 2 Qualifier (Camp Grayling MI, June 8-19 2026), 19 to Gauntlet II",
   "requirement": "Each company must deliver 120 kamikaze drones with lethality payloads in roughly five weeks. Price ceilings $5,500 long-range strike, $4,500 close quarters. Awards cover 5 long-range and 3 close-quarters designs, with production orders of 4,000-9,500 UAVs per winner.",
-  "why_it_matters": "Nineteen pre-qualified companies that must prove they can manufacture at wartime speed. Every one is a Stratasys prospect. The 120-units-in-five-weeks requirement is the additive manufacturing pitch stated as a procurement requirement. Intelligence indicates HP is supporting 14 of the 19 [validation-needed]; if true, HP is buying ecosystem position ahead of its advertising, which no ad scan would surface.",
+  "why_it_matters": "Nineteen pre-qualified companies that must prove they can manufacture at wartime speed. Every one is a Stratasys prospect. The 120-units-in-five-weeks requirement is the additive manufacturing pitch stated as a procurement requirement. One account is confirmed Locked to a competitor (ORQA, Formlabs) and two are Contested. Internal intelligence suggests HP supports 14 of the 19 [validation-needed]: unproven publicly, which is expected, since supplier relationships are not published. Do not cite the figure externally.",
   "headline_signal": "The Gauntlet I winner runs hundreds of 3D printers and has committed to removing Chinese components. Nobody has asked whether the printers themselves meet the same standard.",
   "last_researched": "2026-08-25",
   "sources": [
@@ -384,5 +384,6 @@
       "A Stratasys rep seeing HP equipment on site during a visit. This is the most likely route and it costs nothing: ask the field team."
     ],
     "do_not_conclude": "Do not record this as refuted. It is unproven, and given the nature of supplier relationships it may well stay unproven while being true."
-  }
+  },
+  "signal_so_what": "SkyFall runs hundreds of printers and publicly de-Sinified the Shrike 10-F's bill of materials to win the programme. NDAA FY2026 s880 applies the same standard to the additive machines themselves. Ask whether the printer fleet was audited too. Separately, Neros remains the loudest sceptic in the field: have an answer before a prospect quotes them back."
 }

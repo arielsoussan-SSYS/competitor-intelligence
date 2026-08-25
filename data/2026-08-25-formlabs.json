@@ -327,7 +327,7 @@
       "funnel": "Top",
       "url": "https://www.linkedin.com/ad-library/detail/849660054",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "3 instances across video and single image variants. 'End-use' and 'production-grade' make this a production claim, not a prototyping claim."
     },
     {
@@ -346,7 +346,7 @@
       "funnel": "Top",
       "url": "https://www.linkedin.com/ad-library/detail/777139324",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "8 instances, the single heaviest creative at 21% of LinkedIn ad volume. Running since at least Apr 2026, roughly five months in rotation. Stale by our own standard but clearly a proven workhorse."
     },
     {
@@ -365,7 +365,7 @@
       "funnel": "Top",
       "url": "https://www.linkedin.com/ad-library/detail/856086744",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "5 instances. Direct comparison claim against traditional manufacturing methods."
     },
     {
@@ -384,7 +384,7 @@
       "funnel": "Bottom",
       "url": "https://www.linkedin.com/ad-library/detail/886412754",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "3 instances. Always-on demo capture."
     },
     {
@@ -403,7 +403,7 @@
       "funnel": "Top",
       "url": "https://www.linkedin.com/ad-library/detail/776639144",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "3 instances. 'From first prototypes to production-ready workflows' is the bridge claim from their beachhead into ours."
     },
     {
@@ -422,7 +422,7 @@
       "funnel": "Bottom",
       "url": "https://www.linkedin.com/ad-library/detail/886571454",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "2 instances."
     },
     {
@@ -441,7 +441,7 @@
       "funnel": "Top",
       "url": "https://www.linkedin.com/ad-library/detail/833218423",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "3 instances. 12-page document ad. PSYONIC is a prosthetics case study, which touches our O&P ground."
     },
     {
@@ -460,7 +460,7 @@
       "funnel": "Top",
       "url": "https://www.linkedin.com/ad-library/detail/747791434",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "2 instances. 8-page document ad."
     },
     {
@@ -479,7 +479,7 @@
       "funnel": "Mid",
       "url": "https://www.linkedin.com/ad-library/detail/833188053",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "2 instances. 10-page document ad. Tooling replacement is a production-adjacent claim."
     },
     {
@@ -498,7 +498,7 @@
       "funnel": "Top",
       "url": "https://www.linkedin.com/ad-library/detail/747533544",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "2 instances. Direct shot at the 'you need a specialist to run it' objection, which is a standard industrial-system objection we have to answer."
     },
     {
@@ -517,7 +517,7 @@
       "funnel": "Mid",
       "url": "https://www.linkedin.com/ad-library/detail/1443662754",
       "owner": "Formlabs-owned",
-      "status": "NEW this week",
+      "status": "Baseline",
       "notes": "1 instance. Promoted by Formlabs, posted by CRO Nick Graham. Body and headline disagree on volume by roughly 30x. Opens by naming and attacking the exact objection we use."
     },
     {
@@ -536,7 +536,7 @@
       "funnel": "Mid",
       "url": "https://www.linkedin.com/ad-library/detail/1314686034",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "1 instance. CRO-signed. The $100,000/year comparator is a service bureau contract, not a capital system. Note the framing: 'no waiting game of months or years trying to reach breakeven ROI'."
     },
     {
@@ -555,7 +555,7 @@
       "funnel": "Mid",
       "url": "https://www.linkedin.com/ad-library/detail/1311388424",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "1 instance. Also cites a commissioned third-party study at 98.7% part yield on Form 4. Reliability-as-proof is their production argument."
     },
     {
@@ -574,7 +574,7 @@
       "funnel": "Mid",
       "url": "https://www.linkedin.com/ad-library/detail/1295117164",
       "owner": "Formlabs-owned",
-      "status": "Carried over",
+      "status": "Baseline",
       "notes": "1 instance. Utilisation-as-proof. Consumable pull-through is the metric they choose to publish, which is the metric a capital-equipment buyer actually cares about."
     }
   ],

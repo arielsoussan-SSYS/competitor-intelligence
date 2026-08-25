@@ -469,8 +469,9 @@ function rows(f){
   const D=CO[cur], q=(f||"").toLowerCase();
   const r=(D.ads||[]).filter(a=>!q||JSON.stringify(a).toLowerCase().includes(q));
   $("rows").innerHTML=r.map(a=>{const isNew=/NEW/i.test(a.status||"");
+    const lbl=/NEW/i.test(a.status||"")?"NEW":(a.status||"Carried over");
     return "<tr"+(isNew?' class="new"':"")+'><td><span class="badge '+(isNew?"b-new":"b-carry")+'">'+
-    (isNew?"NEW":"Carried")+'</span></td><td><span class="f">'+e(a.theme)+'</span></td><td class="hl">'+
+    e(lbl)+'</span></td><td><span class="f">'+e(a.theme)+'</span></td><td class="hl">'+
     (a.url?'<a class="src" href="'+e(a.url)+'" target="_blank" rel="noopener">'+e(a.headline)+"</a>":e(a.headline))+
     "</td><td>"+e(a.format)+"</td><td>"+e(a.cta)+'</td><td><span class="f">'+e(a.funnel)+"</span></td><td>"+
     e(a.impr)+"</td><td>"+money(a)+"</td><td>"+e(a.audience)+"</td><td>"+e(a.notes)+"</td></tr>";}).join("")
@@ -554,13 +555,14 @@ function go(v){document.querySelector('.sb[data-v="'+v+'"]').click();}
 /* ---- home ---- */
 function home(){
   const live=ORD.filter(s=>CO[s].status!=="pending");
+  const uniq=live.reduce((n,s)=>n+((CO[s].sources&&CO[s].sources.linkedin&&CO[s].sources.linkedin.unique_creatives)||0),0);
   const ads=live.reduce((n,s)=>n+(CO[s].ads||[]).length,0);
   const inst=live.reduce((n,s)=>n+((CO[s].sources&&CO[s].sources.linkedin&&CO[s].sources.linkedin.live_instances)||0),0);
   const nw=live.reduce((n,s)=>n+(CO[s].ads||[]).filter(a=>/NEW/i.test(a.status||"")).length,0);
   const contested=G?G.teams.filter(t=>t.posture==="Contested").length:0;
   const K=[
    {label:"Competitors tracked",value:ORD.length,delta:live.length+" scanned, "+(ORD.length-live.length)+" awaiting first run",dir:"flat"},
-   {label:"Unique creatives",value:ads,delta:"Across all scanned competitors",dir:"flat"},
+   {label:"Unique creatives",value:uniq,delta:"LinkedIn, across all scanned competitors",dir:"flat"},
    {label:"Live instances",value:inst||"n/a",delta:"LinkedIn, where reported",dir:"flat"},
    {label:"New this week",value:nw,delta:nw?"Flagged in the ad logs":"No new creatives",dir:nw?"up":"flat"},
    {label:"Gauntlet II field",value:G?G.teams.length:0,delta:"Pre-qualified drone prospects",dir:"flat"},
@@ -570,8 +572,7 @@ function home(){
     '</div><div class="d"><span class="dir '+k.dir+'">'+g+"</span>"+e(k.delta)+"</div></div>";}).join("");
 
   const sig=[];
-  if(G&&G.headline_signal) sig.push({l:"Gauntlet",h:G.headline_signal,
-    b:"This is the core objection to the entire drone additive pitch, ours and HP's alike, and it is coming from a Gauntlet 1 award winner. Have an answer before a prospect quotes it back."});
+  if(G&&G.headline_signal) sig.push({l:"Gauntlet",h:G.headline_signal,b:G.signal_so_what||""});
   live.forEach(s=>{const d=CO[s]; if(d.headline) sig.push({l:d.competitor,h:d.headline,b:d.so_what||""});});
   $("signals").innerHTML=sig.map(x=>'<div class="glass sig"><div class="l">'+e(x.l)+
     '</div><div class="h">'+e(x.h)+'</div><div class="b">'+e(x.b)+"</div></div>").join("");
