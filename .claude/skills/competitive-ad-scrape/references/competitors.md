@@ -23,7 +23,7 @@ Collected every run. No standing Watch section unless something material moves.
 |---|---|---|---|
 | 3D Systems | `3dsystems` | 3D Systems | Direct industrial overlap, existing tracker |
 | Formlabs | `formlabs` | Formlabs | Owns the workhorse/accessible segment, moving upmarket. **Now the nearest-term drone threat**: ships Fuse X1 Q4 2026, ahead of HP's MJF 1200. Also log **partner/reseller ads** (Phillips Machine Tools, Thinglab, 3D-EDU) separately in `partner_ads` — the channel runs the harder drone creative. |
-| Bambu Lab | `bambulab` | Bambu Lab | Prosumer disruption pressing up into professional; drone hobbyist crossover |
+| Bambu Lab | `bambulab` | **None. Runs zero LinkedIn ads** (verified Aug 25 2026, 5 variants + control) | Largest 3D printing company in the world by unit volume, now in our departmental FDM market with the $3,799 H2D Pro. Track via **Google only**, plus NDAA compliance status and the Stratasys litigation. Their buckets use Google counts, not LinkedIn instances: see `bucket_basis`. |
 
 Formlabs and Bambu Lab were removed from the tracker on Aug 10 2026 when it narrowed to
 HP-only, then reinstated at Tier 2. Tiering is what makes that sustainable: they get an

@@ -8,9 +8,23 @@ where a scraping API is used instead, the field mappings still hold.
 Primary source, and the only one that reliably yields creative-level data.
 
 - Advertiser: **"HP Additive Manufacturing (AM) Solutions - 3D Printing"**
-- **URL query parameters return "No results found."** Click the "Company or advertiser"
-  field, type the name, then click Search. If typing does not register, click the field
-  again and retype: the first click sometimes only focuses the page.
+- **Use the URL parameter, not the form.** `?accountOwner=<Name>` works and is the
+  reliable path:
+  `https://www.linkedin.com/ad-library/search?accountOwner=Formlabs` returns 38.
+  An earlier version of this file said URL params return "No results found." **That was
+  wrong** and cost an hour on the Aug 25 run. Keyword uses `?keyword=<phrase>`.
+- The **form's Search button is unreliable** and intermittently returns "Failed to load"
+  for every query including known-good ones, in both the sandbox browser and a real
+  signed-in Chrome. It is the endpoint, not throttling and not the query. When it fails,
+  switch to the URL parameter instead of waiting.
+- **Distinguish a real zero from a broken query with a control.** Before recording zero
+  ads for any advertiser, run `?accountOwner=Formlabs` and confirm it returns a count. A
+  zero with no control is not a finding, it is an unknown.
+- Advertiser matching is **exact-ish on the registered advertiser name**. Try variants
+  before concluding zero: the plain name, no-space form, regional entities (`X US`,
+  `X Japan`), and the legal entity from Google Ads Transparency Center. Bambu Lab
+  returned zero on all five, while a substring search for `Bambu` returned 237 ads that
+  were all **Bambuser**, an unrelated company. Substring hits are not evidence.
 - Read the **"N ads match your search criteria"** count. That is the **instance** count
   and the source of truth for reconciliation.
 - Results lazy-load, and **scrolling alone stops early**. On the Aug 25 run scrolling

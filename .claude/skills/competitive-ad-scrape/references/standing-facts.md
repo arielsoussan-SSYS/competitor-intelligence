@@ -69,6 +69,46 @@ drone manufacturer, uses its printers. SkyFall independently builds the **Shrike
 that won Gauntlet I for **Skycutter** (99.3/100). Neither source confirms the other.
 `[Unverified]`. Verifying this is the highest-value open question on the board.
 
+## Bambu Lab — carry forward (est. Aug 25 2026)
+
+**Does not advertise on LinkedIn.** Zero owned ads, verified across five entity names
+with a passing control. Re-check each run: it is a five-minute test and a change would
+signal a real enterprise go-to-market.
+
+**Products.** H2D (Mar 2025, all-in-one FDM + laser + cutter). H2S $1,249 (Aug 2025).
+**H2D Pro $3,799** — dual nozzle, 350C nozzle, active heated chamber to 65C,
+WPA2-Enterprise Wi-Fi and Ethernet, **reseller-exclusive**, positioned for departmental
+and shared-services use. This is the machine aimed at us.
+
+**Scale.** 2024 ~6B RMB revenue, ~1.2M units, ~29% of the global consumer 3D printer
+market. 2025 revenue >10B RMB. Shenzhen Guangming base planned for 3M+ units/year.
+Backers include IDG Capital, 5Y Capital, Temasek, True Light, Wuyuan, Mingshi, and
+reportedly Tencent at ~$10B. All figures `[Unverified]` — private, unaudited.
+
+**Google entities.** 深圳拓竹科技有限公司 (Shenzhen Tuozhu, `AR05671717087047843841`),
+BAMBU JAPAN K.K. (`AR04882639184256303105`), and agency Sinointeractive Digital
+Marketing (`AR05226884764400615425`, Hong Kong). **The agency account's ~100K ads are
+its whole client book, not Bambu's.** Same trap as HP's 50K on hp.com.
+
+**The decisive fact: NDAA FY2026.**
+- **Section 880** — no agency may operate, enter into, or renew a contract for additive
+  manufacturing machines **manufactured in**, running **software developed in**, or
+  **networked through** China, Russia, Iran or North Korea.
+- **Section 849** — bars DoD contracting for covered AM machines. Effective **one year
+  after enactment**; confirm the exact date with Legal.
+
+Bambu is exposed on all three limbs of s880, and its cloud Authorization Control
+architecture makes the networking limb worse. Defense contractors are already scrapping
+Bambu machines to reach compliance. **Every Bambu printer on a defense or Tier-1 floor
+is a forced replacement and a pipeline source for us.**
+
+**Stratasys v. Bambu Lab — legally sensitive, route to Legal.** This is our own live
+litigation. PTAB rulings on the contested patents expected mid-2026, with Bambu reported
+leading 3-1 on its challenges. US consolidated case in Texas, jury trial expected next
+June. On **Apr 24 2026 the Unified Patent Court in The Hague dismissed our emergency bid**
+to block the H2C in Europe — a provisional-measure ruling only, **not** a decision on
+infringement or validity. Do not let reps characterise the case to customers.
+
 ## Known bad claims — do not repeat
 
 | Claim | Status |

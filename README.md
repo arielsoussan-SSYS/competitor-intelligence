@@ -106,6 +106,25 @@ Company intelligence comes from trade press, newsrooms, landing pages, and inves
 **Headline:** Formlabs is selling large-format industrial SLS into drone manufacturing,
 and it ships the Fuse X1 in Q4 2026, ahead of HP's MJF 1200 in early 2027.
 
+**Bambu Lab, run 2026-08-25 — baseline run, no prior data.**
+
+| Metric | This run |
+|---|---|
+| LinkedIn owned ads | **0** (verified, 5 name variants + control) |
+| Google ads, own account | 1,700 (700 Text / 600 Image / 400 Video) |
+| Google ads, all Bambu entities | ~2,100 |
+| Third-party LinkedIn mentions | 75 ads across 45 advertisers |
+| Defense addressable market | Zero, NDAA FY2026 s849 and s880 |
+| Platforms checked | LinkedIn, Google. Meta out of scope this run. |
+
+**Headline:** Bambu buys no B2B advertising at all. The threat is price and volume, not
+marketing. NDAA FY2026 bars them from defense entirely, which makes every Bambu printer
+on a defense floor a forced replacement.
+
+> Bambu's chart buckets use **Google** counts, not LinkedIn instances, because they have
+> no LinkedIn programme. Every run file carries a `bucket_basis` string stating its
+> denominator, and the dashboard prints it above the charts.
+
 **HP Additive, run 2026-08-18, baseline 2026-08-10.**
 
 | Metric | This run | Baseline |
@@ -125,8 +144,8 @@ financial backing, production scale, technology and a sales hook. 14 of 19 are n
 `Confirmed`, up from 1. One account is `Locked` (ORQA US LLC, Formlabs installed and
 case-studied) and two are `Contested` (Neros, Skycutter).
 
-3D Systems last ran 2026-08-18. Bambu Lab has not been scanned yet and is an explicit
-`pending` stub, not zeroed data.
+3D Systems last ran 2026-08-18. All four tracked competitors now have real data; there
+are no `pending` stubs left.
 
 ## Tech
 
