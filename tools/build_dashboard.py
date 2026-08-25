@@ -206,6 +206,25 @@ canvas{max-height:270px}
 .pos.Contested{background:rgba(200,16,46,.13);color:var(--red)}
 .pos.Locked{background:rgba(16,23,37,.09);color:var(--ink3)}
 .g1{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:999px;background:rgba(31,56,100,.11);color:var(--navy)}
+.gcards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.gcard{border:1px solid rgba(16,23,37,.1);border-radius:18px;padding:16px 17px;
+ background:var(--glass2);border-left:4px solid rgba(16,23,37,.14)}
+.gcard.Locked{border-left-color:var(--red)}
+.gcard.Contested{border-left-color:var(--amber)}
+.gcard.Open{border-left-color:var(--green)}
+.gcard header{margin-bottom:11px}
+.gcard h4{font-size:16.5px;font-weight:680;letter-spacing:-.01em;color:var(--ink);margin:0 0 8px}
+.gcard .chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.gcard .warn{font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:3px 9px;border-radius:999px;
+ background:rgba(200,16,46,.12);color:var(--red)}
+.gbody{display:grid;gap:7px;margin-bottom:12px}
+.gr{display:grid;grid-template-columns:82px 1fr;gap:10px;font-size:12.8px;line-height:1.5}
+.gk{font-size:10.5px;font-weight:700;letter-spacing:.055em;text-transform:uppercase;color:var(--ink3);padding-top:2px}
+.gv{color:var(--ink2)}
+.hook{padding:11px 13px;border-radius:13px;background:rgba(255,252,245,.92);
+ border:1px solid rgba(168,100,0,.24);font-size:13px;line-height:1.55;color:var(--ink);margin-bottom:10px}
+.hook b{color:var(--amber)}
+.gnote{font-size:12.4px;line-height:1.6;color:var(--ink3);margin:0}
 .empty{padding:44px 26px;text-align:center}
 .empty h3{font-size:17px;font-weight:660;margin-bottom:8px}
 .empty p{font-size:14px;color:var(--ink2);max-width:56ch;margin:0 auto 6px;line-height:1.6}
@@ -248,9 +267,8 @@ footer b{color:var(--ink2)}
   <div class="gmeta" id="gMeta"></div>
   <div class="glass card"><h3>The 19 companies in Gauntlet II</h3>
     <p class="cap">Every one is a Stratasys prospect. Posture is displacement difficulty, not importance. Confidence is how well the competitor presence is evidenced.</p>
-    <div class="tools"><input class="search" id="gq" placeholder="Search company, posture, notes..." autocomplete="off"></div>
-    <div class="scroll"><table><thead><tr><th>Company</th><th>Posture</th><th>AM stance</th>
-      <th>Competitor present</th><th>Confidence</th><th>Notes</th></tr></thead><tbody id="gRows"></tbody></table></div>
+    <div class="tools"><input class="search" id="gq" placeholder="Search company, location, backer, technology, hook..." autocomplete="off"></div>
+    <div class="gcards" id="gRows"></div>
     <p class="cap" style="margin:12px 0 0" id="gCount"></p></div>
   <div class="glass card"><h3>Sources</h3><p class="cap">Public reporting only. No non-public information.</p>
     <ul class="plain" id="gSrc"></ul></div>
@@ -314,6 +332,10 @@ footer b{color:var(--ink2)}
       <th>CTA</th><th>Funnel</th><th>Impr</th><th>Est $/mo</th><th>Audience</th><th>Notes</th></tr></thead>
       <tbody id="rows"></tbody></table></div>
     <p class="cap" style="margin:12px 0 0" id="count"></p></div>
+  <div class="glass card" id="partnerCard" hidden><h3>Partner and reseller ads</h3>
+    <p class="cap">Ads run by resellers and distributors promoting this competitor's technology. Not counted in the instance totals above, because they are not the competitor's own spend. Often the more aggressive, bottom-funnel creative.</p>
+    <div class="scroll"><table><thead><tr><th>Advertiser</th><th>Volume</th><th>What they are running</th></tr></thead>
+      <tbody id="prows"></tbody></table></div></div>
 </section>
 
 <section class="panel" id="p-themes">
@@ -446,6 +468,11 @@ function rows(f){
   const li=D.sources&&D.sources.linkedin;
   $("count").textContent=r.length+" of "+(D.ads||[]).length+" unique creatives shown."+
     (li&&li.live_instances!=null?" "+li.live_instances+" live instances total.":"");
+  const pa=(D.partner_ads||[]);
+  $("partnerCard").hidden=!pa.length;
+  $("prows").innerHTML=pa.map(x=>"<tr><td class='hl'>"+e(x.advertiser)+"</td><td><span class='f'>"+
+    e(x.count)+"</span></td><td>"+e(x.note)+(x.url?' <a class="src" href="'+e(x.url)+
+    '" target="_blank" rel="noopener">source</a>':"")+"</td></tr>").join("");
 }
 $("q").addEventListener("input",ev=>rows(ev.target.value));
 $("who").addEventListener("click",ev=>{const b=ev.target.closest(".co"); if(b) render(b.dataset.s);});
@@ -544,15 +571,28 @@ function gaunt(){
 function grows(f){
   const q=(f||"").toLowerCase();
   const r=G.teams.filter(t=>!q||JSON.stringify(t).toLowerCase().includes(q));
-  $("gRows").innerHTML=r.map(t=>"<tr><td class='hl'>"+e(t.company)+
-    (t.gauntlet1?' <span class="g1">G1</span>':"")+'</td><td><span class="pos '+e(t.posture)+'">'+
-    e(t.posture)+"</span></td><td>"+e(t.am_posture||"Unknown")+"</td><td>"+
-    e(t.competitor_presence||"None identified")+'</td><td><span class="f">'+e(t.confidence)+"</span></td><td>"+
-    e(t.notes)+(t.evidence_url?' <a class="src" href="'+e(t.evidence_url)+
-    '" target="_blank" rel="noopener">source</a>':"")+"</td></tr>").join("")
-    ||'<tr><td colspan="6">No companies match.</td></tr>';
+  const row=(l,v)=>v?'<div class="gr"><span class="gk">'+l+'</span><span class="gv">'+e(v)+'</span></div>':"";
+  $("gRows").innerHTML=r.map(t=>
+    '<article class="gcard '+e(t.posture)+'">'+
+      '<header><h4>'+e(t.company)+(t.gauntlet1?' <span class="g1">G1</span>':"")+'</h4>'+
+      '<div class="chips"><span class="pos '+e(t.posture)+'">'+e(t.posture)+'</span>'+
+      '<span class="f">AM stance: '+e(t.am_posture||"Unknown")+'</span>'+
+      '<span class="f">'+e(t.confidence)+'</span>'+
+      (t.competitor_presence?'<span class="warn">'+e(t.competitor_presence)+'</span>':"")+
+      '</div></header>'+
+      '<div class="gbody">'+
+        row("Based",t.hq)+row("Backing",t.backing)+row("Scale",t.scale)+row("Technology",t.tech)+
+      '</div>'+
+      (t.sales_hook?'<div class="hook"><b>Sales hook:</b> '+e(t.sales_hook)+'</div>':"")+
+      '<p class="gnote">'+e(t.notes)+(t.evidence_url?' <a class="src" href="'+e(t.evidence_url)+
+        '" target="_blank" rel="noopener">source</a>':"")+'</p>'+
+    '</article>').join("")
+    ||'<p class="cap">No companies match.</p>';
+  const loc=G.teams.filter(t=>t.posture==="Locked").length,
+        con=G.teams.filter(t=>t.posture==="Contested").length;
   $("gCount").textContent=r.length+" of "+G.teams.length+" companies shown. "+
-    G.teams.filter(t=>t.gauntlet1).length+" returning from Gauntlet I.";
+    G.teams.filter(t=>t.gauntlet1).length+" returning from Gauntlet I. "+
+    loc+" locked by a competitor, "+con+" contested, "+(G.teams.length-loc-con)+" open.";
 }
 
 render(cur); home(); gaunt();
