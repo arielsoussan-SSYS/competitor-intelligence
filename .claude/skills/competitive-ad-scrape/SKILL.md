@@ -20,6 +20,7 @@ sales consequence does not ship.
 
 ## Read first
 
+- `references/context.md` — why this exists, who it is for, and what is already running
 - `references/competitors.md` — who is tracked, at what depth, and why
 - `references/standing-facts.md` — carry-forward intel and refuted claims. **Verify, do not re-derive.**
 - `references/collection.md` — source-by-source tradecraft. Saves an hour of rediscovery.

@@ -13,12 +13,36 @@ plus a one-page sales brief. Every output answers "what do I do with this on a c
 The dashboard has three sections: **Home** for the cross-competitor read, **Competitors**
 for the per-competitor dashboards, and **Gauntlet** for account penetration.
 
+## Start here
+
+**Claude reads [`CLAUDE.md`](CLAUDE.md) automatically when you open a session in this
+folder.** That file is the operating manual: setup requirements, collection rules,
+verified advertiser names, honesty rules and current state. This README is the human
+overview.
+
 ## How to run it, in one line
 
-Open a Claude Code session in this repo and say **"scrape competitor ads"**. It is not
-automated yet, by design: the collection runs through Ariel's own Chrome browser, so his
-machine has to be on. Automating it means swapping the browser for an API-based scraper,
-which is a later project.
+Open a Claude Code session **in this folder** and say **"scrape competitor ads"**.
+
+> The session must be rooted here. This repo is gitignored inside the parent Stratasys
+> workspace, so opening Claude Code at the workspace root will not find the skill.
+
+### First time on a new machine
+
+```bash
+git clone https://github.com/arielsoussan-SSYS/competitor-intelligence.git
+cd competitor-intelligence
+```
+
+Then check one thing before anything else: **the Claude for Chrome extension must be
+installed and connected.** The entire collection phase drives your own browser through it.
+Without it there is no scrape, though everything downstream still works. `python3` and
+`git` are the only other requirements, and the dashboard builder uses the standard library
+only, so there is nothing to install.
+
+It is not automated by design: collection needs a live browser, so your machine has to be
+on. Automating it means swapping the browser for an API-based scraper, which is a later
+project.
 
 ## Collection rules that matter
 
