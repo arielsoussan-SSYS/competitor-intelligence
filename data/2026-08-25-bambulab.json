@@ -263,5 +263,10 @@
     "method": "Chrome connector, ?accountOwner= URL parameter",
     "live_instances_at_verification": 0,
     "note": "Confirmed 2026-08-25 via Chrome connector across 5 name variants. Control (Formlabs=38) passed."
+  },
+  "last_reconfirmed": {
+    "on": "2026-09-07",
+    "method": "Chrome connector, ?accountOwner= URL parameter",
+    "result": "0 live instances, unchanged from Aug 25 baseline. No re-scrape of individual ads performed since the count and advertiser identity are stable."
   }
 }

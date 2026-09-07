@@ -634,5 +634,10 @@
     "ads_with_eu_delivery": 1,
     "of_total": 38,
     "note": "Only 1 of 38 Formlabs creatives was served in the EU, which is why impressions and targeting are 'Not disclosed' for the other 37. Formlabs' LinkedIn programme is effectively United States only."
+  },
+  "last_reconfirmed": {
+    "on": "2026-09-07",
+    "method": "Chrome connector, ?accountOwner= URL parameter",
+    "result": "38 live instances, unchanged from Aug 25 baseline. No re-scrape of individual ads performed since the count and advertiser identity are stable."
   }
 }
