@@ -77,14 +77,14 @@ These exist because breaking each one has already produced wrong data in this re
 
 ### Verified advertiser names
 
-Confirmed 2026-09-15 (Formlabs, Bambu Lab). Re-confirm every run and update this table.
+Confirmed 2026-09-22 (all four). Re-confirm every run and update this table.
 
 | Competitor | `?accountOwner=` | Live instances | Warning |
 |---|---|---|---|
-| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 36 (Sep 7) | `HP Additive` also resolves correctly |
-| Formlabs | `Formlabs` | 33 (Sep 15, down from 38) | clean, use as the control |
-| 3D Systems | `3D Systems Corporation` | 1 (Sep 7) | **`3D Systems` returns 33 ads that are NOT them** (3D Dental Systems d.o.o., FGS Media) |
-| Bambu Lab | no account exists | 0 (Sep 15) | **`Bambu` returns 237 ads that are all Bambuser**, unrelated |
+| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 36 (Sep 22) | `HP Additive` also resolves correctly |
+| Formlabs | `Formlabs` | 33 (Sep 22, flat) | clean, use as the control |
+| 3D Systems | `3D Systems Corporation` | 1 (Sep 22, recruitment only) | **`3D Systems` returns 33 ads that are NOT them** (3D Dental Systems d.o.o., FGS Media) |
+| Bambu Lab | no account exists | 0 (Sep 22) | **`Bambu` returns 237 ads that are all Bambuser**, unrelated |
 
 **Never quote an agency's total ad count as a competitor's.** ATREVIA COMUNICACIÓN SL
 (124 ads) and Sinointeractive (100K ads) are their whole client books, not HP's or Bambu's.

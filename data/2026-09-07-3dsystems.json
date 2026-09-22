@@ -379,5 +379,10 @@
     "live_instances_at_verification": 1,
     "note": "Unchanged from Aug 25."
   },
-  "theme_gap": null
+  "theme_gap": null,
+  "last_reconfirmed": {
+    "on": "2026-09-22",
+    "method": "Chrome connector, ?accountOwner= URL parameter, control (Formlabs) passed first",
+    "result": "1 live instance, unchanged from Sep 7, and it is a recruitment ad ('explore relevant opportunities'), not marketing creative. Fourth consecutive run with zero marketing creative in market."
+  }
 }

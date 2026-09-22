@@ -638,5 +638,10 @@
     "ads_with_eu_delivery": 2,
     "of_total": 36,
     "note": "Only 2 of 36 HP AM creatives reach the EU, and both are paid for by ATREVIA COMUNICACION SL. HP AM's LinkedIn programme is otherwise United States only."
+  },
+  "last_reconfirmed": {
+    "on": "2026-09-22",
+    "method": "Chrome connector, ?accountOwner= URL parameter, control (Formlabs) passed first",
+    "result": "36 live instances across 18 unique creatives, unchanged from Sep 7. Third consecutive flat run: same creatives, same counts, same copy. Instance total read from LinkedIn's own 'N ads match' figure; the full 36 were not re-enumerated by hand this run because the reported total and every creative visible matched the Sep 7 record exactly."
   }
 }
