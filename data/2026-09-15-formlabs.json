@@ -165,7 +165,8 @@
     }
   ],
   "unverified": [
-    "Skyfall, the largest drone manufacturer in Ukraine, uses Formlabs printers. [Unverified], carried from Aug 25. No published Formlabs case study or Skyfall statement names Formlabs."
+    "Skyfall, the largest drone manufacturer in Ukraine, uses Formlabs printers. [Unverified], carried from Aug 25. No published Formlabs case study or Skyfall statement names Formlabs.",
+    "Corrected 2026-09-22: the Skyfall/Rob Ortiz message ad end date was recorded as Aug 24 2026. LinkedIn's detail page reads Aug 10 to Sep 7 2026. The earlier date was wrong, not the library."
   ],
   "ads": [
     {
@@ -177,13 +178,13 @@
       "impr": "<1k",
       "first": "Aug 10, 2026",
       "last": "Sep 7, 2026",
-      "active": "Ended Aug 24 2026",
+      "active": "Ended Sep 7 2026",
       "audience": "English speakers, United States and Europe. No job-title or company targeting disclosed.",
       "funnel": "Bottom",
       "url": "https://www.linkedin.com/ad-library/detail/1494261574",
       "owner": "Formlabs-owned",
       "status": "Still listed past recorded end date",
-      "notes": "1 instance, unchanged. Recorded as ended Aug 24 2026 in the Aug 25 run; still present in the library 3 weeks later. Not re-verified against a fresh EU disclosure pull this run.",
+      "notes": "1 instance, unchanged. Recorded as ended Aug 24 2026 in the Aug 25 run; still present in the library 3 weeks later. Not re-verified against a fresh EU disclosure pull this run. Corrected 2026-09-22: previously recorded as ended Aug 24 2026; the library's own detail page reads 'Ran from Aug 10, 2026 to Sep 7, 2026'.",
       "impr_disclosed": true,
       "impr_countries": "US 98%, Ukraine 1%, Estonia <1%, Greece <1%",
       "payer": "Formlabs Inc."
