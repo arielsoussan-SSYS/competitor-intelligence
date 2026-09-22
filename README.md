@@ -147,8 +147,14 @@ Company intelligence comes from trade press, newsrooms, landing pages, and inves
 
 - **One row equals one unique creative.** LinkedIn serves the same creative as many
   library entries. Unique creatives and live instances are reported separately, always.
-- **Spend is a directional `[Estimate]`**, never a competitor's real budget. Impression
-  figures are bands, so midpoint arithmetic compounds error.
+- **Spend is a directional `[Estimate]`**, never a competitor's real budget, and it is
+  derived rather than stored. `tools/spend_model.py` computes every dollar from the
+  disclosed impression band (geometric mean, not midpoint), divided by the ad's real run
+  length, times a format-specific B2B CPM. Message Ads are costed per send instead.
+  LinkedIn discloses impressions **only for EU-targeted ads**, so most creatives cannot
+  be costed at all and are reported as "not disclosed" rather than zero. Every total is
+  published with its coverage, e.g. "from 2 of 18 creatives". See
+  `.claude/skills/competitive-ad-scrape/references/spend-model.md`.
 - **Absence of evidence is not evidence of absence.** "Not found in search", never "none".
 - **Labels are mandatory:** `[Inference]` for reasoning, `[Unverified]` for uncorroborated
   claims, `[validation-needed]` for anything sales-facing that is not proven.
@@ -170,8 +176,10 @@ All four competitors carry real data. No pending stubs.
 | Live instances | 36 | 36 |
 | New / dropped | 1 / 1 | - |
 | Drone share of volume | 39% (14 of 36) | 39% (14 of 36) |
+| Drone spend | **not disclosed**, no drone creative is EU-targeted | - |
 | Largest measured flight | **500K-1M impressions in 19 days** | not measured |
-| Est. spend, that flight alone | $15-80K `[Estimate]` | - |
+| Est. spend, that flight alone | $14-32K `[Estimate]`, whole flight | - |
+| Est. monthly rate while running | $22.7K to $51.0K/mo `[Estimate]` | - |
 | EU-served creatives | 2 of 36 | - |
 
 **Headline:** HP put 500K-1M impressions behind a single MJF 1200 teaser in three weeks,

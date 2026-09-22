@@ -222,8 +222,6 @@
       "theme": "Recruitment (not marketing)",
       "headline": "Get the latest jobs and industry news. %FIRSTNAME%, explore relevant opportunities with 3D Systems Corporation",
       "cta": "Learn More",
-      "lo": 0,
-      "hi": 500,
       "first": "2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -233,7 +231,8 @@
       "owner": "3D Systems corporate",
       "status": "Carried over",
       "notes": "Still the ONLY ad under advertiser '3D Systems Corporation'. Still carrying the unrendered %FIRSTNAME% token, unchanged since baseline. Marketing creative on LinkedIn: zero, for a second consecutive run.",
-      "impr": "Not reported"
+      "impr": "Not disclosed",
+      "impr_disclosed": false
     },
     {
       "platform": "Google Search (KR)",
@@ -241,8 +240,6 @@
       "theme": "Brand defence",
       "headline": "3D Systems - 3d 시스템즈",
       "cta": "Visit site",
-      "lo": 300,
-      "hi": 1200,
       "first": "2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -252,7 +249,8 @@
       "owner": "3D Systems Korea (쓰리디시스템즈코리아)",
       "status": "Carried over",
       "notes": "Brand-term search ad from the Korean subsidiary account, unchanged.",
-      "impr": "Not reported"
+      "impr": "Not disclosed",
+      "impr_disclosed": false
     },
     {
       "platform": "Google Search (JP)",
@@ -260,8 +258,6 @@
       "theme": "Prototyping speed",
       "headline": "【3D Systems】業務用3Dプリンタ - 試作リードタイムを大幅短縮 (industrial 3D printer, sharply shorten prototyping lead time)",
       "cta": "Visit site",
-      "lo": 300,
-      "hi": 1200,
       "first": "2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -271,7 +267,8 @@
       "owner": "Yamada Leo House (株式会社ヤマダレオハウス), JP reseller",
       "status": "Carried over",
       "notes": "Reseller-run, not corporate. Unchanged.",
-      "impr": "Not reported"
+      "impr": "Not disclosed",
+      "impr_disclosed": false
     },
     {
       "platform": "Google Search (JP)",
@@ -279,8 +276,6 @@
       "theme": "Cost reduction",
       "headline": "金型コスト削減に貢献3Dプリンタ (3D printers that cut mould costs)",
       "cta": "Visit site",
-      "lo": 300,
-      "hi": 1200,
       "first": "2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -290,7 +285,8 @@
       "owner": "Yamada Leo House (JP reseller)",
       "status": "Carried over",
       "notes": "Cost-displacement pitch, unchanged.",
-      "impr": "Not reported"
+      "impr": "Not disclosed",
+      "impr_disclosed": false
     },
     {
       "platform": "Google Search (JP)",
@@ -298,8 +294,6 @@
       "theme": "Accuracy vs low-cost printers",
       "headline": "安価3Dプリンタの精度に不満な方 (for those dissatisfied with the accuracy of cheap 3D printers)",
       "cta": "Visit site",
-      "lo": 300,
-      "hi": 1200,
       "first": "2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -309,7 +303,8 @@
       "owner": "Yamada Leo House (JP reseller)",
       "status": "Carried over",
       "notes": "The only competitive-displacement message in their footprint, unchanged.",
-      "impr": "Not reported"
+      "impr": "Not disclosed",
+      "impr_disclosed": false
     },
     {
       "platform": "Google Display (KR)",
@@ -317,8 +312,6 @@
       "theme": "Jewelry / wax casting",
       "headline": "주얼리 전용 MJP 3D 프린터 - 쥬얼리 왁스 패턴 3D 프린터, MJP 300W Plus (MJP 3D printer for jewelry, wax pattern printing)",
       "cta": "더 알아보기 (Learn more)",
-      "lo": 400,
-      "hi": 1500,
       "first": "2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -328,7 +321,8 @@
       "owner": "3D Systems Korea",
       "status": "Carried over",
       "notes": "Branded MJP 300W Plus creative, unchanged. Still nothing supporting Med Tech, A&D or data centre.",
-      "impr": "Not reported"
+      "impr": "Not disclosed",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn (reseller)",
@@ -336,8 +330,6 @@
       "theme": "Dental",
       "headline": "Impression 3D directe de protheses completes dentaire. Soirees de l'imprimante 3D NextDent 300, Paris",
       "cta": "Register",
-      "lo": 200,
-      "hi": 800,
       "first": "Jun 2026",
       "last": "Jul 2026",
       "active": "No",
@@ -347,7 +339,8 @@
       "owner": "KALLISTO (FR reseller)",
       "status": "Carried over (inactive)",
       "notes": "Event already ended at baseline (Jun-Jul 2026). Still the library's only NextDent creative, still reseller-owned not 3D Systems, still inactive.",
-      "impr": "Not reported"
+      "impr": "Not disclosed",
+      "impr_disclosed": false
     }
   ],
   "themes": {
@@ -384,5 +377,14 @@
     "on": "2026-09-22",
     "method": "Chrome connector, ?accountOwner= URL parameter, control (Formlabs) passed first",
     "result": "1 live instance, unchanged from Sep 7, and it is a recruitment ad ('explore relevant opportunities'), not marketing creative. Fourth consecutive run with zero marketing creative in market."
+  },
+  "spend_method": "Dollars are derived at render time by tools/spend_model.py, never stored. Geometric mean of the disclosed impression band, divided by the actual run length, times a format-specific B2B CPM. Message and Conversation Ads use cost per send instead. Ads with no disclosed impressions are reported as not disclosed, never imputed.",
+  "spend_summary": {
+    "monthly_lo": 0,
+    "monthly_hi": 0,
+    "n_estimated": 0,
+    "n_undisclosed": 7,
+    "coverage": "0 of 7 creatives had disclosed impressions and could be costed.",
+    "label": "[Estimate] derived, not reported. Wide by construction."
   }
 }

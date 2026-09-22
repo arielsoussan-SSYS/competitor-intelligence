@@ -95,9 +95,15 @@ The same trap applies to HP's ~50K Google total, which cannot be split from cons
 - **One row is one unique creative.** Ad libraries serve the same creative as many entries.
   Unique creatives and live instances are reported separately, always, and are not
   interchangeable.
-- **Spend is always `[Estimate]`.** Impression bands come from the platform; the dollar
-  conversion is ours and the range is wide by construction. Never present it as a
-  competitor's real budget.
+- **Spend is always `[Estimate]`, and always derived, never stored.** Dollars live
+  nowhere in `data/*.json`. `tools/spend_model.py` computes them at render time from
+  the disclosed impression band, the actual run length and a format-specific CPM.
+  Three rules that the old method broke: use the **geometric mean** of a band, not the
+  midpoint; **divide lifetime impressions by the real run length** to get a monthly
+  rate; and treat an ad with no EU targeting as **not disclosed, not zero**. LinkedIn
+  publishes impressions only for EU-targeted ads, which on 2026-09-22 was 2 of HP's 36
+  instances and 1 of Formlabs' 33. Always publish coverage next to a total. Never
+  multiply instance count by anything.
 - **`[Inference]`** for reasoning, **`[Unverified]`** for uncorroborated advertiser claims,
   **`[validation-needed]`** for anything sales-facing that is not proven.
 - **"Not found in search", never "none."** Absence of evidence is not evidence of absence.
@@ -119,7 +125,7 @@ All in `.claude/skills/competitive-ad-scrape/references/`:
 | `standing-facts.md` | Carry-forward intel per competitor, and known bad claims. **Verify, do not re-derive.** |
 | `competitors.md` | Who is tracked, at what depth, and why |
 | `schema.md` | The 17-field ad record, verbatim. Do not invent fields. |
-| `spend-model.md` | CPM/CPC constants, impression bands, format efficiency |
+| `spend-model.md` | The spend method, its constants and its limits. `tools/spend_model.py` is the implementation and wins any disagreement. |
 | `creative-rubric.md` | How to score creative quality, including ours |
 | `context.md` | Why this exists, stakeholders, what marketing already has running, hard-won lessons |
 

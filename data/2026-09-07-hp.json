@@ -10,8 +10,6 @@
       "headline": "Manufacturing leaders in the Pacific Northwest: this one's for you. Meet the HP Multi Jet Fusion 1200. Our newest compact professional printer / HP MJF 1200 Open House, October 1 2026",
       "cta": "Register",
       "impr": "Not disclosed",
-      "lo": 1500,
-      "hi": 4000,
       "first": "Aug 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -20,7 +18,8 @@
       "url": "https://www.linkedin.com/ad-library/detail/1554731086",
       "owner": "HP-owned",
       "status": "NEW this week",
-      "notes": "3 instances. First dated, in-person, bottom-funnel event for the MJF 1200. Geographically targeted at the Pacific Northwest, which is unusual precision for HP AM. Event runs Oct 1 2026 18:00 - Oct 2 00:00 UTC. This is the closing stage of the launch motion that began with the April teaser."
+      "notes": "3 instances. First dated, in-person, bottom-funnel event for the MJF 1200. Geographically targeted at the Pacific Northwest, which is unusual precision for HP AM. Event runs Oct 1 2026 18:00 - Oct 2 00:00 UTC. This is the closing stage of the launch motion that began with the April teaser.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -28,9 +27,7 @@
       "theme": "Product Launch",
       "headline": "The energy around the unveiling of the next chapter of HP Multi Jet Fusion at RAPID + TCT 2026 is still going / Live Look: HP Unveils New 3D Printer",
       "cta": "Learn More",
-      "impr": "10K-50K",
-      "lo": 3000,
-      "hi": 8000,
+      "impr": "Not disclosed",
       "first": "Apr 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -39,7 +36,8 @@
       "url": "https://reinvent.hp.com/us-en-3dprint-mjfunveil2026",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "3 active instances. Launch event recap still in rotation 4 months post-reveal."
+      "notes": "3 active instances. Launch event recap still in rotation 4 months post-reveal.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -47,9 +45,7 @@
       "theme": "Webinar / Vertical",
       "headline": "Manufacturing in the U.S. is more important than ever, but many drone companies still face challenges with cost, reliance / Made in America: Redefining UAV Production with Additive Manufacturing Webinar",
       "cta": "Register",
-      "impr": "10K-50K",
-      "lo": 3000,
-      "hi": 8000,
+      "impr": "Not disclosed",
       "first": "Oct 2025",
       "last": "Aug 2026",
       "active": "Yes",
@@ -58,7 +54,8 @@
       "url": "https://www.commercialuavnews.com/webinars/made-in-america-redefining-uav-production-with-additive-manufacturing",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "4 active instances, tied for heaviest creative in rotation. Webinar aired Oct 30 2025, evergreen gated asset."
+      "notes": "4 active instances, tied for heaviest creative in rotation. Webinar aired Oct 30 2025, evergreen gated asset.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -66,18 +63,19 @@
       "theme": "Product Teaser",
       "headline": "Something new is on the horizon. HP #MJFNext. You'll want to see this. Join us on April 14 to see what's coming next",
       "cta": "Learn More",
-      "impr": "500K-1M",
-      "lo": 15000,
-      "hi": 80000,
-      "first": "Mar 2026",
-      "last": "Aug 2026",
+      "impr": "500k-1M",
+      "first": "Mar 26, 2026",
+      "last": "Apr 13, 2026",
       "active": "Yes",
       "audience": "Engineering, exec",
       "funnel": "Top",
       "url": "https://reinvent.hp.com/us-en-3dprint-mjfunveil2026",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "2 instances. EU-served, full record disclosed: ran Mar 26 - Apr 13 2026, TOTAL IMPRESSIONS 500K-1M, delivered United States 97% / France 2% / Spain 1% / Germany <1%. Paid for by ATREVIA COMUNICACION SL. This single nineteen-day teaser flight is the largest measured HP AM spend we have found: roughly $15,000-$80,000 at a $30-80 CPM [Estimate]. The creative is still live in rotation five months later with an expired April 14 date in the copy."
+      "notes": "2 instances. EU-served, full record disclosed: ran Mar 26 - Apr 13 2026, TOTAL IMPRESSIONS 500K-1M, delivered United States 97% / France 2% / Spain 1% / Germany <1%. Paid for by ATREVIA COMUNICACION SL. This single nineteen-day teaser flight is the largest measured HP AM spend we have found: roughly $15,000-$80,000 at a $30-80 CPM [Estimate]. The creative is still live in rotation five months later with an expired April 14 date in the copy.",
+      "impr_disclosed": true,
+      "impr_countries": "US 97%, France 2%, Spain 1%, Germany <1%",
+      "payer": "ATREVIA COMUNICACION SL"
     },
     {
       "platform": "LinkedIn",
@@ -85,9 +83,7 @@
       "theme": "Product Launch",
       "headline": "A few minutes ago, we unveiled the next chapter of HP Multi Jet Fusion! Introducing the HP Multi Jet Fusion 1200 3D Printer / Professional 3D Printing, Now Within Your Reach.",
       "cta": "Learn More",
-      "impr": "10K-50K",
-      "lo": 3000,
-      "hi": 8000,
+      "impr": "Not disclosed",
       "first": "Apr 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -96,7 +92,8 @@
       "url": "https://www.hp.com/us-en/printers/3d-printers/products/multi-jet-fusion-1200.html",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "3 instances. Sub-$60K positioning. Machine does not ship until early 2027."
+      "notes": "3 instances. Sub-$60K positioning. Machine does not ship until early 2027.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -104,9 +101,7 @@
       "theme": "Webinar / Vertical",
       "headline": "Why are UAV leaders choosing additive manufacturing? In this upcoming webinar, Unusual Machines, blueflite, Firestorm",
       "cta": "Register",
-      "impr": "10K-50K",
-      "lo": 3000,
-      "hi": 8000,
+      "impr": "Not disclosed",
       "first": "Oct 2025",
       "last": "Aug 2026",
       "active": "Yes",
@@ -115,7 +110,8 @@
       "url": "https://reinvent.hp.com/us-en-3dprint-drones",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "4 active instances. Names Unusual Machines, blueflite, Firestorm Labs as proof points."
+      "notes": "4 active instances. Names Unusual Machines, blueflite, Firestorm Labs as proof points.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -123,9 +119,7 @@
       "theme": "Production Scale",
       "headline": "Scaling industrial 3D printing isn't about adding printers. It's about building a production system the business can trust",
       "cta": "Learn More",
-      "impr": "5K-25K",
-      "lo": 1500,
-      "hi": 4000,
+      "impr": "Not disclosed",
       "first": "Aug 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -134,7 +128,8 @@
       "url": "https://www.hp.com/us-en/printers/3d-printers.html",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "2 instances. Now a full week into rotation, holding steady. Reliability/total-system positioning, Stratasys core ground."
+      "notes": "2 instances. Now a full week into rotation, holding steady. Reliability/total-system positioning, Stratasys core ground.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -142,18 +137,19 @@
       "theme": "Bottom Funnel Offer",
       "headline": "Reserve your HP MJF 1200 3D printer today! With our new program for the HP MJF 1200, businesses can get priority access / Book your HP MJF 1200 3D Printer",
       "cta": "Sign Up",
-      "impr": "30K-50K",
-      "lo": 1200,
-      "hi": 3200,
-      "first": "Apr 2026",
-      "last": "Aug 2026",
+      "impr": "30k-50k",
+      "first": "Jun 29, 2026",
+      "last": "Jul 19, 2026",
       "active": "Yes",
       "audience": "SMB, procurement, engineering",
       "funnel": "Bottom",
       "url": "https://reinvent.hp.com/us-en-3dprint-mjflaunch2026",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "2 instances, multi-page carousel. EU-served, so the full record is disclosed: ran Jun 29 - Jul 19 2026, 30K-50K total impressions, delivered France 41% / Spain 37% / United States 8% / United Kingdom 8%, targeted on English and a location list including Germany and the United States. Paid for by ATREVIA COMUNICACION SL, a Madrid communications agency, not by HP directly. FULL OFFER TERMS: priority access before general availability, no upfront payment required, 20% off eligible MJF parts orders through HP 3D Printing Service, credit toward a future MJF 1200 purchase, up to $10,000 in credit."
+      "notes": "2 instances, multi-page carousel. EU-served, so the full record is disclosed: ran Jun 29 - Jul 19 2026, 30K-50K total impressions, delivered France 41% / Spain 37% / United States 8% / United Kingdom 8%, targeted on English and a location list including Germany and the United States. Paid for by ATREVIA COMUNICACION SL, a Madrid communications agency, not by HP directly. FULL OFFER TERMS: priority access before general availability, no upfront payment required, 20% off eligible MJF parts orders through HP 3D Printing Service, credit toward a future MJF 1200 purchase, up to $10,000 in credit.",
+      "impr_disclosed": true,
+      "impr_countries": "France 41%, Spain 37%, US 8%, UK 8%",
+      "payer": "ATREVIA COMUNICACION SL"
     },
     {
       "platform": "LinkedIn",
@@ -161,9 +157,7 @@
       "theme": "Metal / Technical",
       "headline": "What happens between printing and performance? For many metal AM applications, the answer is sintering",
       "cta": "Learn More",
-      "impr": "5K-25K",
-      "lo": 1500,
-      "hi": 4000,
+      "impr": "Not disclosed",
       "first": "Aug 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -172,7 +166,8 @@
       "url": "https://www.hp.com/us-en/printers/3d-printers/products/metal-jet.html",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "Sintering education play, held at 1 instance. Pairs with OptiPowder Ni718 qualification with Continuum Powders and INDO-MIM."
+      "notes": "Sintering education play, held at 1 instance. Pairs with OptiPowder Ni718 qualification with Continuum Powders and INDO-MIM.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -180,9 +175,7 @@
       "theme": "Case Study",
       "headline": "3D Printing, 3,400 Meters Under the Sea. In the groundbreaking KM3NeT Neutrino telescope project, around 16,000 components",
       "cta": "Learn More",
-      "impr": "5K-25K",
-      "lo": 1500,
-      "hi": 4000,
+      "impr": "Not disclosed",
       "first": "Jun 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -191,7 +184,8 @@
       "url": "https://www.hp.com/us-en/printers/3d-printers.html",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "Prestige/science credibility play. Low commercial intent."
+      "notes": "Prestige/science credibility play. Low commercial intent.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -199,9 +193,7 @@
       "theme": "Product Launch",
       "headline": "The Future of Industrial Filament is Here. Prototyping is great, but industrial production demands more.",
       "cta": "Learn More",
-      "impr": "5K-25K",
-      "lo": 1500,
-      "hi": 4000,
+      "impr": "Not disclosed",
       "first": "Apr 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -210,7 +202,8 @@
       "url": "https://reinvent.hp.com/us-en-3dprint-filament3dprinter600HT",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "HP IF 600 HT. Direct competitive overlap with Stratasys FDM."
+      "notes": "HP IF 600 HT. Direct competitive overlap with Stratasys FDM.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -218,9 +211,7 @@
       "theme": "Product Launch",
       "headline": "Why does industrial filament still come with so many trade-offs? Too often, manufacturers are forced to choose between",
       "cta": "Learn More",
-      "impr": "5K-25K",
-      "lo": 1500,
-      "hi": 4000,
+      "impr": "Not disclosed",
       "first": "Aug 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -229,7 +220,8 @@
       "url": "https://reinvent.hp.com/us-en-3dprint-filament3dprinter600HT",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "Third distinct 600 HT creative. Carried over from Aug 18, not new.. Objection-handling angle rather than a feature announcement, argues open materials against proprietary trade-offs."
+      "notes": "Third distinct 600 HT creative. Carried over from Aug 18, not new.. Objection-handling angle rather than a feature announcement, argues open materials against proprietary trade-offs.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -237,9 +229,7 @@
       "theme": "Product Launch",
       "headline": "Did you catch our Industrial Filament launch? This carousel is a closer look at the HP Industrial Filament 3D Printer / HP IF 3D Printer 600 HT",
       "cta": "Learn More",
-      "impr": "5K-25K",
-      "lo": 1500,
-      "hi": 4000,
+      "impr": "Not disclosed",
       "first": "Apr 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -248,7 +238,8 @@
       "url": "https://www.hp.com/us-en/printers/3d-printers/products/filament_3d_printer_600ht.html",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "6-page carousel. 380x380x420mm build, 500C printhead, 195C heated chamber, PEEK/PAEK/Ultem 9085."
+      "notes": "6-page carousel. 380x380x420mm build, 500C printhead, 195C heated chamber, PEEK/PAEK/Ultem 9085.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -256,9 +247,7 @@
       "theme": "Vertical / Thought Leadership",
       "headline": "How is additive redefining U.S. drone manufacturing? Manufacturing in the U.S. is evolving, balancing innovation, cost",
       "cta": "Learn More",
-      "impr": "10K-50K",
-      "lo": 3000,
-      "hi": 8000,
+      "impr": "Not disclosed",
       "first": "Aug 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -267,7 +256,8 @@
       "url": "https://reinvent.hp.com/us-en-3dprint-drones",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "Held at 4 instances, HP's heaviest single creative alongside the Made in America webinar. Reshoring and domestic production framing."
+      "notes": "Held at 4 instances, HP's heaviest single creative alongside the Made in America webinar. Reshoring and domestic production framing.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -275,9 +265,7 @@
       "theme": "Bottom Funnel Offer",
       "headline": "Designing or printing parts for drones? Now you can get answers directly from HP Application Engineers. Engineer's Corner",
       "cta": "Book a Meeting",
-      "impr": "5K-25K",
-      "lo": 1500,
-      "hi": 4000,
+      "impr": "Not disclosed",
       "first": "Jun 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -286,7 +274,8 @@
       "url": "https://reinvent.hp.com/us-en-3dprint-drones",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "Direct sales-engineer routing. Highest-intent drone CTA HP is running."
+      "notes": "Direct sales-engineer routing. Highest-intent drone CTA HP is running.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -294,9 +283,7 @@
       "theme": "Case Study / Vertical",
       "headline": "In the fast-paced world of FPV drones, speed and adaptability are everything. That's why Unusual Machines turned to HP",
       "cta": "Learn More",
-      "impr": "5K-25K",
-      "lo": 1500,
-      "hi": 4000,
+      "impr": "Not disclosed",
       "first": "Feb 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -305,7 +292,8 @@
       "url": "https://reinvent.hp.com/us-en-3dprint-drones",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "Unusual Machines adopted MJF publicly Aug 2024. Domestic FPV production angle."
+      "notes": "Unusual Machines adopted MJF publicly Aug 2024. Domestic FPV production angle.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -313,9 +301,7 @@
       "theme": "Event / Vertical",
       "headline": "At #AAOP2026, the focus is clear: better outcomes for the patients we serve. We'll be in #Nashville at Booth 822",
       "cta": "Learn More",
-      "impr": "5K-25K",
-      "lo": 1500,
-      "hi": 4000,
+      "impr": "Not disclosed",
       "first": "Jan 2026",
       "last": "Aug 2026",
       "active": "Yes",
@@ -324,7 +310,8 @@
       "url": "https://www.hp.com/us-en/printers/3d-printers/industries/orthotics-prosthetics.html",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "AAOP 2026 ran Feb 18-21 2026. Creative is now roughly 6 months stale and still live, second consecutive run flagged. [Unverified] HP exhibition and booth 822 not confirmed outside HP's own ad copy."
+      "notes": "AAOP 2026 ran Feb 18-21 2026. Creative is now roughly 6 months stale and still live, second consecutive run flagged. [Unverified] HP exhibition and booth 822 not confirmed outside HP's own ad copy.",
+      "impr_disclosed": false
     },
     {
       "platform": "LinkedIn",
@@ -332,9 +319,7 @@
       "theme": "Webinar / Vertical",
       "headline": "3D Printing for Orthotics & Prosthetics. Join us on October 30, 2025 at 11:00 AM EDT / 5 PM CET",
       "cta": "Register",
-      "impr": "1K-10K",
-      "lo": 500,
-      "hi": 2000,
+      "impr": "Not disclosed",
       "first": "Oct 2025",
       "last": "Aug 2026",
       "active": "Yes",
@@ -343,7 +328,8 @@
       "url": "https://www.hp.com/us-en/printers/3d-printers/industries/orthotics-prosthetics.html",
       "owner": "HP-owned",
       "status": "Carried over",
-      "notes": "Dated Oct 2025 webinar still running with a past date in the copy. Stale for a second consecutive run."
+      "notes": "Dated Oct 2025 webinar still running with a past date in the copy. Stale for a second consecutive run.",
+      "impr_disclosed": false
     }
   ],
   "themes": {
@@ -643,5 +629,14 @@
     "on": "2026-09-22",
     "method": "Chrome connector, ?accountOwner= URL parameter, control (Formlabs) passed first",
     "result": "36 live instances across 18 unique creatives, unchanged from Sep 7. Third consecutive flat run: same creatives, same counts, same copy. Instance total read from LinkedIn's own 'N ads match' figure; the full 36 were not re-enumerated by hand this run because the reported total and every creative visible matched the Sep 7 record exactly."
+  },
+  "spend_method": "Dollars are derived at render time by tools/spend_model.py, never stored. Geometric mean of the disclosed impression band, divided by the actual run length, times a format-specific B2B CPM. Message and Conversation Ads use cost per send instead. Ads with no disclosed impressions are reported as not disclosed, never imputed.",
+  "spend_summary": {
+    "monthly_lo": 24005,
+    "monthly_hi": 54066,
+    "n_estimated": 2,
+    "n_undisclosed": 16,
+    "coverage": "2 of 18 creatives had disclosed impressions and could be costed.",
+    "label": "[Estimate] derived, not reported. Wide by construction."
   }
 }

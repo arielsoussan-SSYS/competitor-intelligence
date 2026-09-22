@@ -268,5 +268,14 @@
     "on": "2026-09-22",
     "method": "Chrome connector, ?accountOwner= URL parameter, control (Formlabs) passed first",
     "result": "No results for the advertiser search, unchanged. Still no LinkedIn advertiser account exists. Not a zero spend finding, an absence of an account."
+  },
+  "spend_method": "Dollars are derived at render time by tools/spend_model.py, never stored. Geometric mean of the disclosed impression band, divided by the actual run length, times a format-specific B2B CPM. Message and Conversation Ads use cost per send instead. Ads with no disclosed impressions are reported as not disclosed, never imputed.",
+  "spend_summary": {
+    "monthly_lo": 0,
+    "monthly_hi": 0,
+    "n_estimated": 0,
+    "n_undisclosed": 0,
+    "coverage": "0 of 0 creatives had disclosed impressions and could be costed.",
+    "label": "[Estimate] derived, not reported. Wide by construction."
   }
 }

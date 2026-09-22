@@ -41,7 +41,27 @@ for s, d in C.items():
 GPATH = os.path.join(ROOT, "data", "gauntlet.json")
 G = json.load(open(GPATH, encoding="utf-8")) if os.path.exists(GPATH) else None
 
-PAYLOAD = {"competitors": C, "order": order, "built": built, "gauntlet": G}
+import spend_model as SM
+
+def _attach_spend(competitors):
+    """Dollars are derived here, never read from the data files. The data files
+    hold observations (impression band, run dates, format); every dollar is a
+    view computed by tools/spend_model.py, so an estimate can always be traced
+    to the method that produced it."""
+    for slug, d in competitors.items():
+        for a in d.get("ads", []) or []:
+            r = SM.estimate(a)
+            a["spend_estimable"] = r["estimable"]
+            a["spend_lo"] = round(r["monthly_lo"]) if r["monthly_lo"] else None
+            a["spend_hi"] = round(r["monthly_hi"]) if r["monthly_hi"] else None
+            a["spend_floor_only"] = r["floor_only"]
+            a["spend_basis"] = r["basis"]
+        d["spend_derived"] = SM.summarise(d.get("ads", []) or [])
+    return competitors
+
+C = _attach_spend(C)
+PAYLOAD = {"competitors": C, "order": order, "built": built, "gauntlet": G,
+           "spend_method": SM.__doc__.strip().split("WHY THIS REPLACED")[0].strip()}
 
 TPL = r"""<!doctype html>
 <html lang="en">
@@ -360,7 +380,7 @@ footer b{color:var(--ink2)}
     <div class="glass card"><h3>Theme mix</h3><p class="cap" id="cap1">By campaign theme</p><canvas id="c1"></canvas><p class="empty" id="e1" hidden></p></div>
     <div class="glass card"><h3>Format mix</h3><p class="cap" id="cap2">By creative format</p><canvas id="c2"></canvas><p class="empty" id="e2" hidden></p></div>
     <div class="glass card"><h3>Funnel distribution</h3><p class="cap" id="cap3">Where they are spending in the buying cycle</p><canvas id="c3"></canvas><p class="empty" id="e3" hidden></p></div>
-    <div class="glass card"><h3>Estimated spend by theme</h3><p class="cap">Low and high monthly bands. Directional only.</p><canvas id="c4"></canvas><p class="empty" id="e4" hidden></p></div>
+    <div class="glass card"><h3>Estimated spend by theme</h3><p class="cap">Monthly, and only for ads whose impressions LinkedIn actually discloses. Derived, wide by construction.</p><canvas id="c4"></canvas><p class="empty" id="e4" hidden></p></div>
   </div>
 </section>
 
@@ -399,7 +419,10 @@ footer b{color:var(--ink2)}
 const P=%%DATA%%, CO=P.competitors, ORD=P.order, G=P.gauntlet;
 const e=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const $=i=>document.getElementById(i);
-const money=a=>a.lo||a.hi?"$"+(a.lo/1000)+"-"+(a.hi/1000)+"K":"n/a";
+const fmtM=v=>v>=1000?"$"+(v/1000).toFixed(1)+"K":"$"+v;
+const money=a=>a.spend_estimable&&a.spend_lo!=null
+  ? (a.spend_floor_only?"≥":"")+fmtM(a.spend_lo)+"-"+fmtM(a.spend_hi)+"/mo"
+  : "not disclosed";
 let cur=ORD[0], charts=[], drawnFor=null;
 
 $("who").innerHTML=ORD.map(s=>{const d=CO[s],pend=d.status==="pending";
@@ -534,13 +557,16 @@ function drawCharts(){
   mk("c3",{type:"bar",data:{labels:fu.map(x=>x[0]),datasets:[{data:fu.map(x=>x[1]),
     backgroundColor:PAL[1],borderRadius:7}]},options:{...base,...noL}},
     "No funnel breakdown collected this run.");
-  const sp={}; (D.ads||[]).forEach(a=>{const k=a.theme;sp[k]=sp[k]||[0,0];sp[k][0]+=a.lo||0;sp[k][1]+=a.hi||0;});
+  const sp={}; (D.ads||[]).forEach(a=>{if(!a.spend_estimable)return;
+    const k=a.theme;sp[k]=sp[k]||[0,0];sp[k][0]+=a.spend_lo||0;sp[k][1]+=a.spend_hi||0;});
   const se=Object.entries(sp).sort((a,b)=>b[1][1]-a[1][1]);
   mk("c4",{type:"bar",data:{labels:se.map(x=>x[0]),datasets:[
     {label:"Low",data:se.map(x=>x[1][0]),backgroundColor:PAL[1],borderRadius:6},
     {label:"High",data:se.map(x=>x[1][1]),backgroundColor:PAL[0],borderRadius:6}]},
     options:{...base,plugins:{legend:{position:"top",labels:{boxWidth:11,usePointStyle:true,pointStyle:"circle"}}}}},
-    "No ad-level spend estimate: spend bands are only modelled for LinkedIn creatives, and this competitor has none.");
+    "No spend estimate is possible. LinkedIn discloses impressions only for "
+    +"EU-targeted ads, and none of this competitor's live creatives carry a "
+    +"disclosed band. That is missing data, not zero spend.");
 }
 
 /* ---- section switching ---- */
