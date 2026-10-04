@@ -1,0 +1,487 @@
+{
+  "competitor": "Formlabs",
+  "slug": "formlabs",
+  "run_date": "2026-10-04",
+  "baseline_date": "2026-09-22",
+  "week_label": "Week of Sep 28 - Oct 4, 2026",
+  "why_tracked": "Owns the workhorse and accessible segment, is moving upmarket into industrial SLS, and is advertising directly into drone manufacturing.",
+  "headline": "Formlabs is shifting budget from LinkedIn to Google: LinkedIn down to 28 ads (from 33) as three case-study documents dropped, while Google search ads rose to 121 (from 106).",
+  "so_what": "Both drone ads held steady, so the contested-ground read on drones is unchanged. The cut fell on prototyping case studies, not on production or drone messaging. [Inference] More search and less LinkedIn means Formlabs is harvesting demand ahead of Fuse X1 deliveries in Q4: buyers searching for SLS and production printing will see Formlabs first. Fuse X1 shipping is still not confirmed.",
+  "sources": {
+    "linkedin": {
+      "checked": true,
+      "unique_creatives": 12,
+      "live_instances": 28,
+      "note": "Advertiser search 'Formlabs' reports 28 ads (24 Formlabs company posts, 4 Nick Graham thought-leader ads promoted by Formlabs). All 28 loaded and hand-grouped into 12 unique creatives. Reconciled."
+    },
+    "meta": {
+      "checked": false,
+      "note": "Out of scope. Not checked. This is not a zero result."
+    },
+    "google": {
+      "checked": true,
+      "note": "Formlabs Inc. (AR04252334007510892545), single verified account. Format filter counts Oct 4: 99 Text, 14 Image, 8 Video = 121 exact, up from 106 (88/10/8) on Aug 25."
+    }
+  },
+  "kpis": [
+    {
+      "label": "Unique creatives",
+      "value": "12",
+      "delta": "Down from 15 (0 new, 3 dropped)",
+      "dir": "down"
+    },
+    {
+      "label": "Live instances (LinkedIn)",
+      "value": "28",
+      "delta": "Down from 33 (-15%), second straight fall",
+      "dir": "down"
+    },
+    {
+      "label": "Google ads, own account",
+      "value": "121",
+      "delta": "Up from 106 on Aug 25 (99 Text / 14 Image / 8 Video)",
+      "dir": "up"
+    },
+    {
+      "label": "Drone-specific creative",
+      "value": "4 of 28",
+      "delta": "Count unchanged, share up to 14% as total volume fell",
+      "dir": "flat"
+    }
+  ],
+  "changes": [
+    {
+      "cat": "Ad-level",
+      "items": [
+        {
+          "t": "DROPPED: three document case studies (PSYONIC, Form 4 upgrade, blow-mold tooling).",
+          "d": "1 instance each on Sep 22, absent Oct 4. All three were prototyping or tooling-cost proof, not drone or production messaging.",
+          "u": "https://www.linkedin.com/ad-library/search?accountOwner=Formlabs"
+        },
+        {
+          "t": "'Turn concepts into reality faster' cut from 8 instances to 6.",
+          "d": "Still Formlabs's heaviest creative. A weight change, not a message change.",
+          "u": "https://www.linkedin.com/ad-library/search?accountOwner=Formlabs"
+        },
+        {
+          "t": "Both drone creatives held: the SLS 'propeller-ready' video (3) and the Rob Ortiz / Skyfall message ad (1).",
+          "d": "The message ad's own record says it ended Sep 7, yet it is still listed four weeks later.",
+          "u": "https://www.linkedin.com/ad-library/detail/1494261574"
+        }
+      ]
+    },
+    {
+      "cat": "Company / market",
+      "items": [
+        {
+          "t": "Google search ads up 14% since Aug 25, to 121.",
+          "d": "Text ads 88 to 99, image 10 to 14, video flat at 8. Same single verified account, so the count is clean.",
+          "u": "https://adstransparency.google.com/advertiser/AR04252334007510892545?region=anywhere&hl=en"
+        },
+        {
+          "t": "No confirmation yet that Fuse X1 deliveries have started, and no IPO filing found.",
+          "d": "Still stated as 'deliveries starting Q4 2026'. Dávid Lakatos was named President in the August board reshuffle.",
+          "u": "https://3dprintingindustry.com/news/formlabs-overhauls-board-riccio-joins-as-linder-steps-down-after-15-years-253870/"
+        }
+      ]
+    },
+    {
+      "cat": "Messaging / positioning",
+      "items": [
+        {
+          "t": "EOS is now the heaviest advertiser on 'SLS drone parts', ahead of Formlabs's reseller.",
+          "d": "Keyword scan, discovery only, not in the ad log: EOS 8 of the first-page results, Phillips Machine Tools (Formlabs reseller) 5, Formlabs-branded drone creative 1. SLS-for-drones is becoming a crowded message.",
+          "u": "https://www.linkedin.com/ad-library/search?keyword=SLS%20drone%20parts"
+        }
+      ]
+    }
+  ],
+  "dropped": [
+    {
+      "headline": "PSYONIC used Formlabs SLA printers to prototype nine versions of the Ability Hand, transforming lengthy development cycles into agile, in-house revision workflows / Iterate prototypes quickly with 9 versions built in-house",
+      "cta": "Learn More",
+      "funnel": "Top",
+      "note": "1 instance on Sep 22, absent Oct 4. Document ad. 1 instance, down from 3 at Aug 25. Largest single drop this run."
+    },
+    {
+      "headline": "Fast prints, flawless finish, fewer tweaks. Upgrading to Form 4 transformed Peak Design's SLA prototyping allowing for more iterations per day / One-hour SLA prints that move product design faster",
+      "cta": "Learn More",
+      "funnel": "Top",
+      "note": "1 instance on Sep 22, absent Oct 4. Document ad. 1 instance, down from 2 at Aug 25."
+    },
+    {
+      "headline": "Reduce blow-mold tooling costs by up to 90% using Formlabs 3D printers",
+      "cta": "Learn More",
+      "funnel": "Mid",
+      "note": "1 instance on Sep 22, absent Oct 4. Document ad. 1 instance, down from 2 at Aug 25."
+    }
+  ],
+  "theme_gap": "Google re-checked Oct 4 (121 ads, format counts only; Google creative is not themed because it renders in cross-origin iframes). Themes, formats and funnels below are LinkedIn instances, hand-counted Oct 4.",
+  "theme_detail": [
+    [
+      "Prototyping speed / iteration",
+      2,
+      8,
+      "Turn concepts into reality faster. Iterate in hours.",
+      "Top",
+      "Design engineers, product teams"
+    ],
+    [
+      "Quality / industrial-grade",
+      1,
+      5,
+      "Industrial-grade accuracy and surface finish that rivals traditional methods.",
+      "Top",
+      "Engineering, manufacturing"
+    ],
+    [
+      "Drones / UAV / defense",
+      2,
+      4,
+      "From prototype to propeller-ready. End-use drone components.",
+      "Top and Bottom",
+      "Drone OEM engineering, ops, defense"
+    ],
+    [
+      "Dental / clear aligners",
+      3,
+      3,
+      "Resin production is real. 98.6% print success. Aligners at volume.",
+      "Mid",
+      "Dental labs, clinic chains, DSOs"
+    ],
+    [
+      "Scale / growth partner",
+      1,
+      2,
+      "Built to grow with you. Startups and Fortune 500s alike.",
+      "Top",
+      "Engineering leadership"
+    ],
+    [
+      "Demo / consultation",
+      1,
+      3,
+      "One-on-one virtual walkthrough. Book a demo.",
+      "Bottom",
+      "Any evaluating buyer"
+    ],
+    [
+      "Ease of use",
+      1,
+      2,
+      "Designed for engineers and designers, not just specialists.",
+      "Top",
+      "Engineering, ops"
+    ],
+    [
+      "Price-performance",
+      1,
+      1,
+      "Can a $7,000 printer outperform one that costs $100,000/year?",
+      "Mid",
+      "Budget holders, finance"
+    ]
+  ],
+  "talk_track": [
+    {
+      "claim": "\"Skyfall, the largest drone manufacturer in Ukraine, prints flight-ready parts the same day they are designed on our machines.\"",
+      "counter": "Still [Unverified], no published Skyfall case study. This run adds a wrinkle: the ad itself is still listed in the library past its recorded end date, so confirm it is not quietly running again before briefing this as closed.",
+      "tag": "Drones"
+    }
+  ],
+  "exposure": [
+    "Drone manufacturing as a named vertical, unchanged this run: dedicated drones page, top-funnel SLS drone creative at steady volume, personalised outbound drone play still listed."
+  ],
+  "watch": [
+    {
+      "h": "Whether the Skyfall message ad has genuinely relaunched",
+      "b": "It should have dropped out of the library after its Aug 24 end date and has not. Re-check the EU disclosure record next run for new run dates before treating this as reactivated.",
+      "u": "https://www.linkedin.com/ad-library/detail/1494261574"
+    },
+    {
+      "h": "Whether the LinkedIn pullback continues",
+      "b": "Second straight fall (38, 33, 28) while Google grew. One more run in the same direction makes it a channel shift, not noise.",
+      "u": "https://www.linkedin.com/ad-library/search?accountOwner=Formlabs"
+    },
+    {
+      "h": "EOS on drone SLS keywords",
+      "b": "EOS is not tracked but is now buying the 'SLS drone parts' conversation. Consider adding it at Tier 2 if it shows up again.",
+      "u": "https://www.linkedin.com/ad-library/search?keyword=SLS%20drone%20parts"
+    }
+  ],
+  "unverified": [
+    "Skyfall, the largest drone manufacturer in Ukraine, uses Formlabs printers. [Unverified], carried from Aug 25. No published Formlabs case study or Skyfall statement names Formlabs.",
+    "Corrected 2026-09-22: the Skyfall/Rob Ortiz message ad end date was recorded as Aug 24 2026. LinkedIn's detail page reads Aug 10 to Sep 7 2026. The earlier date was wrong, not the library."
+  ],
+  "ads": [
+    {
+      "platform": "LinkedIn",
+      "format": "Message Ad",
+      "theme": "Drones / UAV / defense",
+      "headline": "Hi %FIRSTNAME%, here at Formlabs I work all the time with drone teams on both SLS and SLA production. Skyfall, the largest drone manufacturer in Ukraine, uses our printers to deploy flight-ready parts the same day they're designed. The new Fuse X1 can print 20 1ft quadcopter frames in one build in-house versus 7-10 days and 5x the cost at a service bureau. / What does it cost?",
+      "cta": "What does it cost?",
+      "impr": "<1k",
+      "first": "Aug 10, 2026",
+      "last": "Sep 7, 2026",
+      "active": "Ended Sep 7 2026",
+      "audience": "English speakers, United States and Europe. No job-title or company targeting disclosed.",
+      "funnel": "Bottom",
+      "url": "https://www.linkedin.com/ad-library/detail/1494261574",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "1 instance, unchanged. Recorded as ended Aug 24 2026 in the Aug 25 run; still present in the library 3 weeks later. Not re-verified against a fresh EU disclosure pull this run. Corrected 2026-09-22: previously recorded as ended Aug 24 2026; the library's own detail page reads 'Ran from Aug 10, 2026 to Sep 7, 2026'. Re-pulled Oct 4 2026: EU record still reads 'Ran from Aug 10, 2026 to Sep 7, 2026', <1k impressions, US 98%. Still listed four weeks after its end date.",
+      "impr_disclosed": true,
+      "impr_countries": "US 98%, Ukraine 1%, Estonia <1%, Greece <1%",
+      "payer": "Formlabs Inc."
+    },
+    {
+      "platform": "LinkedIn",
+      "format": "Video",
+      "theme": "Drones / UAV / defense",
+      "headline": "From prototype to propeller-ready. Formlabs SLS delivers end-use drone components that are strong, precise, and production-grade, no supports, no compromise / Strong, functional end-use parts perfected for drone manufacturing",
+      "cta": "Learn More",
+      "impr": "Not disclosed",
+      "first": "Jul 2026",
+      "last": "Sep 2026",
+      "active": "Yes",
+      "audience": "Drone OEM engineering, manufacturing",
+      "funnel": "Top",
+      "url": "https://www.linkedin.com/ad-library/detail/849660054",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "3 instances, unchanged from Aug 25.",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "LinkedIn",
+      "format": "Video",
+      "theme": "Prototyping speed / iteration",
+      "headline": "Turn concepts into reality faster. With Formlabs 3D printers, design teams can iterate in hours, test form and function, and deliver prototypes that impress clients / Prototype Quick with Professional 3D Printing",
+      "cta": "Learn More",
+      "impr": "Not disclosed",
+      "first": "Apr 2026",
+      "last": "Sep 2026",
+      "active": "Yes",
+      "audience": "Design engineers, product teams",
+      "funnel": "Top",
+      "url": "https://www.linkedin.com/ad-library/detail/777139324",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "6 instances, down from 8. Weight change, not a status change. Still the single heaviest creative, now 24% of a smaller total volume.",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "LinkedIn",
+      "format": "Single Image",
+      "theme": "Quality / industrial-grade",
+      "headline": "Quality you can trust. Formlabs SLA and SLS printers deliver industrial-grade accuracy and surface finish that rivals traditional methods. See the difference for yourself.",
+      "cta": "Learn More",
+      "impr": "Not disclosed",
+      "first": "Apr 2026",
+      "last": "Sep 2026",
+      "active": "Yes",
+      "audience": "Engineering, manufacturing",
+      "funnel": "Top",
+      "url": "https://www.linkedin.com/ad-library/detail/856086744",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "5 instances, unchanged from Aug 25.",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "LinkedIn",
+      "format": "Single Image",
+      "theme": "Demo / consultation",
+      "headline": "Have a specific challenge? Get your questions answered in a one-on-one virtual walkthrough and discover how our printers can fit into your workflow / Book a demo with a Formlabs 3D printing expert today.",
+      "cta": "Learn More",
+      "impr": "Not disclosed",
+      "first": "Jun 2026",
+      "last": "Sep 2026",
+      "active": "Yes",
+      "audience": "Any evaluating buyer",
+      "funnel": "Bottom",
+      "url": "https://www.linkedin.com/ad-library/detail/886412754",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "3 instances, unchanged from Aug 25.",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "LinkedIn",
+      "format": "Single Image",
+      "theme": "Scale / growth partner",
+      "headline": "Built to grow with you. From first prototypes to production-ready workflows, Formlabs scales with your needs. Trusted by startups and Fortune 500s alike.",
+      "cta": "Learn More",
+      "impr": "Not disclosed",
+      "first": "Apr 2026",
+      "last": "Sep 2026",
+      "active": "Yes",
+      "audience": "Engineering leadership",
+      "funnel": "Top",
+      "url": "https://www.linkedin.com/ad-library/detail/776639144",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "2 instances, down from 3 at Aug 25.",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "LinkedIn",
+      "format": "Video",
+      "theme": "Prototyping speed / iteration",
+      "headline": "Turn your ideas into high-fidelity prototypes that look and work like final products within days / Contact a Formlabs 3D printing expert for a 1-1 consultation.",
+      "cta": "Learn More",
+      "impr": "Not disclosed",
+      "first": "Jun 2026",
+      "last": "Sep 2026",
+      "active": "Yes",
+      "audience": "Design engineers, product teams",
+      "funnel": "Bottom",
+      "url": "https://www.linkedin.com/ad-library/detail/886571454",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "2 instances, unchanged from Aug 25.",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "LinkedIn",
+      "format": "Single Image",
+      "theme": "Ease of use",
+      "headline": "Easy to use. Easy to scale. Formlabs printers are designed for engineers and designers, not just specialists. Simple setup, simple scaling.",
+      "cta": "Learn More",
+      "impr": "Not disclosed",
+      "first": "Apr 2026",
+      "last": "Sep 2026",
+      "active": "Yes",
+      "audience": "Engineering, ops",
+      "funnel": "Top",
+      "url": "https://www.linkedin.com/ad-library/detail/747533544",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "2 instances, unchanged from Aug 25.",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "LinkedIn",
+      "format": "Thought Leader",
+      "theme": "Dental / clear aligners",
+      "headline": "Resin 3D printing isn't ready for production. It's a common misconception. Clove Dental built a fleet of Form 4Bs manufacturing clear aligners at volume / How Clove Dental Scaled with Formlabs Form 4B",
+      "cta": "Learn More",
+      "impr": "Not disclosed",
+      "first": "Aug 2026",
+      "last": "Sep 2026",
+      "active": "Yes",
+      "audience": "Dental labs, clinic chains, DSOs",
+      "funnel": "Mid",
+      "url": "https://www.linkedin.com/ad-library/detail/1443662754",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "1 instance, unchanged from Aug 25.",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "LinkedIn",
+      "format": "Thought Leader",
+      "theme": "Price-performance",
+      "headline": "Can a $7,000 3D printer outperform one that costs $100,000/year? The crazy answer is yes. We make more industrial resin 3D printers than any other company in the world. We are #1 by unit market share.",
+      "cta": "Learn More",
+      "impr": "Not disclosed",
+      "first": "Jul 2026",
+      "last": "Sep 2026",
+      "active": "Yes",
+      "audience": "Budget holders, finance, engineering leadership",
+      "funnel": "Mid",
+      "url": "https://www.linkedin.com/ad-library/detail/1314686034",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "1 instance, unchanged from Aug 25.",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "LinkedIn",
+      "format": "Thought Leader",
+      "theme": "Dental / clear aligners",
+      "headline": "What is the reliability of your dental 3D printer? Formlabs Form 4B finished 2025 with a 98.6% print success rate. Form 4BL at 98.3%. Based on data from over 400,000 customer votes.",
+      "cta": "Learn More",
+      "impr": "Not disclosed",
+      "first": "Jul 2026",
+      "last": "Sep 2026",
+      "active": "Yes",
+      "audience": "Dental labs, practices",
+      "funnel": "Mid",
+      "url": "https://www.linkedin.com/ad-library/detail/1311388424",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "1 instance, unchanged from Aug 25.",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "LinkedIn",
+      "format": "Thought Leader",
+      "theme": "Dental / clear aligners",
+      "headline": "Is your dental 3D printer a fancy paperweight? Both the Form 4B and 4BL average more than 1 print a day. Form 4B practices used 2 litres of resin a month per printer in 2025, Form 4BL customers 15 litres.",
+      "cta": "Learn More",
+      "impr": "Not disclosed",
+      "first": "Jun 2026",
+      "last": "Sep 2026",
+      "active": "Yes",
+      "audience": "Dental labs, practices",
+      "funnel": "Mid",
+      "url": "https://www.linkedin.com/ad-library/detail/1295117164",
+      "owner": "Formlabs-owned",
+      "status": "Carried over",
+      "notes": "1 instance, unchanged from Aug 25.",
+      "impr_disclosed": false
+    }
+  ],
+  "partner_ads": [
+    {
+      "advertiser": "Phillips Machine Tools",
+      "count": "5 results on the 'SLS drone parts' keyword search, Oct 4 2026",
+      "note": "Bottom-funnel, quote-seeking drone creative. Re-observed Oct 4 via keyword scan.",
+      "url": "https://www.linkedin.com/ad-library/detail/1478883703"
+    },
+    {
+      "advertiser": "Thinglab",
+      "count": "3+ instances, not re-checked this run",
+      "note": "Fuse X1 launch webinars. Carried forward from Aug 25, not re-verified.",
+      "url": "https://www.linkedin.com/ad-library/detail/1510031316"
+    }
+  ],
+  "themes": {
+    "Prototyping speed / iteration": 8,
+    "Quality / industrial-grade": 5,
+    "Drones / UAV / defense": 4,
+    "Dental / clear aligners": 3,
+    "Demo / consultation": 3,
+    "Scale / growth partner": 2,
+    "Ease of use": 2,
+    "Price-performance": 1
+  },
+  "formats": {
+    "Single Image": 13,
+    "Video": 10,
+    "Thought Leader": 4,
+    "Message Ad": 1
+  },
+  "funnels": {
+    "Top": 18,
+    "Mid": 4,
+    "Bottom": 6
+  },
+  "bucket_basis": "Counts are live LinkedIn ad instances, not unique creatives. 12 creatives on Oct 4: the Sep 15 set minus 3 dropped document ads, with 'Turn concepts into reality faster' down from 8 to 6 instances. Totals 28.",
+  "count_unit": "Live LinkedIn instances",
+  "linkedin_advertiser": "Formlabs",
+  "advertiser_verified": {
+    "on": "2026-10-04",
+    "method": "Chrome connector, ?accountOwner= URL parameter, control (Formlabs) passed first",
+    "live_instances_at_verification": 28,
+    "note": "Control search. Returned a count first (28), so the Bambu zero and the 3D Systems near-zero in this run are findings. Result cards are Formlabs and Nick Graham, CRO at Formlabs, promoted by Formlabs."
+  },
+  "spend_method": "Dollars are derived at render time by tools/spend_model.py, never stored. Geometric mean of the disclosed impression band, divided by the actual run length, times a format-specific B2B CPM. Message and Conversation Ads use cost per send instead. Ads with no disclosed impressions are reported as not disclosed, never imputed.",
+  "eu_disclosure": {
+    "ads_with_eu_delivery": 1,
+    "of_total": 28,
+    "note": "Only the Rob Ortiz / Skyfall message ad is EU-served. Effectively US-only."
+  }
+}

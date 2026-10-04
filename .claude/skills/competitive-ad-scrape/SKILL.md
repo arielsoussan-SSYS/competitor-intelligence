@@ -83,12 +83,12 @@ Per competitor, in tier order. Follow `references/collection.md` for each source
 
 ### Verified advertiser names
 
-Confirmed 2026-08-25 via Chrome connector. Re-confirm each run and update this table.
+Confirmed 2026-10-04 via Chrome connector. Re-confirm each run and update this table.
 
 | Competitor | `accountOwner=` | Verified count | Warning |
 |---|---|---|---|
-| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 36 | `HP Additive` also returns 36 and is safe |
-| Formlabs | `Formlabs` | 38 | clean |
+| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 34 | `HP Additive` also returns 34 and is safe |
+| Formlabs | `Formlabs` | 28 | clean |
 | 3D Systems | `3D Systems Corporation` | 1 | **`3D Systems` returns 33 ads that are NOT them** (3D Dental Systems d.o.o., FGS Media). Always use the full legal name. |
 | Bambu Lab | none exists | 0 | Verified across `Bambu Lab`, `BambuLab`, `Bambu Lab US`, `Bambu Japan`, `Tuozhu`. `Bambu` returns 237 ads that are all **Bambuser**, unrelated. |
 

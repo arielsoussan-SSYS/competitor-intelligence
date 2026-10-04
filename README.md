@@ -134,12 +134,12 @@ social posts, trade press.
 
 Company intelligence comes from trade press, newsrooms, landing pages, and investor calls.
 
-**Verified advertiser names.** Confirmed 2026-08-25. Re-confirm every run.
+**Verified advertiser names.** Confirmed 2026-10-04. Re-confirm every run.
 
 | Competitor | `?accountOwner=` | Live instances |
 |---|---|---|
-| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 36 |
-| Formlabs | `Formlabs` | 38 |
+| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 34 |
+| Formlabs | `Formlabs` | 28 |
 | 3D Systems | `3D Systems Corporation` | 1 |
 | Bambu Lab | no account exists | 0 |
 
@@ -166,62 +166,56 @@ Company intelligence comes from trade press, newsrooms, landing pages, and inves
 
 ## Current snapshot
 
-All four competitors carry real data. No pending stubs.
+All four competitors carry real data. No pending stubs. Latest run **2026-10-04**.
 
-**HP Additive — run 2026-08-25, baseline 2026-08-18**
+**HP Additive, run 2026-10-04, baseline 2026-09-22**
 
 | Metric | This run | Baseline |
 |---|---|---|
-| Unique creatives | 18 | 18 |
-| Live instances | 36 | 36 |
-| New / dropped | 1 / 1 | - |
-| Drone share of volume | 39% (14 of 36) | 39% (14 of 36) |
-| Drone spend | **not disclosed**, no drone creative is EU-targeted | - |
-| Largest measured flight | **500K-1M impressions in 19 days** | not measured |
-| Est. spend, that flight alone | $14-32K `[Estimate]`, whole flight | - |
-| Est. monthly rate while running | $22.7K to $51.0K/mo `[Estimate]` | - |
-| EU-served creatives | 2 of 36 | - |
+| Unique creatives | 16 | 18 |
+| Live instances | 34 | 36 |
+| New / dropped | 0 / 2 | - |
+| Drone share of volume | 35% (12 of 34) | 39% (14 of 36) |
+| Stale dated creatives | 4 | 3 |
+| Est. monthly rate, costable ads | $24.0K to $54.1K/mo `[Estimate]`, from 2 of 16 creatives | same 2 ads |
+| EU-served creatives | 2 of 34 | 2 of 36 |
 
-**Headline:** HP put 500K-1M impressions behind a single MJF 1200 teaser in three weeks,
-and now runs a dated Open House to close it. Volume looks flat, but the mix moved from
-top-funnel brand storytelling to bottom-funnel pipeline: an emotive prosthetics carousel
-dropped, an Oct 1 Open House replaced it.
+**Headline:** HP cut its two most direct drone ads, including the "talk to an HP engineer"
+offer, and has added nothing new in four weeks.
 
-**Formlabs — run 2026-08-25, baseline run**
+**Formlabs, run 2026-10-04, baseline 2026-09-22**
 
-| Metric | This run |
-|---|---|
-| Unique creatives / live instances | 15 / 38 |
-| Google ads, own account | 106 (88 Text / 10 Image / 8 Video) |
-| Drone-specific creative | 4 of 38 |
-| EU-served creatives | 1 of 38 |
+| Metric | This run | Baseline |
+|---|---|---|
+| Unique creatives / live instances | 12 / 28 | 15 / 33 |
+| Google ads, own account | 121 (99 Text / 14 Image / 8 Video) | 106 (Aug 25) |
+| Drone-specific creative | 4 of 28 | 4 of 33 |
+| EU-served creatives | 1 of 28 | 1 of 33 |
 
-**Headline:** Formlabs ships the Fuse X1 in Q4 2026 at $84,999, ahead of HP's MJF 1200 in
-early 2027, and is advertising into drone manufacturing by name.
+**Headline:** LinkedIn down for a second run while Google search grew. Budget is moving to search.
 
-**Bambu Lab — run 2026-08-25, baseline run**
+**Bambu Lab, run 2026-10-04, baseline 2026-08-25**
 
 | Metric | This run |
 |---|---|
 | LinkedIn owned ads | **0** (verified, 5 name variants + control) |
-| Google ads, own account | 1,700 (700 Text / 600 Image / 400 Video) |
-| Third-party LinkedIn mentions | 75 ads across 45 advertisers |
+| Google ads, own account | ~1,800 (~600 Text / ~800 Image / ~400 Video, rounded) |
 | Defense addressable market | Zero, NDAA FY2026 s849 and s880 |
 
-**Headline:** Bambu buys no B2B advertising at all. The threat is price and volume. NDAA
-FY2026 bars them from defense entirely, which makes every Bambu printer on a defense
-floor a forced replacement.
+**Headline:** Still no B2B advertising. Sep 18 2026: a Texas jury found four Stratasys patents
+valid and infringed, about $27.6M in past damages. Legally sensitive, route to Legal.
 
-**3D Systems — run 2026-08-18**
+**3D Systems, run 2026-10-04, baseline 2026-09-22**
 
-Zero marketing creative on LinkedIn for a second consecutive run; 26 Google ads across
-two APAC reseller accounts. They win aerospace and defense through contracts, not media.
+Still zero marketing creative on LinkedIn. NEW: a verified US corporate Google account with
+9 ads (dental, metal, SLA, industrial quote), the first western paid search in five runs.
+35 Google ads on 3dsystems.com, up from 27.
 
-**Gauntlet tracker — updated 2026-08-25**
+**Gauntlet tracker, updated 2026-10-04**
 
-All 19 Gauntlet II teams carry location, financial backing, production scale, technology
-and a sales hook. 14 of 19 are `Confirmed`. One account is `Locked` (ORQA US LLC, Formlabs
-installed and case-studied) and two are `Contested` (Neros, Skycutter).
+Gauntlet II results are out (Sep 15-18 2026) and production orders are being placed. 17 of 19
+teams are `Confirmed`. One account is `Locked` (ORQA US LLC, Formlabs) and two are `Contested`
+(Neros, Skycutter).
 
 > Bambu's chart buckets use **Google** counts, not LinkedIn instances, because they have
 > no LinkedIn programme. Every run file carries a `bucket_basis` string stating its

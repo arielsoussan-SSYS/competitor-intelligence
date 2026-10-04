@@ -104,8 +104,11 @@ is a forced replacement and a pipeline source for us.**
 
 **Stratasys v. Bambu Lab — legally sensitive, route to Legal.** This is our own live
 litigation. PTAB rulings on the contested patents expected mid-2026, with Bambu reported
-leading 3-1 on its challenges. US consolidated case in Texas, jury trial expected next
-June. On **Apr 24 2026 the Unified Patent Court in The Hague dismissed our emergency bid**
+leading 3-1 on its challenges. **Sep 18 2026: in the first of two US cases (E.D. Texas,
+Marshall), a jury found four Stratasys patents valid and infringed, about $27.6M in past
+damages** (TCT, Sep 18 2026). Bambu says it will seek post-trial review and appeal. The
+second case has no trial date. Law360 (Sep 30 2026) reports PTAB invalidated nearly all
+challenged claims on three patents, relating to $2.8M of the award. On **Apr 24 2026 the Unified Patent Court in The Hague dismissed our emergency bid**
 to block the H2C in Europe — a provisional-measure ruling only, **not** a decision on
 infringement or validity. Do not let reps characterise the case to customers.
 

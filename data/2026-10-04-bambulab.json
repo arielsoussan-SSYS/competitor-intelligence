@@ -1,0 +1,210 @@
+{
+  "competitor": "Bambu Lab",
+  "slug": "bambulab",
+  "run_date": "2026-10-04",
+  "baseline_date": "2026-08-25",
+  "week_label": "Week of Sep 28 - Oct 4, 2026",
+  "status": "scanned",
+  "why_tracked": "Largest 3D printing company in the world by unit volume, now pushing up from prosumer into the professional and departmental FDM market we own.",
+  "headline": "Still zero LinkedIn ads and roughly 1,800 Google ads. The news is legal, not marketing: a Texas jury found four Stratasys patents valid and infringed by Bambu Lab, about $27.6M in past damages.",
+  "so_what": "Reps state the facts only and route every customer question to Legal. Bambu has said it will appeal, and later PTAB rulings have invalidated claims tied to part of the award. The sales argument that does not depend on the case is NDAA FY2026 section 849, which takes effect around Dec 18 2026 [Inference, confirm with Legal]: about eleven weeks to put a replacement offer in front of every defense floor running Bambu.",
+  "sources": {
+    "linkedin": {
+      "checked": true,
+      "unique_creatives": 0,
+      "live_instances": 0,
+      "note": "Still no LinkedIn advertiser account. 'No results found' for Bambu Lab, BambuLab, Bambu Lab US, Bambu Japan and Tuozhu on Oct 4. Control (Formlabs) returned 28 first, so the zero is real."
+    },
+    "meta": {
+      "checked": false,
+      "note": "Out of scope this run by request. Not checked. This is not a zero result."
+    },
+    "google": {
+      "checked": true,
+      "note": "Own account 深圳拓竹科技有限公司 (Shenzhen Tuozhu, AR05671717087047843841), format filter Oct 4: ~600 Text / ~800 Image / ~400 Video = ~1,800. Google shows these rounded, so the change from 1,700 is within rounding except the image shift (600 to ~800). BAMBU JAPAN and the Sinointeractive agency account not re-checked."
+    }
+  },
+  "kpis": [
+    {
+      "label": "LinkedIn owned ads",
+      "value": "0",
+      "delta": "5 name variants, control passed",
+      "dir": "flat"
+    },
+    {
+      "label": "Google ads, own account",
+      "value": "~1,800",
+      "delta": "~600 Text / ~800 Image / ~400 Video, rounded",
+      "dir": "up"
+    },
+    {
+      "label": "Defense addressable market",
+      "value": "Zero",
+      "delta": "NDAA FY2026 s849 and s880",
+      "dir": "down"
+    },
+    {
+      "label": "s849 effective",
+      "value": "~Dec 18 2026",
+      "delta": "One year after enactment [Inference], confirm with Legal",
+      "dir": "flat"
+    },
+    {
+      "label": "Stratasys v. Bambu, first trial",
+      "value": "Verdict Sep 18",
+      "delta": "4 patents valid and infringed, ~$27.6M past damages. Bambu to appeal. Route to Legal.",
+      "dir": "flat"
+    },
+    {
+      "label": "New product",
+      "value": "R1 laser cutter",
+      "delta": "$2,499, maker market, not enterprise",
+      "dir": "flat"
+    }
+  ],
+  "changes": [
+    {
+      "cat": "Ad-level",
+      "items": [
+        {
+          "t": "Still no LinkedIn advertising.",
+          "d": "Zero across five entity names, with a passing control. Sixth check since Aug 25.",
+          "u": "https://www.linkedin.com/ad-library/search?accountOwner=Bambu+Lab"
+        },
+        {
+          "t": "Google image ads up, from 600 to about 800.",
+          "d": "Text and video roughly flat. Counts are Google's rounded figures, so read the direction, not the exact size.",
+          "u": "https://adstransparency.google.com/advertiser/AR05671717087047843841?region=anywhere&hl=en"
+        }
+      ]
+    },
+    {
+      "cat": "Company / market",
+      "items": [
+        {
+          "t": "Stratasys v. Bambu Lab, E.D. Texas: jury verdict for Stratasys on four patents, about $27.6M in past damages (Sep 18 2026).",
+          "d": "Facts only, route to Legal. Bambu says it disagrees and will seek post-trial review and appeal. A second case has no trial date yet. Law360 (Sep 30) reports PTAB invalidated nearly all challenged claims on three patents, which it says relate to $2.8M of the award.",
+          "u": "https://www.tctmagazine.com/stratasys-awarded-27-6-in-damages-in-first-of-two-patent-infringement-cases-against-bambu-lab/"
+        },
+        {
+          "t": "Bambu launched the R1, a $2,499 55W CO2 laser cutter.",
+          "d": "Preorders opened Sep 22. First product beyond 3D printing. A maker product, not an enterprise move. No H2D Pro or reseller news.",
+          "u": "https://www.3dnatives.com/en/bambu-lab-laser-engraver-22092026/amp/"
+        }
+      ]
+    }
+  ],
+  "dropped": [],
+  "theme_detail": [],
+  "talk_track": [
+    {
+      "claim": "\"The H2D Pro does engineering materials at $3,799. Why would we spend ten times that?\"",
+      "counter": "If the parts never leave the building and never touch a regulated programme, that is a fair question and sometimes the honest answer is that they should buy it. Where it breaks is repeatability across machines and sites, documented material properties, and any customer or auditor who asks how the part was qualified. Ask what happens when the design is approved on one machine and has to be produced on six.",
+      "tag": "Pricing"
+    },
+    {
+      "claim": "\"Bambu is the biggest 3D printing company in the world now.\"",
+      "counter": "By unit volume, yes, and it is not close. That is a consumer market statistic. 1.2 million units at roughly 29% share of the consumer segment tells you nothing about qualified production parts. Agree with the fact, then move the frame to what the units are used for.",
+      "tag": "Scale"
+    },
+    {
+      "claim": "\"We already run Bambu printers and they work fine.\"",
+      "counter": "For any defense, DoD-contracting or Tier-1 supplier account this is now a compliance conversation, not a preference one. NDAA FY2026 Section 880 bars agencies from operating AM machines manufactured in, running software developed in, or networked through a covered country. Section 849 bars DoD contracting for them. Ask who has reviewed their floor against it. Bring the sections, not an opinion.",
+      "tag": "Compliance"
+    },
+    {
+      "claim": "\"Their cloud is fine, they published a Trust Center.\"",
+      "counter": "The Trust Center addresses security practice. Section 880's networking limb is about jurisdiction, not practice. Print data including file names, settings and camera feeds transiting infrastructure in a covered country is the issue, and no amount of documentation changes where the servers are.",
+      "tag": "Compliance"
+    },
+    {
+      "claim": "\"Everyone in the industry is talking about Bambu.\"",
+      "counter": "True, and worth understanding honestly. They buy zero LinkedIn advertising. 45 separate third-party advertisers pay to talk about their printers. That is an earned position built on product, and we should study it rather than dismiss it. It is also irrelevant to a qualification decision.",
+      "tag": "Brand"
+    }
+  ],
+  "exposure": [
+    "Departmental and office FDM. The H2D Pro at $3,799 with a 350C nozzle and a 65C active heated chamber is aimed squarely at the shared-services printer we have historically owned, and it is sold through resellers who also carry us.",
+    "The bottom of the funnel we no longer contest. Buyers now arrive having already used a Bambu machine at home or in a lab. The evaluation starts from their ergonomics and their price expectation.",
+    "Earned advocacy. 45 third-party advertisers promote Bambu on LinkedIn without Bambu paying for it. We spend to be talked about; they are talked about for free.",
+    "Scale economics. Capacity being built for 3M+ units a year against our unit volumes means their component costs will keep falling faster than ours."
+  ],
+  "watch": [
+    {
+      "h": "Stratasys v. Bambu Lab litigation",
+      "b": "Our own live litigation: legally sensitive, route all customer questions to Legal and do not characterise the case. Status as reported: Sep 18 2026, jury in the Eastern District of Texas found four Stratasys patents valid and infringed, about $27.6M in past damages. Bambu intends to appeal. A second case has no trial date. PTAB has since invalidated claims that Law360 says relate to $2.8M of the award. On Apr 24 2026 the Unified Patent Court in The Hague dismissed our emergency bid to block the H2C in Europe, a provisional ruling only.",
+      "u": "https://www.tctmagazine.com/stratasys-awarded-27-6-in-damages-in-first-of-two-patent-infringement-cases-against-bambu-lab/"
+    },
+    {
+      "h": "NDAA Section 849 effective date",
+      "b": "FY2026 NDAA signed Dec 18 2025, so s849 takes effect around Dec 18 2026 [Inference]. Confirm the exact date with Legal, then build the replacement campaign against it. No implementation guidance found yet.",
+      "u": "https://www.kslaw.com/news-and-insights/fy-2026-ndaa-domestic-sourcing-artificial-intelligence-cybersecurity-and-acquisition-reforms"
+    },
+    {
+      "h": "Whether Bambu ever starts buying B2B media",
+      "b": "Zero LinkedIn spend today. If that changes it signals a genuine enterprise go-to-market, not just an enterprise SKU. Re-run the advertiser search every cycle: it is a five-minute check with a high-value answer.",
+      "u": "https://www.linkedin.com/ad-library/search?accountOwner=Bambu+Lab"
+    },
+    {
+      "h": "H2D Pro reseller penetration",
+      "b": "Reseller-exclusive distribution means our own channel partners are the leading indicator. Ask partner managers which distributors have taken the line.",
+      "u": "https://bambulab.com/en-us/h2d-pro"
+    },
+    {
+      "h": "Tencent round and any IPO signal",
+      "b": "A confirmed Tencent round at ~$10B would fund a western enterprise push. Currently reported but unconfirmed by either party.",
+      "u": "https://kr-asia.com/bambu-lab-nears-usd-100-billion-valuation-as-tencent-eyes-new-investment"
+    }
+  ],
+  "unverified": [
+    "Bambu Lab valuation of roughly $10B with Tencent participating. [Unverified] Reported by multiple outlets; both parties declined to confirm. A separate report referencing a far higher figure appears to be a currency or unit error and should not be repeated.",
+    "2024 revenue ~6B RMB, ~1.2M units, ~29% global consumer 3D printer share; 2025 revenue >10B RMB. [Unverified] Private company, no audited public accounts. Directionally consistent across sources but not independently verifiable.",
+    "Bambu Lab is 'the largest 3D printing company in the world'. [Unverified] True on unit volume by most accounts, not established on revenue or on industrial or production-part terms. Be precise about which measure is being used.",
+    "Sinointeractive's ~100K ad count. This is the agency's entire client book and is NOT Bambu's ad volume. Recorded here specifically so nobody repeats the mistake we already avoided with HP's 50K figure on hp.com.",
+    "Planned annual capacity above 3 million units at the Shenzhen Guangming base. [Unverified] Announced plan, not installed capacity.",
+    "Oct 4 2026: a secondary site (makers101.com) says the court denied enhanced damages and an injunction. Not confirmed by trade press or the court record. Do not repeat until Legal confirms.",
+    "Third-party LinkedIn mentions (75 ads / 45 advertisers) were not re-checked this run; the figure is from Aug 25."
+  ],
+  "ads": [],
+  "partner_ads": [
+    {
+      "advertiser": "45 unique third-party advertisers",
+      "count": "75 ads reference Bambu Lab",
+      "note": "None Bambu-owned. Includes service bureaus (Weerg, FKM Additive Manufacturing), filament vendors (3DXTECH, on AMS compatibility), independent AM consultants across Germany, Poland and France, universities, and event organisers. One promotes a Belgrade event built around the H2D Pro. This is earned advocacy at a scale we cannot buy, and it is the real Bambu marketing story.",
+      "url": "https://www.linkedin.com/ad-library/search?keyword=Bambu%20Lab"
+    },
+    {
+      "advertiser": "Sinointeractive Digital Marketing Co., Ltd.",
+      "count": "Agency, Hong Kong",
+      "note": "Verified Google advertiser running ads that point at bambulab.com. Its own account shows ~100K ads across all clients, which is the agency's whole book and not attributable to Bambu. [Inference] Bambu outsources a meaningful share of paid acquisition.",
+      "url": "https://adstransparency.google.com/advertiser/AR05226884764400615425?region=anywhere&hl=en"
+    },
+    {
+      "advertiser": "BAMBU JAPAN K.K.",
+      "count": "400 Google ads",
+      "note": "Bambu's own Japanese entity, run as a separate verified advertiser account. The only geographic subsidiary buying media under its own name.",
+      "url": "https://adstransparency.google.com/advertiser/AR04882639184256303105?region=anywhere&hl=en"
+    }
+  ],
+  "themes": {},
+  "formats": {
+    "Text": 600,
+    "Image": 800,
+    "Video": 400
+  },
+  "funnels": {
+    "Bottom": 600,
+    "Top": 1200
+  },
+  "bucket_basis": "Basis for Bambu Lab is DIFFERENT to the other competitors. These are Google Ads Transparency Center counts on Bambu's own advertiser account (Shenzhen Tuozhu), ~1,800 ads total on Oct 4 (rounded counts from Google's format filter), not LinkedIn instances, because Bambu buys zero LinkedIn advertising. Theme mix is empty by design: Google renders ad creative in cross-origin iframes so creative-level themes could not be extracted this run. Funnel split is an [Inference]: Text treated as bottom-funnel brand and product search, Image and Video as top-funnel display and video.",
+  "count_unit": "Google ads on Bambu's own advertiser account",
+  "theme_gap": "Bambu buys no LinkedIn advertising, so there are no creative-level themes to break down. Google renders ad creative in cross-origin iframes, which blocked theme extraction this run. Declared gap, not a zero.",
+  "linkedin_advertiser": "None. No LinkedIn advertiser account found.",
+  "advertiser_verified": {
+    "on": "2026-10-04",
+    "method": "Chrome connector, ?accountOwner= URL parameter, control (Formlabs) passed first",
+    "live_instances_at_verification": 0,
+    "note": "Five name variants, all 'No results found', after the Formlabs control returned 28."
+  },
+  "spend_method": "Dollars are derived at render time by tools/spend_model.py, never stored. Geometric mean of the disclosed impression band, divided by the actual run length, times a format-specific B2B CPM. Message and Conversation Ads use cost per send instead. Ads with no disclosed impressions are reported as not disclosed, never imputed."
+}

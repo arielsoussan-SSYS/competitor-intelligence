@@ -2,13 +2,21 @@
   "program": "Drone Dominance Program - Gauntlet II",
   "sponsor": "Office of the Secretary of War, executed by DIU, NSWC Crane and the Test Resource Management Center",
   "value": "$1.1B program",
-  "stage": "19 companies advancing to Gauntlet II, Fort Carson CO, August 2026",
+  "stage": "Gauntlet II complete (results posted Sep 15-18 2026). 9 companies won the 10 slots: Deep Strike Perennial, Hyperscale, Neros, Skycutter, Swarm; Close Quarters Neros, ORQA US, XTEND, Vector, ModalAI. About 60,000 drones to be ordered. Gauntlet 2.5 (bomber drones) in October 2026.",
   "funnel": "26 companies in Gauntlet I, 49 in the Phase 2 Qualifier (Camp Grayling MI, June 8-19 2026), 19 to Gauntlet II",
   "requirement": "Each company must deliver 120 kamikaze drones with lethality payloads in roughly five weeks. Price ceilings $5,500 long-range strike, $4,500 close quarters. Awards cover 5 long-range and 3 close-quarters designs, with production orders of 4,000-9,500 UAVs per winner.",
   "why_it_matters": "Nineteen pre-qualified companies that must prove they can manufacture at wartime speed. Every one is a Stratasys prospect. The 120-units-in-five-weeks requirement is the additive manufacturing pitch stated as a procurement requirement. One account is confirmed Locked to a competitor (ORQA, Formlabs) and two are Contested. Internal intelligence suggests HP supports 14 of the 19 [validation-needed]: unproven publicly, which is expected, since supplier relationships are not published. Do not cite the figure externally.",
-  "headline_signal": "The Gauntlet I winner runs hundreds of 3D printers and has committed to removing Chinese components. Nobody has asked whether the printers themselves meet the same standard.",
-  "last_researched": "2026-09-07",
+  "headline_signal": "Gauntlet II is decided and production orders are being placed now. The Deep Strike runner-up, Hyperscale, is itself a metal 3D-printing company, while Neros, the field's loudest 3D-printing sceptic, took the biggest order: 14,000+ drones.",
+  "last_researched": "2026-10-04",
   "sources": [
+    {
+      "t": "Gauntlet II results (DefenseScoop, Sep 18 2026)",
+      "u": "https://defensescoop.com/2026/09/18/drone-dominance-program-gauntlet-2-results/"
+    },
+    {
+      "t": "Nine companies win Gauntlet II (Inside Unmanned Systems, Sep 22 2026)",
+      "u": "https://insideunmannedsystems.com/nine-companies-win-ddp-gauntlet-2-fpv-drone-competition/"
+    },
     {
       "t": "DOD names 19 companies invited to Phase II final demo",
       "u": "https://insidedefense.com/insider/dod-names-19-companies-invited-drone-dominance-phase-ii-final-demo-event"
@@ -61,13 +69,13 @@
       "am_posture": "Skeptical",
       "competitor_presence": null,
       "confidence": "Confirmed",
-      "evidence_url": "https://www.sourcery.vc/p/breaking-inside-neros-factory",
+      "evidence_url": "https://dronexl.co/2026/09/30/neros-gauntlet-ii-100-million-order-800-bonus-drones/",
       "stratasys_relationship": null,
       "posture": "Contested",
       "notes": "CEO Soren Monroe-Anderson, on a factory tour: '3D printing is generally good for making a few of a thing, making lots of different things. We are mostly focused on making a lot of one thing, or a really consistent process.' And: 'You're not gonna be 3D printing your circuit boards, your motors, your radios, any of that stuff out on the battlefield. So it does not solve the supply chain problem.' Read it precisely. He is rejecting distributed printing as a supply-chain fix, not rejecting additive inside a factory. That is a narrower claim than it sounds and it is answerable.",
       "hq": "El Segundo, California, USA",
-      "backing": "VC-backed. Founded 2023 by former professional drone racers Soren Monroe-Anderson and Olaf Hichwa.",
-      "scale": "Moved from a 15,000 sq ft site to a 250,000 sq ft factory (Millennium One). 250+ drones/day today, targeting 1M/year. Highest-output American drone manufacturer in 2025.",
+      "backing": "VC-backed. Founded 2023 by former professional drone racers Soren Monroe-Anderson and Olaf Hichwa. $250M Series C at $2.5B post-money, co-led by Sequoia and the American Strategic Technology Fund (Aug 2026).",
+      "scale": "Moved from a 15,000 sq ft site to a 250,000 sq ft factory (Millennium One). 250+ drones/day today, targeting 1M/year. Highest-output American drone manufacturer in 2025. Gauntlet II: 1st Close Quarters (88.1), 3rd Deep Strike (69.8), the only team on both boards. Order for 14,000+ drones worth over $100M, plus 800 drones reassigned from rivals that missed deadlines (Sep 30 2026). About 65,000 units/yr now, 100,000 run-rate targeted by end-2026.",
       "tech": "Vertically integrated conventional mass manufacturing. Explicitly designs the product around the process rather than around printing.",
       "sales_hook": "Do not lead with speed-to-part. Lead with tooling-free bridge production and design changes mid-programme. Their public objection is about printing at the edge, not about additive in the factory. That distinction is the opening."
     },
@@ -83,7 +91,7 @@
       "notes": "Robinson ownership changes the sale. Sell to the parent's manufacturing engineering function.",
       "hq": "Wilmington, Massachusetts, USA",
       "backing": "Acquired by Robinson Helicopter Company, April 2024. Prior funding was a 2019 seed led by Dreamit and a 2015 Kickstarter for the Sprite.",
-      "scale": "Builds through Robinson's vertically integrated manufacturing operation in California.",
+      "scale": "Builds through Robinson's vertically integrated manufacturing operation in California. Not in either Gauntlet II top 5 (results Sep 2026).",
       "tech": "Rugged cylindrical coaxial VTOL drones for industrial, public safety and defense.",
       "sales_hook": "Owned by a real aerospace manufacturer, which means an existing quality system and an existing supply chain. The buying centre is Robinson, not Ascent. Coaxial cylindrical airframes are geometrically awkward for conventional tooling, which is a genuine additive argument rather than a generic one."
     },
@@ -115,7 +123,7 @@
       "notes": "Founder-owned since 1995. Shortest decision chain on the board.",
       "hq": "Madison, Alabama, USA, in the Huntsville defense cluster.",
       "backing": "Privately held. Founded 1995 by Larry A. French, who remains Owner, CEO and CTO.",
-      "scale": "Long-standing target-drone and UAS manufacturer with an established DoD vendor history.",
+      "scale": "Long-standing target-drone and UAS manufacturer with an established DoD vendor history. One of three Gauntlet I winners to finish deliveries by mid-August. Army IDIQ up to $133M for Outlaw target drones (Aug 2026). Not in the Gauntlet II top 5.",
       "tech": "MQM-170 Outlaw, Valiant and related UAS platforms.",
       "sales_hook": "The incumbent on this list. Thirty years of DoD delivery and a founder-owner who still holds CTO, so one person can approve a capital purchase. Huntsville proximity makes it an easy field visit. Legacy aerospace processes mean tooling and lead-time pain is real and quantifiable."
     },
@@ -131,7 +139,7 @@
       "notes": "Autonomy and compute supplier rather than a mass airframe producer. 'Hand built in San Diego' is stated openly, which is a direct opening for tooling-free production.",
       "hq": "Sorrento Valley, San Diego, California, USA",
       "backing": "Spun out of Qualcomm in 2018. Over $18.7M in government contracts. About 44 employees, reporting at least 60% annual sales growth.",
-      "scale": "All drones hand built in San Diego. Small headcount, high growth.",
+      "scale": "All drones hand built in San Diego. Small headcount, high growth. Gauntlet II: 5th Close Quarters (74.3). Order size pending.",
       "tech": "VOXL 2 autopilot on Qualcomm QRB5165 at 16g, VOXL 2 Mini at 11g and 42x42mm, VOXL 3 thermal AI processing. Runs PX4. GPS-denied autonomy.",
       "sales_hook": "Hand built at 44 people is the definition of a company that cannot tool. Size, weight and power constrained enclosures for 11g compute modules are a precision additive application. Small deal size, fast decision, good reference logo."
     },
@@ -144,10 +152,10 @@
       "evidence_url": "https://oboronka.mezha.ua/en/dron-vid-skyfall-peremig-v-programi-pentagonu-309215/",
       "stratasys_relationship": null,
       "posture": "Contested",
-      "notes": "SkyFall + Skycutter joint task force topped Gauntlet I with the Shrike 10-F. Formlabs claims in outbound that 'Skyfall, the largest drone manufacturer in Ukraine, uses our printers'. SkyFall's heavy additive use is now independently CONFIRMED (hundreds of printers, printed modular parts, 23-second takt). The Formlabs BRAND claim remains [Unverified]: no published case study, no SkyFall statement. Separately, Auterion has agreed to supply SkyFall with autonomy software for 50,000 FPV drones, linking two Gauntlet II entrants. Re-checked 2026-09-07: searched Formlabs' own case study index and general SkyFall/additive coverage. No new case study, no SkyFall statement, nothing corroborating or refuting the Formlabs outbound claim. Formlabs published a new drone case study in this window (PMRobotics, a Swiss target-drone maker) but it predates this tracker (Dec 2024) and has no connection to SkyFall or the Gauntlet. Still [Unverified], and still the highest-value open item on this board.",
+      "notes": "SkyFall + Skycutter joint task force topped Gauntlet I with the Shrike 10-F. Formlabs claims in outbound that 'Skyfall, the largest drone manufacturer in Ukraine, uses our printers'. SkyFall's heavy additive use is now independently CONFIRMED (hundreds of printers, printed modular parts, 23-second takt). The Formlabs BRAND claim remains [Unverified]: no published case study, no SkyFall statement. Separately, Auterion has agreed to supply SkyFall with autonomy software for 50,000 FPV drones, linking two Gauntlet II entrants. Re-checked 2026-09-07: searched Formlabs' own case study index and general SkyFall/additive coverage. No new case study, no SkyFall statement, nothing corroborating or refuting the Formlabs outbound claim. Formlabs published a new drone case study in this window (PMRobotics, a Swiss target-drone maker) but it predates this tracker (Dec 2024) and has no connection to SkyFall or the Gauntlet. Still [Unverified], and still the highest-value open item on this board. Re-checked Oct 4 2026: no new evidence on Formlabs at SkyFall. Gauntlet I delivery slippage is now public, which strengthens the capacity pitch.",
       "hq": "United Kingdom",
       "backing": "Private UK company. On contract for more than 2,500 drones off Gauntlet I. Operates as a joint task force with SkyFall of Ukraine, which manufactures the airframe.",
-      "scale": "Won Gauntlet I outright at 99.3 of 100, about 12 points clear of Neros, from a field of 27 including Neros, Auterion, PDW and Kratos. Manufacturing partner SkyFall produces one drone every 23 seconds, up to 4,000 a day and a reported 123,000 units a month.",
+      "scale": "Won Gauntlet I outright at 99.3 of 100, about 12 points clear of Neros, from a field of 27 including Neros, Auterion, PDW and Kratos. Manufacturing partner SkyFall produces one drone every 23 seconds, up to 4,000 a day and a reported 123,000 units a month. Gauntlet II: 4th Deep Strike (66.6), down from winning Gauntlet I. At least 5,000 drones reported ordered. SkyFall has delivered 1,280 of its 2,560 Gauntlet I drones.",
       "tech": "Shrike 10-F, a 10-inch fibre-optic FPV drone developed and manufactured by SkyFall; Skycutter provided logistics and engineering. Fibre-optic control bypasses jamming and spoofing. SkyFall runs a factory with HUNDREDS of 3D printers, with modular design and printed parts central to production speed. The Shrike 10-F was specifically REDESIGNED WITH SKYCUTTER TO EXCLUDE ALL CHINESE PARTS AND COMPONENTS to meet Drone Dominance requirements.",
       "sales_hook": "Best-qualified opportunity on the board, and the argument writes itself. They already run hundreds of printers, so there is no need to sell additive. They have publicly committed to removing Chinese components to win a US programme. Ukrainian drone production commonly runs Chinese desktop printers such as Creality and Bambu, and NDAA FY2026 s880 bars agencies from operating AM machines manufactured in, with software developed in, or networked through China. Ask one question: has the printer fleet itself been audited against the same standard as the bill of materials? If not, they have a compliance gap at the exact moment they are scaling a US contract."
     },
@@ -163,7 +171,7 @@
       "notes": "A greenfield US facility with a public jobs commitment is the clearest capital-equipment buying window among the 19.",
       "hq": "US entity for Ukraine's F-Drones. First US plant in Holland, Lucas County, Ohio.",
       "backing": "$18.4M committed investment in the Ohio facility with at least 300 jobs pledged by Dec 31 2029. Announced with Congresswoman Marcy Kaptur.",
-      "scale": "F10 quadcopter scored 72.9 of 100 in Gauntlet I, which secured a US Army procurement contract. Among the 11 selected for follow-on orders.",
+      "scale": "F10 quadcopter scored 72.9 of 100 in Gauntlet I, which secured a US Army procurement contract. Among the 11 selected for follow-on orders. Finished its Gauntlet I deliveries by mid-August. Not in the Gauntlet II top 5.",
       "tech": "Combat-tested FPV platforms from F-Drones.",
       "sales_hook": "Best-timed account on the list. They are building a brand new US plant right now with public money attached and jobs promised. Equipment decisions for that line are being made this year. Get in before the line is specified."
     },
@@ -179,7 +187,7 @@
       "notes": "Public parent means quarterly disclosure. Red Cat earnings calls are a free intelligence feed on the whole segment.",
       "hq": "Salt Lake City, Utah, USA",
       "backing": "Wholly owned subsidiary of Red Cat Holdings, Nasdaq: RCAT. Sister company FlightWave Aerospace.",
-      "scale": "$2.49M US Air Force firm-fixed-price order for Black Widow systems, July 2026. Black Widow selected on competitive tender by an Asia-Pacific ally (Dec 2025) and a NATO ally (March 2026), both delivering in 2026.",
+      "scale": "$2.49M US Air Force firm-fixed-price order for Black Widow systems, July 2026. Black Widow selected on competitive tender by an Asia-Pacific ally (Dec 2025) and a NATO ally (March 2026), both delivering in 2026. Not in either Gauntlet II top 5 (results Sep 2026).",
       "tech": "Black Widow sUAS. American-made hardware and software.",
       "sales_hook": "The only publicly listed pure-play on the board, so the financials are readable and the pressure is quarterly. Multiple allied deliveries landing in the same year is a capacity problem. Lead with surge capacity and second-source resilience."
     },
@@ -192,26 +200,26 @@
       "evidence_url": "https://www.morningstar.com/news/pr-newswire/20260211de86058/swarm-defense-selected-for-11-billion-us-drone-dominance-program",
       "stratasys_relationship": null,
       "posture": "Open",
-      "notes": "Missed a Gauntlet I delivery order and came back for Gauntlet II. A company with something to prove and a 3.5x capacity ramp in front of it.",
+      "notes": "Missed a Gauntlet I delivery order and came back for Gauntlet II. A company with something to prove and a 3.5x capacity ramp in front of it. Has now won an order. The pitch moves from 'win the next round' to delivering against a fixed timeline.",
       "hq": "Metro Detroit, Michigan, USA",
       "backing": "Spun out of Firefly Drone Shows in August 2024. CEO Kyle Dorosz.",
-      "scale": "Current capacity 72,000 units a year, scaling to 250,000+. Fully NDAA-compliant supply chain. Competed in Gauntlet I but did not win a delivery order, then qualified for Gauntlet II.",
+      "scale": "Current capacity 72,000 units a year, scaling to 250,000+. Fully NDAA-compliant supply chain. Competed in Gauntlet I but did not win a delivery order, then qualified for Gauntlet II. Gauntlet II: 5th Deep Strike (66.0). Prototype delivery order for 4,000 Kiwi drones, minimum $25M (Sep 24 2026). Says it is expanding manufacturing capacity in Michigan.",
       "tech": "Proprietary swarm coordination software allowing one operator to fly thousands of drones without collisions. Heritage in entertainment drone shows.",
       "sales_hook": "Scaling from 72K to 250K units a year is a tooling decision they have to make soon, and they missed a Gauntlet I order so the pressure is on. Detroit location means automotive manufacturing talent and automotive assumptions about tooling. Bring the cost-per-part crossover analysis."
     },
     {
       "company": "Vector Defense, Inc.",
       "gauntlet1": true,
-      "am_posture": "Unknown",
+      "am_posture": "Possible adopter [Unverified]",
       "competitor_presence": null,
       "confidence": "Confirmed",
       "evidence_url": "https://www.axios.com/2025/09/03/vector-defense-drones-utah-investments",
       "stratasys_relationship": null,
       "posture": "Open",
-      "notes": "Entity resolved 2026-08-25 via the Department of War Drone Dominance vendor directory, which lists 'VECTOR DEFENSE, INC.'. Earlier ambiguity came from the programme's short display name 'Vector'.",
+      "notes": "Entity resolved 2026-08-25 via the Department of War Drone Dominance vendor directory, which lists 'VECTOR DEFENSE, INC.'. Earlier ambiguity came from the programme's short display name 'Vector'. Oct 4 2026: Inside Unmanned Systems describes its entry as a '3D-printed 3.5\" Dagger quadcopter'. Vector's own Dagger page does not mention printing, and no printer brand is named. [Unverified]",
       "hq": "Bluffdale, Utah, USA. R&D in Austin, Texas.",
       "backing": "$61M Series A, Sept 2025, led by Pelion Venture Partners with Lightspeed Venture Partners and Point72 Ventures. Plus a $20M loan from JPMorgan Chase to expand domestic manufacturing.",
-      "scale": "Holds a SOCOM contract. Expanding US production on the back of the JPMorgan facility.",
+      "scale": "Holds a SOCOM contract. Expanding US production on the back of the JPMorgan facility. Gauntlet II: 4th Close Quarters (78.2). Says it has an order for up to 5,000 drones.",
       "tech": "Hammer, a deep-sensing and strike FPV quadcopter. First US company to integrate fibre-optic control lines into a US-made FPV drone, giving immunity to electronic jamming. Sells 'Modern Warfare as a Service': hardware plus battlefield insight, TTP development, integration and training.",
       "sales_hook": "Resolved from the official DoW vendor directory: the entity is Vector Defense, Inc. Well funded, US based, actively expanding domestic manufacturing with borrowed money, which means capex decisions are live right now. The fibre-optic FPV line puts them in direct technical competition with Skycutter's Shrike 10-F. A services-led model means they care about sustainment and spares, which is a strong tooling-free argument."
     },
@@ -224,10 +232,10 @@
       "evidence_url": "https://www.prnewswire.com/news-releases/xtend-secures-30m-extension-to-complete-70m-series-b-to-scale-its-battle-proven-autonomous-ai-robots-across-america-302505634.html",
       "stratasys_relationship": null,
       "posture": "Open",
-      "notes": "Going public at $1.5B. Post-listing they will need auditable, documented manufacturing processes, which favours a qualified system over an open-material one.",
+      "notes": "Going public at $1.5B. Post-listing they will need auditable, documented manufacturing processes, which favours a qualified system over an open-material one. Correction Oct 4 2026: earlier entries said a Nasdaq listing; it listed on the NYSE.",
       "hq": "Israel, with US headquarters and a drone production facility in Tampa, Florida.",
       "backing": "$70M Series B completed with a $30M extension co-led by Aliya Capital Partners and Protego Ventures, July 2025. Earlier $40M including Chartered Group and General-Tech. Founded 2018 by Matteo Shapira, Rubi Liani and Adir Tubi.",
-      "scale": "Announced a Nasdaq listing at a $1.5B valuation via all-stock merger with JFB Construction Holdings, closing mid-2026, to be renamed XTEND AI Robotics, ticker XTND.",
+      "scale": "Merger with JFB closed Sep 3 2026; now XTEND AI Robotics, trading on the NYSE as XTND since Sep 4. Gauntlet II: 3rd Close Quarters (80.2).",
       "tech": "Human-guided autonomous machine systems, battle-proven AI robots for defense.",
       "sales_hook": "Newly built US production facility in Tampa plus a public listing means capex and scrutiny at the same time. New facilities buy new capability. Go now, while the Tampa line is still being tooled."
     },
@@ -243,7 +251,7 @@
       "notes": "Eric Schmidt-backed. The $500M IDIQ is the largest single funding event among the 19 and makes this the highest-budget prospect on the list.",
       "hq": "California, USA",
       "backing": "Backed by former Google CEO Eric Schmidt. Launched quietly in 2023 as White Stork. $500M IDIQ from the Department of War, May 2026, one of the largest counter-UAS awards ever made to a non-incumbent. Earlier $5.2M with JIATF-401, Jan 2026.",
-      "scale": "Scaling against a $500M ceiling. Interceptors proven in Ukraine.",
+      "scale": "Scaling against a $500M ceiling. Interceptors proven in Ukraine. Won Gauntlet II Deep Strike (80.1), 9.2 points clear. Order size pending.",
       "tech": "Merops interceptors, Bumblebee quadcopters, Hornet midrange strike drones. AI-powered counter-UAS.",
       "sales_hook": "Best-funded name on the board and the money is fresh. A $500M IDIQ means a production ramp they have not built yet, which is exactly when tooling-free capacity gets bought. Go early and go at the program office, not the lab."
     },
@@ -259,7 +267,7 @@
       "notes": "Blue UAS Cleared listing removes the biggest US procurement barrier. European base, so route through the EMEA team.",
       "hq": "Denmark",
       "backing": "Founded and staffed by former operators of the Jaeger Corps and Fromandskorpset, Danish special forces.",
-      "scale": "Delivered at least 10,000 Nightmare FPV systems to Ukraine's Ministry of Defence, mostly since October 2025.",
+      "scale": "Delivered at least 10,000 Nightmare FPV systems to Ukraine's Ministry of Defence, mostly since October 2025. Not in either Gauntlet II top 5 (results Sep 2026).",
       "tech": "Nightmare FPV, on the Blue UAS Cleared List in analog and digital variants. Also builds portable counter-drone systems.",
       "sales_hook": "Their stated method is design, build, test, improve, with prototypes going straight to the front and coming back modified within days. That is an iteration-rate argument, which is the single strongest additive argument there is. Sell the loop, not the part."
     },
@@ -275,7 +283,7 @@
       "notes": "70,000 drones a month across 33 products is a part-number problem as much as a volume problem, and part-number proliferation is where tooling economics break down.",
       "hq": "Joint venture. Production at Wilcox Industries' complex in Newington, New Hampshire, USA. General Cherry is Ukrainian.",
       "backing": "Joint venture announced March 2026 between General Cherry and Wilcox Industries. Still in the approval phase, seeking Ukrainian state backing before formal registration. [Unverified] as to completion.",
-      "scale": "General Cherry, founded September 2023, produces more than 70,000 drones a month across 33 codified products.",
+      "scale": "General Cherry, founded September 2023, produces more than 70,000 drones a month across 33 codified products. Not in either Gauntlet II top 5 (results Sep 2026).",
       "tech": "FPV and interceptor drones. Bullet interceptor, a 309 km/h fixed-wing VTOL built to engage Shahed-class attack drones, plus the AIR counter-UAV series. General Cherry engineering leads development, Wilcox provides manufacturing infrastructure and US procurement access.",
       "sales_hook": "A new US production line being stood up from scratch in New Hampshire, explicitly aimed at Pentagon orders. Same timing logic as the Ohio plant. The engineering team is Ukrainian and used to fast iteration, the facility is American and needs documented process. That gap is the sale."
     },
@@ -291,24 +299,24 @@
       "notes": "Production volume figures differ by roughly an order of magnitude between sources. Do not quote a number externally.",
       "hq": "Ukraine",
       "backing": "Privately held Ukrainian producer.",
-      "scale": "Reported deliveries of up to 15,000 units a month to the Ukrainian market, with wider reporting of far higher figures. Tens of thousands of UAVs fielded. Volume claims vary widely by source. [Unverified]",
+      "scale": "Reported deliveries of up to 15,000 units a month to the Ukrainian market, with wider reporting of far higher figures. Tens of thousands of UAVs fielded. Volume claims vary widely by source. [Unverified] Not in either Gauntlet II top 5 (results Sep 2026).",
       "tech": "Combat FPV strike drones built to operate under electronic warfare and carry heavier payloads at range. Models include Grim, Volyniaka and Hromylo, plus 8 inch and 10 inch FPV platforms.",
       "sales_hook": "High-volume Ukrainian producer under wartime tempo. Additive competes with injection tooling on time-to-first-part, not unit cost. Expect an export-control and end-use review before any conversation goes far."
     },
     {
       "company": "Hyperscale",
       "gauntlet1": false,
-      "am_posture": "Unknown",
+      "am_posture": "Adopter (metal AM is its core business)",
       "competitor_presence": null,
-      "confidence": "[Unverified]",
-      "evidence_url": "https://drone-dominance.io/vendors.html",
+      "confidence": "Confirmed",
+      "evidence_url": "https://insideunmannedsystems.com/nine-companies-win-ddp-gauntlet-2-fpv-drone-competition/",
       "stratasys_relationship": null,
       "posture": "Open",
-      "notes": "Research gap. Generic company name makes open-source search unusable. Carry to next run. Entity check 2026-08-25: the official DoW vendor directory lists this company under the bare name shown here, with no legal suffix and no Phase 1 directory entry, so it is a Phase 2 new entrant. The thin public footprint is genuine, not a search failure.",
-      "hq": "Not established from public sources. [Unverified]",
+      "notes": "Research gap largely closed Oct 4 2026. A metal-AM company that placed 2nd in Deep Strike. [Inference] A peer or partner more than a classic printer sale; polymer AM for airframes, jigs and fixtures could complement its metal process. A 7,000-drone order figure circulates but could not be sourced [Unverified].",
+      "hq": "Austin, Texas, USA [single source]",
       "backing": "Not established from public sources.",
-      "scale": "Advanced to Gauntlet II at Fort Carson, August 2026.",
-      "tech": "Not established from public sources.",
+      "scale": "Founded 2024. 2nd in Gauntlet II Deep Strike (70.9). Order size not published.",
+      "tech": "Tooling-free metal parts from a proprietary blue-laser microwire additive process it says is 20x faster than conventional metal AM, with about 1% waste. Gauntlet II airframe not publicly identified.",
       "sales_hook": "Confirmed in the programme, invisible in public sources. Same treatment as Vector: get the entity from the programme vendor listing first."
     },
     {
@@ -323,7 +331,7 @@
       "notes": "Three organisations, two mission areas. Map the buying centre carefully before pitching.",
       "hq": "Mountain Horse Solutions, USA. AG3 Labs spun out of Michigan State University. Draganfly is a partner.",
       "backing": "AG3 Labs won $350K as one of four global winners at Army xTechCounter Strike in Germany. Founded by MSU students.",
-      "scale": "Three-way team. Competing in both mission areas.",
+      "scale": "Three-way team. Competing in both mission areas. Not in either Gauntlet II top 5 (results Sep 2026).",
       "tech": "Draganfly Flex FPV drone for Mission Area A, long-range strike at 5 to 20 km beyond visual line of sight. AG3 SPADE plus Flex for Mission Area B, tactical work in buildings, trenches and tunnels under 2 km. AG3 builds low-cost swarming quadcopters with repeatable flight patterns for training.",
       "sales_hook": "The only team on the board competing in both mission areas, which means two airframe families and twice the part count. AG3's low-cost swarm training drones are a volume consumable play. Draganfly is the manufacturing partner and probably the real buying centre."
     },
@@ -336,10 +344,10 @@
       "evidence_url": "https://formlabs.com/blog/drone-solutions-sls-3d-printing-orqa-fpv/",
       "stratasys_relationship": null,
       "posture": "Locked",
-      "notes": "Formlabs published case study, July 9 2025. ORQA prints electronic speed controllers, antennae, flight controls, goggle prototypes, camera mounts, drone frames and propeller guards, including end-use parts. Buys powder in 50 kg lots and keeps 100 kg on hand to avoid interrupting production batches. Mechanical designer Antonio Kovac: 'With the Fuse 1+ we can get prints the same day. We don't need to wait for changes in tooling.' This is the clearest confirmed competitor placement inside a Gauntlet account.",
+      "notes": "Formlabs published case study, July 9 2025. ORQA prints electronic speed controllers, antennae, flight controls, goggle prototypes, camera mounts, drone frames and propeller guards, including end-use parts. Buys powder in 50 kg lots and keeps 100 kg on hand to avoid interrupting production batches. Mechanical designer Antonio Kovac: 'With the Fuse 1+ we can get prints the same day. We don't need to wait for changes in tooling.' This is the clearest confirmed competitor placement inside a Gauntlet account. [Inference] The Formlabs placement is documented for the Croatian plant. The new US line in By Light's Florida plant names no printer supplier, so the US equipment decision may still be open. Posture kept Locked pending field confirmation.",
       "hq": "Osijek, Croatia. US entity ORQA US LLC.",
       "backing": "EUR 12.7M Series A led by Expeditions Ventures, with Lightspeed Venture Partners, Taiwania Capital, Aymo and Radius Capital. Earlier EUR 5.8M seed. Founded 2018 by Srdjan Kovacevic, Ivan Jelusic and Vlatko Matijevic.",
-      "scale": "Croatian facility rated up to 280,000 NDAA-compliant drones a year, targeting 500,000 drones and components. EUR 10M FPV contract with the Croatian military. Supplied Ukrainian forces.",
+      "scale": "Croatian facility rated up to 280,000 NDAA-compliant drones a year, targeting 500,000 drones and components. EUR 10M FPV contract with the Croatian military. Supplied Ukrainian forces. Gauntlet II: 2nd Close Quarters (82.8). US production at By Light's 180,000 sq ft plant in Port Orange, FL, full rate due October 2026.",
       "tech": "Builds flight controllers, radios, motors, cameras and PCBs in-house and avoids Chinese components for supply-chain sovereignty. Runs Formlabs Fuse 1 and Fuse 1+ 30W SLS printers on Nylon 12 and TPU 90A.",
       "sales_hook": "A competitor is already installed here and Formlabs has published the case study. Do not pitch entry-level SLS. Pitch what Fuse cannot do: qualified engineering polymers, FDM for large jigs and fixtures, and repeatability across a 280K-unit-a-year line. Their own supply-chain-sovereignty argument is the wedge, because Open Material Mode pushes qualification onto them."
     },
@@ -348,19 +356,19 @@
       "gauntlet1": false,
       "am_posture": "Unknown",
       "competitor_presence": null,
-      "confidence": "[Unverified]",
-      "evidence_url": "https://drone-dominance.io/vendors.html",
+      "confidence": "Confirmed",
+      "evidence_url": "https://usubc.org/u-s-ukraine-business-council-welcomes-stellarion-as-a-new-member/",
       "stratasys_relationship": null,
       "posture": "Open",
-      "notes": "Confirmed in Gauntlet II with the Deadliner Q1. Everything else is unestablished. Research gap, carry to next run. Entity check 2026-08-25: the official DoW vendor directory lists this company under the bare name shown here, with no legal suffix and no Phase 1 directory entry, so it is a Phase 2 new entrant. The thin public footprint is genuine, not a search failure.",
+      "notes": "Entity resolved Oct 4 2026. Joined the US-Ukraine Business Council Sep 18 2026 and is publicly asking for introductions to US primes and integrators for joint development and co-production. [Inference] It is looking for a US manufacturing partner now, which is a timing opening.",
       "hq": "Ukraine",
-      "backing": "Not established from public sources. [Unverified]",
-      "scale": "Not established from public sources.",
+      "backing": "Privately held Ukrainian LLC. Investors not disclosed.",
+      "scale": "850 employees, capacity up to 30,000 drones a month, over 100,000 Deadliner drones supplied to more than 20 Ukrainian brigades in its first year (company-stated). Not in either Gauntlet II top 5.",
       "tech": "Deadliner Q1 UAV, its Gauntlet II entry.",
       "sales_hook": "Thin public footprint. Treat as a discovery call, not a pitch. Establish who manufactures the Deadliner Q1 and where before spending time."
     }
   ],
-  "research_note": "Enrichment pass Aug 25 2026 added headquarters, financial backing, production scale, technology and a sales hook for all 19 teams. Public sources only. Three companies (Vector, Hyperscale, Stellarion) have thin or ambiguous public footprints and are flagged as research gaps rather than filled with guesses.",
+  "research_note": "Enrichment pass Aug 25 2026 added headquarters, financial backing, production scale, technology and a sales hook for all 19 teams. Public sources only. Three companies (Vector, Hyperscale, Stellarion) have thin or ambiguous public footprints and are flagged as research gaps rather than filled with guesses. Oct 4 2026 pass: Gauntlet II results and first orders added; Hyperscale and Stellarion moved to Confirmed; Vector remains [Unverified] on additive.",
   "official_directory": {
     "url": "https://drone-dominance.io/vendors.html",
     "note": "Authoritative source for entity names and status. Phase 2 lists 49 qualifiers with the 19 that advanced to Gauntlet II marked. A separate Lethality Vendors section lists munitions partners teamed with Phase 2 drone operations: Bravo Ordnance, Kela Defense, Kraken Kinetics, Mountain Horse and Northrop Grumman as Lethality Prize winners, plus Nammo, Perennial Autonomy and XTEND Reality. Note Northrop Grumman's presence in the programme."
@@ -385,12 +393,17 @@
     ],
     "do_not_conclude": "Do not record this as refuted. It is unproven, and given the nature of supplier relationships it may well stay unproven while being true."
   },
-  "signal_so_what": "SkyFall runs hundreds of printers and publicly de-Sinified the Shrike 10-F's bill of materials to win the programme. NDAA FY2026 s880 applies the same standard to the additive machines themselves. Ask whether the printer fleet was audited too. Separately, Neros remains the loudest sceptic in the field: have an answer before a prospect quotes them back.",
+  "signal_so_what": "The window is the next two to five months: winners must deliver half of each order in about 2.5 months and the rest in 5 [per GovConIC]. Lead with the five who just won orders and have to scale fast (Neros, Swarm, Skycutter, Vector, ORQA US). Skycutter's supplier SkyFall has delivered only half its Gauntlet I order, which is the capacity argument in public. Have the Neros answer ready: he rejects printing at the edge, not printing in the factory.",
   "open_items_checked": [
     {
       "on": "2026-09-07",
       "item": "SkyFall -> Formlabs printer claim",
       "result": "No new public evidence found either way. Recommended next step unchanged: ask the field team directly rather than continuing open-source search, since supplier relationships of this kind are rarely published."
+    },
+    {
+      "on": "2026-10-04",
+      "item": "SkyFall -> Formlabs printer claim",
+      "result": "Re-checked. No new public evidence either way. Still [Unverified]; ask the field team."
     }
   ]
 }

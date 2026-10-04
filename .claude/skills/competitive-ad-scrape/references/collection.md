@@ -14,12 +14,12 @@ browser.** The sandbox browser intermittently fails on LinkedIn; his session is 
 about a brand. Advertiser tells you what the company is running. Only the second one
 belongs in the ad log. Keyword results belong in `partner_ads` and nowhere else.
 
-### Verified advertiser names, confirmed 2026-08-25
+### Verified advertiser names, confirmed 2026-10-04
 
 | Competitor | `?accountOwner=` | Count | Note |
 |---|---|---|---|
-| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 36 | `HP Additive` also works |
-| Formlabs | `Formlabs` | 38 | clean |
+| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 34 | `HP Additive` also works |
+| Formlabs | `Formlabs` | 28 | clean |
 | 3D Systems | `3D Systems Corporation` | 1 | **`3D Systems` returns 33 unrelated ads** |
 | Bambu Lab | no account exists | 0 | `Bambu` returns 237 **Bambuser** ads |
 
@@ -103,8 +103,8 @@ Then open each result and capture impressions, country split, run dates and targ
 
 | Competitor | EU-served | Of total | Read |
 |---|---|---|---|
-| Formlabs | 1 | 38 | Effectively US-only |
-| HP Additive | 2 | 36 | Effectively US-only |
+| Formlabs | 1 | 28 | Effectively US-only |
+| HP Additive | 2 | 34 | Effectively US-only |
 
 Both competitors are fighting the LinkedIn war almost entirely in the United States.
 

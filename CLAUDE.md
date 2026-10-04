@@ -77,14 +77,14 @@ These exist because breaking each one has already produced wrong data in this re
 
 ### Verified advertiser names
 
-Confirmed 2026-09-22 (all four). Re-confirm every run and update this table.
+Confirmed 2026-10-04 (all four). Re-confirm every run and update this table.
 
 | Competitor | `?accountOwner=` | Live instances | Warning |
 |---|---|---|---|
-| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 36 (Sep 22) | `HP Additive` also resolves correctly |
-| Formlabs | `Formlabs` | 33 (Sep 22, flat) | clean, use as the control |
-| 3D Systems | `3D Systems Corporation` | 1 (Sep 22, recruitment only) | **`3D Systems` returns 33 ads that are NOT them** (3D Dental Systems d.o.o., FGS Media) |
-| Bambu Lab | no account exists | 0 (Sep 22) | **`Bambu` returns 237 ads that are all Bambuser**, unrelated |
+| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 34 (Oct 4) | `HP Additive` also resolves correctly |
+| Formlabs | `Formlabs` | 28 (Oct 4) | clean, use as the control |
+| 3D Systems | `3D Systems Corporation` | 1 (Oct 4, recruitment only) | **`3D Systems` returns 33 ads that are NOT them** (3D Dental Systems d.o.o., FGS Media) |
+| Bambu Lab | no account exists | 0 (Oct 4) | **`Bambu` returns 237 ads that are all Bambuser**, unrelated |
 
 **Never quote an agency's total ad count as a competitor's.** ATREVIA COMUNICACIÓN SL
 (124 ads) and Sinointeractive (100K ads) are their whole client books, not HP's or Bambu's.
@@ -147,16 +147,16 @@ live site. Commit messages: what changed and why, in plain English.
 
 ## Where things stand
 
-Current as of 2026-08-25. All four competitors carry real data; there are no pending stubs.
+Current as of 2026-10-04. All four competitors carry real data; there are no pending stubs.
 
-- **HP Additive** — 18 creatives, 36 live instances. Buys launch bursts, not always-on
+- **HP Additive** — 16 creatives, 34 live instances (Oct 4); dropped its drone engineer offer. Buys launch bursts, not always-on
   presence: one MJF 1200 teaser took 500K-1M impressions in nineteen days.
 - **Formlabs** — ships the Fuse X1 in Q4 2026, ahead of HP's early-2027 MJF 1200. The
   nearest-term threat, and the one we had not planned for.
 - **Bambu Lab** — buys zero LinkedIn advertising. NDAA FY2026 §849/§880 bar them from
   defense entirely, which makes every Bambu machine on a defense floor a forced replacement.
-- **3D Systems** — third consecutive run at zero marketing creative.
-- **Gauntlet** — 19 accounts, 16 confirmed. ORQA is `Locked` to Formlabs; Neros and
+- **3D Systems** — zero LinkedIn marketing creative, but a US corporate Google account appeared Oct 4 (9 ads).
+- **Gauntlet** — Gauntlet II results out Sep 2026, orders being placed. 19 accounts, 17 confirmed. ORQA is `Locked` to Formlabs; Neros and
   Skycutter are `Contested`.
 
 ### Open items
