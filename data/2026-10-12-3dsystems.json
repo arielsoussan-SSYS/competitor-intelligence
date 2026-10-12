@@ -1,0 +1,499 @@
+{
+  "competitor": "3D Systems",
+  "slug": "3dsystems",
+  "run_date": "2026-10-12",
+  "baseline_date": "2026-10-04",
+  "week_label": "Week of Oct 5 - Oct 12, 2026",
+  "status": "active",
+  "sources": {
+    "linkedin": {
+      "checked": true,
+      "unique_creatives": 1,
+      "live_instances": 1,
+      "note": "'3D Systems Corporation' returns exactly 1 ad, the same recruitment post (follow-company jobs ad). Sixth consecutive run at zero LinkedIn marketing creative."
+    },
+    "meta": {
+      "checked": false,
+      "note": "Out of scope. Not checked. This is not a zero result."
+    },
+    "google": {
+      "checked": true,
+      "note": "35 ads on 3dsystems.com, unchanged from Oct 4. The US account 3D Systems Corporation (AR05070900391252590593) was not re-sampled this run, so its 9-ad count and last-shown date are carried from Oct 4. Not checked, not zero."
+    }
+  },
+  "headline": "3D Systems is unchanged: still no LinkedIn marketing creative (sixth run) and 35 Google ads on its domain, same as Oct 4.",
+  "so_what": "No new signal this week. The US Google account that appeared Oct 4 has not been re-sampled, so treat its growth as unknown. [Inference] 3D Systems competes on contract awards and joint ventures, not media, so its ad data rarely changes a sales conversation.",
+  "kpis": [
+    {
+      "label": "LinkedIn marketing creatives",
+      "value": "0",
+      "delta": "Sixth consecutive run at zero",
+      "dir": "flat"
+    },
+    {
+      "label": "Google ads on domain",
+      "value": "35",
+      "delta": "Unchanged from Oct 4",
+      "dir": "flat"
+    },
+    {
+      "label": "Advertiser accounts",
+      "value": "3",
+      "delta": "US account plus two APAC resellers, unchanged",
+      "dir": "flat"
+    },
+    {
+      "label": "US corporate Google ads",
+      "value": "9",
+      "delta": "Carried from Oct 4, not re-sampled this run",
+      "dir": "flat"
+    },
+    {
+      "label": "Est spend / mo",
+      "value": "Not disclosed",
+      "delta": "Google does not disclose impressions [Estimate not possible]",
+      "dir": "flat"
+    },
+    {
+      "label": "New / dropped",
+      "value": "0 / 0",
+      "delta": "No re-catalogue this run",
+      "dir": "flat"
+    }
+  ],
+  "changes": [
+    {
+      "cat": "Ad-level",
+      "items": [
+        {
+          "t": "No change on either platform.",
+          "d": "LinkedIn: 1 recruitment ad, same as Oct 4. Google: 35 ads on 3dsystems.com, same as Oct 4.",
+          "u": "https://www.linkedin.com/ad-library/search?accountOwner=3D+Systems+Corporation"
+        }
+      ]
+    },
+    {
+      "cat": "Company / market",
+      "items": [
+        {
+          "t": "No 3D Systems news checked this run.",
+          "d": "[Unverified] No source beyond the ad libraries was searched for 3D Systems on Oct 12.",
+          "u": "https://www.3dsystems.com/"
+        }
+      ]
+    }
+  ],
+  "dropped": [],
+  "talk_track": [
+    {
+      "tag": "Marketing presence",
+      "claim": "“3D Systems is a major competitor in this space.”",
+      "counter": "In demand generation they are effectively absent. Zero LinkedIn marketing creative for two consecutive runs, and their only paid footprint is 26 Google ads from two APAC reseller accounts. They are not contesting the market with marketing.",
+      "u": ""
+    },
+    {
+      "tag": "Vertical claims",
+      "claim": "“3D Systems leads in Med Tech, Dental, and Aerospace.”",
+      "counter": "Those are stated verticals with effectively zero paid support behind them. Their observable advertising sells jewelry wax patterns and mould cost reduction in Korea and Japan. Ask what they are actively investing in versus what is on the website."
+    },
+    {
+      "tag": "Stability",
+      "claim": "“3D Systems is a safe long-term partner.”",
+      "counter": "The CEO search opened Aug 4 and remains unresolved with no successor named. Raise continuity of support and roadmap ownership over a multi-year program."
+    },
+    {
+      "tag": "Where they do win",
+      "claim": "“They just won a defense contract.”",
+      "counter": "True, and worth respecting. The $9M USAF follow-on and the NAMI licence are real. They win through contracts and JVs, not marketing, so contest those on programme terms, not on share of voice."
+    }
+  ],
+  "exposure": [
+    "Aerospace and defense programme wins. They are converting through contract awards and joint ventures, which our ad tracking cannot see. This is the blind spot on this competitor.",
+    "APAC jewelry and dental resale. A small but defended niche where they hold local reseller relationships."
+  ],
+  "watch": [
+    {
+      "h": "Whether the US Google account grows",
+      "b": "9 ads is a test. If it grows, or LinkedIn creative follows, 3D Systems is back in western demand gen and belongs higher in the tracker.",
+      "u": "https://adstransparency.google.com/advertiser/AR05070900391252590593?region=anywhere&hl=en"
+    },
+    {
+      "h": "Contract awards and joint ventures",
+      "b": "This is where they actually compete. Aerospace and defense wins, certifications and JV announcements matter far more than their media.",
+      "u": "https://www.3dsystems.com/press-releases"
+    },
+    {
+      "h": "The broken %FIRSTNAME% jobs ad",
+      "b": "Still live for a third run. Minor, but it is a fair, checkable data point about operational attention.",
+      "u": "https://www.linkedin.com/ad-library/search?accountOwner=3D+Systems+Corporation"
+    },
+    {
+      "h": "CEO successor",
+      "b": "A new CEO usually resets go-to-market. Watch for the appointment and any marketing reorganisation after it.",
+      "u": "https://www.3dsystems.com/press-releases"
+    }
+  ],
+  "unverified": [
+    "Absence of Meta ads. Keyword search cannot prove absence.",
+    "No new contract or JV news Aug 11-18. Absence of search hits is not absence of news; a direct poll of the press release page is the reliable check.",
+    "Run confirmed Oct 12 2026: LinkedIn 1 instance, Google domain total 35.",
+    "Oct 12: the US Google account's creatives were not re-sampled, and no 3D Systems news search was run. Not checked, not zero.",
+    "Oct 12: Meta not checked. Out of scope."
+  ],
+  "theme_detail": [
+    [
+      "Recruitment (not marketing)",
+      1,
+      1,
+      "",
+      "n/a",
+      "See ad log"
+    ],
+    [
+      "Brand defence",
+      1,
+      1,
+      "",
+      "n/a",
+      "See ad log"
+    ],
+    [
+      "Prototyping speed",
+      1,
+      1,
+      "",
+      "n/a",
+      "See ad log"
+    ],
+    [
+      "Cost reduction",
+      1,
+      1,
+      "",
+      "n/a",
+      "See ad log"
+    ],
+    [
+      "Accuracy vs low-cost printers",
+      1,
+      1,
+      "",
+      "n/a",
+      "See ad log"
+    ],
+    [
+      "Jewelry / wax casting",
+      1,
+      1,
+      "",
+      "n/a",
+      "See ad log"
+    ],
+    [
+      "Dental",
+      1,
+      1,
+      "",
+      "n/a",
+      "See ad log"
+    ],
+    [
+      "Dental (corporate)",
+      2,
+      2,
+      "",
+      "n/a",
+      "See ad log"
+    ],
+    [
+      "Metal / materials",
+      2,
+      2,
+      "",
+      "n/a",
+      "See ad log"
+    ],
+    [
+      "Industrial / quote",
+      1,
+      1,
+      "",
+      "n/a",
+      "See ad log"
+    ],
+    [
+      "Industrial SLA / surface finish",
+      1,
+      1,
+      "",
+      "n/a",
+      "See ad log"
+    ]
+  ],
+  "ads": [
+    {
+      "platform": "LinkedIn",
+      "format": "Text / Jobs",
+      "theme": "Recruitment (not marketing)",
+      "headline": "Get the latest jobs and industry news. %FIRSTNAME%, explore relevant opportunities with 3D Systems Corporation",
+      "cta": "Learn More",
+      "first": "2026",
+      "last": "Aug 2026",
+      "active": "Yes",
+      "audience": "Job seekers",
+      "funnel": "n/a",
+      "url": "https://www.linkedin.com/company/3d-systems/",
+      "owner": "3D Systems corporate",
+      "status": "Carried over",
+      "notes": "Still the ONLY ad under advertiser '3D Systems Corporation'. Still carrying the unrendered %FIRSTNAME% token, unchanged since baseline. Marketing creative on LinkedIn: zero, for a second consecutive run.",
+      "impr": "Not disclosed",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "Google Search (KR)",
+      "format": "Search Ad",
+      "theme": "Brand defence",
+      "headline": "3D Systems - 3d 시스템즈",
+      "cta": "Visit site",
+      "first": "2026",
+      "last": "Aug 2026",
+      "active": "Yes",
+      "audience": "Korean buyers searching the brand",
+      "funnel": "Bottom",
+      "url": "https://ko.3dsystems.com/",
+      "owner": "3D Systems Korea (쓰리디시스템즈코리아)",
+      "status": "Carried over",
+      "notes": "Brand-term search ad from the Korean subsidiary account, unchanged.",
+      "impr": "Not disclosed",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "Google Search (JP)",
+      "format": "Search Ad",
+      "theme": "Prototyping speed",
+      "headline": "【3D Systems】業務用3Dプリンタ - 試作リードタイムを大幅短縮 (industrial 3D printer, sharply shorten prototyping lead time)",
+      "cta": "Visit site",
+      "first": "2026",
+      "last": "Aug 2026",
+      "active": "Yes",
+      "audience": "Japanese engineering and prototyping buyers",
+      "funnel": "Mid",
+      "url": "https://ja.3dsystems.com/",
+      "owner": "Yamada Leo House (株式会社ヤマダレオハウス), JP reseller",
+      "status": "Carried over",
+      "notes": "Reseller-run, not corporate. Unchanged.",
+      "impr": "Not disclosed",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "Google Search (JP)",
+      "format": "Search Ad",
+      "theme": "Cost reduction",
+      "headline": "金型コスト削減に貢献3Dプリンタ (3D printers that cut mould costs)",
+      "cta": "Visit site",
+      "first": "2026",
+      "last": "Aug 2026",
+      "active": "Yes",
+      "audience": "Japanese tooling and manufacturing buyers",
+      "funnel": "Mid",
+      "url": "https://ja.3dsystems.com/",
+      "owner": "Yamada Leo House (JP reseller)",
+      "status": "Carried over",
+      "notes": "Cost-displacement pitch, unchanged.",
+      "impr": "Not disclosed",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "Google Search (JP)",
+      "format": "Search Ad",
+      "theme": "Accuracy vs low-cost printers",
+      "headline": "安価3Dプリンタの精度に不満な方 (for those dissatisfied with the accuracy of cheap 3D printers)",
+      "cta": "Visit site",
+      "first": "2026",
+      "last": "Aug 2026",
+      "active": "Yes",
+      "audience": "Owners of entry-level printers",
+      "funnel": "Mid",
+      "url": "https://ja.3dsystems.com/",
+      "owner": "Yamada Leo House (JP reseller)",
+      "status": "Carried over",
+      "notes": "The only competitive-displacement message in their footprint, unchanged.",
+      "impr": "Not disclosed",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "Google Display (KR)",
+      "format": "Display Image",
+      "theme": "Jewelry / wax casting",
+      "headline": "주얼리 전용 MJP 3D 프린터 - 쥬얼리 왁스 패턴 3D 프린터, MJP 300W Plus (MJP 3D printer for jewelry, wax pattern printing)",
+      "cta": "더 알아보기 (Learn more)",
+      "first": "2026",
+      "last": "Aug 2026",
+      "active": "Yes",
+      "audience": "Korean jewelry manufacturers",
+      "funnel": "Mid",
+      "url": "https://ko.3dsystems.com/",
+      "owner": "3D Systems Korea",
+      "status": "Carried over",
+      "notes": "Branded MJP 300W Plus creative, unchanged. Still nothing supporting Med Tech, A&D or data centre.",
+      "impr": "Not disclosed",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "LinkedIn (reseller)",
+      "format": "Event Ad",
+      "theme": "Dental",
+      "headline": "Impression 3D directe de protheses completes dentaire. Soirees de l'imprimante 3D NextDent 300, Paris",
+      "cta": "Register",
+      "first": "Jun 2026",
+      "last": "Jul 2026",
+      "active": "No",
+      "audience": "French dental laboratories",
+      "funnel": "Mid",
+      "url": "https://www.linkedin.com/ad-library/search?keyword=NextDent",
+      "owner": "KALLISTO (FR reseller)",
+      "status": "Carried over",
+      "notes": "Event already ended at baseline (Jun-Jul 2026). Still the library's only NextDent creative, still reseller-owned not 3D Systems, still inactive.",
+      "impr": "Not disclosed",
+      "impr_disclosed": false
+    },
+    {
+      "platform": "Google Search",
+      "format": "Search Ad",
+      "theme": "Dental (corporate)",
+      "headline": "Dental Lab 3D Printers - 3D Printers for Orthodontics - 30+ Dental... / 3D Systems offers digital dental solutions, global availability, and 24/7 assistance. Clinically validated NextDent materials.",
+      "cta": "Visit site",
+      "impr": "Not disclosed",
+      "first": "2026",
+      "last": "Oct 2026",
+      "active": "Yes",
+      "audience": "[Inference] Dental lab owners and industrial engineers searching for printers",
+      "funnel": "Mid",
+      "url": "https://www.3dsystems.com/3dprint/dental",
+      "owner": "3D Systems Corporation (US, verified Google advertiser)",
+      "status": "Carried over",
+      "notes": "First 3D Systems corporate ad seen in five runs. Sitelinks: Orthodontics, 3D Printing Software, Metal 3D Printers."
+    },
+    {
+      "platform": "Google Search",
+      "format": "Search Ad",
+      "theme": "Dental (corporate)",
+      "headline": "3D Printed Dentures - Lower Cost Per Implant Part - 80+ Years of Dental... / 3D Systems matches your clinic's needs with a range of complete digital dental solutions.",
+      "cta": "Visit site",
+      "impr": "Not disclosed",
+      "first": "2026",
+      "last": "Oct 2026",
+      "active": "Yes",
+      "audience": "[Inference] Dental lab owners and industrial engineers searching for printers",
+      "funnel": "Mid",
+      "url": "https://www.3dsystems.com/3dprint/dental",
+      "owner": "3D Systems Corporation (US, verified Google advertiser)",
+      "status": "Carried over",
+      "notes": "Cost-per-part framing aimed at clinics."
+    },
+    {
+      "platform": "Google Search",
+      "format": "Search Ad",
+      "theme": "Metal / materials",
+      "headline": "Print Alloy Materials / Learn how you can save money, accelerate time-to-market and discover new efficiencies.",
+      "cta": "Visit site",
+      "impr": "Not disclosed",
+      "first": "2026",
+      "last": "Oct 2026",
+      "active": "Yes",
+      "audience": "[Inference] Dental lab owners and industrial engineers searching for printers",
+      "funnel": "Mid",
+      "url": "https://www.3dsystems.com/",
+      "owner": "3D Systems Corporation (US, verified Google advertiser)",
+      "status": "Carried over",
+      "notes": "Generic metal materials ad."
+    },
+    {
+      "platform": "Google Search",
+      "format": "Search Ad",
+      "theme": "Industrial / quote",
+      "headline": "Industrial 3D Printing Leader / Transform manufacturing with industrial 3D printing. Cut lead times. Get a quote today.",
+      "cta": "Visit site",
+      "impr": "Not disclosed",
+      "first": "2026",
+      "last": "Oct 2026",
+      "active": "Yes",
+      "audience": "[Inference] Dental lab owners and industrial engineers searching for printers",
+      "funnel": "Bottom",
+      "url": "https://www.3dsystems.com/",
+      "owner": "3D Systems Corporation (US, verified Google advertiser)",
+      "status": "Carried over",
+      "notes": "Quote-request CTA. The most direct western demand-gen ad 3D Systems has run in this tracker."
+    },
+    {
+      "platform": "Google Search",
+      "format": "Search Ad",
+      "theme": "Metal / materials",
+      "headline": "High-Precision Metal Printers / Cut production and prototype times with 3D Systems metal 3D printers.",
+      "cta": "Visit site",
+      "impr": "Not disclosed",
+      "first": "2026",
+      "last": "Oct 2026",
+      "active": "Yes",
+      "audience": "[Inference] Dental lab owners and industrial engineers searching for printers",
+      "funnel": "Mid",
+      "url": "https://www.3dsystems.com/",
+      "owner": "3D Systems Corporation (US, verified Google advertiser)",
+      "status": "Carried over",
+      "notes": ""
+    },
+    {
+      "platform": "Google Search",
+      "format": "Search Ad",
+      "theme": "Industrial SLA / surface finish",
+      "headline": "Industrial SLA 3D Printing / Don't settle for rough prints. 3D Systems delivers smoother surfaces and sharp detail.",
+      "cta": "Visit site",
+      "impr": "Not disclosed",
+      "first": "2026",
+      "last": "Oct 2026",
+      "active": "Yes",
+      "audience": "[Inference] Dental lab owners and industrial engineers searching for printers",
+      "funnel": "Mid",
+      "url": "https://www.3dsystems.com/",
+      "owner": "3D Systems Corporation (US, verified Google advertiser)",
+      "status": "Carried over",
+      "notes": "Surface-finish comparison aimed at lower-cost printers."
+    }
+  ],
+  "themes": {
+    "Recruitment (not marketing)": 1,
+    "Brand defence": 1,
+    "Prototyping speed": 1,
+    "Cost reduction": 1,
+    "Accuracy vs low-cost printers": 1,
+    "Jewelry / wax casting": 1,
+    "Dental": 1,
+    "Dental (corporate)": 2,
+    "Metal / materials": 2,
+    "Industrial / quote": 1,
+    "Industrial SLA / surface finish": 1
+  },
+  "formats": {
+    "Text / Jobs": 1,
+    "Search Ad": 10,
+    "Display Image": 1,
+    "Event Ad": 1
+  },
+  "funnels": {
+    "n/a": 1,
+    "Bottom": 2,
+    "Mid": 10
+  },
+  "bucket_basis": "Basis for 3D Systems is DIFFERENT to the other competitors. These 13 are individually catalogued creatives across both platforms: 1 LinkedIn owned (a jobs post), 1 LinkedIn reseller event ad, 5 sampled Google ads from the two APAC reseller accounts, and 6 of the 9 ads on the new 3D Systems Corporation Google account. They are not LinkedIn instances and not the full 35 Google ads on 3dsystems.com.",
+  "count_unit": "Catalogued creatives, all platforms",
+  "linkedin_advertiser": "3D Systems Corporation",
+  "advertiser_verified": {
+    "on": "2026-10-12",
+    "method": "Chrome connector, ?accountOwner= URL parameter, control (Formlabs) passed first (27 ads)",
+    "live_instances_at_verification": 1,
+    "note": "'3D Systems Corporation' returns exactly 1 ad on Oct 12, advertiser 3D Systems Corporation, paid for by 3D Systems, Inc. Control passed."
+  },
+  "theme_gap": null,
+  "spend_method": "Dollars are derived at render time by tools/spend_model.py, never stored. Geometric mean of the disclosed impression band, divided by the actual run length, times a format-specific B2B CPM. Message and Conversation Ads use cost per send instead. Ads with no disclosed impressions are reported as not disclosed, never imputed.",
+  "mode": "Off-cycle check, 8 days after the Oct 4 scan"
+}

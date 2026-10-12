@@ -7,7 +7,7 @@
   "requirement": "Each company must deliver 120 kamikaze drones with lethality payloads in roughly five weeks. Price ceilings $5,500 long-range strike, $4,500 close quarters. Awards cover 5 long-range and 3 close-quarters designs, with production orders of 4,000-9,500 UAVs per winner.",
   "why_it_matters": "Nineteen pre-qualified companies that must prove they can manufacture at wartime speed. Every one is a Stratasys prospect. The 120-units-in-five-weeks requirement is the additive manufacturing pitch stated as a procurement requirement. One account is confirmed Locked to a competitor (ORQA, Formlabs) and two are Contested. Internal intelligence suggests HP supports 14 of the 19 [validation-needed]: unproven publicly, which is expected, since supplier relationships are not published. Do not cite the figure externally.",
   "headline_signal": "Gauntlet II is decided and production orders are being placed now. The Deep Strike runner-up, Hyperscale, is itself a metal 3D-printing company, while Neros, the field's loudest 3D-printing sceptic, took the biggest order: 14,000+ drones.",
-  "last_researched": "2026-10-04",
+  "last_researched": "2026-10-12",
   "sources": [
     {
       "t": "Gauntlet II results (DefenseScoop, Sep 18 2026)",
@@ -216,7 +216,7 @@
       "evidence_url": "https://www.axios.com/2025/09/03/vector-defense-drones-utah-investments",
       "stratasys_relationship": null,
       "posture": "Open",
-      "notes": "Entity resolved 2026-08-25 via the Department of War Drone Dominance vendor directory, which lists 'VECTOR DEFENSE, INC.'. Earlier ambiguity came from the programme's short display name 'Vector'. Oct 4 2026: Inside Unmanned Systems describes its entry as a '3D-printed 3.5\" Dagger quadcopter'. Vector's own Dagger page does not mention printing, and no printer brand is named. [Unverified]",
+      "notes": "Entity resolved 2026-08-25 via the Department of War Drone Dominance vendor directory, which lists 'VECTOR DEFENSE, INC.'. Earlier ambiguity came from the programme's short display name 'Vector'. Oct 4 2026: Inside Unmanned Systems describes its entry as a '3D-printed 3.5\" Dagger quadcopter'. Vector's own Dagger page does not mention printing, and no printer brand is named. [Unverified] Oct 12: Inside Unmanned Systems (Sep 22, updated Sep 25) says Vector's Dagger is 'likely' 3D-printed. That hedge is IUS's own. No printer brand or competitor named. [Unverified]",
       "hq": "Bluffdale, Utah, USA. R&D in Austin, Texas.",
       "backing": "$61M Series A, Sept 2025, led by Pelion Venture Partners with Lightspeed Venture Partners and Point72 Ventures. Plus a $20M loan from JPMorgan Chase to expand domestic manufacturing.",
       "scale": "Holds a SOCOM contract. Expanding US production on the back of the JPMorgan facility. Gauntlet II: 4th Close Quarters (78.2). Says it has an order for up to 5,000 drones.",
@@ -312,7 +312,7 @@
       "evidence_url": "https://insideunmannedsystems.com/nine-companies-win-ddp-gauntlet-2-fpv-drone-competition/",
       "stratasys_relationship": null,
       "posture": "Open",
-      "notes": "Research gap largely closed Oct 4 2026. A metal-AM company that placed 2nd in Deep Strike. [Inference] A peer or partner more than a classic printer sale; polymer AM for airframes, jigs and fixtures could complement its metal process. A 7,000-drone order figure circulates but could not be sourced [Unverified].",
+      "notes": "Research gap largely closed Oct 4 2026. A metal-AM company that placed 2nd in Deep Strike. [Inference] A peer or partner more than a classic printer sale; polymer AM for airframes, jigs and fixtures could complement its metal process. A 7,000-drone order figure circulates but could not be sourced [Unverified]. Oct 12: the metal-AM claim (blue laser microwire, 20x faster) rests on a single source, Inside Unmanned Systems (Sep 22). No second source or company page found. [Unverified]",
       "hq": "Austin, Texas, USA [single source]",
       "backing": "Not established from public sources.",
       "scale": "Founded 2024. 2nd in Gauntlet II Deep Strike (70.9). Order size not published.",
@@ -404,6 +404,11 @@
       "on": "2026-10-04",
       "item": "SkyFall -> Formlabs printer claim",
       "result": "Re-checked. No new public evidence either way. Still [Unverified]; ask the field team."
+    },
+    {
+      "on": "2026-10-12",
+      "item": "Gauntlet II accounts re-checked: Vector, Hyperscale, Stellarion, Grim Tech, Skycutter/SkyFall, Neros",
+      "result": "No tracker upgrades justified. No additive supplier or competitor named for any of the four gap companies. Skycutter/SkyFall to Formlabs remains [Unverified]. Neros: no new printing statement (order announcement Sep 30). Gauntlet 2.5 (bomber/dropper, ~$32M) still only scheduled, qualifier 'tentatively' October 2026 [Unverified]. Orders confirmed so far: Neros and Swarm Defense only; Skycutter and Vector 5,000 each are forecasts. Skycutter and ModalAI deliveries flagged as awaiting inspection."
     }
   ]
 }
