@@ -40,7 +40,7 @@ inside the parent workspace. Open Claude Code *here*.
 | **Claude for Chrome extension**, connected | The entire collection phase drives Ariel's own browser through the `claude-in-chrome` connector. Without it there is no scrape. | Ask Claude to run `ToolSearch` for `mcp__claude-in-chrome__navigate`. If it is missing, stop and fix this first. |
 | `python3` | Builds the dashboard. **Stdlib only**, works on 3.9+. No pip install needed. | `python3 tools/build_dashboard.py` |
 | `git` push access | Publishing is a push to `main`. | `git push` |
-| Node | **Only** for building slide decks. Not needed for a scan. | optional |
+| Node | Runs the JavaScript syntax check in the SKILL.md Phase 7 gate, and builds slide decks. | `node --version` |
 
 Everything else travels in this repo. There are no machine-specific paths.
 
@@ -141,9 +141,8 @@ that is where things actually move.
 Publishing is pre-authorised. `git add -A && git commit && git push`, then confirm the
 live site. Commit messages: what changed and why, in plain English.
 
-> A previous Cowork sandbox blocked `git push`, which forced a gzip/base64 injection into
-> GitHub's web editor. That workaround corrupted a character on the Aug 10 2026 run. It is
-> gone. If a push ever fails, fix the environment. Do not rebuild the injection path.
+If `git push` fails, fix the environment and retry. Never work around it by pasting files
+into GitHub's web editor: that path once corrupted a published run.
 
 ## Where things stand
 

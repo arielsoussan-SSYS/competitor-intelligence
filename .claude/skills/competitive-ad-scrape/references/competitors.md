@@ -54,7 +54,7 @@ surface. That is the argument for this tier existing.
 **Confirmed as of Aug 25 2026:** ORQA US LLC is `Locked` to **Formlabs** (published case
 study, Fuse 1 / Fuse 1+ 30W). Skycutter is `Contested`: its Gauntlet I winning Shrike 10F
 is built by SkyFall, which Formlabs names as a customer in outbound `[Unverified]`.
-14 of 19 teams are now `Confirmed`. Vector, Hyperscale and Stellarion remain research
+16 of 19 teams are now `Confirmed` (see `data/gauntlet.json`). Vector, Hyperscale and Stellarion remain research
 gaps — thin or ambiguous public footprints. Resolve the legal entity from the DIU or
 NSWC Crane vendor listing before spending more open-source search time on them.
 

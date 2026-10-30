@@ -114,6 +114,9 @@ relying only on a diff against our own prior run.
 
 ## Meta Ad Library
 
+**Out of scope by Ariel's decision.** Record Meta as *not checked*, never as zero. The
+notes below are kept for if it is brought back into scope.
+
 Keyword search, not advertiser search: `Multi Jet Fusion`, `HP 3D printing`,
 `HP Metal Jet`. Filter active, ad_type=all, country=US.
 

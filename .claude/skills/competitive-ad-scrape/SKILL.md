@@ -1,6 +1,6 @@
 ---
 name: competitive-ad-scrape
-description: Run the weekly additive-manufacturing competitive ad intelligence scan and rebuild the dashboard. Use when the user says "scrape competitor ads", "update ad intelligence", "refresh ad data", "pull HP ads", "ad library scrape", "HP ad watch", "competitive ad update", "competitor scan", "what changed this week", or asks for the weekly competitive ad report. Covers LinkedIn Ad Library, Meta Ad Library, and Google Ads Transparency Center, diffs against the previous run, and publishes the dashboard, workbook, and sales brief.
+description: Run the additive-manufacturing competitive ad intelligence scan (HP, Formlabs, 3D Systems, Bambu Lab) and rebuild the dashboard. Use when the user asks to scrape, refresh, or update competitor ad data, run the competitor scan, or asks what competitors changed since the last run (e.g. "scrape competitor ads", "what changed this week"). Covers LinkedIn Ad Library and Google Ads Transparency Center plus the Gauntlet account tracker, diffs against the previous run, and publishes the dashboard and sales briefs.
 ---
 
 # Competitive ad intelligence: scrape, diff, build, publish
@@ -35,7 +35,6 @@ Deliverables, into the repo:
 | `data/YYYY-MM-DD-<slug>.json` | The run dataset. **The asset.** |
 | `index.html` | Dashboard, published to GitHub Pages |
 | `briefs/YYYY-MM-DD-<slug>-brief.md` | One page, for sales |
-| `ad-intelligence.xlsx` | Workbook, for anyone who wants to filter and sort |
 | `README.md` | Snapshot table refreshed |
 
 Live site: https://arielsoussan-ssys.github.io/competitor-intelligence/
@@ -51,8 +50,7 @@ That is the comparison set.
 If no prior file exists for a competitor, this is a **baseline run**: collect normally,
 report no diff, label the run `baseline`.
 
-> Baseline used to be recovered by scraping the published dashboard, because the dataset
-> lived inside `index.html`. It no longer does. Do not parse the live site for data.
+Do not parse the live site for data; `data/` is the only baseline.
 
 ---
 
@@ -83,19 +81,15 @@ Per competitor, in tier order. Follow `references/collection.md` for each source
 
 ### Verified advertiser names
 
-Confirmed 2026-10-04 via Chrome connector. Re-confirm each run and update this table.
-
-| Competitor | `accountOwner=` | Verified count | Warning |
-|---|---|---|---|
-| HP Additive | `HP Additive Manufacturing (AM) Solutions - 3D Printing` | 34 | `HP Additive` also returns 34 and is safe |
-| Formlabs | `Formlabs` | 28 | clean |
-| 3D Systems | `3D Systems Corporation` | 1 | **`3D Systems` returns 33 ads that are NOT them** (3D Dental Systems d.o.o., FGS Media). Always use the full legal name. |
-| Bambu Lab | none exists | 0 | Verified across `Bambu Lab`, `BambuLab`, `Bambu Lab US`, `Bambu Japan`, `Tuozhu`. `Bambu` returns 237 ads that are all **Bambuser**, unrelated. |
+The table lives in the repo's `CLAUDE.md` ("Verified advertiser names"); use the exact
+names there, re-confirm each run via the Chrome connector, and update that one table.
+For Bambu Lab, check `Bambu Lab`, `BambuLab`, `Bambu Lab US`, `Bambu Japan` and `Tuozhu`
+before recording that no account exists. Always use 3D Systems' full legal name.
 
 Record `linkedin_advertiser` and `advertiser_verified` in every run file.
 
 **LinkedIn** — primary and the only reliable creative-level source.
-**Meta** — keyword search. **Zero results is a finding**, recorded explicitly, never omitted.
+**Meta** — out of scope by Ariel's decision. Record it as *not checked* in every run file, never as zero.
 **Google** — parent-domain totals are not isolable by business unit. Say so. The real
 signal is `jumpid` campaign codes on trade-site display banners; a new code means a
 newly funded flight.
@@ -144,13 +138,14 @@ week-over-week swings.
 
 ---
 
-## Phase 4: research the trailing 7 days
+## Phase 4: research since the baseline run
 
-Run in parallel with Phase 2/3. Cover: product/pricing/availability news; partnerships,
+Run in parallel with Phase 2/3. Cover everything since the baseline `run_date` from
+Phase 1, not only the last 7 days: product/pricing/availability news; partnerships,
 events, verticals; drone/UAV/defense; orthotics and prosthetics; metal and sintering;
 earnings, exec changes, hiring; channel and reseller changes; landing page and offer changes.
 
-Require a source URL and publication date for every claim, separate last-7-days from
+Require a source URL and publication date for every claim, separate in-window news from
 older context, and flag anything unconfirmed.
 
 **Also update the Gauntlet tracker,** `data/gauntlet.json`. For each of the 19 companies,
@@ -206,25 +201,9 @@ scored gap is the answer to "HP out-markets us"; an opinion is not.
 Write `data/YYYY-MM-DD-<slug>.json` **first**. If a run dies halfway, the data must
 already be on disk. The dashboard is a view of the data, never the other way round.
 
-**index.html** — single file, Chart.js from cdnjs only, no localStorage, navy `#1f3864`
-and red `#c8102e`. Header with week label, run date, baseline date. Pinned weekly card
-above the KPIs: red top border, headline at 24px, amber "so what" box, then the four
-change categories as a colour-coded grid with source links. Tabs: Dashboard (6 KPI cards,
-4 charts — theme mix horizontal bar with top theme in red, format mix doughnut, funnel
-bar, spend-by-theme grouped bar — plus the dropped-creatives table), Ad Log (searchable,
-NEW badges, funnel tags), Messaging Themes, Watch (source link per bullet, explicit
-"Unverified and refuted" section), Collection Notes. Escape all interpolated strings.
-Write LF line endings; confirm with `file index.html`.
-
-**ad-intelligence.xlsx** — openpyxl, Arial. Tabs: Weekly Change Log (newest at top),
-Ad Log (17 columns, navy header, auto-filter, frozen top row, green fill on NEW rows,
-real `SUM`/`COUNTIF` formulas never hardcoded results), Summary (this week vs baseline
-vs change, plus numbered "what this means for Stratasys"), Messaging Themes,
-Collection Notes.
-
-If LibreOffice recalc hangs, kill it rather than retrying, verify formula ranges cover
-exactly the data rows, cross-check against a Python-side computation, and say in the
-summary that recalc did not complete.
+**index.html** — generated, never hand-edited. Rebuild it from `data/` with
+`python3 tools/build_dashboard.py`; layout and design changes go in that script.
+Confirm LF line endings with `file index.html`.
 
 **briefs/YYYY-MM-DD-<slug>-brief.md** — one page maximum. For most reps this is the only
 thing they will read.
@@ -269,11 +248,8 @@ git add -A && git commit -m "<Competitor> tracker: <Mon DD YYYY> scrape" && git 
 
 Commit body: the headline plus the bullet summary of changes.
 
-> The Cowork sandbox blocked `git push` (HTTP 403 on CONNECT to github.com), which forced
-> a gzip/base64/chunk/SHA-verify injection into GitHub's CodeMirror web editor. That
-> workaround corrupted a character on the Aug 10 run. It is gone. In Claude Code, GitHub
-> traffic uses a dedicated proxy independent of the network policy. If a push ever fails,
-> fix the environment; do not rebuild the injection path.
+If `git push` fails, fix the environment and retry. Never work around it by pasting files
+into GitHub's web editor: that path once corrupted a published run.
 
 ---
 
