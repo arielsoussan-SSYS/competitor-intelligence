@@ -7,7 +7,7 @@
   "requirement": "Each company must deliver 120 kamikaze drones with lethality payloads in roughly five weeks. Price ceilings $5,500 long-range strike, $4,500 close quarters. Awards cover 5 long-range and 3 close-quarters designs, with production orders of 4,000-9,500 UAVs per winner.",
   "why_it_matters": "Nineteen pre-qualified companies that must prove they can manufacture at wartime speed. Every one is a Stratasys prospect. The 120-units-in-five-weeks requirement is the additive manufacturing pitch stated as a procurement requirement. One account is confirmed Locked to a competitor (ORQA, Formlabs) and two are Contested. Internal intelligence suggests HP supports 14 of the 19 [validation-needed]: unproven publicly, which is expected, since supplier relationships are not published. Do not cite the figure externally.",
   "headline_signal": "Gauntlet II is decided and production orders are being placed now. The Deep Strike runner-up, Hyperscale, is itself a metal 3D-printing company, while Neros, the field's loudest 3D-printing sceptic, took the biggest order: 14,000+ drones.",
-  "last_researched": "2026-10-12",
+  "last_researched": "2026-10-30",
   "sources": [
     {
       "t": "Gauntlet II results (DefenseScoop, Sep 18 2026)",
@@ -409,6 +409,16 @@
       "on": "2026-10-12",
       "item": "Gauntlet II accounts re-checked: Vector, Hyperscale, Stellarion, Grim Tech, Skycutter/SkyFall, Neros",
       "result": "No tracker upgrades justified. No additive supplier or competitor named for any of the four gap companies. Skycutter/SkyFall to Formlabs remains [Unverified]. Neros: no new printing statement (order announcement Sep 30). Gauntlet 2.5 (bomber/dropper, ~$32M) still only scheduled, qualifier 'tentatively' October 2026 [Unverified]. Orders confirmed so far: Neros and Swarm Defense only; Skycutter and Vector 5,000 each are forecasts. Skycutter and ModalAI deliveries flagged as awaiting inspection."
+    },
+    {
+      "on": "2026-10-30",
+      "item": "Neros and Perennial Autonomy additive suppliers",
+      "result": "Searched for a named 3D printing or additive supplier for Neros (Archer) and for Perennial Autonomy. No public evidence found for either. Neros reporting describes vertical integration with no additive supplier named. No account moved from Unverified; none refuted. Ask the field team."
+    },
+    {
+      "on": "2026-10-30",
+      "item": "Gauntlet II order status",
+      "result": "Coverage still reports roughly $300M in near-term orders across nine to ten winners, with most order values pending contract negotiation. DIU posted results Sep 15 2026. No complete official winners list or final contract values found."
     }
   ]
 }

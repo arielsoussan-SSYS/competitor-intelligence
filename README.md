@@ -134,7 +134,7 @@ social posts, trade press.
 
 Company intelligence comes from trade press, newsrooms, landing pages, and investor calls.
 
-**Verified advertiser names.** Confirmed 2026-10-12. Re-confirm every run.
+**Verified advertiser names.** Confirmed 2026-10-30. Re-confirm every run.
 
 | Competitor | `?accountOwner=` | Live instances |
 |---|---|---|
@@ -166,55 +166,56 @@ Company intelligence comes from trade press, newsrooms, landing pages, and inves
 
 ## Current snapshot
 
-All four competitors carry real data. No pending stubs. Latest run **2026-10-12** (eight-day check after the Oct 4 scan).
+All four competitors carry real data. No pending stubs. Latest run **2026-10-30** (scheduled scan, 18 days after the Oct 12 check).
 
-**HP Additive, run 2026-10-12, baseline 2026-10-04**
-
-| Metric | This run | Baseline |
-|---|---|---|
-| Unique creatives | 16 | 16 |
-| Live instances | 34 | 34 |
-| New / dropped | 0 / 0 | - |
-| Drone share of volume | 35% (12 of 34) | 35% (12 of 34) |
-| Stale dated creatives | 4 | 4 |
-| Est. monthly rate, costable ads | $24.0K to $54.1K/mo `[Estimate]`, from 2 of 16 creatives | same 2 ads |
-| EU-served creatives | 2 of 34 | 2 of 34 |
-
-**Headline:** HP changed nothing on LinkedIn in eight days, and the MJF 1200 Open House ad is
-still running 11 days after the event.
-
-**Formlabs, run 2026-10-12, baseline 2026-10-04**
+**HP Additive, run 2026-10-30, baseline 2026-10-12**
 
 | Metric | This run | Baseline |
 |---|---|---|
-| Unique creatives / live instances | 12 / 27 | 12 / 28 |
-| Google ads, own account | 119 (99 Text / 12 Image / 8 Video) | 121 (99 / 14 / 8) |
-| Drone-specific creative | 4 of 27 | 4 of 28 |
-| EU-served creatives | 1 of 27 | 1 of 28 |
+| Unique creatives | 13 | 16 |
+| Live instances | 24 | 34 |
+| New / dropped | 1 / 4 | 0 / 0 |
+| Drone share of volume | 0% (0 of 24) | 35% (12 of 34) |
+| Stale dated creatives | 3 | 4 |
+| Est. monthly rate | computed at render time, `[Estimate]`, see dashboard | |
+| EU-served creatives | 2 of 24 | 2 of 34 |
 
-**Headline:** Same 12 creatives, one fewer instance. The LinkedIn pullback has paused.
+**Headline:** HP removed every drone creative from LinkedIn since Oct 12 (four creatives, 13
+instances). Its only new ad is a Nov 5 MJF 1200 webinar. The drone lane is open.
 
-**Bambu Lab, run 2026-10-12, baseline 2026-10-04**
+**Formlabs, run 2026-10-30, baseline 2026-10-12**
+
+| Metric | This run | Baseline |
+|---|---|---|
+| Unique creatives / live instances | 9 / 13 | 12 / 27 |
+| Google ads, own account | 119 carried from Oct 12, not re-pulled | 119 |
+| Drone-specific creative | 3 of 13 (23%) | 4 of 27 (15%) |
+| EU-served creatives | 1 of 13 | 1 of 27 |
+
+**Headline:** Formlabs cut its LinkedIn rotation roughly in half (27 to 13 instances, three
+creatives dropped). The Fuse X1 is still a Q4 2026 ship with no firm date found.
+
+**Bambu Lab, run 2026-10-30, baseline 2026-10-12**
 
 | Metric | This run |
 |---|---|
 | LinkedIn owned ads | **0** (verified, 5 name variants + control) |
-| Google ads, own account | ~1,800 carried from Oct 4, not re-pulled (domain page shows ~3K across accounts) |
+| Google ads, own account | ~1,800 carried from Oct 4, not re-pulled |
 | Defense addressable market | Zero, NDAA FY2026 s849 and s880 |
 
 **Headline:** Still no B2B advertising. Litigation and product news not re-checked this run.
 Legally sensitive, route to Legal.
 
-**3D Systems, run 2026-10-12, baseline 2026-10-04**
+**3D Systems, run 2026-10-30, baseline 2026-10-12**
 
-Still zero marketing creative on LinkedIn (one recruitment ad). 35 Google ads on 3dsystems.com,
-unchanged. The US corporate Google account (9 ads) was not re-sampled this run.
+Still zero marketing creative on LinkedIn (one recruitment ad, seventh run). 36 Google ads on
+3dsystems.com, up one from 35. Q3 results are due Nov 4.
 
-**Gauntlet tracker, updated 2026-10-12**
+**Gauntlet tracker, updated 2026-10-30**
 
-No tracker upgrades. 17 of 19 teams are `Confirmed`. One account is `Locked` (ORQA US LLC,
-Formlabs) and two are `Contested` (Neros, Skycutter). Vector's printing and Hyperscale's
-metal-AM claims are single-source `[Unverified]`. Gauntlet 2.5 still only scheduled.
+No tracker upgrades: a search for additive suppliers behind Neros and Perennial Autonomy found
+nothing public. 17 of 19 teams are `Confirmed`. One account is `Locked` (ORQA US LLC,
+Formlabs) and two are `Contested` (Neros, Skycutter).
 
 > Bambu's chart buckets use **Google** counts, not LinkedIn instances, because they have
 > no LinkedIn programme. Every run file carries a `bucket_basis` string stating its
