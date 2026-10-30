@@ -160,7 +160,7 @@ Current as of 2026-10-30. All four competitors carry real data; there are no pen
 
 ### Open items
 
-- **Meta** is out of scope by Ariel's decision. Recorded as not checked.
+- **Meta and Google are now in scope** (Ariel, 2026-10-30), because LinkedIn alone misses channels (Bambu Lab runs about 3K Google and about 350 Meta ads but zero on LinkedIn). First pass lives in `data/platforms.json` and the dashboard's Platforms tab; method in `research/2026-10-30-google-meta-widening.md`. Creative-level capture is still to do.
 - **"HP supports 14 of 19"** remains `[validation-needed]`. No public evidence, which is
   the *expected* result since supplier relationships are not published. Do **not** record it
   as refuted, and do not cite the figure externally. The cheapest route to validating it is

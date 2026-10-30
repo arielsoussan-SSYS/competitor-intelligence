@@ -89,7 +89,7 @@ before recording that no account exists. Always use 3D Systems' full legal name.
 Record `linkedin_advertiser` and `advertiser_verified` in every run file.
 
 **LinkedIn** — primary and the only reliable creative-level source.
-**Meta** — out of scope by Ariel's decision. Record it as *not checked* in every run file, never as zero.
+**Meta** — in scope since 2026-10-30 (Ariel). Search the Meta Ad Library by keyword, US, active, and count by advertiser page name; see `research/2026-10-30-google-meta-widening.md`. Record anything not checked as *not checked*, never as zero.
 **Google** — parent-domain totals are not isolable by business unit. Say so. The real
 signal is `jumpid` campaign codes on trade-site display banners; a new code means a
 newly funded flight.

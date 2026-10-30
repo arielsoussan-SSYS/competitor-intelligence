@@ -1,0 +1,80 @@
+{
+  "checked_on": "2026-10-30",
+  "scope": "US view. Counts as each ad library reports them, not spend. First multi-platform pass.",
+  "headline": "Bambu Lab is not missing from advertising, only from LinkedIn: about 3K ads on Google and about 350 on Meta, sold through retailers and creators.",
+  "so_what": "LinkedIn shows only part of the picture. For Bambu, Google and Meta show who they are going after: consumer and prosumer buyers, which fits their defense ban. On a call, a Bambu machine in a defense account came from retail channels, not a B2B sales push.",
+  "platforms": ["LinkedIn", "Google", "Meta"],
+  "rows": [
+    {
+      "competitor": "HP Additive",
+      "cells": {
+        "LinkedIn": {"value": "24", "detail": "live instances (34 on Oct 12). All 24 extracted."},
+        "Google": {"value": "Not isolable", "detail": "hp.com shows about 50K worldwide, mixed with consumer HP. Do not cite as AM."},
+        "Meta": {"value": "0 found", "detail": "No ads under the AM names searched. Not found in search, which is not proof of none."}
+      },
+      "read": "LinkedIn is its only measurable channel, and volume is down from 34."
+    },
+    {
+      "competitor": "Formlabs",
+      "cells": {
+        "LinkedIn": {"value": "13", "detail": "live instances, 9 unique creatives (27 on Oct 12). Control passed."},
+        "Google": {"value": "59", "detail": "US ads, 7 of them video. About 200 worldwide. One verified advertiser, Formlabs Inc."},
+        "Meta": {"value": "6", "detail": "from its own page, plus reseller ads (MatterHackers 2). About 13 keyword results in total."}
+      },
+      "read": "The only competitor on all three channels. LinkedIn is shrinking while Google and Meta stay active."
+    },
+    {
+      "competitor": "3D Systems",
+      "cells": {
+        "LinkedIn": {"value": "1", "detail": "a jobs ad only, no marketing creative."},
+        "Google": {"value": "9", "detail": "US ads (36 worldwide). Verified advertiser 3D Systems Corporation."},
+        "Meta": {"value": "Not isolable", "detail": "A keyword search returns 50,000 unrelated ads. Needs a page-level check."}
+      },
+      "read": "Quietest of the four. Google is its main visible channel."
+    },
+    {
+      "competitor": "Bambu Lab",
+      "cells": {
+        "LinkedIn": {"value": "0", "detail": "No results for the names Bambu Lab and BambuLab. Other names were zero on Oct 12."},
+        "Google": {"value": "~200 US", "detail": "About 3K worldwide, 29 US video ads. Advertiser is the legal entity 深圳拓竹科技有限公司 (Shenzhen Tuozhu). US count caps at about 200."},
+        "Meta": {"value": "~350", "detail": "US results. Page Bambu Lab 3D, plus Best Buy, Target, AliExpress and named creators."}
+      },
+      "read": "Heavy on Google and Meta, absent from LinkedIn. Consumer and retail, not B2B."
+    }
+  ],
+  "trend": {
+    "title": "LinkedIn live instances over time",
+    "note": "Same advertiser names each run. A fall can mean ad rotation, so wait for more points before calling it a trend.",
+    "dates": ["Sep 15", "Sep 22", "Oct 4", "Oct 12", "Oct 30"],
+    "series": [
+      {"competitor": "HP Additive", "values": [null, 36, 34, 34, 24]},
+      {"competitor": "Formlabs", "values": [33, 33, 28, 27, 13]},
+      {"competitor": "3D Systems", "values": [null, null, 1, 1, 1]},
+      {"competitor": "Bambu Lab", "values": [null, null, 0, 0, 0]}
+    ]
+  },
+  "takeaways": [
+    "Bambu Lab advertises heavily outside LinkedIn: about 3K Google ads worldwide and about 350 on Meta in the US.",
+    "HP and Formlabs both cut LinkedIn volume since September (HP 36 to 24, Formlabs 33 to 13). [Inference] Could be rotation or a pullback.",
+    "Formlabs is the only competitor present on all three channels.",
+    "HP shows no Meta ads under the AM names searched. HP's Google total cannot be split from consumer HP.",
+    "3D Systems is the quietest: one LinkedIn jobs ad and 9 US Google ads."
+  ],
+  "method": [
+    "LinkedIn: Ad Library advertiser search with the exact name; control (Formlabs) run first and returned a count.",
+    "Google: Ads Transparency Center, domain page, region US. Counts above about 200 show as ~200, so they cap. A domain page can include unrelated advertisers.",
+    "Meta: Ad Library keyword search, US, active ads. Keyword results mix in other advertisers, so ads are counted by advertiser page name. Meta results are discovery, not a spend measure.",
+    "Spend is not estimated on this view."
+  ],
+  "not_done": [
+    "Meta page-level check for HP and 3D Systems.",
+    "Creative-level capture (headlines, formats, run dates) for Google and Meta.",
+    "Bambu LinkedIn names Bambu Lab US, Bambu Japan and Tuozhu were not re-checked this run.",
+    "EU-country disclosure pass for Formlabs and HP was not re-run."
+  ],
+  "sources": [
+    {"t": "LinkedIn Ad Library", "u": "https://www.linkedin.com/ad-library"},
+    {"t": "Google Ads Transparency Center", "u": "https://adstransparency.google.com/"},
+    {"t": "Meta Ad Library", "u": "https://www.facebook.com/ads/library/"}
+  ]
+}

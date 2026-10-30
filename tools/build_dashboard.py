@@ -40,6 +40,8 @@ for s, d in C.items():
 
 GPATH = os.path.join(ROOT, "data", "gauntlet.json")
 G = json.load(open(GPATH, encoding="utf-8")) if os.path.exists(GPATH) else None
+PLPATH = os.path.join(ROOT, "data", "platforms.json")
+PL = json.load(open(PLPATH, encoding="utf-8")) if os.path.exists(PLPATH) else None
 
 import spend_model as SM
 
@@ -60,7 +62,7 @@ def _attach_spend(competitors):
     return competitors
 
 C = _attach_spend(C)
-PAYLOAD = {"competitors": C, "order": order, "built": built, "gauntlet": G,
+PAYLOAD = {"competitors": C, "order": order, "built": built, "gauntlet": G, "platforms": PL,
            "spend_method": SM.__doc__.strip().split("WHY THIS REPLACED")[0].strip()}
 
 TPL = r"""<!doctype html>
@@ -204,6 +206,10 @@ canvas{max-height:270px}
 .sb{flex:0 0 auto;border:0;cursor:pointer;font:inherit;font-size:14px;font-weight:640;color:var(--ink2);
   background:transparent;padding:10px 20px;border-radius:16px;transition:background .18s,color .18s}
 .sb:hover{color:var(--ink)}
+.pv{font-size:22px;font-weight:700;color:var(--navy);line-height:1.1}
+.pd{font-size:12px;color:var(--ink2);margin-top:4px;max-width:30ch}
+td.pc{vertical-align:top;min-width:150px}
+.plist{margin:0;padding-left:18px;display:grid;gap:6px;font-size:13.5px}
 .sb[aria-pressed=true]{background:#fff;color:var(--navy);box-shadow:0 1px 2px rgba(16,23,37,.06),0 5px 16px rgba(16,23,37,.10)}
 .view{display:none}.view.on{display:block}
 .sig{padding:18px 20px;border-left:3px solid var(--red)}
@@ -269,14 +275,31 @@ footer b{color:var(--ink2)}
 <header>
   <div class="eyebrow">Stratasys competitive intelligence</div>
   <h1>Competitive Ad Intelligence</h1>
-  <p class="sub">What competitors are advertising, what changed, and what to say about it on a call. Sources: LinkedIn Ad Library (advertiser search), Google Ads Transparency Center, and trade press. Meta is not currently checked.</p>
+  <p class="sub">What competitors are advertising, what changed, and what to say about it on a call. Sources: LinkedIn Ad Library (advertiser search), Google Ads Transparency Center, Meta Ad Library (first pass, see Platforms), and trade press.</p>
 </header>
 
 <div class="sect glass" role="group" aria-label="Section">
   <button class="sb" data-v="home" aria-pressed="true">Home</button>
   <button class="sb" data-v="competitors" aria-pressed="false">Competitors</button>
+  <button class="sb" data-v="platforms" aria-pressed="false">Platforms</button>
   <button class="sb" data-v="gauntlet" aria-pressed="false">Gauntlet</button>
 </div>
+
+<section class="view" id="v-platforms">
+  <div class="glass hero" style="margin-top:16px">
+    <div class="lab">Where they advertise</div>
+    <h2 id="plHead"></h2>
+    <div class="sowhat"><b>So what:</b> <span id="plWhy"></span></div>
+  </div>
+  <div class="glass card"><h3>Four competitors, three channels</h3>
+    <p class="cap" id="plScope"></p>
+    <div class="scroll"><table><thead id="plHead2"></thead><tbody id="plRows"></tbody></table></div></div>
+  <div class="glass card"><h3>What this says</h3><ul class="plist" id="plTake"></ul></div>
+  <div class="glass card"><h3 id="plTrendT"></h3><p class="cap" id="plTrendN"></p>
+    <div class="scroll"><table><thead id="plTH"></thead><tbody id="plTB"></tbody></table></div></div>
+  <div class="glass card"><h3>How it was counted</h3><ul class="plist" id="plMeth"></ul>
+    <p class="cap" style="margin:14px 0 6px"><b>Not done yet</b></p><ul class="plist" id="plTodo"></ul></div>
+</section>
 
 <section class="view on" id="v-home">
   <div class="grid g3" id="homeKpis" style="margin:16px 0"></div>
@@ -416,7 +439,7 @@ footer b{color:var(--ink2)}
 
 </div>
 <script>
-const P=%%DATA%%, CO=P.competitors, ORD=P.order, G=P.gauntlet;
+const P=%%DATA%%, CO=P.competitors, ORD=P.order, G=P.gauntlet, PL=P.platforms;
 const e=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const $=i=>document.getElementById(i);
 const fmtM=v=>v>=1000?"$"+(v/1000).toFixed(1)+"K":"$"+v;
@@ -607,6 +630,9 @@ function home(){
    '<button class="ncard" data-go="competitors"><span class="t">Competitors</span>'+
    '<span class="d">Ad logs, messaging themes, weekly diffs and a sales brief for '+ORD.length+
    ' competitors.</span><span class="go">Open competitors &rarr;</span></button>'+
+   (PL?'<button class="ncard" data-go="platforms"><span class="t">Platforms</span>'+
+   '<span class="d">Who advertises where: LinkedIn, Google and Meta side by side, and how LinkedIn volume is moving.</span>'+
+   '<span class="go">Open platforms &rarr;</span></button>':"")+
    (G?'<button class="ncard" data-go="gauntlet"><span class="t">Drone Dominance Gauntlet</span>'+
    '<span class="d">'+G.teams.length+' pre-qualified drone manufacturers, who is already in each account, and where we can still win.</span>'+
    '<span class="go">Open gauntlet &rarr;</span></button>':"");
@@ -653,7 +679,28 @@ function grows(f){
     loc+" locked by a competitor, "+con+" contested, "+(G.teams.length-loc-con)+" open.";
 }
 
-render(cur); home(); gaunt();
+/* ---- platforms ---- */
+function plat(){
+  if(!PL) return;
+  $("plHead").textContent=PL.headline;
+  $("plWhy").textContent=PL.so_what;
+  $("plScope").textContent="Checked "+PL.checked_on+". "+PL.scope;
+  $("plHead2").innerHTML="<tr><th>Competitor</th>"+PL.platforms.map(p=>"<th>"+e(p)+"</th>").join("")+"<th>Read</th></tr>";
+  $("plRows").innerHTML=PL.rows.map(r=>"<tr><td class='hl'>"+e(r.competitor)+"</td>"+
+    PL.platforms.map(p=>{const c=r.cells[p]||{};return "<td class='pc'><div class='pv'>"+e(c.value||"-")+
+      "</div><div class='pd'>"+e(c.detail||"")+"</div></td>";}).join("")+
+    "<td>"+e(r.read||"")+"</td></tr>").join("");
+  $("plTake").innerHTML=PL.takeaways.map(t=>"<li>"+e(t)+"</li>").join("");
+  const T=PL.trend;
+  $("plTrendT").textContent=T.title; $("plTrendN").textContent=T.note;
+  $("plTH").innerHTML="<tr><th>Competitor</th>"+T.dates.map(d=>"<th>"+e(d)+"</th>").join("")+"</tr>";
+  $("plTB").innerHTML=T.series.map(s=>"<tr><td class='hl'>"+e(s.competitor)+"</td>"+
+    s.values.map(v=>"<td>"+(v==null?"&ndash;":e(v))+"</td>").join("")+"</tr>").join("");
+  $("plMeth").innerHTML=PL.method.map(t=>"<li>"+e(t)+"</li>").join("");
+  $("plTodo").innerHTML=PL.not_done.map(t=>"<li>"+e(t)+"</li>").join("");
+}
+
+render(cur); home(); gaunt(); plat();
 </script>
 </body>
 </html>
