@@ -148,6 +148,7 @@ into GitHub's web editor: that path once corrupted a published run.
 
 Current as of 2026-10-30. All four competitors carry real data; there are no pending stubs.
 
+- **Platforms (2026-10-30):** first LinkedIn + Google + Meta pass is in `data/platforms.json` and the dashboard's Platforms tab. Bambu Lab: 0 LinkedIn, about 3K Google (legal entity 深圳拓竹科技有限公司), about 350 Meta (Bambu Lab 3D page, Best Buy, Target, creators). LinkedIn instances Oct 30: HP 24, Formlabs 13, 3D Systems 1. A full scan run was started Oct 30 but not finished: no run files in `data/` for that date. Still to do: Meta page-level check for HP and 3D Systems, Google and Meta creatives, EU pass.
 - **HP Additive** — 13 creatives, 24 live instances (Oct 30); removed ALL drone creative since Oct 12. New: a Nov 5 MJF 1200 webinar.
   Buys launch bursts, not always-on presence: one MJF 1200 teaser took 500K-1M impressions in nineteen days.
 - **Formlabs** — LinkedIn cut to 13 instances / 9 creatives (Oct 30, from 27 / 12). Ships the Fuse X1 in Q4 2026, ahead of HP's early-2027 MJF 1200. The
